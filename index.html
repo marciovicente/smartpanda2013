@@ -71,10 +71,10 @@
 				</section>
 
 				<section id="listaOfertas">
-					<div id="loadingImage"></div>
 					<div class="groupOfertas">
 						
 						<div class="ofertaUnique">
+							<div class="loadingImage"></div>
 							<img src="https://img.getyourguide.com/img/tour_img-19091-21.jpg" alt="">
 							<div class="bottomBar">
 								<button class="btnBar like"></button>
@@ -85,6 +85,7 @@
 						</div>
 
 						<div class="ofertaUnique">
+							<div class="loadingImage"></div>
 							<img src="http://www.outerfit.com.br/media/catalog/product/cache/1/thumbnail/228x/9df78eab33525d08d6e5fb8d27136e95/_/-/_-57_1.jpg" alt="">
 							<div class="bottomBar">
 								<button class="btnBar like"></button>
@@ -95,6 +96,7 @@
 						</div>
 
 						<div class="ofertaUnique">
+							<div class="loadingImage"></div>
 							<img src="http://www.brandsdreams.com.br/image/cache/data/produtos/tenis/nike-max-alpha/big%20(14)-228x228.gif" alt="">
 							<div class="bottomBar">
 								<button class="btnBar like"></button>
@@ -105,6 +107,7 @@
 						</div>
 
 						<div class="ofertaUnique">
+							<div class="loadingImage"></div>
 							<img src="http://www.export-to-china.com/sites/default/files/styles/product_detail/public/Ricci%20Ricci%20edp%20vapo.jpg" alt="">
 							<div class="bottomBar">
 								<button class="btnBar like"></button>
@@ -123,12 +126,12 @@
 	<script src="js/jquery.1-9-1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>
-		$(function() {
-	      	$('#loadingImg').show();
-	      	$('.groupOfertas').ready(function() {
-		    	$('#loadingImg').hide();
-		      	alert("ok");
-	      	});
+		$(window).ready(function(){
+		    $(".groupOfertas img").load(function(){
+		        $(".loadingImage").fadeOut(function(){
+		            $(".groupOfertas > img").fadeIn();
+		        });
+		    });
 		});
 		
 	</script>
