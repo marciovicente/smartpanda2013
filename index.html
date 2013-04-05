@@ -16,16 +16,20 @@
 					<div id="statusLogin">
 						
 						<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/195225_100001708066608_415344984_q.jpg" alt="">
-						<a href="#" class="logout"><i class="icon icon-white icon-remove"></i> Sair</a>
 						<div id="profile">
 							<h6>Márcio Vicente Santos </h6>
-							<i class="icon icon-white icon-chevron-down"></i>
+							<a href="#" class="logout"> <i class="icon icon-white icon-remove"></i>Sair</a>
 							
+							<i class="icon icon-white icon-chevron-down"></i>
 						</div>
 					</div>
 				</div>
 
+				<div id="filter">
+
+				</div>
 			</header>
+
 
 			<div class="central">
 				<section id="firstContainer">
@@ -73,50 +77,85 @@
 				<section id="listaOfertas">
 					<div class="groupOfertas">
 						
-						<div class="ofertaUnique">
-							<div class="loadingImage"></div>
-							<img src="https://img.getyourguide.com/img/tour_img-19091-21.jpg" alt="">
-							<div class="bottomBar">
-								<button class="btnBar like"></button>
-								<button class="btnBar dislike"></button>
-								<button class="btnBar share"></button>
-								<button class="btnBar favorite"></button>
-							</div>
-						</div>
+						<a href="#" class="ofertaUnique turismo">
+							<div class="imageOferta">
+								<div class="loadingImage"></div>
+								<img src="https://img.getyourguide.com/img/tour_img-19091-21.jpg" alt="">
 
-						<div class="ofertaUnique">
-							<div class="loadingImage"></div>
-							<img src="http://www.outerfit.com.br/media/catalog/product/cache/1/thumbnail/228x/9df78eab33525d08d6e5fb8d27136e95/_/-/_-57_1.jpg" alt="">
+								<div class="desc turismo">
+									<h5>Tênis nike com 70% de desconto</h5>
+									<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h6>
+								</div>
+							</div>
 							<div class="bottomBar">
 								<button class="btnBar like"></button>
 								<button class="btnBar dislike"></button>
 								<button class="btnBar share"></button>
 								<button class="btnBar favorite"></button>
 							</div>
-						</div>
+						</a>
 
-						<div class="ofertaUnique">
-							<div class="loadingImage"></div>
-							<img src="http://www.brandsdreams.com.br/image/cache/data/produtos/tenis/nike-max-alpha/big%20(14)-228x228.gif" alt="">
-							<div class="bottomBar">
-								<button class="btnBar like"></button>
-								<button class="btnBar dislike"></button>
-								<button class="btnBar share"></button>
-								<button class="btnBar favorite"></button>
-							</div>
-						</div>
+						<a href="#" class="ofertaUnique roupas">
 
-						<div class="ofertaUnique">
-							<div class="loadingImage"></div>
-							<img src="http://www.export-to-china.com/sites/default/files/styles/product_detail/public/Ricci%20Ricci%20edp%20vapo.jpg" alt="">
+							<div class="imageOferta">
+								<div class="loadingImage"></div>
+								<img src="http://www.outerfit.com.br/media/catalog/product/cache/1/thumbnail/228x/9df78eab33525d08d6e5fb8d27136e95/_/-/_-57_1.jpg" alt="">
+
+								<div class="desc roupas">
+									<h5>Tênis nike com 70% de desconto</h5>
+									<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h6>
+								</div>
+							</div>
 							<div class="bottomBar">
 								<button class="btnBar like"></button>
 								<button class="btnBar dislike"></button>
 								<button class="btnBar share"></button>
 								<button class="btnBar favorite"></button>
 							</div>
-						</div>
+						</a>
+
+						<a href="#" class="ofertaUnique esporte">
+
+							<div class="imageOferta">	
+								<div class="loadingImage"></div>
+								<img src="http://www.brandsdreams.com.br/image/cache/data/produtos/tenis/nike-max-alpha/big%20(14)-228x228.gif" alt="">
+
+								<div class="desc esporte">
+									<h5>Tênis nike com 70% de desconto</h5>
+									<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h6>
+								</div>
+							</div>
+
+							<div class="bottomBar ">
+								<button class="btnBar like"></button>
+								<button class="btnBar dislike"></button>
+								<button class="btnBar share"></button>
+								<button class="btnBar favorite"></button>
+							</div>
+						</a>
+
+						<a href="#" class="ofertaUnique informativo">
+							<div class="imageOferta">	
+								<div class="loadingImage"></div>
+								<img src="http://www.export-to-china.com/sites/default/files/styles/product_detail/public/Ricci%20Ricci%20edp%20vapo.jpg" alt="">
+								
+								<div class="desc informativo">
+									<h5>Tênis nike com 70% de desconto</h5>
+									<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h6>
+								</div>
+							</div>
+
+
+							<div class="bottomBar">
+								<button class="btnBar like"></button>
+								<button class="btnBar dislike"></button>
+								<button class="btnBar share"></button>
+								<button class="btnBar favorite"></button>
+							</div>
+						</a>
 					</div>
+
+					
 					
 				</section>
 			</div>
@@ -127,12 +166,25 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script>
 		$(window).ready(function(){
+			$('.ofertaUnique .desc').hide();
+
 		    $(".groupOfertas img").load(function(){
 		        $(".loadingImage").fadeOut(function(){
 		            $(".groupOfertas > img").fadeIn();
 		        });
 		    });
 		});
+
+		(function ($) { 
+			$("a.ofertaUnique").hover(function(){
+				$(this).find(".desc").fadeIn();
+
+			});
+			$("a.ofertaUnique").mouseleave(function(){
+				$(this).find(".desc").fadeOut();
+
+			});
+		})(jQuery)
 		
 	</script>
 </body>

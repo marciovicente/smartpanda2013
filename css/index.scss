@@ -62,7 +62,7 @@ body{
 				border-bottom: 3px solid #232323;
 				display: block;
 				position: fixed;
-				z-index: 10000;
+				z-index: 10;
 
 				#logo{
 					background: url(../images/marca.png) no-repeat;
@@ -84,18 +84,12 @@ body{
 					width: 210px;
 					background:#232323;
 					height: 78px;
-					border-top: 3px solid $verde;
+					border-top: 3px solid #3B5998;
 					
 					img {float: left;}
 						
 					a.logout{
-						width: 47px;
-						height: 23px;
 						float: left;
-						position: relative;
-						top: 50px;
-						left: -50px;
-						background:$verde;
 						color: #fff;
 						padding-top: 5px;
 						padding-left: 3px;
@@ -121,11 +115,7 @@ body{
 						}
 
 						i{
-							// transform: rotate(90deg);
-					  //       -webkit-transform: rotate(90deg);
-					  //       -moz-transform: rotate(90deg);
-					  //       -o-transform: rotate(90deg);
-					        float: right;
+					        float: left;
 					        @include opacityCB(4);
 						}
 					}
@@ -136,7 +126,22 @@ body{
 						}
 					}
 				}
+				
+
+				#filter{
+					width: 100%;
+					height: 33px;
+					background: $verde; 
+					position: relative;
+					z-index: 8;
+					border-bottom: 2px solid #82C018;
+					// -webkit-box-shadow: 0 1px 2px rgb(0,0,0);
+					// -moz-box-shadow: 0 1px 2px rgb(0,0,0);
+					// box-shadow: 0 1px 2px rgb(0,0,0);
+					top: 2px;
+				}
 			}
+
 
 			// icons categorias
 			.categoriaIcon{
@@ -203,7 +208,7 @@ body{
 
 			#firstContainer{
 				height: 350px;
-				margin: 95px 0 15px 0;
+				margin: 135px 0 15px 0;
 
 
 				#paperFolding{
@@ -462,15 +467,62 @@ body{
 					background: url(../images/ajax-loader.gif) center no-repeat;
 				}
 				
-				.ofertaUnique{
+				a.ofertaUnique{
 					float: left;
 					width: 228px;
 					height: 270px;
 					background:#b2b2b2;
 					margin: 15px 15px 0 0;
-					border-top: 3px solid $verde;
+					border-top: 5px solid ;
+					color: #333;
+					position: relative;
 
 					&:last-child{margin: 15px 0;}
+					&:hover{ text-decoration: none;	}
+					
+
+					&.roupas{ border-color: #DF1A49; }
+					&.praia{ border-color:#791eb6 ; }
+					&.informativo{ border-color: #333; }
+					&.turismo{ border-color: #ffc424; }
+					&.esporte{ border-color: #00A550; }
+
+					
+					.imageOferta{
+						width: 228px;
+						height: 228px;
+
+						img{
+							position: relative;
+							z-index: 3;
+						}
+
+						.desc{
+							width: 208px;
+							height: 208px;
+							position: relative;
+							top: -228px;
+							z-index: 5;
+							padding: 10px;
+							color: #fff;
+
+							h5{
+								text-align: center;
+								font-size: 21px;
+							}
+							h6{
+								font-weight: normal;
+								text-align: center;
+								
+							}
+
+							&.roupas{ background: #DF1A49; }
+							&.praia{ background: #791eb6 ; }
+							&.informativo{ background: $verde; }
+							&.turismo{ background: #ffc424; }
+							&.esporte{ background: #00A550; }
+						}
+					}
 
 					.bottomBar{
 						width: 100%;
@@ -495,7 +547,7 @@ body{
 							border: 0;
 							margin: 4px 5px;
 							padding-right: 2px;
-							@include opacityCB(4);
+							@include opacityCB(2);
 							border-right: 1px solid #5b5b5b;
 
 							&:last-child{ border: 0;}
