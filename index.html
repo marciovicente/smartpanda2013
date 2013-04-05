@@ -53,9 +53,9 @@
 							<h3>Saia de Veludo 70% OFF</h3>
 							<a href="#"> <h4><i class="icon icon-tags"></i> Arezzo Sport Fino</h4></a>
 							<a href=""><h4><i class="icon icon-bookmark"></i> Shopping Paseo Itaigara</h4></a>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							<article class="descOfertaDetalhe">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco. </p>
+							quis nostrud exercitation ullamco. </article>
 						</div>
 						
 						<div id="barDestaque">
@@ -69,12 +69,68 @@
 
 					</div>
 				</section>
+
+				<section id="listaOfertas">
+					<div id="loadingImage"></div>
+					<div class="groupOfertas">
+						
+						<div class="ofertaUnique">
+							<img src="https://img.getyourguide.com/img/tour_img-19091-21.jpg" alt="">
+							<div class="bottomBar">
+								<button class="btnBar like"></button>
+								<button class="btnBar dislike"></button>
+								<button class="btnBar share"></button>
+								<button class="btnBar favorite"></button>
+							</div>
+						</div>
+
+						<div class="ofertaUnique">
+							<img src="http://www.outerfit.com.br/media/catalog/product/cache/1/thumbnail/228x/9df78eab33525d08d6e5fb8d27136e95/_/-/_-57_1.jpg" alt="">
+							<div class="bottomBar">
+								<button class="btnBar like"></button>
+								<button class="btnBar dislike"></button>
+								<button class="btnBar share"></button>
+								<button class="btnBar favorite"></button>
+							</div>
+						</div>
+
+						<div class="ofertaUnique">
+							<img src="http://www.brandsdreams.com.br/image/cache/data/produtos/tenis/nike-max-alpha/big%20(14)-228x228.gif" alt="">
+							<div class="bottomBar">
+								<button class="btnBar like"></button>
+								<button class="btnBar dislike"></button>
+								<button class="btnBar share"></button>
+								<button class="btnBar favorite"></button>
+							</div>
+						</div>
+
+						<div class="ofertaUnique">
+							<img src="http://www.export-to-china.com/sites/default/files/styles/product_detail/public/Ricci%20Ricci%20edp%20vapo.jpg" alt="">
+							<div class="bottomBar">
+								<button class="btnBar like"></button>
+								<button class="btnBar dislike"></button>
+								<button class="btnBar share"></button>
+								<button class="btnBar favorite"></button>
+							</div>
+						</div>
+					</div>
+					
+				</section>
 			</div>
 		</div>
 	</div>
 	
 	<script src="js/jquery.1-9-1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	
+	<script>
+		$(function() {
+	      	$('#loadingImg').show();
+	      	$('.groupOfertas').ready(function() {
+		    	$('#loadingImg').hide();
+		      	alert("ok");
+	      	});
+		});
+		
+	</script>
 </body>
 </html>
