@@ -1,8 +1,14 @@
 @charset "utf-8";
 
 //variaveis
-$verde: #8bd11c;
 $ubuntu: "Ubuntu", sans-serif;
+
+//cores
+$verde: #8bd11c;
+$roupas: #DF1A49; 
+$praia: #791eb6 ;
+$turismo: #ffc424; 
+$esporte: #00A550; 
 
 // funcoes
 @mixin opacityCB($valor){
@@ -48,10 +54,19 @@ body{
 		display: table;
 	}
 
+	.innerLine{
+		width: 0;
+		height: 90%;
+		border-right: 1px solid rgba(255,255,255,0.3);
+		border-left: 1px solid rgba(0,0,0,0.2);
+		float: left;
+		margin-top: 3px;
+	}
+
 	#all{
 		width: 100%;
 		height: auto;
-
+		
 		
 		#container{
 
@@ -92,6 +107,7 @@ body{
 						float: left;
 						color: #fff;
 						padding-top: 5px;
+						font-size: 11px;
 						padding-left: 3px;
 					}
 
@@ -309,6 +325,46 @@ body{
 					float: left;
 					height: 100%;
 
+					#ribbon {
+						background: #8bd11c;
+						height: 44px;
+						width: 44px;
+						position: relative;
+						text-align: center;
+						font: 600 21px sans-serif;
+						color: white;
+						line-height: 22px;
+						border: 0;
+						z-index: 4;
+						right: 15px;
+						float: right;
+						
+						&:after {
+							content: "";
+							position: absolute;
+							bottom: -20px;
+							left: 0;
+							height: 0;
+							width: 0;
+							border: solid 22px #8bd11c;
+							border-bottom-color: transparent;
+
+						}
+
+
+						.pinIcon{
+							width: 32px;
+							height: 32px;
+							background: url(../images/sprite-mini.png) no-repeat -226px 0;
+							position: relative;
+							top: 8px;
+							z-index: 1;
+							left: 7px;
+						}
+
+					} //ribbon
+
+					
 					#fotoDestaque{
 						width: 285px;
 						height: 285px;
@@ -317,34 +373,30 @@ body{
 						border-right: 3px solid #d8d8d8;
 						img{
 							position: relative;
-							top: -30px;
-							z-index: 0;
+							//top: -52px;
+							z-index: 1;
 						}
 
-						#ribbon {
-						    background: #DF1A49;
-						    height: 30px;
-						    width: 30px;
-						    position: relative;
-						    text-align: center;
-						    font: 600 16px sans-serif;
-						    color: white;
-						    line-height: 27px;
-						    border: 0;
-						    z-index: 4;
-						    left: 15px;
+						.filterCategoria{
+							width: 52px;
+							height: 52px;
+							position: relative;
+							z-index: 2;
+
+							div{
+								top: 5px;
+								left: 8px;
+								position: relative;
+							}
+							&.roupas{ background: #DF1A49; }
+							&.praia{ background: #791eb6 ; }
+							&.informativo{ background: $verde; }
+							&.turismo{ background: #ffc424; }
+							&.esporte{ background: #00A550; }
+
 						}
 
-						#ribbon:after {
-						    content: "";
-						    position: absolute;
-						    bottom: -18px;
-						    left: 0;
-						    height: 0;
-						    width: 0;
-						    border: solid 15px #DF1A49;
-						    border-bottom-color: transparent;
-						}
+
 					}
 					
 					#ofertaDestaque{
@@ -389,17 +441,16 @@ body{
 							width: 127px;
 							height: 59px;
 							float: left;
-							border-right:0;
-							border-top: 0;
-							border-bottom: 0; 
-							border-left: 1px solid #B3E958;
-							margin: 3px 5px;
+							border: none; 
+							//border-left: 1px solid #B3E958;
+							//border-left: 1px solid rgba(255,255,255,0.1);
+							//margin: 3px 5px;
 							background:none;
 
-							&:first-child{ width: 119px;}
-							&:nth-child(2){ width: 133px}
+							&:first-child{ width: 129px;}
+							&:nth-child(2){ width: 170px}
 
-							&:nth-child(3){ width: 107px}
+							&:nth-child(3){ width: 134px}
 
 							&:nth-child(4){ width: 129px}	
 							&:last-child{
@@ -407,7 +458,7 @@ body{
 							}						
 
 							h5{
-								color: #5f891c;	
+								color: rgba(0,0,0,0.4);	
 								float: left;
 								position: relative;
 								top: 19px;
@@ -443,7 +494,9 @@ body{
 									@include opacityCB(8);
 								}
 
-								h5{color: #35421d;}
+								h5{//color: #35421d;
+									color: rgba(0,0,0,0.7)
+								}
 
 							}
 						}
@@ -542,8 +595,8 @@ body{
 
 						.btnBar{
 							background:url(../images/sprite-mini.png) no-repeat;
-							width: 41px;
-							height: 40px;
+							width: 32px;
+							height: 32px;
 							float: left;
 							border: 0;
 							margin: 4px 5px;
@@ -559,11 +612,13 @@ body{
 
 							&.like{background-position: 0 0}
 
-							&.dislike{background-position: -40px 0;padding-left: 39px;}
+							&.dislike{background-position: -33px 0;}
 
-							&.share{background-position: -84px 0; padding: 0 26px;}
+							&.share{background-position: -65px 0; width: 39px;}
 
-							&.favorite{background-position: -137px 0; width: 44px;}
+							&.favorite{background-position: -107px 0; width: 39px;}
+							
+							&.pin{background-position: -226px 0;}
 						}
 					}
 
