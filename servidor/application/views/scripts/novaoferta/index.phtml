@@ -1,0 +1,94 @@
+ <style>
+ 	h2 {
+ 		font-size:22px;
+ 	}
+ </style>
+<section id="inner">
+	<form id="formCadastro" enctype="multipart/form-data" action="novaoferta/salvaroferta" method="POST">
+                <div class="span7" style="width:50%">
+
+                    <h2>Novo Anúncio</h2>
+                    
+                        <div class="control-group">
+                            <label class="control-label" for="nome">Nome do Anúncio</label>
+                            <div class="controls">
+                                <input type="text" size="70" id="nome" name="nome" placeholder="( Até 20 caracteres )" maxlength="20" required class="dica"><span>Para sua identificação (Somente visível para você)</span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="titulo">Título Exibido</label>
+                            <div class="controls">
+                                <input type="text" size="70" id="titulo" name="titulo" placeholder="( Até 30 caracteres )" maxlength="30" required class="dica"><span>Visível para os usuários</span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="titulo">Categoria</label>
+                            <div class="controls">
+                                <select required class="dica" id="categoria" name="categoria">
+								  <?= $this->categorias ?>
+								</select><span>Categoria do produto/serviço do anúncio</span>
+                            </div>
+                        </div>
+                        
+                                            <h2>Texto</h2>
+
+						<div>Caracteres Restantes: <span id="restantes">120</span></div>
+                        <textarea id="texto" name="texto" rows="5" maxlength="120" onkeydown="countChar(this)" onkeyup="countChar(this)" required class="dica" style="width:350px;display:block;"></textarea>
+                        <span>Mensagem exibida no anúncio</span>
+                    
+                    <label class="control-label" for="imagem">Imagem do Anúncio (Tam. Máximo = 5MB)</label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
+                    <input type="file" id="imagem" name="imagem" required/>
+                    
+                    <p>&nbsp;</p>
+                    <label class="control-label">Validade</label>
+					De <input type="text" id="from" name="from" style="width:100px;"/>
+					Até <input type="text" id="to" name="to" style="width:100px;"/>
+					<input type="checkbox" name="validadeVisivel" id="validadeVisivel" checked="yes" value="1" title="Validade Final deve ser exibida para o usuário?"/> <span title="Validade Final deve ser exibida para o usuário?">Visível para o usuário</span>
+                        
+                      
+
+
+                </div>
+                <div class="span5" style="width:40%">
+					<div class="control-group">
+                        	<h2>Público Alvo</h2>
+                            <label class="control-label" for="idade_min">Idade Mínima</label>
+                            <input type="text" size="1" id="idade_min" name="idade_min" placeholder="0-99" class="dica"><span>Idade Mínima do seu público alvo (opcional)</span>
+                            <p>
+                            <input type="checkbox" name="maior_idade" id="maior_idade" value="1" title="O anúncio tem conteúdo restrito a maiores de 18 anos?"/> <span title="O anúncio tem conteúdo restrito a maiores de 18 anos?">Conteúdo Adulto</span>
+                            </p>
+                            <label class="control-label" for="idade_max">Idade Máxima</label>
+                            <input type="text" size="1" id="idade_max" name="idade_max" placeholder="0-99" class="dica"><span>Idade Máxima do seu público alvo (opcional)</span>
+
+                            <label class="control-label" for="genero">Sexo</label>
+
+							<label class="radio">
+                                <input type="radio" name="genero" id="genero" value="" checked>
+                                Ambos 
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="genero" id="genero" value="m">
+                                Masculino
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="genero" id="genero" value="f">
+                                Feminino 
+                            </label>
+                            <br><br>
+                            <button type="submit" id="btEnviar" class="btn btn-success bt-avancar">Avançar</button>
+                        </div>
+
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="offset10 span2">
+                    
+                </div>
+                
+            </div>
+            </form>
+            </section>
+        </div>
+        <!-- div container -->

@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xmlns:fb="https://www.facebook.com/2008/fbml">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object#">
+
+	<meta charset="UTF-8">
+
+	<title>Smartpanda</title>
+
+	<!-- css -->
+
+	<link rel="stylesheet" href="<?= $this->baseUrl() ?>/css/index.css">
+	<link rel="stylesheet" href="<?= $this->baseUrl() ?>/css/bootstrap.css">
+	<link rel="stylesheet" href="<?= $this->baseUrl() ?>/css/bootstrap-responsive.css">
+	<link rel="StyleSheet" href="<?= $this->baseUrl() ?>/css/smartpanda/jquery-ui-1.9.2.custom.min.css" title="Contemporary">
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" type="image/x-icon" href="<?= $this->baseUrl() ?>/favicon.ico">
+<!-- 	<link rel="stylesheet" href="css/auth-buttons.css"> -->
+
+	<!-- scripts -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>	
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+	<script src="<?= $this->baseUrl() ?>/js/bootstrap.js"></script>
+<!-- 	<script type="text/javascript" src="js/scripts.js"></script> -->
+	
+	<?php
+	    print $this->headMeta();
+		print $this->headScript();
+		print $this->headStyle();
+		print $this->headLink();
+	?>
+
+</head>
+
+<body style="background:url(<?= $this->baseUrl() ?>/images/bg1.png)">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=225275740933146";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+	<style type="text/css">
+		#section1{
+			min-height: 600px;
+			max-height: 100%;
+		}
+	</style>
+
+	<div id="all">
+		<div id="content">
+			<!-- Section 1 -->
+
+			<section id="section1" style="height: 400px;">
+				<div id="content1" class="central960">
+					<header id="header">
+						<a href="http://smartpanda.com.br">							
+							<img src="<?= $this->baseUrl() ?>/images/brand.png" alt="" id="brand">
+							<p>O shopping na palma da mão</p>
+						</a>
+						<nav id="menu" style="margin-top:13px;">
+							<a href="http://smartpanda.com.br/#content2" class='como-funciona'>Como funciona</a>
+							<a href="http://smartpanda.com.br/#content3">Smartpanda</a>
+							<a href="http://smartpanda.com.br/#content4">Contato</a>
+						</nav>						
+					</header>
+					<div id="shadow"></div>
+
+<?= $this->layout()->content ?>
+
+				</div>
+			</section>
+		</div>
+	</div>
+	<footer id="footer">
+		<p>Smartpanda - Todos os direitos reservados</p>
+	</footer>
+</body>
+</html>

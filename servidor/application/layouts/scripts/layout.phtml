@@ -1,0 +1,108 @@
+<?= $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+
+	<meta charset="UTF-8">
+
+	<title>Smartpanda</title>
+
+	<!-- css -->
+
+	<link rel="stylesheet" href="<?= $this->baseUrl() ?>/css/index.css">
+	<link rel="stylesheet" href="<?= $this->baseUrl() ?>/css/admin.css">
+	<link rel="StyleSheet" href="<?= $this->baseUrl() ?>/style.css" title="Contemporary">
+	<link rel="stylesheet" href="<?= $this->baseUrl() ?>/css/bootstrap.css">
+	<link rel="stylesheet" href="<?= $this->baseUrl() ?>/css/bootstrap-responsive.css">
+	<link rel="StyleSheet" href="<?= $this->baseUrl() ?>/css/smartpanda/jquery-ui-1.9.2.custom.min.css" title="Contemporary">
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" type="image/x-icon" href="<?= $this->baseUrl() ?>/favicon.ico">
+<!-- 	<link rel="stylesheet" href="css/auth-buttons.css"> -->
+
+	<!-- scripts -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>	
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script id="facebook-jssdk" src="//connect.facebook.net/pt_BR/all.js"></script>
+	<script src="<?= $this->baseUrl() ?>/js/bootstrap.js"></script>
+	<script src="<?= $this->baseUrl() ?>/js/global.js"></script>
+<!-- 	<script src="js/tooltip.js" ></script> -->
+<!-- 	<script type="text/javascript" src="js/scripts.js"></script> -->
+	
+	<?php
+	    print $this->headMeta();
+		print $this->headScript();
+		print $this->headStyle();
+		print $this->headLink();
+	?>
+
+</head>
+
+<body>
+	<div id="all">
+		<section id="content" class="central960">
+			
+			<header id="header">
+				<a href="http://smartpanda.com.br">							
+					<img src="<?= $this->baseUrl() ?>/images/brand.png" alt="" id="brand">
+					<p>O shopping na palma da mão</p>
+				</a>
+				<nav id="menu">
+					<a href="<?= $this->baseUrl() ?>/ofertascadastradas">Início</a>
+<!-- 					<a href="#">Conta</a> -->
+					<a href="http://smartpanda.com.br">Saiba Mais</a>
+					<button onclick='location.href="<?= $this->baseUrl() ?>/logout"' class="btn btn-danger"> <i class="icon-remove icon-white"></i> Sair</button>
+					
+				</nav>						
+			</header>
+					<div id="shadow"></div>
+
+<?= $this->layout()->content ?>
+
+				<div id="modalImage" style="display:none;"></div>
+		</section>
+		
+		<div class="push"></div>		
+	</div>
+	
+	<div id="modalContact" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h4 id="myModalLabel">Reporte um erro ou sugestão para nossa equipe</h4>
+			
+			<div class="modal-body">
+				<h6>Encontrou algum erro no nosso aplicativo? Envie uma mensagem e iremos reparar o quanto antes.</h6>
+				<form action="" method="post">
+					<label><span>Nome*</span>
+						<input type="text" name="nome" required>
+					</label>
+					<label><span>Email*</span>
+						<input type="email" name="email" required>
+					</label>
+					<label><span>Mensagem*</span>
+						<textarea name="mensagem" id="" cols="30" rows="8" required></textarea>
+					</label>
+					
+				</form>
+			</div>
+	
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+				<button class="btn btn-primary btn-success">Enviar mensagem</button>
+			</div>
+		</div>
+		
+		
+		
+	</div>
+	<footer>
+		<div class="central960">
+			<a href="#modalContact" data-toggle="modal" >
+				<i class="icon-warning-sign icon-white"></i>
+				Reporte um problema
+			</a>
+		</div>
+		
+		<div id="mex"></div>
+	</footer>
+</body>
+</html>

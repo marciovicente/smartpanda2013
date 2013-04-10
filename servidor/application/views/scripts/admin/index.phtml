@@ -1,0 +1,136 @@
+<div class="row">
+                <div class="span7" style="width:100%">
+                	<h2>Pré-Cadastros</h2>
+					<a href="#modalprecadastro" class="btn btn-success bt-avancar" data-toggle="modal" onclick="listarShoppingsCadastrados();listarEstabelecimentosCategorias();carregarEstados();carregarCidades();">Pré-cadastrar Estabelecimento</a>
+					<a href="#modalcadastrocidades" class="btn btn-success bt-avancar" data-toggle="modal" onclick="carregarEstadosCadastrados();">Cadastrar Cidade</a>
+					<br>
+					<button onclick="carregarPreCadastros(4);$('#modalexibirprecadastros').modal('show');">Exibir Pré-cadastros</button> <button onclick="window.location='admin/estabelecimentos'">Exibir Cadastros Ativos</button>
+					
+                    <h2>Usuários Inativos</h2>
+                    <table id="tableUsuariosInativos" class="table table-hover">
+						<tr><td>Carregando Dados...</td></tr>
+                    </table>
+                    
+                    <h2 id="h2_usuariosAtivos">Usuários Ativos</h2>
+                    <p>Créditos Disponíveis: <span id="creditosDisponiveis"></span></p>
+                    <button onclick="carregarShoppingsAtivos();">Exibir Shoppings</button> <button onclick="carregarLojistasAtivos();">Exibir Lojistas</button> <button onclick="carregarUsuariosFinaisAtivos();">Exibir Usuários Finais</button> <button onclick="carregarAdminsAtivos();">Exibir Administradores</button>
+					<table id="tableUsuariosAtivos" class="table table-hover">
+						
+                    </table>
+                    
+                    <div id="alterarSh-modal" class="modal hide fade in" style="display: none;">
+                        <div class="modal-header">
+                            <a class="close" data-dismiss="modal">×</a>
+                            <h3>Shoppings Disponíveis</h3>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <legend>Selecione o Shopping</legend>
+                                <div id="listaShoppings"></div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-success" onclick="$('#alterarSh-modal').modal('hide');">Cancelar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- -------------------- -->   <!-- Modal -->
+				    <div id="modalprecadastro"  class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				        <div class="modal-header">
+				            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				            <h3 id="myModalLabel">Pré-cadastro de Estabelecimento</h3>
+				        </div>
+				        <div class="modal-body">
+				                <fieldset>
+				                	<div style="float:left">
+					                    <label>Nome Fantasia</label>
+					                    <input type="text" name="nome_fantasia" id="nome_fantasia" maxlength="100" placeholder="(até 100 caracteres)" value="<?= $this->nome_fantasia ?>" required>
+					                    
+					                    <label class="control-label" for="Tipo">Tipo de Estabelecimento</label>
+										<label class="radio">
+			                                <input type="radio" name="tipo" id="tipo" value="2" onclick="$('#configShopping').fadeOut();$('#configLoja').fadeIn();" checked>
+			                                Loja
+			                            </label>
+			                            <label class="radio">
+			                                <input type="radio" name="tipo" id="tipo" value="4" onclick="$('#configLoja').fadeOut();$('#configShopping').fadeIn();">
+			                                Shopping
+			                            </label>
+			                            <div id="configLoja">
+				                            <label>A qual Shopping pertence</label>
+		                                	<div id="listaShoppingsCadastrados"></div>
+		                                	<label>Categoria da Loja</label>
+		                                	<div id="listaCategorias"></div>
+	                                	</div>
+	                                	<div id="configShopping" style="display: none;">
+				                            <label>Estado</label>
+		                                	<div id="listaEstados"></div>
+		                                	<label>Cidade</label>
+		                                	<div id="listaCidades"></div>
+	                                	</div>
+		                            </div>
+		                            <div style="float:right">
+		                            	<label>Endereço</label>
+					                    <input type="text" name="endereco" id="endereco" maxlength="120"placeholder="Endereço da Loja/Shopping">
+					                    <label>Número</label>
+					                    <input type="text" name="nr" id="nr" placeholder="Número">
+					                    <label>Complemento</label>
+					                    <input type="text" name="complemento" id="complemento" maxlength="50" placeholder="ex.: Loja 101">
+					                    <label>Telefone</label>
+				                    <input type="text" name="telefone" id="telefone" maxlength="15" placeholder="Telefone com DDD">
+		                            </div>
+				                </fieldset>
+				        </div>
+				        <div class="modal-footer">
+				        	<span id="statusMsg" class="label hide"></span>
+				            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+				            <button class="btn btn-primary" onclick="salvarPreCadastro();">Salvar</button>
+				        </div>
+				    </div>
+				
+				    <!-- -------------------- --> <!-- Modal -->
+				    
+				    <!-- -------------------- -->   <!-- Modal -->
+				    <div id="modalexibirprecadastros"  class="modal hide fade" style="width:600px;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				        <div class="modal-header">
+				            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				            <h3 id="precadastro_titulo">Pré-cadastros</h3>
+				        </div>
+				        <div class="modal-body">
+				        	<table id="lista_precadastros" class="table table-hover"></table>
+				        </div>
+				        <div class="modal-footer">
+				        	<span id="statusMsg" class="label hide"></span>
+				            <button class="btn" data-dismiss="modal" aria-hidden="true">OK</button>
+				        </div>
+				    </div>
+				
+				    <!-- -------------------- --> <!-- Modal -->
+				    
+				    <!-- -------------------- -->   <!-- Modal -->
+				    <div id="modalcadastrocidades"  class="modal hide fade" style="width:600px;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				        <div class="modal-header">
+				            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				            <h3 id="cadastrocidades_titulo">Cadastrar Cidades</h3>
+				        </div>
+				        <div class="modal-body">
+				        	<label>Estado</label>
+                            <div id="listaEstados2"></div>
+                            <label>Cidade</label>
+                            <div id="listaCidades2"></div>
+				        </div>
+				        <div class="modal-footer">
+				        	<span id="statusMsg" class="label hide"></span>
+				            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+				            <button class="btn btn-primary" onclick="salvarCidade();">Salvar</button>
+				        </div>
+				    </div>
+				
+				    <!-- -------------------- --> <!-- Modal -->
+				    
+                </div>
+            </div>
+
+
+        </div>
+        <!-- div container -->

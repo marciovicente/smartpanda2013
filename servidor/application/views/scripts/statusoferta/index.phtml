@@ -1,0 +1,101 @@
+<div class="row">
+                <div class="span7" style="width: 460px;">
+
+                    <h2><?= $this->nome ?></h2>
+
+                    <table class="table table-hover">
+
+                        <thead>
+                            <tr>
+                                <th>
+                                    <img src="images/<?= $this->status_img ?>" />
+                                    <?= $this->status ?> (Validade: <? print "$this->data_min - $this->data_max"; ?>)
+                                </th>
+                                <th style="text-align:right">
+                                	<div id="botoes"><?= $this->botoes ?></div>
+                                	<p id="statusMsg"></p>
+                                	<div id="msgBox" title="Ativar Oferta" style="display: none;">
+										<fieldset>
+											<span>Créditos:</span>
+											<input type="text" name="inputCreditos" id="inputCreditos" maxlength="8" placeholder="Quantidade máxima a ser usada" title="Número máximo de pessoas que irão receber a oferta">
+											<a href="" onclick="event.preventDefault();enviarAtivarOferta(<?= $this->id_oferta ?>);" class="btn btn-success bt-avancar">OK</a> <a href="" onclick="event.preventDefault();cancelarAtivarOferta();" class="btn btn-success bt-avancar">Cancelar</a>
+											<p>Créditos disponíveis no momento: <?= $this->creditosDisponiveis ?>
+										</fieldset>
+<!-- 										<p id="statusMsg"></p> -->
+									</div>
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tr>
+                            <td><b>Título do Anúncio</b></td>
+                            <td><?= $this->titulo ?></td>
+                        </tr>
+
+
+						<tr title="Quantas vezes esse anúncio foi entregue">
+                            <td><b>Alcance</b></td>
+                            <td><?= $this->entregas ?></td>
+                        </tr>
+                        
+                        <tr title="Quantas vezes o anúncio foi aberto para visualização dos detalhes">
+                            <td><b>Views</b></td>
+                            <td><?= $this->visualizacoes ?></td>
+                        </tr>
+
+                        <tr title="Quantos usuários Smartpanda receberam esse anúncio">
+                            <td><b>Quantos Receberam</b></td>
+                            <td><?= $this->entregues ?> usuários</td>
+                        </tr>
+
+                        <tr title="Quantos usuários Smartpanda gostaram do anúncio">
+                            <td><b>Quantos Gostaram</b></td>
+                            <td><?= $this->curtiram ?> usuários</td>
+                        </tr>
+
+                        <tr title="Quantos usuários Smartpanda não gostaram do anúncio">
+                            <td><b>Quantos Não Gostaram</b></td>
+                            <td><?= $this->nao_curtiram ?> usuários</td>
+                        </tr>
+                        
+                        <tr>
+                        	<td colspan="2" style="text-align: center;"><b>Público Alvo</b></td>
+                        </tr>
+                        
+                        <tr>
+                        	<td><b>Gênero</b></td>
+                        	<td><?= $this->genero ?></td>
+                        </tr>
+                        
+                        <tr>
+                        	<td><b>Idade Mínima</b></td>
+                        	<td><?= $this->idade_min ?></td>
+                        </tr>
+                        
+                        <tr>
+                        	<td><b>Idade Máxima</b></td>
+                        	<td><?= $this->idade_max ?></td>
+                        </tr>
+
+                    </table>
+                    
+                    <a href="ofertascadastradas" class="btn btn-success bt-avancar">Voltar</a>
+                </div>
+                <div class="span5">
+
+<!--                     <div class="thumbnail"> -->
+                        <!-- <iframe src="<?= $this->webapp ?>" style="width:100%;height:500px;"/> -->
+                        <div class="previewQuadro">
+                        	<h2><?= $this->lojista ?></h2>
+                        	<img src="<?= $this->imagem ?>" alt="Imagem da Oferta">
+                        	<h3><?= $this->titulo ?></h3>
+                        	<p><?= $this->texto ?></p>
+                        </div>
+<!--                     </div> -->
+
+                </div>
+            </div>
+           
+
+        </div>
+        <!-- div container -->

@@ -1,0 +1,60 @@
+<style>
+#popupPanel-popup {
+    right: 0 !important;
+    left: auto !important;
+}
+#popupPanel {
+    width: 200px;
+    border: 1px solid #000;
+    border-right: none;
+    background: rgba(0,0,0,.5);
+    margin: -1px 0;
+}
+#popupPanel .ui-btn {
+    margin: 2em 15px;
+}
+</style>
+<div data-role="page" id="acontecendo">
+		<div data-role="header">
+			<a href="shoppings" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext">Voltar</a>
+			<h1 style="margin: .6em 0% .8em;"><img src="img/logo.png" title="Smarpanda" alt="Smartpanda"></h1>
+			<a href="#popupMenu" data-rel="popup" data-role="button" data-icon="grid" data-iconpos="notext">Menu</a>
+		</div>
+		
+		<div data-role="content">
+		
+			<div data-role="popup" id="popupMenu" data-theme="a">
+					<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="b">
+						<li data-role="divider" data-theme="a">Menu</li>
+						<li><a href="" onclick="event.preventDefault();window.location='./logout';">Sair</a></li>
+					</ul>
+			</div>
+			
+			<div data-role="popup" id="popupInfo2" class="ui-content" data-theme="e" style="max-width:350px;">
+          		<p>A internet parece lenta ou não funcional. Tentando conexão novamente...</p>
+			</div>
+			
+			<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+			    <a href="">Teste</a>
+			    <a href="">Teste</a>
+			    <a href="">Teste</a>
+			</div>
+			<div id="banner" style="text-align:center;"></div>
+			<h2 style="text-align: center; font-size: 18px;"></h2>
+			<script>id = <?= $this->shoppingID ?>;</script>
+			
+			<ul data-role="listview" id="listaOfertas">
+				<li data-role="list-divider"><b><?= $this->usuarioNome ?></b>, <?= $this->bemvindo ?> ao <span id="shoppingNome"><?= $this->shoppingNome ?></span></li>
+				<select name="cbCategorias" id="cbCategorias" title="Filtrar por Categoria">
+					<option value="0">Todas as Categorias</option>
+				</select>
+			</ul>
+			
+			<ul data-role="listview" id="listaLojas">
+				
+			</ul>
+			<br>
+			<p id="maisLojas" style="text-align: center;display:none;"><button onclick="carregarLojasSemOfertas();">+ lojas</button></p>
+
+		</div>		
+</div>

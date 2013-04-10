@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
 	<div id="all">
@@ -28,7 +29,14 @@
 				<div id="filter">
 					<div class="central">
 						<form action="" id="formQuery">
-							
+							<input type="text">
+							<select name="cbCategorias" id="cbCategorias" title="Filtrar por Categoria">
+								<option value="0">Todas as Categorias</option>
+							</select>
+							<select name="selectShAtivos" id="selectShAtivos" title="Filtrar por Shopping">
+								<option value="0">Todos os shoppings</option>
+							</select>
+							<input type="text">
 							
 						</form>
 					</div>
@@ -69,13 +77,15 @@
 						</div>
 						
 						<div id="barDestaque">
-							<button class="btnDestaque"> <div class="spriteDestaque like"></div> <h5>Gostei</h5> <span>137</span> </button>
+							<!-- 199 sera o id_campanha que pegarei via get json -->
+							<button class="btnDestaque" onclick="event.preventDefault(); gostar(1, 199, $(this)); "> <div class="spriteDestaque like"></div> <h5>Gostei</h5> <span>137</span> </button>
 							<div class="innerLine"></div>
-							<button class="btnDestaque"><div class="spriteDestaque dislike"></div> <h5>Não gostei</h5></button>
+							<button class="btnDestaque" onclick="event.preventeDefault(); gostar(0, 199); "><div class="spriteDestaque dislike"></div> <h5>Não gostei</h5></button>
 							<div class="innerLine"></div>
 							<button class="btnDestaque"><div class="spriteDestaque share"></div> <h5>Share</h5></button>
 							<div class="innerLine"></div>
 							<button class="btnDestaque"><div class="spriteDestaque favorito"></div> <h5>Favorito</h5></button>
+							<!-- trocar favorito, nao existira, entrara Reservar -->
 							<div class="innerLine"></div>
 							<button class="btnDestaque"><div class="spriteDestaque comment"></div> <h5>Comentar</h5></button>
 
@@ -173,16 +183,16 @@
 	</div>
 	
 	<script src="js/jquery.1-9-1.min.js"></script>
+	<script src="js/global.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script>
-		$(window).ready(function(){
-			$('.ofertaUnique .desc').hide();
 
-		    $(".groupOfertas img").load(function(){
-		        $(".loadingImage").fadeOut(function(){
-		            $(".groupOfertas > img").fadeIn();
-		        });
-		    });
+	<script>
+
+		$(window).load(function(){
+			$('.ofertaUnique .desc').hide();
+			getShoppingsAtivos(1);
+			carregarCategorias();
+
 		});
 
 		(function ($) { 

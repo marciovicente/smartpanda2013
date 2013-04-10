@@ -1,0 +1,31 @@
+<?= $this->outroUsuario ?>
+<div class="row">
+                <div class="span7">
+
+					<h4><?= $this->nomeUsuario ?></h3>
+					<p>Créditos Disponíveis: <span id="creditosDisponiveis"></span></p>
+                    <h2>Saída de Créditos</h2>
+                    <table id="tableEnvios" class="table table-hover">
+						<tr>
+							<th>DESTINO</th>
+							<th>QUANTIDADE</th>
+							<th>QUANDO</th>
+						</tr>
+						<?= $this->envios ?>
+                    </table>
+                    
+                    <h2 id="h2_usuariosAtivos">Entrada de Créditos</h2>
+					<table id="tableRecebimento" class="table table-hover">
+						<tr>
+							<th>ORIGEM</th>
+							<th>QUANTIDADE</th>
+							<th>QUANDO</th>
+						</tr>
+						<?= $this->recebimentos ?>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- div container -->

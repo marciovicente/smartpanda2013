@@ -1,0 +1,761 @@
+@charset "utf-8";
+*{margin: 0;}
+$verde: #96B046;
+$verde_b: #29ba7f;
+
+::selection, -moz-::selection, input::selection{
+    background: $verde_b;
+    color:#fff;
+    text-shadow: 0 0 0 ;
+}
+
+// font-face
+
+@font-face {
+    font-family: 'gothic_bold';
+    src: url('../fonts/17515_goth725k-webfont.eot');
+    src: url('../fonts/17515_goth725k-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/17515_goth725k-webfont.woff') format('woff'),
+         url('../fonts/17515_goth725k-webfont.ttf') format('truetype'),
+         url('../fonts/17515_goth725k-webfont.svg#gothic_bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'gothic720_lt_btlight';
+    src: url('../fonts/goth720l-webfont.eot');
+    src: url('../fonts/goth720l-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/goth720l-webfont.woff') format('woff'),
+         url('../fonts/goth720l-webfont.ttf') format('truetype'),
+         url('../fonts/goth720l-webfont.svg#gothic720_lt_btlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'geoslab703_mdcn_btmedium';
+    src: url('../fonts/tt1019m_-webfont.eot');
+    src: url('../fonts/tt1019m_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tt1019m_-webfont.woff') format('woff'),
+         url('../fonts/tt1019m_-webfont.ttf') format('truetype'),
+         url('../fonts/tt1019m_-webfont.svg#geoslab703_mdcn_btmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'geoslab703_mdcn_btbold';
+    src: url('../fonts/tt1020m_-webfont.eot');
+    src: url('../fonts/tt1020m_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tt1020m_-webfont.woff') format('woff'),
+         url('../fonts/tt1020m_-webfont.ttf') format('truetype'),
+         url('../fonts/tt1020m_-webfont.svg#geoslab703_mdcn_btbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// 
+
+
+$goth: "gothic720_lt_btlight";
+$geo: "geoslab703_mdcn_btmedium";
+$geob: "geoslab703_mdcn_btbold";
+$ubuntu: "Ubuntu";
+
+
+html, body{
+	background: url(../images/bg1.png);
+	// min-height: 600px;
+	height: 100%;
+
+	#all{
+
+	 	min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        margin: 0 auto -75px;
+        // display: table;
+        position: relative;
+
+        .central960{
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        section#content{
+
+    	 	padding-bottom: 35px;
+            display: table;
+            #brand{float: left;}
+
+            header#header{
+                width: auto;
+                height: 120px;
+                display: table;
+                margin-top: 15px;
+                    
+                p{
+                    font-size: 15px;
+                    font-family: $goth;
+                    color: #666;
+                    float: left;
+                    position: relative;
+                    top: 45px;
+                    left: -196px; 
+
+                }
+
+     			nav#menu{
+     				float: right;
+     				margin-top: 15px;
+     				font-family: $goth; 
+     				font-size: 17px;
+                    width: auto;
+
+     				a{
+     					color: #666;
+     					text-decoration: none;
+     					margin-left: 30px;
+     					float: left;
+     					margin-top: 7px;
+
+     					&:hover{
+     						color: $verde_b;
+     					}
+     				}
+
+     				button{
+     					float: left;
+     					margin-left: 30px;
+     				}
+
+                    &.shopping{
+                        margin-top: -16px;
+                    }
+
+     			}
+
+            }
+            
+
+            #shadow{
+                background: url("../images/shadow.png");
+                width: 960px;
+                height: 52px;
+                position: relative;
+                top: -45px;
+                z-index: 11;
+            }
+
+            // tabela
+
+            table{
+
+            	.imageThumb{
+            		width: 60px;
+            		height: 60px;
+            		float: left;
+            		overflow: hidden;
+            		background: #fff;
+
+            		img{
+            			width: 60px;
+            			height: auto;
+            			//position: relative;
+            			vertical-align: middle;
+            		}
+            	}
+
+                th{
+                    text-align: center;
+
+                    &:first-child{
+                        text-align: left;
+                    }
+                }
+
+
+
+                
+
+                td{
+                    font-size: 20px;
+                    font-family: $ubuntu;
+                    font-weight: bold;
+                    text-shadow: 1px 1px 1px #fff;
+                    text-align: center;   
+
+
+
+                    &.descAnuncio{
+                        width: 250px;
+                        height: auto;
+                        font-size: 15px;
+                        text-align: left;
+                    }
+
+                    &.gostaram{
+                        font-size: 20px;
+                        font-family: $ubuntu;
+                        font-weight: bold;
+                        color: #666;
+                        text-shadow: 1px 1px 1px #fff;
+                        text-align: center;
+                        top: 15px;
+                        position: relative;
+                    }
+
+                    &.naoGostaram{
+                        color: #A9AB9C;
+                        top: 15px;
+                        position: relative;
+                    }
+
+                    &.reserva{
+                        text-align: center;
+                        top: 15px;
+                        position: relative;
+                    }
+                }
+            }
+            
+            .status{
+                width: 22px;
+                height: 22px;
+                margin:0 auto;
+                float: left;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+                margin-left: 32px;
+                vertical-align: middle;
+                display: table-cell;
+                margin-top: 15px;
+
+                &.statusOn{
+                    background:#A8D11B;
+                    -webkit-box-shadow: inset 2px 0 6px #568318;
+                    -moz-box-shadow: inset 2px 0 6px #568318;
+                    box-shadow: inset 2px 0 6px #568318;
+                    
+                }
+                &.statusOff{
+                    background: #FF353A;
+                    -webkit-box-shadow: inset 2px 0 6px #7D0205;
+                    -moz-box-shadow: inset 2px 0 6px #7D0205;
+                    box-shadow: inset 2px 0 6px #7D0205;
+                }
+
+
+                &.statusPause{
+                    background: #F2DC3C;
+                    -webkit-box-shadow: inset 2px 0 6px #B5A00F;
+                    -moz-box-shadow: inset 2px 0 6px #B5A00F;
+                    box-shadow: inset 2px 0 6px #B5A00F;
+                }
+            }
+
+            .legenda{
+                width: 285px;
+                float: right;
+                height: auto;
+                background: #f2f2f2;
+                padding: 15px;
+                -webkit-box-shadow: 0 0 10px #ccc;
+                -moz-box-shadow: 0 0 10px #ccc;
+                box-shadow: 0 0 10px #ccc;
+
+                .status{
+                    width: 15px;
+                    height: 15px;
+                    float: left;
+                    margin-left: 0;
+                    margin-top: 8px;
+                }
+
+                h5{padding-top: 0;margin-top: 0;}
+
+                h6{
+                    padding: 0;
+                    margin: 5px 0 0 6px;                
+                    font-weight: normal;
+                    width: auto;
+                    float: left;
+                    margin-right: 33px;
+                    color: #666;
+                    text-shadow: 1px 1px 1px #fff;
+
+                    &:last-child{margin-right: 0;}
+                }
+            }
+
+            #modalImage{
+                width: 200px;
+                padding: 5px;
+                background: #fff;
+                float: right;
+                -webkit-box-shadow: 0 0 10px #666;
+                -moz-box-shadow: 0 0 10px #666;
+                box-shadow: 0 0 10px #666;
+                position: fixed;
+                z-index: 1000;
+                height: auto;
+                max-width: 50%;
+                right: 5px;
+                top: 130px;
+            }
+
+
+
+            // *******************************************************
+            // *
+            // *                   NOVO ANUNCIO 
+            // *
+            // ******************************************************* 
+
+            #leftForm{
+                width: 310px;
+                float: left; 
+                margin-top: -30px;   
+
+                label{
+                    color: #666;
+                    margin-top: 6px;
+                    width: 90%;
+                }
+
+                input{
+                    width: 100%;
+                    height: 25px;
+
+                    &[type="file"]{
+                        margin-bottom: 15px;
+                    }
+                }
+
+                textarea{
+                    width: 100%;
+                    resize:none;
+                }
+                span{font-size: 11px;}
+
+                select{
+                    height: 35px;
+                    width: 105%;
+                }
+                legend{font-size: 16px;}
+            }
+
+            #rightForm{
+                width: 250px;
+                float: left;
+                margin-top: -30px;
+                margin-left: 60px;
+                height: auto;
+
+                legend{font-size: 16px;}
+                select{
+                    height: 35px;
+                }
+
+                label{
+                    color: #666;
+                    margin-top: 6px;
+                    width: 90%;
+                    float: left;
+                    
+                    &.lbLeft{
+                        float: left;
+                    }
+
+                    &.idadeLabel{
+                        width: 40%;
+
+                        input{
+                            width: 71%;
+                            float: left;
+
+                        }
+                        
+                        &:nth-child(3){
+                            margin-left: 20px;
+                        }
+                    }
+
+                    i{
+                        &.icon-warning-sign{
+                            margin-right: 3px;
+                        }
+                    }
+                }
+
+                button{
+                    width: 100%;
+                    margin-top: 11px;
+                }
+
+                input{
+                    width: 100%;
+                    height: 25px;
+
+                    &[type="file"]{
+                        margin-bottom: 15px;
+                    }
+
+                    &[type="checkbox"]{
+                        width: 15px;
+                        height: 15px;
+                        float: left;
+                        margin-right: 10px;
+                        position: relative;
+                        top: -2px;
+                    }
+
+                    &[type="radio"]{
+                        width: 15px;
+                        height: 15px;
+                        float: left;
+                        margin-right: 10px;
+                        position: relative;
+                        top: -2px;
+                    }
+                    &#from, &#to{
+                        width: 70px;
+                    }
+                }
+
+                .validade{
+                    width: 100%;
+
+                    label{
+                        float: left;
+                        width: 50%;
+
+                        input{
+                            margin-left: 1px;
+                            margin-right: 1px;
+                        }
+                    }
+                }
+
+                #qAdult{
+                    opacity: 0.4;
+                }
+
+            }
+
+            #devicePreview{
+                background: url(../images/device.png);
+                width: 230px;
+                height: 450px;
+                float: right;
+                margin: -35px 60px 0 0 ;
+                position: static;
+
+                #preview{
+                    width: 202px;
+                    height: 312px;
+                    position: relative;
+                    top: 84px;
+                    left: 14px;
+                    background: #f2f2f2;
+                    display: table;
+
+
+                    .title{
+                        background: $verde;
+                        height: auto;
+                        text-align: center;
+                        padding: 10px 0 5px 0;
+                        color: #fff;
+                        margin-top: -6px;
+                        display: table;
+                        width: 202px;
+                        font-weight: bold;
+
+                        #txt{
+                            padding: 0;
+                            width: 90%;
+                            min-height: 40px;   
+                            margin: 0 auto;
+                            display: table;    
+                            background: none;
+                            border: 0;
+                            -webkit-box-shadow: none;
+                            -moz-box-shadow: none;
+                            box-shadow: none;
+                            font-weight: bold;
+                            color: #fff;
+                            text-align: center;
+                            resize:none;                    
+                        }
+                    }
+
+                    .previewImg{
+                        width: 90%;
+                        margin: 6% auto;
+                        background: #ccc;
+                        height: 94px;
+                        overflow: hidden;
+                        position: relative;
+                        z-index: 3;
+
+                        #imgMax{
+                            width: 100%;
+                            height: auto;
+                            position: relative;
+                            z-index: 1;
+                            top: -10%;
+                        }
+
+                        h6{
+                            font-size: 25px;
+                            font-weight: bold;
+                            text-align: center;
+                            display: table;
+                            position: relative;
+                            top: 35px;
+                            left: 18px;
+                            color: rgba(0,0, 0, 0.2);
+                        }
+
+                        // img{
+                        //     max-width: 182px;
+                        //     height: auto;
+                        //     width: auto;
+                        //     max-height: 94px;
+                        //     position: relative;
+
+                        // }
+                    }
+
+                    .descOferta{
+                        line-height: 19px;
+                        width: 90%;
+                        text-align: center;
+                        font-family: $ubuntu;
+                        color: #666;
+                        height: 115px ;
+                        text-shadow: 1px 1px 1px #fff;
+                        font-size: 16px;
+                        max-height: 110px;
+                        overflow: hidden;
+                        background: none;
+                        border:0;
+                        resize:none;
+                        -webkit-box-shadow: none;
+                        -moz-box-shadow: none;
+                        box-shadow: none;
+                        padding: 0;
+                        max-height: 115px;
+                        margin-top: -21px;
+                        margin-left: 11px;
+                    }
+
+                    #likes{
+                        width: 100%;
+                        background: $verde;
+                        height: 12%;
+                        position: absolute;
+                        bottom: 0;
+                        text-align: center;
+                        color: #fff;
+
+
+                        .likes{
+                            width: 49%;
+                            float: left;
+                            cursor:pointer;
+                            height: 100%;
+                            padding-top: 7px;
+                            &:hover{
+                                background: rgba(0,0,0, 0.4);
+                            }
+                            
+                            &.noLike{
+                                padding-left: 2px;
+                                border-left: 2px solid rgba(0,0,0,0.2);
+                            }
+                        }
+
+                    }
+                }
+
+
+            }
+
+            h1.none{
+                width: auto;
+                text-align: center;
+                color: #ccc;
+                text-shadow: 1px 1px 1px #fff;
+                font-size: 42px;
+                font-family: $ubuntu;
+                width: 99%;
+                margin-top: 160px;
+            }
+
+            a.adquira{
+                font-family: "gothic720_lt_btlight";
+                color: #29ba7f;
+                text-align: center;
+                font-size: 29px;
+                width: 50%;
+                margin-left: 231px;
+
+                &:hover{text-decoration: underline;}
+            }
+        }
+
+        .push{height: 35px;}
+
+    }
+
+    #modalContact{
+        h4{
+            background: rgb(233, 233, 233);
+            color: #fff;
+            font-size: 20px;
+            font-family: "Ubuntu";
+            padding: 5px;
+            width: 100%;
+            position: relative;
+            top: -8px;
+            color: #666;
+            text-shadow: 1px 1px 1px #fff;
+            z-index: 2;
+        }
+
+        .close{
+            font-size: 42px;
+            z-index: 3;
+            position: relative;
+            top: 6px;
+            right: -5px;
+
+            &:hover{color:$verde_b;opacity: 1}
+        }
+
+        h6{
+            font-size: 14px;
+            color: #999;
+            padding: 0;
+            font-weight: normal;
+        }
+        label{
+            width: 100%;
+
+            span{
+                width: 20%;
+                float: left;
+            }
+            input,textarea{
+                width: 60%;  
+                float: left;
+                resize: none;
+            }
+            
+
+            &:first-child{
+                margin-top: 26px;
+            }
+        }
+    }
+    
+
+    footer{
+        height: 35px;        
+        background: $verde;
+        position: relative;
+        margin: 40px auto;
+
+        .central960{
+            width: 960px;
+            margin: 0 auto;
+            height: auto;
+
+            a{
+                color: #fff;
+                font-size: 14px;
+                position: relative;
+                top: 7px;
+                &:hover{ text-shadow: 1px 1px 0 rgba(0,0,0, 0.4); }
+            } 
+        }
+    }
+
+}
+
+
+
+
+
+
+
+// ***************************************************************************************************************
+
+
+
+/*Tooltip UI component by www.menucool.com */
+
+/*For tooltip target element that has set class="tooltip" */
+.tooltip {
+    text-decoration: none; border-bottom:2px dotted #36c;color: #36c; outline: none; 
+
+
+}
+
+/*For tooltip box*/
+div#mcTooltip 
+{
+    line-height:16px;
+    border-width: 1px;   
+    color:#333; 
+    border-color:#BBBBBB;
+    padding:10px;
+    font-size: 12px;
+    font-family: Verdana, Arial;
+    border-radius:6px; /*Rounded corners. N/A for IE 8 and below.*/
+    box-shadow: 0 1px 4px #AAAAAA; /*Drop shadow. N/A for IE 8 and below.*/
+}
+div#mcTooltip, div#mcTooltip div 
+{
+    background-color:#EAECF0;
+}
+
+/* For hyperlink within tooltip */
+div#mcTooltip a { color:#fff; }
+
+/*Close button. Only available when sticky or overlay has been set to true.*/
+div#mcttCloseButton 
+{
+    width:14px;height:14px;position:absolute;background-image:url(../closeBtn.gif);cursor:pointer; overflow:hidden;
+    top:12px; right:12px; left:auto;
+}            
+
+/* Only applies when overlay has been set to true or 1.*/
+div#mcOverlay 
+{
+    background-color: white;
+    opacity:0.8; filter: alpha(opacity=80); 
+    display:none;top:0;left:0;width:100%;height: 100%;overflow:visible;z-index:4; 
+}
+
+/*Only available when calling by tooltip.ajax(...). It will be a spinning image indicating a request is in progress.*/
+div#tooltipAjaxSpin {margin:20px 50px; background:transparent url(../loading.gif) no-repeat center center; width:50px; height:30px; font-size:0;}
+
+/*The settings below should remain unchanged*/
+div#mcTooltipWrapper {position:absolute;visibility:hidden;overflow:visible;z-index:9999999999;top:-2000px;}
+div#mcTooltip {float:left;border-style:solid;position:relative;overflow:hidden;}
+div#mcttCo {position:absolute;text-align:left;}
+div#mcttCo em, div#mcttCo b {display:block; width:0; height:0;overflow:hidden;}
+

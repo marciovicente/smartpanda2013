@@ -1,0 +1,28 @@
+<div data-role="page" id="index">
+		<div data-role="header">
+			<h1 style="margin: .6em 0% .8em;"><img src="img/logo.png" title="Smarpanda" alt="Smartpanda"></h1>
+		</div>
+		
+		<div data-role="content" style="padding:0px;">
+		
+			<div data-role="popup" id="popupMenu" data-theme="a">
+					<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="b">
+						<li data-role="divider" data-theme="a">Menu</li>
+						<li><a href="" onclick="event.preventDefault();window.location='./logout';">Sair</a></li>
+					</ul>
+			</div>
+
+			<center><img src="img/splash.jpg" style="width:100%;height:auto;" /></center>
+			<!-- <button onclick="FB.login(function(response) {window.location ='./';}, {scope: 'user_birthday'});">Login via Facebook</button> -->
+
+		</div>
+		
+		<div data-role="footer" data-position="fixed">		
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" onclick="FB.login(function(response) {window.location ='./';}, {scope: 'user_birthday'});" data-icon="check" data-icon-pos="top"  data-mini="true">Login via Facebook</a></li>
+						<?= $this->app ?>
+					</ul>
+				</div><!-- /navbar -->
+		</div><!-- /footer -->		
+</div>

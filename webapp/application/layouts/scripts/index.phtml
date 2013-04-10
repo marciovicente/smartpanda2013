@@ -1,0 +1,32 @@
+<?= $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Smartpanda</title>
+	<meta name="robots" content="all">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/tema/panda.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.min.css" /> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script id="facebook-jssdk" src="//connect.facebook.net/pt_BR/all.js"></script>
+    <script src="js/global.js"></script>
+    <?php
+	    print $this->headMeta();
+		print $this->headScript();
+		print $this->headStyle();
+	?>
+
+</head>
+<body>
+<div id="fbBT"><div id="fb-root"></div></div>
+	
+		
+<?= $this->layout()->content ?>
+			
+		
+</body>
+</html>
