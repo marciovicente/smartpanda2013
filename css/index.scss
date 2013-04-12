@@ -27,6 +27,9 @@ $esporte: #00A550;
   opacity: $valor*0.1;
 }
 
+*{margin: 0}
+html,body{height: 100%;}
+
 body{
 	margin: 0 auto;
 	padding: 0;
@@ -79,6 +82,10 @@ body{
 		
 		
 		#container{
+			min-height: 100%;
+			height: auto !important;
+			height: 100%;
+			margin: 0 auto -150px; /* the bottom margin is the negative value of the footer's height */
 
 			#header{
 				width: 100%;
@@ -810,6 +817,16 @@ body{
 
 			}
 		} //container
+
+
+		.pushFooter{height: 150px;}
+		
+		#footer{
+			width: 100%;
+			background: $verde;
+			height: 150px;
+			
+		}
 	}//all
 
 }

@@ -46,7 +46,10 @@ window.fbAsyncInit = function() {
  }(document));
 
 erroFacebook = 0;
+var nomeUsuario = null;
 function checkLogin() {
+
+	alert();
 	if(erroFacebook == 5) {
 		erroFacebook++;
 		console.error('Erro ao conectar/autenticar com o Facebook (Javascript)');
@@ -67,11 +70,15 @@ function checkLogin() {
 	     // user has auth'd your app and is logged into Facebook
 	     FB.api('/me', function(me){
 	    	 usuarioID = me.id;
+	    	  nomeUsuario = me.name;
 //	    	 imgSrc = "http://graph.facebook.com/"+me.id+"/picture?type=large";
 //	    	 $('#mnUsuario').html(me.name);
 //        	 $('#profile-name').html(me.name);
 //        	 $('#profile-pic').attr('src',imgSrc);
+
 	     });
+    	imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
+   	 	$('#statusLogin img').attr('src',imgSrc);
 	}
 	
 	setTimeout(checkLogin, 1000);
@@ -81,14 +88,14 @@ checkLogin();
 
 
 //##### Index
-$('#index').live("pageinit", function() {
+// $('#index').live("pageinit", function() {
 	
-});
+// });
 
-//##### Shoppings
-$('#shoppings').live("pageinit", function() {
-	obterPosicao();
-});
+// //##### Shoppings
+// $('#shoppings').live("pageinit", function() {
+// 	obterPosicao();
+// });
 
 //##### Loja
 // $('#loja').live("pageinit", function() {
@@ -111,13 +118,13 @@ $('#shoppings').live("pageinit", function() {
 // });
 
 //##### Detalhes
-$('#detalhes').live("pageinit", function() {
-	var campanha;
-	var oferta;
-	carregarDetalhes();
-	$( "#popupDialog" ).popup();
-	$( "#popupPicture" ).popup();
-});
+// $('#detalhes').live("pageinit", function() {
+// 	var campanha;
+// 	var oferta;
+// 	carregarDetalhes();
+// 	$( "#popupDialog" ).popup();
+// 	$( "#popupPicture" ).popup();
+// });
 
 
 $( document ).on( "pageinit", function() {
