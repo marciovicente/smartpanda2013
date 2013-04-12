@@ -91,24 +91,24 @@ $('#shoppings').live("pageinit", function() {
 });
 
 //##### Loja
-$('#loja').live("pageinit", function() {
-	getEstabelecimentoInfo(id,'lojaNome');
-	carregarOfertas('listaOfertas2');
+// $('#loja').live("pageinit", function() {
+// 	getEstabelecimentoInfo(id,'lojaNome');
+// 	carregarOfertas('listaOfertas2');
 	
-	$('#cbCategorias').change(function() {
-		selecionarCategoria($(this).val());
-	});
-});
+// 	$('#cbCategorias').change(function() {
+// 		selecionarCategoria($(this).val());
+// 	});
+// });
 
-//##### Acontecendo
-$('#acontecendo').live("pageinit", function() {
-	getEstabelecimentoInfo(id,'shoppingNome');
-	carregarOfertas('listaOfertas');
-//	carregarLojas();
-	$('#cbCategorias').change(function() {
-		selecionarCategoria($(this).val());
-	});
-});
+// //##### Acontecendo
+// $('#acontecendo').live("pageinit", function() {
+// 	getEstabelecimentoInfo(id,'shoppingNome');
+// 	carregarOfertas('listaOfertas');
+// //	carregarLojas();
+// 	$('#cbCategorias').change(function() {
+// 		selecionarCategoria($(this).val());
+// 	});
+// });
 
 //##### Detalhes
 $('#detalhes').live("pageinit", function() {
@@ -309,50 +309,71 @@ function carregarLojasSemOfertas() {
 	});
 }
 
-var ofertasDisponiveis = new Array();
-function carregarOfertas(listaOfertas) {
-	$.mobile.loading( 'show' );
-	$.ajax({data: {id: id}, type:'GET', dataType:'json', url:servidor+'getofertasbyid', timeout:timeout,
+function carregarOfertas(id_shopping) {
+
+	var ofertasDisponiveis = new Array();
+
+	$.ajax({data: {id: id_shopping}, type:'GET', dataType:'json', url:servidor+'getofertasbyid', timeout:timeout,
 		success: function(dados){
 			if(dados[0]) {
-				$( "#popupInfo2" ).popup( "close" );
+				$('#ajaxLoading').hide();
+
 				ofertas = "";
 				ultimaLoja = 0;
+				var html = '';
 				$.each(dados, function(i, obj) {
-	//				mapa = '( <a target="_blank" href="https://maps.google.com.br/maps?q='+obj.latitude+',+'+obj.longitude+'&hl=pt-BR&t=h&z=18">Ver No Mapa</a> )';
-//					$('#shoppingNome').html(obj.shopping);
+		
 					oferta = obj.oferta;
 					campanha = obj.campanha;
 					ofertasDisponiveis.push(obj.categoria);
-					ofertaLI = '';
-					if((oferta.id_estabelecimento != id) && (oferta.id_estabelecimento != ultimaLoja)) {
-						ultimaLoja = oferta.id_estabelecimento;
-						if((oferta.lojista_thumb) && (oferta.lojista_thumb != ""))
-							ofertaLI = '<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b"><img alt="Logo" src="'+servidor+'../'+oferta.lojista_thumb+'" style="height:29px;display:block;"><span style="margin-left:40px">'+oferta.lojista+'</span></li>';
-						else
-							ofertaLI = '<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b">'+oferta.lojista+'</li>';
-					}
-					ofertaLI += 	'<li class="categorias categoria'+obj.categoria+'">'
-									+'<a href="detalhes?id='+oferta.id+'">'
-										+'<img src="'+servidor+'../'+oferta.thumb+'" />'
-										+'<h3 style="font-size:14px">'+oferta.titulo+'</h3>';
-					if(campanha.curtiram > 2)
-										ofertaLI += '<p>'+campanha.curtiram+' pessoas gostaram</p>';
-					ofertaLI +=''
-									+'</a>'
-								+'</li>';
-					ofertas += ofertaLI;
+
+					html = '<a href="#" class="ofertaUnique categoria'+obj.categoria+'">'
+								+'<div class="imageOferta">'
+									+'<img src="'+servidor+'../'+oferta.banner+'" alt="'+oferta.titulo+'" width="228" height="228">'
+									+'<div class="desc categoria'+obj.categoria+'">'
+										+'<h5>'+oferta.titulo+'</h5>'  // +'<h6>'+oferta.texto+'</h6>'
+										+'<h6><i class="icon icon-white icon icon-gift"></i> '+oferta.lojista+'</h6>'
+										+'<h6><i class="icon icon-white icon icon-inbox"></i> '+obj.shopping+'</h6>'
+									+'</div>'
+								+'</div>'
+								+'<div class="bottomBar">'
+									+'<button onclick="" class="btnBar like"></button>'
+									+'<div class="innerLine"></div>' //event.preventDefault(); gostar(1, oferta.id, $(this));
+									+'<button onclick="" class="btnBar dislike"></button>'
+									+'<div class="innerLine"></div>'
+									+'<button class="btnBar share"></button>'
+									+'<div class="innerLine"></div>'
+									+'<button class="btnBar comment"></button>'
+									+'<div class="innerLine"></div>'
+									+'<button class="btnBar pin"></button>'
+								+'</div>'; //imageOferta
+					html += '</a>';
+
+					$('.groupOfertas').append(html);
+
+
+					
 	
 				});
-				carregarCategorias();
-				$('#'+listaOfertas).append(ofertas);
-				$('#'+listaOfertas).listview("refresh");
+				
+
+				// $('.ofertaUnique .desc').hide();
+				
+				// $("a.ofertaUnique").hover(function(){
+				// 	$(this).find(".desc").fadeIn();
+				// });
+
+				// $("a.ofertaUnique").mouseleave(function(){
+				// 	$(this).find(".desc").fadeOut();
+
+				// });
+
 			} else {
-				$('#'+listaOfertas).append('<p style="text-align: center">Nenhum anÃºncio cadastrado para o seu perfil no momento</p>');
+				$('.groupOfertas').append('<p style="text-align: center">Nenhum anÃºncio cadastrado para o seu perfil no momento</p>');
 					
 			}
 			
-			$.mobile.loading( 'hide' );
+			// $.mobile.loading( 'hide' );
 			
 //			var usuariosBuscados = new Array();
 //			$('.h3Lojista').each(function(){
@@ -375,6 +396,10 @@ function carregarOfertas(listaOfertas) {
 	});
 }
 
+
+function carregaDestaque(){
+
+}
 
 function carregarDetalhes() {
 	$.mobile.loading( 'show' );

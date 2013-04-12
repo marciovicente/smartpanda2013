@@ -51,8 +51,8 @@
 						<button class="folding"><h4><div class="categoriaIcon roupas"></div>  Roupas e Acessórios</h4></button>
 						<button class="folding"><h4><div class="categoriaIcon praia"></div>Moda praia</h4></button>
 						<button class="folding"><h4><div class="categoriaIcon informatica"></div>Informática</h4></button>
-						<button class="folding"><h4><div class="categoriaIcon esportes"></div>Esporte/Fitness</h4></button>
-						<button class="folding"><h4><div class="categoriaIcon turismo"></div>Turismo</h4></button>	
+						<button class="folding"><h4><div class="categoriaIcon categoria6"></div>Esportes/Fitness</h4></button>
+						<button class="folding"><h4><div class="categoriaIcon categoria18"></div>Turismo</h4></button>	
 						<button class="folding"><h4><div class="categoriaIcon joias"></div>Jóias</h4></button>	
 						<button id="footerFolding"><h4><i class="icon icon-white icon-plus"></i> Ver todas categorias</h4></button>
 
@@ -77,18 +77,15 @@
 						</div>
 						
 						<div id="barDestaque">
-							<!-- 199 sera o id_campanha que pegarei via get json -->
 							<button class="btnDestaque" onclick="event.preventDefault(); gostar(1, 199, $(this)); "> <div class="spriteDestaque like"></div> <h5>Gostei</h5> <span>137</span> </button>
-							<!-- <div class="innerLine"></div> -->
 							<button class="btnDestaque" onclick="event.preventeDefault(); gostar(0, 199); "><div class="spriteDestaque dislike"></div> <h5>Não gostei</h5></button>
-							<!-- <div class="innerLine"></div> -->
 							<button class="btnDestaque"><div class="spriteDestaque share"></div> <h5>Share</h5></button>
-							<!-- <div class="innerLine"></div> -->
+							
 							<button class="btnDestaque"><div class="spriteDestaque favorito"></div> <h5>Reservar</h5></button>
 							<!-- trocar favorito, nao existira, entrara Reservar -->
-							<!-- <div class="innerLine"></div> -->
+							
 							<button class="btnDestaque"><div class="spriteDestaque comment"></div> <h5>Comentar</h5></button>
-
+							
 						</div>
 
 					</div>
@@ -96,83 +93,33 @@
 
 				<section id="listaOfertas">
 					<div class="groupOfertas">
-						
-						<a href="#" class="ofertaUnique turismo">
+						<div id="ajaxLoading"></div>
+
+					
+						<!-- <a href="#" class="ofertaUnique categoria18">
 							<div class="imageOferta">
 								<img src="https://img.getyourguide.com/img/tour_img-19091-21.jpg" alt="">
 
-								<div class="desc turismo">
+								<div class="desc categoria18">
 									<h5>Tênis nike com 70% de desconto</h5>
 									<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h6>
 								</div>
 							</div>
 							<div class="bottomBar">
 								<button class="btnBar like"></button>
+								<div class="innerLine"></div>
 								<button class="btnBar dislike"></button>
+								<div class="innerLine"></div>
 								<button class="btnBar share"></button>
-								<button class="btnBar favorite"></button>
+								<div class="innerLine"></div>
+								<button class="btnBar comment"></button>
+								<div class="innerLine"></div>
 								<button class="btnBar pin"></button>
-							</div>
-						</a>
-
-						<a href="#" class="ofertaUnique roupas">
-
-							<div class="imageOferta">
-								<img src="http://www.outerfit.com.br/media/catalog/product/cache/1/thumbnail/228x/9df78eab33525d08d6e5fb8d27136e95/_/-/_-57_1.jpg" alt="">
-
-								<div class="desc roupas">
-									<h5>Tênis nike com 70% de desconto</h5>
-									<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h6>
-								</div>
-							</div>
-							<div class="bottomBar">
-								<button class="btnBar like"></button>
-								<button class="btnBar dislike"></button>
-								<button class="btnBar share"></button>
-								<button class="btnBar favorite"></button>
-								<button class="btnBar pin"></button>
-							</div>
-						</a>
-
-						<a href="#" class="ofertaUnique esporte">
-
-							<div class="imageOferta">	
-								<img src="http://www.brandsdreams.com.br/image/cache/data/produtos/tenis/nike-max-alpha/big%20(14)-228x228.gif" alt="">
-
-								<div class="desc esporte">
-									<h5>Tênis nike com 70% de desconto</h5>
-									<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h6>
-								</div>
-							</div>
-
-							<div class="bottomBar ">
-								<button class="btnBar like"></button>
-								<button class="btnBar dislike"></button>
-								<button class="btnBar share"></button>
-								<button class="btnBar favorite"></button>
-								<button class="btnBar pin"></button>
-							</div>
-						</a>
-
-						<a href="#" class="ofertaUnique informativo">
-							<div class="imageOferta">	
-								<img src="http://www.export-to-china.com/sites/default/files/styles/product_detail/public/Ricci%20Ricci%20edp%20vapo.jpg" alt="">
 								
-								<div class="desc informativo">
-									<h5>Tênis nike com 70% de desconto</h5>
-									<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h6>
-								</div>
-							</div>
-
-
-							<div class="bottomBar">
-								<button class="btnBar like"></button>
-								<button class="btnBar dislike"></button>
-								<button class="btnBar share"></button>
-								<button class="btnBar favorite"></button>
-								<button class="btnBar pin"></button>
 							</div>
 						</a>
+
+						 -->
 					</div>
 
 					
@@ -188,23 +135,39 @@
 
 	<script>
 
+		(function ($) { 
+			var control = 0;
+			$('#cbCategorias').change(function(){
+				var cat = $(this).val();
+				if(cat == 0)
+					$('.ofertaUnique').show();
+				else{
+					$('.ofertaUnique').show();
+					$('.ofertaUnique').not('.categoria'+cat+'').hide();
+				}
+				
+				// depois escolher um efeito legal
+
+
+			});
+			// $("a.ofertaUnique").hover(function(){
+			// 	$(this).find(".desc").fadeIn();
+
+			// });
+			// $("a.ofertaUnique").mouseleave(function(){
+			// 	$(this).find(".desc").fadeOut();
+
+			// });
+		})(jQuery)
+
+
 		$(window).load(function(){
-			$('.ofertaUnique .desc').hide();
 			getShoppingsAtivos(1);
 			carregarCategorias();
-
+			var id_shopping = 14;		
+			carregarOfertas(id_shopping);
 		});
 
-		(function ($) { 
-			$("a.ofertaUnique").hover(function(){
-				$(this).find(".desc").fadeIn();
-
-			});
-			$("a.ofertaUnique").mouseleave(function(){
-				$(this).find(".desc").fadeOut();
-
-			});
-		})(jQuery)
 		
 	</script>
 </body>
