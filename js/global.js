@@ -49,7 +49,6 @@ erroFacebook = 0;
 var nomeUsuario = null;
 function checkLogin() {
 
-	alert();
 	if(erroFacebook == 5) {
 		erroFacebook++;
 		console.error('Erro ao conectar/autenticar com o Facebook (Javascript)');
@@ -68,23 +67,23 @@ function checkLogin() {
 		    oauth      : true,
 		  });
 	     // user has auth'd your app and is logged into Facebook
-	     FB.api('/me', function(me){
-	    	 usuarioID = me.id;
-	    	  nomeUsuario = me.name;
-//	    	 imgSrc = "http://graph.facebook.com/"+me.id+"/picture?type=large";
-//	    	 $('#mnUsuario').html(me.name);
-//        	 $('#profile-name').html(me.name);
-//        	 $('#profile-pic').attr('src',imgSrc);
+	    FB.api('/me', function(me){
+	    	usuarioID = me.id;
+	    	nomeUsuario = me.name;
+//	    	imgSrc = "http://graph.facebook.com/"+me.id+"/picture?type=large";
+//	    	$('#mnUsuario').html(me.name);
+//        	$('#profile-name').html(me.name);
+//        	$('#profile-pic').attr('src',imgSrc);
 
-	     });
-    	imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
-   	 	$('#statusLogin img').attr('src',imgSrc);
+	    });
 	}
 	
+	// imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
+ // 	$('#statusLogin img').attr('src',imgSrc);
 	setTimeout(checkLogin, 1000);
 }
 
-checkLogin();
+// checkLogin();
 
 
 //##### Index
@@ -336,7 +335,7 @@ function carregarOfertas(id_shopping) {
 
 					html = '<a href="#" class="ofertaUnique categoria'+obj.categoria+'">'
 								+'<div class="imageOferta">'
-									+'<img src="'+servidor+'../'+oferta.banner+'" alt="'+oferta.titulo+'" width="228" height="228">'
+									+'<img src="'+servidor+'../'+oferta.square+'" alt="'+oferta.titulo+'" width="228" height="228">'
 									+'<div class="desc categoria'+obj.categoria+'">'
 										+'<h5>'+oferta.titulo+'</h5>'  // +'<h6>'+oferta.texto+'</h6>'
 										+'<h6><i class="icon icon-white icon icon-gift"></i> '+oferta.lojista+'</h6>'

@@ -155,21 +155,21 @@
 				}
 				
 				// depois escolher um efeito legal
-
-
 			});
-			// $("a.ofertaUnique").hover(function(){
-			// 	$(this).find(".desc").fadeIn();
 
-			// });
-			// $("a.ofertaUnique").mouseleave(function(){
-			// 	$(this).find(".desc").fadeOut();
-
-			// });
+ 			
 		})(jQuery)
 
+		$(document).ready(function(){
+			var usuarioID = null;
+			checkLogin();
+			var imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
+ 			$('#statusLogin img').attr('src',imgSrc);
+
+		});
 
 		$(window).load(function(){
+
 			getShoppingsAtivos(1);
 			carregarCategorias();
 			var id_shopping = 14;		
