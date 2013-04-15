@@ -49,6 +49,8 @@ erroFacebook = 0;
 var nomeUsuario = null;
 function checkLogin() {
 
+	
+
 	if(erroFacebook == 5) {
 		erroFacebook++;
 		console.error('Erro ao conectar/autenticar com o Facebook (Javascript)');
@@ -78,52 +80,13 @@ function checkLogin() {
 	    });
 	}
 	
-	// imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
- // 	$('#statusLogin img').attr('src',imgSrc);
+	imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
+ 	$('#statusLogin img').attr('src',imgSrc);
 	setTimeout(checkLogin, 1000);
 }
 
-// checkLogin();
+checkLogin();
 
-
-//##### Index
-// $('#index').live("pageinit", function() {
-	
-// });
-
-// //##### Shoppings
-// $('#shoppings').live("pageinit", function() {
-// 	obterPosicao();
-// });
-
-//##### Loja
-// $('#loja').live("pageinit", function() {
-// 	getEstabelecimentoInfo(id,'lojaNome');
-// 	carregarOfertas('listaOfertas2');
-	
-// 	$('#cbCategorias').change(function() {
-// 		selecionarCategoria($(this).val());
-// 	});
-// });
-
-// //##### Acontecendo
-// $('#acontecendo').live("pageinit", function() {
-// 	getEstabelecimentoInfo(id,'shoppingNome');
-// 	carregarOfertas('listaOfertas');
-// //	carregarLojas();
-// 	$('#cbCategorias').change(function() {
-// 		selecionarCategoria($(this).val());
-// 	});
-// });
-
-//##### Detalhes
-// $('#detalhes').live("pageinit", function() {
-// 	var campanha;
-// 	var oferta;
-// 	carregarDetalhes();
-// 	$( "#popupDialog" ).popup();
-// 	$( "#popupPicture" ).popup();
-// });
 
 
 $( document ).on( "pageinit", function() {
@@ -332,19 +295,20 @@ function carregarOfertas(id_shopping) {
 					oferta = obj.oferta;
 					campanha = obj.campanha;
 					ofertasDisponiveis.push(obj.categoria);
-
-					html = '<a href="#" class="ofertaUnique categoria'+obj.categoria+'">'
+					// link = servidor+'../publico/anuncio?id='+oferta.id; 
+					link = 'oferta.php?id='+oferta.id;
+					html = '<a href="'+link+'" class="ofertaUnique categoria'+obj.categoria+'">'
 								+'<div class="imageOferta">'
 									+'<img src="'+servidor+'../'+oferta.square+'" alt="'+oferta.titulo+'" width="228" height="228">'
 									+'<div class="desc categoria'+obj.categoria+'">'
-										+'<h5>'+oferta.titulo+'</h5>'  // +'<h6>'+oferta.texto+'</h6>'
+										+'<h5>'+oferta.titulo+'</h5>'
 										+'<h6><i class="icon icon-white icon icon-gift"></i> '+oferta.lojista+'</h6>'
 										+'<h6><i class="icon icon-white icon icon-inbox"></i> '+obj.shopping+'</h6>'
 									+'</div>'
 								+'</div>'
 								+'<div class="bottomBar">'
-									+'<button onclick="" class="btnBar like"></button>'
-									+'<div class="innerLine"></div>' //event.preventDefault(); gostar(1, oferta.id, $(this));
+									+'<button onclick="" class="btnBar like"></button>' 
+									+'<div class="innerLine"></div>'
 									+'<button onclick="" class="btnBar dislike"></button>'
 									+'<div class="innerLine"></div>'
 									+'<button class="btnBar share"></button>'
@@ -355,31 +319,18 @@ function carregarOfertas(id_shopping) {
 								+'</div>'; //imageOferta
 					html += '</a>';
 
-					$('.groupOfertas').append(html);
+					$('.groupOfertas').html(html);
 
-
-					
-	
 				});
 				
 
-				// $('.ofertaUnique .desc').hide();
-				
-				// $("a.ofertaUnique").hover(function(){
-				// 	$(this).find(".desc").fadeIn();
-				// });
-
-				// $("a.ofertaUnique").mouseleave(function(){
-				// 	$(this).find(".desc").fadeOut();
-
-				// });
 
 			} else {
 				$('.groupOfertas').append('<p style="text-align: center">Nenhum anÃºncio cadastrado para o seu perfil no momento</p>');
 					
 			}
 			
-			// $.mobile.loading( 'hide' );
+			
 			
 //			var usuariosBuscados = new Array();
 //			$('.h3Lojista').each(function(){
@@ -395,7 +346,7 @@ function carregarOfertas(id_shopping) {
 //			});
 		},
 		error: function(){
-			$( "#popupInfo2" ).popup( "open" );
+		
 			carregarOfertas();
 			console.warn("Erro ao carregar as ofertas cadastradas");
 		}
@@ -656,7 +607,9 @@ function carregaDetalhes(id_oferta) {
 			validade = dados[0].validade.data_max;
 			
 			$('.imgOferta').attr('src',servidor+'../'+oferta.imagem);
-			$('#infoOferta h4:first').html(oferta.lojista);
+			$('.imgOferta').attr('alt', oferta.titulo);
+			$('#infoOferta h4:first').append(oferta.lojista);
+			$('#infoOferta h4:last').append(oferta.lojista_local);
 			// if((oferta.lojista_banner) && (oferta.lojista_banner != "")) {
 			// 	$('#banner').html('<div style="text-align:center;"><img alt="logo" src="'+servidor+'../'+oferta.lojista_banner+'" style="height:60px;"></div>');
 			// }
@@ -671,8 +624,7 @@ function carregaDetalhes(id_oferta) {
 			
 		},
 		error: function(){
-			$( "#popupInfo3" ).popup( "open" );
-			carregarDetalhes();
+			carregaDetalhes();
 			console.warn("Erro ao carregar as ofertas cadastradas");
 		}
 	});

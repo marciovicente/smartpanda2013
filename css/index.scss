@@ -27,13 +27,22 @@ $esporte: #00A550;
   opacity: $valor*0.1;
 }
 
-*{margin: 0}
+*{margin: 0; padding: 0;}
+
 html,body{height: 100%;}
 
 body{
 	margin: 0 auto;
 	padding: 0;
 	
+	&:before{
+		content:"";
+		height:100%;
+		float:left;
+		width:0;
+		margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+	}
+
 	p,h1,h2,h3,h4,h5,span{padding: 0;margin: 0;}
 
 	.central{
@@ -64,7 +73,7 @@ body{
 	#all{
 		width: 100%;
 		height: auto;
-		
+		min-height: 100%;
 		background-image: linear-gradient(bottom, rgb(237,237,237) 28%, rgb(247,247,247) 64%, rgb(255,255,255) 87%);
 		background-image: -o-linear-gradient(bottom, rgb(237,237,237) 28%, rgb(247,247,247) 64%, rgb(255,255,255) 87%);
 		background-image: -moz-linear-gradient(bottom, rgb(237,237,237) 28%, rgb(247,247,247) 64%, rgb(255,255,255) 87%);
@@ -213,10 +222,12 @@ body{
 				background: url(../images/sprite-interacao.png) no-repeat;
 				width: 46px;
 				height: 57px;
-				//@include opacityCB(4);
+				position: relative;
+				left: 5px;
 
 				&.like{
 					background-position: 0 0;
+					left: 12px;
 				}
 
 				&.dislike{
@@ -233,6 +244,11 @@ body{
 				}
 				&.comment{
 					background-position: -255px 0;
+					width: 59px;
+				}
+
+				&.reservar{
+					background-position: -389px 0;
 					width: 59px;
 				}
 			}
@@ -595,6 +611,7 @@ body{
 							color: #616161;
 							padding-bottom: 10px;
 							border-bottom: 1px solid #c3c3c3;
+							font-variant: small-caps;
 						}
 						
 						a{
@@ -622,9 +639,59 @@ body{
 							width: 450px;
 							height: 50px;
 							background:#333;
+							margin-top: 20px;
+
+							.spriteInteracao{
+								background: url(../images/sprite-interacao-interno.png) no-repeat;
+								width: 40px;
+								height: 45px;
+								float: left;
+								
+								&.like{ background-position: 0 0 ; left: 5px;position: relative; }
+								&.dislike{ background-position: -45px 0 ; }
+								&.reservar{ background-position: -328px 0 ; width: 51px }
+								&.share{ 
+									background-position: -95px 0 ;
+									width: 42px;
+									position: relative;
+									left: 4px;
+								}
+								&.comment{ background-position: 0 0 ; }
+
+
+							}
 
 							a{
 								float: left;
+								width: auto;
+								color: #fff;
+								text-shadow: none;
+								font-family: $ubuntu;
+								transition: opacity .25s ease-in-out;
+								-moz-transition: opacity .25s ease-in-out;
+								-webkit-transition: opacity .25s ease-in-out;
+								@include opacityCB(4);
+								display: table;
+								padding-right: 7px;
+
+								&:last-child{
+									padding-right: 0;
+								}
+							
+
+								h5{
+									position: relative;
+									top: 13px;
+									font-weight: normal;
+									float: left;
+									left: 4px;
+									display: table;
+								}
+
+								&:hover{
+									@include opacityCB(10);
+
+								}
 							}
 
 
@@ -645,9 +712,11 @@ body{
 				padding-bottom: 40px;
 				display: table;
 				width: 960px;
+				padding-bottom: 190px;
 				
 				.groupOfertas{
 					height: auto;
+					min-height: 210px;
 					display: table;
 
 					.loadingImage{
@@ -804,7 +873,7 @@ body{
 								
 								&.comment{background-position: -148px 0; width: 34px;}
 
-								&.pin{background-position: -226px 0; width: 26px;}
+								&.reservar{background-position: -226px 0; width: 26px;}
 							}
 						}
 
@@ -817,14 +886,19 @@ body{
 		} //container
 
 
-		.pushFooter{height: 150px;}
+		// .pushFooter{height: 150px;}
 		
-		#footer{
-			width: 100%;
-			background: $verde;
-			height: 150px;
-			
-		}
 	}//all
+	
+	#footer{
+		width: 100%;
+		position: relative;
+		//margin-top: -110px; /* negative value of footer height */
+		height: 110px;
+		clear:both;
+		background: $verde;
+		top: 40px;
+	}
+
 
 }

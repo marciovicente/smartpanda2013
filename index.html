@@ -29,15 +29,14 @@
 				<div id="filter">
 					<div class="central">
 						<form action="" id="formQuery">
-							<input type="text">
 							<select name="cbCategorias" id="cbCategorias" title="Filtrar por Categoria">
 								<option value="0">Todas as Categorias</option>
 							</select>
+							
 							<select name="selectShAtivos" id="selectShAtivos" title="Filtrar por Shopping">
 								<option value="0">Todos os shoppings</option>
 							</select>
-							<input type="text">
-							
+								
 						</form>
 					</div>
 				</div>
@@ -81,7 +80,7 @@
 							<button class="btnDestaque" onclick="event.preventeDefault(); gostar(0, 199); "><div class="spriteDestaque dislike"></div> <h5>Não gostei</h5></button>
 							<button class="btnDestaque"><div class="spriteDestaque share"></div> <h5>Share</h5></button>
 							
-							<button class="btnDestaque"><div class="spriteDestaque favorito"></div> <h5>Reservar</h5></button>
+							<button class="btnDestaque"><div class="spriteDestaque reservar"></div> <h5>Reservar</h5></button>
 							<!-- trocar favorito, nao existira, entrara Reservar -->
 							
 							<button class="btnDestaque"><div class="spriteDestaque comment"></div> <h5>Comentar</h5></button>
@@ -93,7 +92,7 @@
 
 				<section id="listaOfertas">
 					<div class="groupOfertas">
-						<div id="ajaxLoading"></div>
+						<img src="images/ajax-loader.gif">
 
 					
 						<!-- <a href="#" class="ofertaUnique categoria18">
@@ -128,14 +127,11 @@
 			</div>
 			<div class="footerPush"></div>
 		</div>
+	</div> <!-- all -->
 
+	<footer id="footer">
 
-		<footer id="footer">
-
-		</footer>
-
-
-	</div>
+	</footer>
 	
 	<script src="js/jquery.1-9-1.min.js"></script>
 	<script src="js/global.js"></script>
@@ -155,6 +151,11 @@
 				}
 				
 				// depois escolher um efeito legal
+
+				$("#selectShAtivos option").change(function(){
+					var id_shopping = $(this).val();
+					carregarOfertas(id_shopping);
+				});
 			});
 
  			
@@ -162,9 +163,7 @@
 
 		$(document).ready(function(){
 			var usuarioID = null;
-			checkLogin();
-			var imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
- 			$('#statusLogin img').attr('src',imgSrc);
+
 
 		});
 

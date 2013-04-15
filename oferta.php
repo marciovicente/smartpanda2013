@@ -14,10 +14,10 @@
 		<div id="container">
 			<header id="header">
 				<div class="central">
-					<div id="logo"><span>O shopping na palma da mão</span></div>
+					<a href="http://smartpanda.com.br"><div id="logo"><span>O shopping na palma da mão</span></div></a>
 					<div id="statusLogin">
 						
-						<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/195225_100001708066608_415344984_q.jpg" alt="">
+						<img src="" alt="">
 						<div id="profile">
 							<h6>Márcio Vicente Santos </h6>
 							<a href="#" class="logout"> <i class="icon icon-white icon-remove"></i>Sair</a>
@@ -34,30 +34,25 @@
 			<div class="central">
 				<section id="firstContainer">
 					<div id="oferta">
-						<img src="http://img.clasf.com.br/2013/03/18/Cadeira-de-Madeira-Envernizada-Tok-Stok-Bom-estado-de-20130318181138.jpg" alt="" class="imgOferta">
+						<img src="" alt="" class="imgOferta">
 						<div id="infoOferta">
-							<h2>Cadeira Tok Stok de madeira maciça com 70%</h2>
-							<a href="#"><h4><i class="icon icon-gift"></i>Ual Modas</h4></a>
-							<a href=""><h4><i class="icon icon-tags"></i>Shopping Iguatemi</h4></a>
+							<h2></h2>
+							<a href="#"><h4><i class="icon icon-gift"></i></h4></a>
+							<a href=""><h4><i class="icon icon-tags"></i></h4></a>
 							<article class="articleOferta">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco. <br><span class="validadeOferta"></span>
+							
+							<br><span class="validadeOferta"></span>
 							</article>
 							<div id="validade"></div>
 							
 							<nav id="barOferta">
-								<a href=""><span class="spriteDestaque like"></span>Gostei <span class="curtiram"></span></a>
+								<a href=""><span class="spriteInteracao like"></span><h5>Gostei</h5> <span class="curtiram"></span></a>
 								<div class="innerLine"></div>
-								<a href=""><span class="spriteDestaque dislike"></span>Não gostei <span class="curtiram"></span></a>
+								<a href=""><span class="spriteInteracao dislike"></span><h5>Não gostei</h5></a>
 								<div class="innerLine"></div>
-								<a href=""><span class="spriteDestaque pin"></span>Reservar <span class="curtiram"></span></a>
+								<a href=""><span class="spriteInteracao reservar"></span><h5>Reservar</h5></a>
 								<div class="innerLine"></div>
-								<a href=""><span class="spriteDestaque like"></span>Compartilhar <span class="curtiram"></span></a>
-								<div class="innerLine"></div>
-								<a href=""><span class="spriteDestaque like"></span>Comentar <span class="curtiram"></span></a>
-								<div class="innerLine"></div>
-
+								<a href=""><span class="spriteInteracao share"></span><h5>Compartilhe</h5></a>
 							</nav>
 						</div>
 					</div>
