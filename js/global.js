@@ -85,7 +85,7 @@ function checkLogin() {
 	setTimeout(checkLogin, 1000);
 }
 
-checkLogin();
+// checkLogin();
 
 
 
@@ -310,15 +310,15 @@ function carregarOfertas(id_shopping) {
 									+'</div>'
 								+'</div>'
 								+'<div class="bottomBar">'
-									+'<button onclick="" class="btnBar like"></button>' 
+									+'<button onclick=""  title="Gostei :)" class="btnBar like"></button>' 
 									+'<div class="innerLine"></div>'
-									+'<button onclick="" class="btnBar dislike"></button>'
+									+'<button onclick=""  title="Não gostei :(" class="btnBar dislike"></button>'
 									+'<div class="innerLine"></div>'
-									+'<button class="btnBar share"></button>'
+									+'<button class="btnBar share" title="Compartilhe" ></button>'
 									+'<div class="innerLine"></div>'
-									+'<button class="btnBar comment"></button>'
+									+'<button class="btnBar comment" title="Comentar" ></button>'
 									+'<div class="innerLine"></div>'
-									+'<button class="btnBar reservar"></button>'
+									+'<button class="btnBar reservar" title="Reserve essa oferta agora mesmo!" ></button>'
 								+'</div>'; //imageOferta
 					html += '</a>';
 				}); //end each
@@ -667,3 +667,9 @@ function carregaDetalhes(id_oferta) {
 
 // }
 //***Geolocalizacao
+
+
+
+
+
+
