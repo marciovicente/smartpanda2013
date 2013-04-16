@@ -592,6 +592,11 @@ body{
 
 	
 				#oferta{
+					width: 960px;
+					height: auto;
+					display: table;
+					padding-bottom: 40px;
+
 					.imgOferta{
 						max-width: 450px;
 						float: left;
@@ -600,18 +605,18 @@ body{
 					}
 
 					#infoOferta{
-						width: 450px;
+						width: 507px;
 						float: left;
-						margin-left: 26px;
 						text-shadow: 1px 1px 1px #fff;
+						height: auto;
 
 						h2{
 							font-family: $ubuntu;
 							font-size: 31px;
 							color: #616161;
 							padding-bottom: 10px;
-							border-bottom: 1px solid #c3c3c3;
-							font-variant: small-caps;
+							border-bottom: 1px solid #c3c3c3;			
+							margin-left: 25px;
 						}
 						
 						a{
@@ -624,22 +629,37 @@ body{
 								font-family: $ubuntu;
 								padding: 10px 0;
 								border-bottom: 1px solid #c3c3c3;
+								margin-left: 40px;
+
+								i{
+									position: relative;
+									right: 5px;
+									top: 2px;
+
+								}
 
 							}
 						}
 
-						article{
-
+						.articleOferta{
+							margin-left: 40px;
+							margin-top: 11px;
+							font-size: 13px;
+							line-height: 20px;
+							
 							span.validadeOferta{
 								
 							}
 						}
 
 						#barOferta{
-							width: 450px;
+							width: 478px;
 							height: 50px;
 							background:#333;
-							margin-top: 20px;
+							float: right;
+							top: 15px;
+							position: relative;
+							bottom: 0;
 
 							.spriteInteracao{
 								background: url(../images/sprite-interacao-interno.png) no-repeat;
@@ -672,10 +692,12 @@ body{
 								-webkit-transition: opacity .25s ease-in-out;
 								@include opacityCB(4);
 								display: table;
-								padding-right: 7px;
+								padding: 0 7px;
+
 
 								&:last-child{
 									padding-right: 0;
+									padding-left: 3px;
 								}
 							
 
@@ -839,8 +861,8 @@ body{
 							}
 							
 							.innerLine{
-								height: 80%;
-								margin: 0 8px;
+								height: 28px;
+								margin: 2px 8px;
 							}
 
 							.btnBar{
@@ -874,6 +896,10 @@ body{
 								&.comment{background-position: -148px 0; width: 34px;}
 
 								&.reservar{background-position: -226px 0; width: 26px;}
+
+
+								
+
 							}
 						}
 

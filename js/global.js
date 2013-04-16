@@ -102,6 +102,8 @@ shoppingsLista = "";
 pagina = 1;
 cache_lat = 0;
 cache_long = 0;
+
+
 function carregarShoppings(latitude, longitude) {
 	cache_lat = latitude;
 	cache_long = longitude;
@@ -290,6 +292,7 @@ function carregarOfertas(id_shopping) {
 				ofertas = "";
 				ultimaLoja = 0;
 				var html = '';
+				
 				$.each(dados, function(i, obj) {
 		
 					oferta = obj.oferta;
@@ -297,7 +300,7 @@ function carregarOfertas(id_shopping) {
 					ofertasDisponiveis.push(obj.categoria);
 					// link = servidor+'../publico/anuncio?id='+oferta.id; 
 					link = 'oferta.php?id='+oferta.id;
-					html = '<a href="'+link+'" class="ofertaUnique categoria'+obj.categoria+'">'
+					html += '<a href="'+link+'" class="ofertaUnique categoria'+obj.categoria+'">'
 								+'<div class="imageOferta">'
 									+'<img src="'+servidor+'../'+oferta.square+'" alt="'+oferta.titulo+'" width="228" height="228">'
 									+'<div class="desc categoria'+obj.categoria+'">'
@@ -315,13 +318,12 @@ function carregarOfertas(id_shopping) {
 									+'<div class="innerLine"></div>'
 									+'<button class="btnBar comment"></button>'
 									+'<div class="innerLine"></div>'
-									+'<button class="btnBar pin"></button>'
+									+'<button class="btnBar reservar"></button>'
 								+'</div>'; //imageOferta
 					html += '</a>';
+				}); //end each
 
-					$('.groupOfertas').html(html);
-
-				});
+				$('.groupOfertas').html(html);
 				
 
 
@@ -481,6 +483,19 @@ function selecionarCategoria(id) {
 }
 
 
+function getShoppingName(id_loja){
+	$.ajax({data: {id:id_loja}, type:'GET', dataType:'json', url:servidor+'getestabelecimento', timeout:timeout,
+		success: function(dados){
+			alert(dados[0].id_shopping);
+
+		},
+		error: function(){
+			getShoppingName(id_loja);
+			console.warn("Erro ao carregar nome do shopping");
+		}
+	});
+}
+
 function getEstabelecimentoInfo(id_estabelecimento, campo) {
 	$.ajax({data: {id:id_estabelecimento}, type:'GET', dataType:'json', url:servidor+'getestabelecimento', timeout:timeout,
 		success: function(dados){
@@ -609,7 +624,7 @@ function carregaDetalhes(id_oferta) {
 			$('.imgOferta').attr('src',servidor+'../'+oferta.imagem);
 			$('.imgOferta').attr('alt', oferta.titulo);
 			$('#infoOferta h4:first').append(oferta.lojista);
-			$('#infoOferta h4:last').append(oferta.lojista_local);
+			$('#infoOferta h4:last').append(getShoppingName(id_oferta));
 			// if((oferta.lojista_banner) && (oferta.lojista_banner != "")) {
 			// 	$('#banner').html('<div style="text-align:center;"><img alt="logo" src="'+servidor+'../'+oferta.lojista_banner+'" style="height:60px;"></div>');
 			// }
