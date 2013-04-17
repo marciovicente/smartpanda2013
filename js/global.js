@@ -627,6 +627,9 @@ function carregaDetalhes(id_oferta) {
 			$('.imgOferta').attr('src',servidor+'../'+oferta.imagem);
 			$('.imgOferta').attr('alt', oferta.titulo);
 			$('#infoOferta h4:first').append(oferta.lojista);
+
+			$('#barOferta a:first').attr("onclick", "event.preventDefault(); gostar(1, "+oferta.id+", $(this));");
+			$('#barOferta a.eq(1)').attr("onclick", "event.preventDefault(); gostar(0, "+oferta.id+", $(this));"); 
 			
 			// if((oferta.lojista_banner) && (oferta.lojista_banner != "")) {
 			// 	$('#banner').html('<div style="text-align:center;"><img alt="logo" src="'+servidor+'../'+oferta.lojista_banner+'" style="height:60px;"></div>');
@@ -675,3 +678,4 @@ function carregaDetalhes(id_oferta) {
 
 
 
+''

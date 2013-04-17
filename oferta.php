@@ -46,13 +46,13 @@
 							<div id="validade"></div>
 							
 							<nav id="barOferta">
-								<a href=""><span class="spriteInteracao like"></span><h5>Gostei</h5> <span class="curtiram"></span></a>
+								<a ><span class="spriteInteracao like"></span><h5>Gostei</h5> <span class="curtiram"></span></a>
 								<div class="innerLine"></div>
-								<a href=""><span class="spriteInteracao dislike"></span><h5>Não gostei</h5></a>
+								<a ><span class="spriteInteracao dislike"></span><h5>Não gostei</h5></a>
 								<div class="innerLine"></div>
-								<a href=""><span class="spriteInteracao reservar"></span><h5>Reservar</h5></a>
+								<a ><span class="spriteInteracao reservar"></span><h5>Reservar</h5></a>
 								<div class="innerLine"></div>
-								<a href=""><span class="spriteInteracao share"></span><h5>Compartilhe</h5></a>
+								<a ><span class="spriteInteracao share"></span><h5>Compartilhe</h5></a>
 							</nav>
 						</div>
 					</div>

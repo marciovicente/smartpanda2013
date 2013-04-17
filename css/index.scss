@@ -661,6 +661,10 @@ body{
 							position: relative;
 							bottom: 0;
 
+							a{
+								cursor: pointer;
+							}
+
 							.spriteInteracao{
 								background: url(../images/sprite-interacao-interno.png) no-repeat;
 								width: 40px;
