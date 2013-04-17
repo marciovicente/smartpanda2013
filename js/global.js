@@ -79,9 +79,9 @@ function checkLogin() {
 
 	    });
 	}
-	
-	imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
- 	$('#statusLogin img').attr('src',imgSrc);
+	 
+	// imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
+ // 	$('#statusLogin img').attr('src',imgSrc);
 	setTimeout(checkLogin, 1000);
 }
 
@@ -287,9 +287,9 @@ function carregarOfertas(id_shopping) {
 	$.ajax({data: {id: id_shopping}, type:'GET', dataType:'json', url:servidor+'getofertasbyid', timeout:timeout,
 		success: function(dados){
 			if(dados[0]) {
-				$('#ajaxLoading').hide();
+				$('#textLoading').hide();
 
-				ofertas = "";
+				// ofertas = "";
 				ultimaLoja = 0;
 				var html = '';
 				
@@ -300,19 +300,21 @@ function carregarOfertas(id_shopping) {
 					ofertasDisponiveis.push(obj.categoria);
 					// link = servidor+'../publico/anuncio?id='+oferta.id; 
 					link = 'oferta.php?id='+oferta.id;
-					html += '<a href="'+link+'" class="ofertaUnique categoria'+obj.categoria+'">'
-								+'<div class="imageOferta">'
-									+'<img src="'+servidor+'../'+oferta.square+'" alt="'+oferta.titulo+'" width="228" height="228">'
-									+'<div class="desc categoria'+obj.categoria+'">'
-										+'<h5>'+oferta.titulo+'</h5>'
-										+'<h6><i class="icon icon-white icon icon-gift"></i> '+oferta.lojista+'</h6>'
-										+'<h6><i class="icon icon-white icon icon-inbox"></i> '+obj.shopping+'</h6>'
+					html += '<div class="ofertaUnique categoria'+obj.categoria+'">'
+								+'<a href="'+link+'">'
+									+'<div class="imageOferta">'
+										+'<img src="'+servidor+'../'+oferta.square+'" alt="'+oferta.titulo+'" width="228" height="228">'
+										+'<div class="desc categoria'+obj.categoria+'">'
+											+'<h5>'+oferta.titulo+'</h5>'
+											+'<h6><i class="icon icon-white icon icon-gift"></i> '+oferta.lojista+'</h6>'
+											+'<h6><i class="icon icon-white icon icon-inbox"></i> '+obj.shopping+'</h6>'
+										+'</div>'
 									+'</div>'
-								+'</div>'
+								+'</a>'
 								+'<div class="bottomBar">'
-									+'<button onclick=""  title="Gostei :)" class="btnBar like"></button>' 
+									+'<button onclick="event.preventDefault(); gostar(1, '+oferta.id+', $(this));"  title="Gostei :)" class="btnBar like"></button>' 
 									+'<div class="innerLine"></div>'
-									+'<button onclick=""  title="Não gostei :(" class="btnBar dislike"></button>'
+									+'<button onclick="event.preventDefault(); gostar(0, '+oferta.id+', $(this));"  title="Não gostei :(" class="btnBar dislike"></button>'
 									+'<div class="innerLine"></div>'
 									+'<button class="btnBar share" title="Compartilhe" ></button>'
 									+'<div class="innerLine"></div>'
@@ -320,17 +322,14 @@ function carregarOfertas(id_shopping) {
 									+'<div class="innerLine"></div>'
 									+'<button class="btnBar reservar" title="Reserve essa oferta agora mesmo!" ></button>'
 								+'</div>'; //imageOferta
-					html += '</a>';
+					html += '</div>';
 				}); //end each
 
-				$('.groupOfertas').html(html);
-				
+				$('.groupOfertas').hide().html(html).fadeIn('slow');
+				$('.groupOfertas button[title]').tooltips();
 
-
-			} else {
+			} else 
 				$('.groupOfertas').append('<p style="text-align: center">Nenhum anÃºncio cadastrado para o seu perfil no momento</p>');
-					
-			}
 			
 			
 			
@@ -483,14 +482,18 @@ function selecionarCategoria(id) {
 }
 
 
-function getShoppingName(id_loja){
-	$.ajax({data: {id:id_loja}, type:'GET', dataType:'json', url:servidor+'getestabelecimento', timeout:timeout,
+function getShoppingName(id_estabelecimento){
+	$.ajax({data: {id:id_estabelecimento}, type:'GET', dataType:'json', url:servidor+'getestabelecimento', timeout:timeout,
 		success: function(dados){
-			alert(dados[0].id_shopping);
-
+			
+			if(dados[0].tipo == 4) {
+				$('h4.shoppingName').append(dados[0].nome_fantasia);
+			}else{ //oferta
+				getShoppingName(dados[0].id_shopping);
+			}
 		},
 		error: function(){
-			getShoppingName(id_loja);
+			getShoppingName(id_estabelecimento);
 			console.warn("Erro ao carregar nome do shopping");
 		}
 	});
@@ -624,7 +627,7 @@ function carregaDetalhes(id_oferta) {
 			$('.imgOferta').attr('src',servidor+'../'+oferta.imagem);
 			$('.imgOferta').attr('alt', oferta.titulo);
 			$('#infoOferta h4:first').append(oferta.lojista);
-			$('#infoOferta h4:last').append(getShoppingName(id_oferta));
+			
 			// if((oferta.lojista_banner) && (oferta.lojista_banner != "")) {
 			// 	$('#banner').html('<div style="text-align:center;"><img alt="logo" src="'+servidor+'../'+oferta.lojista_banner+'" style="height:60px;"></div>');
 			// }
@@ -666,7 +669,6 @@ function carregaDetalhes(id_oferta) {
 // 	});
 
 // }
-//***Geolocalizacao
 
 
 

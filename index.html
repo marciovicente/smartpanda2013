@@ -91,9 +91,9 @@
 				</section>
 
 				<section id="listaOfertas">
+					<p id="textLoading">Carregando ofertas...</p>
+					
 					<div class="groupOfertas">
-						<img src="images/ajax-loader.gif">
-
 					
 						<!-- <a href="#" class="ofertaUnique categoria18">
 							<div class="imageOferta">
@@ -139,9 +139,7 @@
 	<script src="js/bootstrap.min.js"></script>
 
 	<script>
-		$(function() {
-			$('.groupoOfertas button[title]').tooltips();			
-		});
+		
 		// (function ($) { 
 		// 	var control = 0;
 		// 	$('#cbCategorias').change(function(){
@@ -166,23 +164,23 @@
 		// })(jQuery)
 
 		$(document).ready(function(){
-			var usuarioID = null;
-			if(checkLogin()){
-				alert("Checou");
-				imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
-				$('#statusLogin img').attr('src',imgSrc);
-			}
-
-
-		});
-
-		$(window).load(function(){
+			$('#textLoading').addClass('animated tada');
 
 			getShoppingsAtivos(1);
 			carregarCategorias();
 			var id_shopping = 14;		
-			carregarOfertas(id_shopping);
+			carregarOfertas(id_shopping)
+
+			var usuarioID = null;
+			checkLogin();
+			imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
+			$('#statusLogin img').attr('src',imgSrc);
+
+
 		});
+
+
+
 
 
 		

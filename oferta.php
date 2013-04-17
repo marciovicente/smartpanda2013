@@ -38,7 +38,7 @@
 						<div id="infoOferta">
 							<h2></h2>
 							<a href="#"><h4><i class="icon icon-gift"></i></h4></a>
-							<a href=""><h4><i class="icon icon-tags"></i></h4></a>
+							<a href=""><h4 class="shoppingName"><i class="icon icon-tags"></i></h4></a>
 							<article class="articleOferta">
 							
 							<br><span class="validadeOferta"></span>
@@ -75,9 +75,15 @@
 	<script src="js/bootstrap.min.js"></script>
 
 	<script>
-		$(window).ready(function(){
+		$(document).ready(function(){
+			
 			var id_oferta = <?php echo $id; ?>;
 			carregaDetalhes(id_oferta);
+			getShoppingName(oferta.id_estabelecimento); 
+			
+			checkLogin();
+			imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
+			$('#statusLogin img').attr('src',imgSrc);
 		});
 
 		
