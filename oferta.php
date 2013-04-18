@@ -1,20 +1,38 @@
-<?php $id = $_GET['id']; ?>
+<?php 
+	$id = $_GET['id']; 
+	$server = "http://smartpanda.com.br/smartpanda2013/";
+	// $server = "http://localhost:8080/smartpanda2013/";
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<title>Smartpanda - O shopping na palma da mão</title>
-	<link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo $server;?>css/index.css">
+	<link rel="stylesheet" href="<?php echo $server;?>css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $server;?>images/favicon.ico">
+	<meta property="fb:admins" content="100001708066608"/>
+	<meta property="fb:app_id" content="225275740933146"/>
+
+
 </head>
 <body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=225275740933146";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
+	</script>
 	<div id="all">
 		<div id="container">
 			<header id="header">
 				<div class="central">
-					<a href="http://smartpanda.com.br"><div id="logo"><span>O shopping na palma da mão</span></div></a>
+					<a href="<?php echo $server ?>"><div id="logo"><span>O shopping na palma da mão</span></div></a>
 					<div id="statusLogin">
 						
 						<img src="" alt="">
@@ -57,33 +75,32 @@
 						</div>
 					</div>
 				</section>
-
+				
+				<div class="fb-comments" data-href="<?php echo $server;?>oferta.php?id=<?php echo $id; ?>" data-width="770" data-num-posts="5"></div>
 					
 			</div>
 		</div>
 	</div>
 
-	<footer id="footer">
+	<!-- <footer id="footer">
 		<div class="central">
 			
 			
 		</div>
-	</footer>
+	</footer> -->
 	
-	<script src="js/jquery.1-9-1.min.js"></script>
-	<script src="js/global.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-
+	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
+	<script src="<?php echo $server;?>js/global.js"></script>
+	<script src="<?php echo $server;?>js/bootstrap.min.js"></script>
+	
 	<script>
 		$(document).ready(function(){
 			
 			var id_oferta = <?php echo $id; ?>;
 			carregaDetalhes(id_oferta);
-			getShoppingName(oferta.id_estabelecimento); 
 			
-			checkLogin();
-			imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
-			$('#statusLogin img').attr('src',imgSrc);
+			// checkLogin();
+			
 		});
 
 		

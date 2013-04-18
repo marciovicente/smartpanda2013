@@ -47,9 +47,8 @@ window.fbAsyncInit = function() {
 
 erroFacebook = 0;
 var nomeUsuario = null;
-function checkLogin() {
 
-	
+function checkLogin() {
 
 	if(erroFacebook == 5) {
 		erroFacebook++;
@@ -77,15 +76,15 @@ function checkLogin() {
 //        	$('#profile-name').html(me.name);
 //        	$('#profile-pic').attr('src',imgSrc);
 
+			imgSrc = "http://graph.facebook.com/"+me.id+"/picture?type=small";
+		 	$('#statusLogin img').attr('src',imgSrc);
 	    });
 	}
 	 
-	// imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
- // 	$('#statusLogin img').attr('src',imgSrc);
 	setTimeout(checkLogin, 1000);
 }
 
-// checkLogin();
+checkLogin();
 
 
 
@@ -316,6 +315,7 @@ function carregarOfertas(id_shopping) {
 									+'<div class="innerLine"></div>'
 									+'<button onclick="event.preventDefault(); gostar(0, '+oferta.id+', $(this));"  title="Não gostei :(" class="btnBar dislike"></button>'
 									+'<div class="innerLine"></div>'
+									// +'<div class="shareThis" data-url="'+servidor+'smartpanda2013/'+link+'" data-text="'+oferta.texto+'" data-title="'+oferta.titulo+'">'
 									+'<button class="btnBar share" title="Compartilhe" ></button>'
 									+'<div class="innerLine"></div>'
 									+'<button class="btnBar comment" title="Comentar" ></button>'
@@ -326,7 +326,8 @@ function carregarOfertas(id_shopping) {
 				}); //end each
 
 				$('.groupOfertas').hide().html(html).fadeIn('slow');
-				$('.groupOfertas button[title]').tooltips();
+				// $('.groupOfertas button[title]').tooltips();
+				
 
 			} else 
 				$('.groupOfertas').append('<p style="text-align: center">Nenhum anÃºncio cadastrado para o seu perfil no momento</p>');
@@ -623,11 +624,13 @@ function carregaDetalhes(id_oferta) {
 			oferta = dados[0].oferta;
 			campanha = dados[0].campanha;
 			validade = dados[0].validade.data_max;
-			
-			$('.imgOferta').attr('src',servidor+'../'+oferta.imagem);
-			$('.imgOferta').attr('alt', oferta.titulo);
-			$('#infoOferta h4:first').append(oferta.lojista);
 
+			$('title').html(oferta.titulo+' - Smartpanda');
+			$('.imgOferta').attr('src',servidor+'../'+oferta.imagem);
+			$('#infoOferta h2').append(oferta.titulo);
+			$('#infoOferta h4:first').append(oferta.lojista);
+			$('.articleOferta').html(oferta.texto);
+			getShoppingName(oferta.id_estabelecimento); //seta o nome do shopping
 			$('#barOferta a:first').attr("onclick", "event.preventDefault(); gostar(1, "+oferta.id+", $(this));");
 			$('#barOferta a.eq(1)').attr("onclick", "event.preventDefault(); gostar(0, "+oferta.id+", $(this));"); 
 			
@@ -637,7 +640,6 @@ function carregaDetalhes(id_oferta) {
 			$('#oferta h2').html(oferta.titulo);
 			if(validade) 
 				$('.validadeOferta').append(' (Validade: '+validade+')');
-			$('.articleOferta').html(oferta.texto);
 			if(campanha.curtiram > 2) {
 				$('#titulo').append('<br><br> <span style="font-size: 14px;"><a href="#" id="btCurtiram" data-role="button" data-icon="check" data-inline="true" data-iconpos="notext"></a>'+campanha.curtiram+' pessoas gostaram disso.</span>');
 				$( "#btCurtiram" ).button();
