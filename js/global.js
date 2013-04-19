@@ -627,6 +627,7 @@ function carregaDetalhes(id_oferta) {
 
 			$('title').html(oferta.titulo+' - Smartpanda');
 			$('.imgOferta').attr('src',servidor+'../'+oferta.imagem);
+			$('.imgOferta').attr('alt', oferta.titulo);
 			$('#infoOferta h2').append(oferta.titulo);
 			$('#infoOferta h4:first').append(oferta.lojista);
 			$('.articleOferta').html(oferta.texto);
