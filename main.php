@@ -1,6 +1,7 @@
 <?php 
 	// $server = "http://smartpanda.com.br/smartpanda2013/";
-	$server = "http://localhost:8080/smartpanda2013/";
+	// $server = "http://localhost:8080/smartpanda2013/";
+	$server = "http://localhost:8887/smartpanda2013/";
 ?>
 
 <!doctype html>
@@ -30,7 +31,7 @@
 					<h2>Encontre tudo o que você precisa</h2>
 					<h3>com o shopping na palma da mão</h3>
 					<h3>(ou na tela do computador)</h3>
-					<button class="getAndroid">Instale agora mesmo</button>
+					<button class="getAndroid"><span>Instale agora mesmo</span> <img src="<?php echo $server ?>images/os-icons.png"></button>
 				</div>
 				<!-- <div id="leftMain">
 					
