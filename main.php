@@ -1,7 +1,7 @@
 <?php 
 	// $server = "http://smartpanda.com.br/smartpanda2013/";
-	// $server = "http://localhost:8080/smartpanda2013/";
-	$server = "http://localhost:8887/smartpanda2013/";
+	$server = "http://localhost:8080/smartpanda2013/";
+	// $server = "http://localhost:8887/smartpanda2013/";
 ?>
 
 <!doctype html>
@@ -16,7 +16,7 @@
 </head>
 <body class="notLogged">
 	<div id="all" class="notLogged">
-		<div id="container">
+		<div class="container">
 			<div class="central">
 				
 				<header id="headerMain">
@@ -27,11 +27,21 @@
 					</a>
 				</header>
 
-				<div id="banner">
+				<div class="banner">
 					<h2>Encontre tudo o que você precisa</h2>
 					<h3>com o shopping na palma da mão</h3>
 					<h3>(ou na tela do computador)</h3>
-					<button class="getAndroid"><span>Instale agora mesmo</span> <img src="<?php echo $server ?>images/os-icons.png"></button>
+					<button class="getButton"><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 2.1 no Google Play</h6> </button>
+					<button class="getButton apple"><span>Instale agora mesmo</span>  <div class="appleIcon"></div></button>
+				</div>
+
+				<div class="banner second">
+					<h2>Em qualquer lugar</h2>
+					<h3>De qualquer dispositivo</h3>
+					<div class="devices"></div>
+					<!-- <h3>(ou na tela do computador)</h3> -->
+					<button class="getButton"><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 2.1 no Google Play</h6> </button>
+					<button class="getButton apple"><span>Instale agora mesmo</span>  <div class="appleIcon"></div></button>
 				</div>
 				<!-- <div id="leftMain">
 					
@@ -59,22 +69,30 @@
 
 	<script>
 		$(function () {
-
-		    var counter = 0, divs = $('#galaxy, #iphone');
-
+			var counter = 0, divs = $('.banner, .banner.second');
+			
 		    function alternateDiv() {
 		        divs.hide() // hide all divs
 		            .filter(function (index) { return index == counter % 2; }) // figure out correct div to show
 		            .fadeIn('slow'); // and show it
 
 		        counter++;
-		    }; // function to loop through divs and show correct div
+		    }; 
 
-		    alternateDiv(); // show first div    
+		    alternateDiv(); 
 
 		    setInterval(function () {
-		        alternateDiv(); // show next div
-		    }, 6 * 1000); // do this every 10 seconds    
+		        alternateDiv(); 
+		    }, 6 * 1000); 
+
+
+			$('.getButton.apple').hover(function() {
+				$(this).fadeIn().html('<span>Em breve!</span> <div class="appleIcon"></div>');
+			});
+
+			$('.getButton.apple').mouseleave(function() {
+				$(this).html('<span>Instale agora mesmo</span> <div class="appleIcon"></div>');
+			});
 
 		});
 
