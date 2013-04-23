@@ -991,9 +991,20 @@ body{
 
 					.devices{
 						float: right;
-						height: 226px;
+						height: 373px;
 						background: url(../images/devices.png) no-repeat center center;
-						width: 400px;
+						width: 535px;
+					} 
+
+					.leftBanner{
+						width: 380px; 
+						float: left;
+
+						h2,h3{
+							text-shadow: 1px 1px 1px #fff;
+							color: rgb(163, 163, 163);
+
+						}
 					}
 
 				}

@@ -1,7 +1,7 @@
 <?php 
 	// $server = "http://smartpanda.com.br/smartpanda2013/";
-	$server = "http://localhost:8080/smartpanda2013/";
-	// $server = "http://localhost:8887/smartpanda2013/";
+	// $server = "http://localhost:8080/smartpanda2013/";
+	$server = "http://localhost:8887/smartpanda2013/";
 ?>
 
 <!doctype html>
@@ -36,12 +36,15 @@
 				</div>
 
 				<div class="banner second">
-					<h2>Em qualquer lugar</h2>
-					<h3>De qualquer dispositivo</h3>
+					<div class="leftBanner">
+						<h2>Em qualquer lugar</h2>
+						<h3>De qualquer dispositivo</h3>
+						<button class="getButton"><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 2.1 no Google Play</h6> </button>
+						<button class="getButton apple"><span>Instale agora mesmo</span>  <div class="appleIcon"></div></button>
+
+					</div>
 					<div class="devices"></div>
 					<!-- <h3>(ou na tela do computador)</h3> -->
-					<button class="getButton"><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 2.1 no Google Play</h6> </button>
-					<button class="getButton apple"><span>Instale agora mesmo</span>  <div class="appleIcon"></div></button>
 				</div>
 				<!-- <div id="leftMain">
 					
