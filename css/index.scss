@@ -11,20 +11,22 @@ $turismo: #ffc424;
 $esporte: #00A550; 
 
 // funcoes
+
 @mixin opacityCB($valor){
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$valor+'0')";
+	$val: $valor*10;
+  	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$val+")";
 
-  /* IE 5-7 */
-  filter: alpha(opacity=''+$valor+'0');
+  	/* IE 5-7 */
+  	filter: alpha(opacity=''+$valor+'0');
 
-  /* Netscape */
-  -moz-opacity: $valor*0.1;
+  	/* Netscape */
+  	-moz-opacity: $valor*0.1;
 
-  /* Safari 1.x */
-  -khtml-opacity: $valor*0.1;
+	  /* Safari 1.x */
+	  -khtml-opacity: $valor*0.1;
 
-  /* Good browsers */
-  opacity: $valor*0.1;
+	  /* Good browsers */
+	  opacity: $valor*0.1;
 }
 
 *{margin: 0; padding: 0;}
@@ -33,9 +35,13 @@ html,body{height: 100%;}
 
 ::selection {
 	background: $verde; /* Safari */
+	text-shadow: none;
+	color: #fff;
 	}
 ::-moz-selection {
 	background: $verde; /* Firefox */
+	text-shadow: none;
+	color: #fff;
 }
 
 
@@ -102,10 +108,12 @@ body{
 			color-stop(0.87, rgb(255,255,255))
 		);
 
+		font-family: Arial;
+
 		&.notLogged{
 			background: none;
 			background-image: none;
-			border-top: 4px solid $verde;
+			
 		}
 		
 		#container{
@@ -951,43 +959,75 @@ body{
 
 		// main.php
 		.container{
-			width: 960px;
+			// width: 960px;
 			min-height: 100%;
+			width: 100%;
+
+			&.notLogged{
+				padding-bottom: 25px;
+			}
+
 			.central{
 				overflow: auto;
 				padding-bottom: 45px;
-			}
-			#headerMain{
-				width: 960px;
-				height: 70px;
-				margin: 0 auto;
-				
-				#logo{
-					background: url(../images/marca.png) no-repeat;
-					float: left;
-					width: 293px;
-					height: 46px;
-					margin: 15px 5px;
 
-					span{
-						position: relative;
-						top: 41px;
-						color: rgb(151, 151, 151);
-						float: right;
+				&.main{
+					padding-bottom: 0;
+				}
+			}
+			.header{
+				width: 100%;
+				background: url(../images/dots.png);	
+				position: relative;
+				z-index: 1000;
+				-webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.4);
+				-moz-box-shadow: 0 3px 7px rgba(0,0,0,0.4);
+				box-shadow: 0 3px 7px rgba(0,0,0,0.4);
+				height: 80px;
+				position: fixed;
+				display: block;
+				border-top: 4px solid $verde;
+				top: 0;
+
+				#headerMain{
+					width: 960px;
+					height: 70px;
+					margin: 0 auto;
+					
+					#logo{
+						background: url(../images/marca.png) no-repeat;
+						float: left;
+						width: 293px;
+						height: 46px;
+						margin: 15px 5px;
+
+						span{
+							position: relative;
+							top: 41px;
+							color: rgb(151, 151, 151);
+							float: right;
+						}
 					}
 				}
 			}
+
 			.banner{
-				width: 960px;
+				// width: 960px;
+				width: 100%;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
 				height: 430px;
-				background: url(../images/dot.png), url(../images/banner.jpg) no-repeat center center;
-				margin: 20px auto;
+				background: url(../images/dot.png), url(../images/banner-full-compress.jpg)  center center;
 				color: #fff;
-				display: table;
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/banner-full.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/banner-full.jpg', sizingMethod='scale')";
+				margin-top: 80px;
 				
 				&.second{
-					// background: url(../images/dot.png),url(../images/dot.png), url(../images/banner2.jpg) no-repeat center center;
-					background: none;
+					background: url(../images/dot.png), url(../images/banner2.jpg) center center;
+					// background: none;
 
 					.devices{
 						float: right;
@@ -1000,15 +1040,13 @@ body{
 						width: 380px; 
 						float: left;
 
-						h2,h3{
-							text-shadow: 1px 1px 1px #fff;
-							color: rgb(163, 163, 163);
 
-						}
 					}
 
 				}
+	
 
+				button{ cursor: pointer; }
 				h2,h3{
 					text-align: left;
 					font-family: $ubuntu;
@@ -1096,67 +1134,174 @@ body{
 
 			}
 			
-
-			// home page, hotsite, presentation, login, etc
-			#leftMain{
-				width: 540px;
-				float: left;
-				
-
-			}
-			#rightMain{
-				width: 400px;
-				height: auto;
-				float: left;
-				min-height: 420px;
+			h1{
+				color: rgb(218, 218, 218);
 				font-family: $ubuntu;
-				margin-left: 20px;
+				font-size: 45px;
+				position: relative;
+				top: -2px;
+				text-shadow: 0 -1px 0 rgb(255, 255, 255);
+			}
+
+			.iconsBio{
+				width: auto;
+				height: auto;
+				margin: 73px auto; 
+				border-bottom: 1px solid #e0e5e5;
+				display: table;
+				height: 250px;
+
+				.exp {
+					@include opacityCB(4); 
+					width: 120px;
+					height: 160px;
+					float: left;
+					margin: 0 45px;
+					
+					h5{
+						position: relative;
+						top: 166px;
+						text-align: center;
+						@include opacityCB(10);
+						color: #000;
+						width: 150px;
+						font-family: $ubuntu;
+						font-weight: normal;
+						font-size: 15px;
+					}
+
+					&.smartphone{ 
+						background: url(../images/smartphone.png) no-repeat center center; 
+						margin: 0 80px 0 45px;
+						h5{left: -20px;}
+					}
+
+					&.pin{
+						background: url(../images/pin.png) no-repeat center center;
+						width: 120px;
+
+						h5{left: -8px;}
+					}
+					&.cart{
+						background: url(../images/cart.png) no-repeat center center;
+						width: 148px;
+					}
+					&.deal{
+						background: url(../images/deal.png) no-repeat center center;
+						width: 164px;
+					}
+				}
+				
+			}
+
+
+			.algorithms{
+				width: 960px;
+				height: 170px;
+				margin-top: 30px;
+				background: url(../images/process.png) center center no-repeat;
+
 
 				h3{
-					font-size: 19px;
-					width: 222px;
+					font-family: $ubuntu;
+					width: 300px;
 					float: left;
-					color: #b1b1b1;
-					text-shadow: 1px 1px 1px #fff;
-					margin-left: 69px;
+					color: rgb(141, 141, 141);
+					font-size: 18px;
 					text-align: center;
-					line-height: 27px;
-					margin-top: 4px;
+					margin: 186px 0 0 38px;
+					font-weight: normal;
 
-				}
-
-				#galaxy{
-					width: 380px;
-					height: 420px;
-					background: url(../images/galaxy.png) no-repeat center center;
-					float: left;
-
-					img{
-						position: relative;
-						top: 408px;
-						left: 98px;
+					&:first-child{
+						color: rgb(177,177,177) ;
 					}
-				}
-
-				#iphone{
-					width: 380px;
-					height: 450px;
-					background:url(../images/iphone.png) no-repeat center center;
-					float: left;
-
-					h2{
-						width: 143px;
-						position: relative;
-						top: 231px;
-						left: 115px;
-						float: left;
-						text-align: center;
-						color: rgb(128,128,128);
-						font-size: 37px;
+					&:last-child{
+						width: 230px;
+						color: rgb(100, 100, 100);
 					}
 				}
 			}
 
+			.download{
+				background:#333;
+				width: 100%;
+				height: 80px;
+				// margin-bottom: 20px;
+				color: #fff;
+				font-family: $ubuntu;
+
+
+				.textDownload{
+					font-size: 18px;
+					width: 360px;
+					float: left;
+					font-weight: normal;
+					margin-top: 7px;
+
+
+					a{
+						color: $verde;
+						margin-right: 17px;
+						font-size: 22px;
+						text-decoration: none;
+						width: 130px;
+						float: left;
+						margin-top: 12px;
+						transition: all .45s ease-in-out;
+						-moz-transition: all .45s ease-in-out;
+						-webkit-transition: all .45s ease-in-out;
+
+						.os{
+							width: 28px;
+							height: 32px;
+							float: left;
+							margin-right: 5px;
+							background: url(../images/os-icons.png) no-repeat ;
+							margin-top: -5px;
+
+							&.android{
+								background-position: -88px -7px;
+							}
+
+							&.ios{
+								background-position: -116px -7px;
+							}
+						}
+
+						&:hover{
+							text-shadow: 0 0 7px #000;
+						}
+					}
+				}
+
+				span{
+					color: rgb(70, 70, 70);
+					font-size: 122px;
+					font-family: "Ubuntu",sans-serif;
+					float: left;
+					width: auto;
+					position: relative;
+					top: -45px;
+					font-style: italic;
+				}
+
+				.btn-auth.large{
+					float: right;
+				}
+			}
+
+			// home page, hotsite, presentation, login, etc
+			.auth{
+				width: 430px;
+				float: right;
+			    
+			    *{
+			    	transition: all .45s ease-in-out;
+					-moz-transition: all .45s ease-in-out;
+					-webkit-transition: all .45s ease-in-out;
+				}
+
+			} //.auth
 			.btn-auth {
 			    position: relative;
 			    display: inline-block;
@@ -1183,52 +1328,98 @@ body{
 			    *display: inline; /* 3 */
 			    *zoom: 1; /* 3 */
 			    font-family: $ubuntu;
-			}
-
-			.btn-auth:hover,
-			.btn-auth:focus,
-			.btn-auth:active {
-			    color: #222;
-			    text-decoration: none;
-				background: #718dc9;
-			}
-
-			.btn-auth:before {
-			    content: "";
 			    float: left;
-			    width: 22px;
-			    height: 22px;
-			    background: url(../images/auth-icons.png) no-repeat 99px 99px;
+
+			    &.btn-lojista{
+			    	border-color: #79B418;
+				    border-bottom-color: rgb(82, 121, 18);
+				    color: #fff;
+				    background-color: #8bd11c;
+				    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#8bd11c), to(#72A916));
+				    background-image: -webkit-linear-gradient(#8bd11c, #72A916);
+				    background-image: -moz-linear-gradient(#8bd11c, #72A916);
+				    background-image: -ms-linear-gradient(#8bd11c, #72A916);
+				    background-image: -o-linear-gradient(#8bd11c, #72A916);
+				    background-image: linear-gradient(#8bd11c, #72A916);
+				    -webkit-box-shadow: inset 0 1px 0 #BDEC6F;
+				    box-shadow: inset 0 1px 0 #BDEC6F;
+				    margin: 20px 0 0 15px;
+
+			    	
+
+					&:hover{
+						background: #8BCF1B ;
+						color: #fff;
+					}
+
+					&:before {
+					    border-right: 1px solid #6A9D15;
+					    margin: 0 1em 0 -1em;
+					    background-position: 0 0;
+					}
+
+					&.large {
+						
+						&::before{
+					    	background-position: -214px 8px; 
+						}
+					}
+
+			    }
+				
+				&:hover,
+				&:focus,
+				&:active {
+				    color: #222;
+				    text-decoration: none;
+					background: #718dc9;
+				}
+				&:before {
+				    content: "";
+				    float: left;
+				    width: 22px;
+				    height: 22px;
+				    background: url(../images/auth-icons.png) no-repeat 99px 99px;
+				}
+
+				/*
+				 * 36px
+				 */
+
+				&.large {
+				    height: 36px;
+				    line-height: 36px;
+				    font-size: 20px;
+					float: left;
+					margin: 20px 0 0 0;
+					border-bottom-width: 4px;
+					border-bottom-style: solid;
+					transition: all .45s ease-in-out;
+					-moz-transition: all .45s ease-in-out;
+					-webkit-transition: all .45s ease-in-out;
+
+					&.btn-lojista{
+						margin: 20px 0 0 15px;
+
+					}
+				}
+
+				&.large:before {
+				    width: 36px;
+				    height: 36px;
+				}
+
+				/*
+				 * Remove excess padding and border in FF3+
+				 */
+
+				&::-moz-focus-inner {
+				    border: 0;
+				    padding: 0;
+				}
 			}
 
-			/*
-			 * 36px
-			 */
 
-			.btn-auth.large {
-			    height: 36px;
-			    line-height: 36px;
-			    font-size: 20px;
-				float: right;
-				margin: 20px 0 0 0;
-			    transition: all .45s ease-in-out;
-				-moz-transition: all .45s ease-in-out;
-				-webkit-transition: all .45s ease-in-out;
-			}
-
-			.btn-auth.large:before {
-			    width: 36px;
-			    height: 36px;
-			}
-
-			/*
-			 * Remove excess padding and border in FF3+
-			 */
-
-			.btn-auth::-moz-focus-inner {
-			    border: 0;
-			    padding: 0;
-			}
 
 
 			/* Facebook (extends .btn-auth)
@@ -1290,14 +1481,20 @@ body{
 		clear:both;
 		background: $verde;
 		top: 54px;
+
+		.central{
+			padding-bottom: 0;
+			
+		}
 	}
 
 	#footerMain{
 		width: 100%;
-		height: 45px;
+		height: 35px;
 		background: $verde;
 		clear: both;
 		position: relative;
+		
 	}
 
 
