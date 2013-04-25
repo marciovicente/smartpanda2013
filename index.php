@@ -1,6 +1,7 @@
 <?php 
 	// $server = "http://smartpanda.com.br/smartpanda2013/";
-	$server = "http://localhost:8080/smartpanda2013/";
+	// $server = "http://localhost:8080/smartpanda2013/";
+	$server = "http://localhost:8887/smartpanda2013/";
 ?>
 
 <!doctype html>
@@ -113,9 +114,10 @@
 	<script src="<?php echo $server;?>js/index.js"></script>
 	<script src="<?php echo $server;?>js/global.js"></script>
 	<script src="<?php echo $server;?>js/bootstrap.min.js"></script>
-	<script src="<?php echo $server;?>js/jquery.sharrre-1.3.4.min.js"></script>
+	<script src="<?php echo $server;?>js/browser.js"></script>
 
 	<script type="text/javascript">
+		
 		
 		$('#searchInput').bind('keyup', function(e) {
 			var query = $(this).val().toLowerCase();

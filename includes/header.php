@@ -18,17 +18,17 @@
 		<div class="central">
 			<form action="" id="formQuery">
 				<label class="select">
-					<select name="cbCategorias" id="cbCategorias" title="Filtrar por Categoria">
+					<select name="cbCategorias" id="cbCategorias" class="select" title="Filtrar por Categoria">
 						<option value="0">Todas as Categorias</option>
 					</select>
 				</label>
 				<label class="select">
-					<select name="selectShAtivos" id="selectShAtivos" title="Filtrar por Shopping">
+					<select name="selectShAtivos" id="selectShAtivos" class="select" title="Filtrar por Shopping">
 						<option value="0">Todos os shoppings</option>
 					</select>
 				</label>
 
-				<input type="text" class="input" id="searchInput" placeholder="Pesquise por palavra chave"> <i class="icon icon-search"></i>
+				<input type="search" class="input" id="searchInput" placeholder="Pesquise por palavra chave"> <i class="icon icon-search"></i>
 				<div id="teste"></div>
 			</form>
 		</div>
