@@ -1,22 +1,46 @@
-<?php 
-	// $server = "http://smartpanda.com.br/smartpanda2013/";
-	$server = "http://localhost:8080/smartpanda2013/";
-?>
-
 <!doctype html>
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<title>Smartpanda - O shopping na palma da mão</title>
-	<link rel="stylesheet" href="<?php echo $server;?>css/index.css">
-	<link rel="stylesheet" href="<?php echo $server;?>css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $server;?>images/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
 	<div id="all">
 		<div id="container">
-			<?php include("includes/header.php"); ?>
+			<header id="header">
+				<div class="central">
+					<div id="logo"><span>O shopping na palma da mão</span></div>
+					<div id="statusLogin">
+						
+						<img src="" alt="">
+						<div id="profile">
+							<h6>Márcio Vicente Santos </h6>
+							<a href="#" class="logout"> <i class="icon icon-white icon-remove"></i>Sair</a>
+							
+							<i class="icon icon-white icon-chevron-down"></i>
+						</div>
+					</div>
+				</div>
+
+				<div id="filter">
+					<div class="central">
+						<form action="" id="formQuery">
+							<select name="cbCategorias" id="cbCategorias" title="Filtrar por Categoria">
+								<option value="0">Todas as Categorias</option>
+							</select>
+							
+							<select name="selectShAtivos" id="selectShAtivos" title="Filtrar por Shopping">
+								<option value="0">Todos os shoppings</option>
+							</select>
+								
+						</form>
+					</div>
+				</div>
+			</header>
 
 
 			<div class="central">
@@ -109,40 +133,13 @@
 
 	</footer>
 	
-	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
-	<script src="<?php echo $server;?>js/index.js"></script>
-	<script src="<?php echo $server;?>js/global.js"></script>
-	<script src="<?php echo $server;?>js/bootstrap.min.js"></script>
-	<script src="<?php echo $server;?>js/jquery.sharrre-1.3.4.min.js"></script>
+	<script src="js/jquery.1-9-1.min.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/global.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 
-	<script type="text/javascript">
+	<script>
 		
-		$('#searchInput').bind('keyup', function(e) {
-			var query = $(this).val().toLowerCase();
-			
-			$('.ofertaUnique').each(function(){
-				obj_txt = $(this).find('h5,h6').text();
-				if(obj_txt.toLowerCase().indexOf(query) < 0){
-					$(this).attr('style','');	
-					$(this).addClass('hide');
-				}
-				else
-					$(this).removeClass('hide');
-			});
-		});
-
-		$(document).ready(function(){
-			$('#textLoading').addClass('animated tada');
-			getShoppingsAtivos(1);
-			carregarCategorias();
-			var id_shopping = 14;		
-			carregarOfertas(id_shopping);
-			checkLogin();
-			
-
-		});
-
-
 		// (function ($) { 
 		// 	var control = 0;
 		// 	$('#cbCategorias').change(function(){
@@ -165,6 +162,22 @@
 
  			
 		// })(jQuery)
+
+		$(document).ready(function(){
+			$('#textLoading').addClass('animated tada');
+
+			getShoppingsAtivos(1);
+			carregarCategorias();
+			var id_shopping = 14;		
+			carregarOfertas(id_shopping)
+
+			var usuarioID = null;
+			checkLogin();
+			imgSrc = "http://graph.facebook.com/"+usuarioID+"/picture?type=small";
+			$('#statusLogin img').attr('src',imgSrc);
+
+
+		});
 
 
 

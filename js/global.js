@@ -78,6 +78,8 @@ function checkLogin() {
 
 			imgSrc = "http://graph.facebook.com/"+me.id+"/picture?type=small";
 		 	$('#statusLogin img').attr('src',imgSrc);
+
+
 	    });
 	}
 	 
@@ -654,6 +656,12 @@ function carregaDetalhes(id_oferta) {
 	});
 }
 
+
+
+// function search(){
+
+
+// }
 
 // function loadPaperFold(){
 // 	$.ajax({ type:'GET', dataType:'json', url:servidor+'getcategorias', timeout:timeout,

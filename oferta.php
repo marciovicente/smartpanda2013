@@ -31,22 +31,23 @@
 	<div id="all">
 		<div id="container">
 			<header id="header">
-				<div class="central">
-					<a href="<?php echo $server ?>"><div id="logo"><span>O shopping na palma da mão</span></div></a>
-					<div id="statusLogin">
-						
-						<img src="" alt="">
-						<div id="profile">
-							<h6>Márcio Vicente Santos </h6>
-							<a href="#" class="logout"> <i class="icon icon-white icon-remove"></i>Sair</a>
-							
-							<i class="icon icon-white icon-chevron-down"></i>
-						</div>
-					</div>
-				</div>
+	<div class="central">
+		<a href="<?php echo $server ?>"><div id="logo"><span>O shopping na palma da mão</span></div></a>
+		<div id="statusLogin">
+			<div class="imgLogin">
+				<img src="" alt="Facebook profile">
+			</div>
+			<div class="profile">
+				<h6>Davi Ricardo Castro</h6>
+				<a href="#"><i class="icon icon-user icon-white"></i>Meu cadastro</a>
+				<a href="#" class="logout"> <i class="icon icon-white icon-remove"></i>Sair</a>
+				
+			</div>
+		</div>
+	</div>
 
-			
-			</header>
+	
+</header>
 
 
 			<div class="central">

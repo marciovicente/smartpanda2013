@@ -1,7 +1,7 @@
 <?php 
 	// $server = "http://smartpanda.com.br/smartpanda2013/";
-	// $server = "http://localhost:8080/smartpanda2013/";
-	$server = "http://localhost:8887/smartpanda2013/";
+	$server = "http://localhost:8080/smartpanda2013/";
+	// $server = "http://localhost:8887/smartpanda2013/";
 ?>
 
 <!doctype html>
@@ -102,7 +102,15 @@
 	</div> <!-- all -->
 
 	<footer id="footerMain">
-		
+		<div class="central">
+			<div class="menuFooter">
+				<a href="">Assine um plano</a>
+				<a href="">Quem somos</a>
+				<a href="">Regras gerais</a>
+				<a href="">Blog</a>
+				<a href="">Contato</a>
+			</div>
+		</div>		
 	</footer>
 
 	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
@@ -114,7 +122,7 @@
 		    function alternateDiv() {
 		        divs.hide() // hide all divs
 		            .filter(function (index) { return index == counter % 2; }) // figure out correct div to show
-		            .fadeIn('slow'); // and show it
+		            .fadeIn('fast'); // and show it
 
 		        counter++;
 		    }; 
