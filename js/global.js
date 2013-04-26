@@ -71,13 +71,11 @@ function checkLogin() {
 	    FB.api('/me', function(me){
 	    	usuarioID = me.id;
 	    	nomeUsuario = me.name;
-//	    	imgSrc = "http://graph.facebook.com/"+me.id+"/picture?type=large";
-//	    	$('#mnUsuario').html(me.name);
-//        	$('#profile-name').html(me.name);
-//        	$('#profile-pic').attr('src',imgSrc);
-
+			alert("Id:"+usuarioID+" - Nome:"+nomeUsuario);
 			imgSrc = "http://graph.facebook.com/"+me.id+"/picture?type=small";
 		 	$('#statusLogin img').attr('src',imgSrc);
+
+		 	$('#statusLogin h6').html(me.first_name+" "+me.last_name);
 
 
 	    });
@@ -88,7 +86,9 @@ function checkLogin() {
 
 checkLogin();
 
-
+function getWords(str) {
+    return str.split(/\s+/).slice(1,3).join(" ");
+}
 
 $( document ).on( "pageinit", function() {
     $( ".photopopup" ).on({
@@ -358,10 +358,33 @@ function carregarOfertas(id_shopping) {
 }
 
 
-function carregaDestaque(){
-
+function carregaDestaque(id_shopping){
+	var hot = null;
+	$.ajax({data: {id: id_shopping}, type:'GET', dataType:'json', url:servidor+'getofertasbyid', timeout:timeout,
+		success: function(dados){
+			hot = dados[0];
+			$.each(dados, function(i, obj) {
+				campanha = obj.campanha;
+				if(campanha.curtiram > hot.campanha.curtiram)
+					hot = obj;
+			});
+			//hot eh minha oferta(obj) mais curtida até o momento
+			$('#ofertaDestaque h3').html(hot.oferta.titulo);
+			$('#ofertaDestaque h4:first').append(hot.oferta.lojista);
+			$('#ofertaDestaque h4:last').append(hot.shopping);
+			$('#ofertaDestaque .descOfertaDetalhe').html(hot.oferta.texto);
+			$('#fotoDestaque img').attr('src', ''+servidor+'../'+hot.oferta.square+'');
+			$('#fotoDestaque img').attr('alt', hot.oferta.titulo);
+			$('#barDestaque button:first').attr('onclick', 'event.preventDefault(); gostar(1, '+oferta.id+', $(this));')
+			$('#barDestaque button.eq(1)').attr('onclick', 'event.preventDefault(); gostar(0, '+oferta.id+', $(this));')
+		},
+		error: function(){
+			console.warn("Erro ao carregar destaque");
+		}
+	});
 }
 
+//useless
 function carregarDetalhes() {
 	$.mobile.loading( 'show' );
 	$.ajax({data: {id: id_oferta}, type:'GET', dataType:'json', url:servidor+'getoferta', timeout:timeout,
@@ -658,35 +681,3 @@ function carregaDetalhes(id_oferta) {
 
 
 
-// function search(){
-
-
-// }
-
-// function loadPaperFold(){
-// 	$.ajax({ type:'GET', dataType:'json', url:servidor+'getcategorias', timeout:timeout,
-// 		success: function(dados){
-			
-// 			var inc = 0;
-// 			$.each(dados, function(i, obj) {
-				
-				
-				
-// 			});
-			
-// 		},
-// 		error: function(){
-// 			$( "#popupInfo3" ).popup( "open" );
-// 			carregarDetalhes();
-// 			console.warn("Erro ao carregar as ofertas cadastradas");
-// 		}
-// 	});
-
-// }
-
-
-
-
-
-
-''

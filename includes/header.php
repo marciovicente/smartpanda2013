@@ -6,7 +6,7 @@
 				<img src="" alt="Facebook profile">
 			</div>
 			<div class="profile">
-				<h6>Davi Ricardo Castro</h6>
+				<h6></h6>
 				<a href="#"><i class="icon icon-user icon-white"></i>Meu cadastro</a>
 				<a href="#" class="logout"> <i class="icon icon-white icon-remove"></i>Sair</a>
 				
@@ -27,9 +27,13 @@
 						<option value="0">Todos os shoppings</option>
 					</select>
 				</label>
+				
+				<label class="input">
+					<input type="search" class="input" id="searchInput" placeholder="Pesquise por palavra chave"> 
+					<i class="icon icon-search"></i>
+				</label>
 
-				<input type="search" class="input" id="searchInput" placeholder="Pesquise por palavra chave"> <i class="icon icon-search"></i>
-				<div id="teste"></div>
+				<div class="countOfertas op0"><span></span></div>
 			</form>
 		</div>
 	</div>

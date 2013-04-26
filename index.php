@@ -1,7 +1,5 @@
 <?php 
-	// $server = "http://smartpanda.com.br/smartpanda2013/";
-	// $server = "http://localhost:8080/smartpanda2013/";
-	$server = "http://localhost:8887/smartpanda2013/";
+	include("includes/config.php");
 ?>
 
 <!doctype html>
@@ -39,17 +37,15 @@
 						<div id="fotoDestaque">
 						<!--	<div class="filterCategoria praia"><div class="categoriaIcon praia"></div></div> -->
 							<a href="#">
-								<img src="http://amorume.com.br/wp-content/uploads/2013/03/veludo.jpg" alt="Sapato de Marca">
+								<img src="" alt="Sapato de Marca">
 							</a>
 						</div>
 						<a href=""><div id="ribbon"><div class="pinIcon"></div></div></a>
 						<div id="ofertaDestaque" >
-							<h3>Saia de Veludo 70% OFF no Iguatemi</h3>
-							<a href="#"> <h4><i class="icon icon-tags"></i> Arezzo Sport Fino</h4></a>
-							<a href=""><h4><i class="icon icon-bookmark"></i> Shopping Paseo Itaigara</h4></a>
-							<article class="descOfertaDetalhe">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco. </article>
+							<h3></h3>
+							<a href="#"> <h4><i class="icon icon-tags"></i> </h4></a>
+							<a href=""><h4><i class="icon icon-bookmark"></i> </h4></a>
+							<article class="descOfertaDetalhe"> </article>
 						</div>
 						
 						<div id="barDestaque">
@@ -131,13 +127,34 @@
 				else
 					$(this).removeClass('hide');
 			});
+
+
+			//adicionando contador
+			var i = 0;
+			$('.ofertaUnique').each(function(){
+				if(!$(this).hasClass('hide'))
+					i++;
+				
+			});
+
+			if(query == '' || query == ' ')
+				$('.countOfertas').addClass('op0');
+			else{
+				$('.countOfertas > span').html("<b>"+i+"</b> anúncios ativos");
+				$('.countOfertas').removeClass('op0');
+			}
+
+
+
 		});
 
 		$(document).ready(function(){
+			
 			$('#textLoading').addClass('animated tada');
+			var id_shopping = 14;	
+			carregaDestaque(id_shopping);	
 			getShoppingsAtivos(1);
 			carregarCategorias();
-			var id_shopping = 14;		
 			carregarOfertas(id_shopping);
 			checkLogin();
 			
