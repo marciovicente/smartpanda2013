@@ -49,7 +49,7 @@
 						</div>
 						
 						<div id="barDestaque">
-							<button class="btnDestaque" onclick="event.preventDefault(); gostar(1, 199, $(this)); "> <div class="spriteDestaque like"></div> <h5>Gostei</h5> <span>137</span> </button>
+							<button class="btnDestaque" onclick="event.preventDefault(); gostar(1, 199, $(this)); "> <div class="spriteDestaque like"></div> <h5>Gostei</h5> <span>0</span> </button>
 							<button class="btnDestaque" onclick="event.preventeDefault(); gostar(0, 199); "><div class="spriteDestaque dislike"></div> <h5>Não gostei</h5></button>
 							<button class="btnDestaque"><div class="spriteDestaque share"></div> <h5>Share</h5></button>
 							

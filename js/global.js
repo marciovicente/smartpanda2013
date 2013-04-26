@@ -376,6 +376,7 @@ function carregaDestaque(id_shopping){
 			$('#fotoDestaque img').attr('src', ''+servidor+'../'+hot.oferta.square+'');
 			$('#fotoDestaque img').attr('alt', hot.oferta.titulo);
 			$('#barDestaque button:first').attr('onclick', 'event.preventDefault(); gostar(1, '+oferta.id+', $(this));')
+			$('#barDestaque button:first span').html(hot.campanha.curtiram);
 			$('#barDestaque button.eq(1)').attr('onclick', 'event.preventDefault(); gostar(0, '+oferta.id+', $(this));')
 		},
 		error: function(){

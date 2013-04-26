@@ -29,7 +29,7 @@
 				</label>
 				
 				<label class="input">
-					<input type="search" class="input" id="searchInput" placeholder="Pesquise por palavra chave"> 
+					<input type="search" class="input" id="searchInput" autocomplete="off" placeholder="Pesquise por palavra chave"> 
 					<i class="icon icon-search"></i>
 				</label>
 

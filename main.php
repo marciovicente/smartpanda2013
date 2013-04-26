@@ -11,6 +11,7 @@
 	
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $server;?>images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="<?php echo $server; ?>css/bootstrap.min.css">
 </head>
 <body class="notLogged">
 	<div id="all" class="notLogged">
@@ -23,7 +24,7 @@
 
 					<div class="auth">
 						<a class="btn-auth btn-facebook large" href="#"> Entre com <b>Facebook</b> </a>
-						<a class="btn-auth btn-lojista large">Lojista</a>
+						<a class="btn-auth btn-lojista large" data-toggle="modal" data-target="#modalLojista">Lojista</a>
 					</div>
 				</div>
 			</header>
@@ -36,6 +37,41 @@
 					<button class="getButton apple"><span>Instale agora mesmo</span>  <div class="appleIcon"></div></button>
 				</div>
 			</div>
+
+
+			<!-- =========================== modal lojista =========================== -->
+			
+			<div id="modalLojista" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Área do Lojista</h3>
+				</div>
+				
+				<div class="modal-body">
+					<form class="loginLojista" method="POST" action="">
+						<span>Login</span>
+						<input type="text" name="user" placeholder="Nome de usuário">
+						<input type="password" name="password" placeholder="Senha">
+						<button class="btn btn-info"><i class="icon icon-white icon-lock" ></i> Entrar</button>
+						<a href=""> <i class="icon icon-question-sign"></i> Esqueci minha senha</a>
+					</form>
+					<div class="leftModalLojista">
+						<h4>Ainda não cadastrou sua loja?</h4>
+						<p>Aumente suas receitas</p>
+						<p>Gerencie e otimize suas despesas com publicidade</p>
+		 				<p>Seus produtos e serviços na palma da mão dos consumidores</p>
+						<p>Seja eficaz em satisfazer as necessidades dos seus clientes</p>
+						<button class="btn btn-success btn-large">Cadastre agora!</button>
+					</div>
+				</div>
+				
+				<!-- <div class="modal-footer">
+					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button class="btn btn-primary">Save changes</button>
+				</div> -->
+			</div>
+
+			<!-- ======================================================================= -->
 
 			<div class="banner second">
 				<div class="central">
@@ -112,6 +148,7 @@
 	</footer>
 
 	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
+	<script src="<?php echo $server;?>js/bootstrap.modal	.js"></script>
 
 	<script>
 		$(function () {

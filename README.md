@@ -1,3 +1,7 @@
 smartpanda2013
 ==============
-project to Smartpanda, begin about 15 days ago :) 
+Smartpanda project
+
+Begin about 15 days ago :) 
+
+FAQ: root@marciovicente.com

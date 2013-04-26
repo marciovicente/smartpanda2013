@@ -1398,6 +1398,70 @@ body{
 				
 			}
 
+			.loginLojista{
+				width: 230px;
+				float: left;
+				height: 200px;
+				padding-right: 15px;
+				border-right: 1px solid #ccc;
+				margin-top: 5px;
+
+				a{	
+					font-size: 12px;
+					color: #67695A;
+					top: 10px;
+					position: relative;
+
+					i{ @include opacityCB(4); }
+				}
+
+				span{
+					font-family: $ubuntu;
+					font-size: 16px;
+					color: rgb(128,128,128);
+					padding: 0;
+					font-weight: bold;
+				}
+				button{
+					width: 219px;
+					height: 34px;
+					border-radius: 3px;
+					margin-top: 7px;
+				}
+				input{
+					height: 26px;
+					margin: 7px 0;
+				}
+			}
+
+			.leftModalLojista{
+				float: left;
+				width: 245px;
+				margin-left: 10px;
+
+				i{ @include opacityCB(3); }
+
+				p{
+					font-size: 12px;
+					color: rgb(151, 151, 151);
+					line-height: 13px;
+					margin-top: 10px;
+					text-align: center;
+				}
+
+				h4{
+					font-family: $ubuntu;
+					font-size: 21px;
+					text-align: center;
+					color: rgb(128,128,128);
+				}
+
+				button{
+					height: 35px; 
+					padding: 0 19px;
+					margin: 10px 0 0 39px;
+				}
+			}
 
 			.algorithms{
 				width: 960px;
@@ -1415,6 +1479,7 @@ body{
 					text-align: center;
 					margin: 186px 0 0 38px;
 					font-weight: normal;
+					line-height: 20px;
 
 					&:first-child{
 						color: rgb(177,177,177) ;
@@ -1485,7 +1550,7 @@ body{
 					float: left;
 					width: auto;
 					position: relative;
-					top: -45px;
+					top: 15px;
 					font-style: italic;
 				}
 
