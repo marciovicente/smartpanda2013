@@ -1,7 +1,10 @@
 smartpanda2013
 ==============
-Smartpanda project
+# Smartpanda project
 
-Begin about 15 days ago :) 
 
-FAQ: root@marciovicente.com
+# License
+The content of this project is licensed under a Creative Commons Attribution License: you may share this, but you must give attribution.
+
+# contact
+root@marciovicente.com

@@ -105,6 +105,7 @@ cache_lat = 0;
 cache_long = 0;
 
 
+
 function carregarShoppings(latitude, longitude) {
 	cache_lat = latitude;
 	cache_long = longitude;
@@ -357,7 +358,7 @@ function carregarOfertas(id_shopping) {
 	});
 }
 
-
+var select = '';
 function carregaDestaque(id_shopping){
 	var hot = null;
 	$.ajax({data: {id: id_shopping}, type:'GET', dataType:'json', url:servidor+'getofertasbyid', timeout:timeout,
@@ -375,9 +376,18 @@ function carregaDestaque(id_shopping){
 			$('#ofertaDestaque .descOfertaDetalhe').html(hot.oferta.texto);
 			$('#fotoDestaque img').attr('src', ''+servidor+'../'+hot.oferta.square+'');
 			$('#fotoDestaque img').attr('alt', hot.oferta.titulo);
-			$('#barDestaque button:first').attr('onclick', 'event.preventDefault(); gostar(1, '+oferta.id+', $(this));')
+			$('#barDestaque button:first').attr('onclick', 'event.preventDefault(); gostar(1, '+oferta.id+', $(this));');
 			$('#barDestaque button:first span').html(hot.campanha.curtiram);
-			$('#barDestaque button.eq(1)').attr('onclick', 'event.preventDefault(); gostar(0, '+oferta.id+', $(this));')
+			$('#barDestaque button.eq(1)').attr('onclick', 'event.preventDefault(); gostar(0, '+oferta.id+', $(this));');
+
+			select ='<label class="select">'
+						+'<select id="selectCidade" name="selectCidade" class="select">';
+						+'<option value="0">'+getShoppingName(hot.oferta.id_estabelecimento)+'</option>'
+						+'</select>'
+					+'</label>';
+
+			
+			$('#filter').prepend(select);
 		},
 		error: function(){
 			console.warn("Erro ao carregar destaque");
@@ -610,12 +620,24 @@ function toRad(Value) {
     return Value * Math.PI / 180;
 }
 
+function loadCidades() {
+	latlng = latitude+','+longitude;
+	$.ajax({data: {latlng:latlng, sensor:'true'}, type:'GET', dataType:'json', url:'http://maps.googleapis.com/maps/api/geocode/json', timeout:timeout,
+		success: function(dados){
+			
+		},
+		error: function(){
+			carregarCategorias();
+			console.warn("Erro ao carregar nome da cidade");
+		}
+	});
+}
+
 function getnomeCidade() {
 	latlng = latitude+','+longitude;
 	$.ajax({data: {latlng:latlng, sensor:'true'}, type:'GET', dataType:'json', url:'http://maps.googleapis.com/maps/api/geocode/json', timeout:timeout,
 		success: function(dados){
 			
-
 		},
 		error: function(){
 			carregarCategorias();

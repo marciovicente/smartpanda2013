@@ -37,7 +37,7 @@
 						<div id="fotoDestaque">
 						<!--	<div class="filterCategoria praia"><div class="categoriaIcon praia"></div></div> -->
 							<a href="#">
-								<img src="" alt="Sapato de Marca">
+								<img src="" alt="">
 							</a>
 						</div>
 						<a href=""><div id="ribbon"><div class="pinIcon"></div></div></a>

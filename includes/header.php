@@ -17,6 +17,12 @@
 	<div id="filter">
 		<div class="central">
 			<form action="" id="formQuery">
+				<!-- <label class="select">
+					<select name="cidade" id="selectCidade" class="select" title="Trocar cidade">
+						<option value="0"></option>
+					</select>
+				</label> -->
+
 				<label class="select">
 					<select name="cbCategorias" id="cbCategorias" class="select" title="Filtrar por Categoria">
 						<option value="0">Todas as Categorias</option>
