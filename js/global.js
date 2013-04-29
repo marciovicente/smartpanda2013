@@ -376,19 +376,24 @@ function carregaDestaque(id_shopping){
 			$('#ofertaDestaque .descOfertaDetalhe').html(hot.oferta.texto);
 			$('#fotoDestaque img').attr('src', ''+servidor+'../'+hot.oferta.square+'');
 			$('#fotoDestaque img').attr('alt', hot.oferta.titulo);
-			$('#barDestaque button:first').attr('onclick', 'event.preventDefault(); gostar(1, '+oferta.id+', $(this));');
+			$('#barDestaque button:first').attr('onclick', 'event.preventDefault(); gostar(1, '+hot.oferta.id+', $(this));');
 			$('#barDestaque button:first span').html(hot.campanha.curtiram);
-			$('#barDestaque button.eq(1)').attr('onclick', 'event.preventDefault(); gostar(0, '+oferta.id+', $(this));');
+			$('#barDestaque button:nth-child(2)').attr('onclick', 'event.preventDefault(); gostar(0, '+hot.oferta.id+', $(this));');
 
+			var data = loadCidades();
 			select ='<label class="select">'
 						+'<select id="selectCidade" name="selectCidade" class="select">';
-						+'<option value="0">'+getShoppingName(hot.oferta.id_estabelecimento)+'</option>'
-						+'</select>'
+			$.each(data, function(i,obj){
+				select += '<option value="'+obj.id+'">'+obj.nome+'</option>';
+			});
+
+			select += '</select>'
 					+'</label>';
 
 			
-			$('#filter').prepend(select);
+			$('#filter').find('#formQuery').prepend(select);
 		},
+		
 		error: function(){
 			console.warn("Erro ao carregar destaque");
 		}
@@ -621,13 +626,13 @@ function toRad(Value) {
 }
 
 function loadCidades() {
-	latlng = latitude+','+longitude;
-	$.ajax({data: {latlng:latlng, sensor:'true'}, type:'GET', dataType:'json', url:'http://maps.googleapis.com/maps/api/geocode/json', timeout:timeout,
+	
+	$.ajax({type:'GET', dataType:'json', url: servidor+'getcidadescomshoppings', timeout:timeout,
 		success: function(dados){
-			
+			return dados;
 		},
 		error: function(){
-			carregarCategorias();
+			loadCidades();
 			console.warn("Erro ao carregar nome da cidade");
 		}
 	});
