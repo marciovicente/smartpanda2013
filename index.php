@@ -13,6 +13,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $server;?>images/favicon.ico">
 </head>
 <body>
+	<div class="countFilter">A busca retornou <span></span> <button class="limpar"> <span class="inner"><i class="icon icon-white icon-trash"></i> <h6>Limpar</h6></span> </button></div>
 	<div id="all">
 		<div id="container">
 			<?php include("includes/header.php"); ?>
@@ -115,7 +116,7 @@
 	<script type="text/javascript">
 		
 		
-		$('#searchInput').bind('keyup', function(e) {
+		var search = $('#searchInput').on('keyup', function(e) {
 			var query = $(this).val().toLowerCase();
 			
 			$('.ofertaUnique').each(function(){
@@ -137,12 +138,32 @@
 				
 			});
 
-			if(query == '' || query == ' ')
-				$('.countOfertas').addClass('op0');
-			else{
-				$('.countOfertas > span').html("<b>"+i+"</b> anúncios ativos");
-				$('.countOfertas').removeClass('op0');
+			if(query == '' || query == ' '){
+				$('.countFilter').removeClass('show');
+				$('.ofertaUnique').removeClass('hide');
+			}else{
+
+				if(i == 0){
+					$('.countFilter > span').html("nenhum anúncio, tente outro termo");
+					$('.countFilter').addClass('danger');
+				}else{
+					$('.countFilter').removeClass('danger');
+					$('.countFilter > span').html("<b>"+i+"</b> anúncio(s)");
+				}
+					
+				$('.countFilter').addClass('show');
+				$("html, body").animate({ scrollTop: 370 }, "slow");
+				
 			}
+
+			$('.countFilter button.limpar').click(function(){
+				$('.countFilter').removeClass('show');
+				$('#filter #searchInput').val('');
+				$('.ofertaUnique').removeClass('hide');
+				
+
+				
+			});
 
 
 

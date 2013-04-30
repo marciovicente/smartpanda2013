@@ -1,3 +1,5 @@
+
+
 <header id="header">
 	<div class="central">
 		<a href="<?php echo $server ?>"><div id="logo"><span>O shopping na palma da mão</span></div></a>
@@ -17,11 +19,11 @@
 	<div id="filter">
 		<div class="central">
 			<form action="" id="formQuery">
-				<!-- <label class="select">
+				<label class="select">
 					<select name="cidade" id="selectCidade" class="select" title="Trocar cidade">
-						<option value="0"></option>
+						<option value="0">Escolha a cidade</option>
 					</select>
-				</label> -->
+				</label>
 
 				<label class="select">
 					<select name="cbCategorias" id="cbCategorias" class="select" title="Filtrar por Categoria">
@@ -39,7 +41,7 @@
 					<i class="icon icon-search"></i>
 				</label>
 
-				<div class="countOfertas op0"><span></span></div>
+				<!-- <div class="countOfertas op0"><span></span></div> -->
 			</form>
 		</div>
 	</div>
