@@ -30,23 +30,23 @@
 	<div id="all">
 		<div id="container">
 			<header id="header">
-	<div class="central">
-		<a href="<?php echo $server ?>"><div id="logo"><span>O shopping na palma da mão</span></div></a>
-		<div id="statusLogin">
-			<div class="imgLogin">
-				<img src="" alt="Facebook profile">
-			</div>
-			<div class="profile">
-				<h6>Davi Ricardo Castro</h6>
-				<a href="#"><i class="icon icon-user icon-white"></i>Meu cadastro</a>
-				<a href="#" class="logout"> <i class="icon icon-white icon-remove"></i>Sair</a>
-				
-			</div>
-		</div>
-	</div>
+				<div class="central">
+					<a href="<?php echo $server ?>"><div id="logo"><span>O shopping na palma da mão</span></div></a>
+					<div id="statusLogin">
+						<div class="imgLogin">
+							<img src="" alt="Facebook profile">
+						</div>
+						<div class="profile">
+							<h6>Davi Ricardo Castro</h6>
+							<a href="#"><i class="icon icon-user icon-white"></i>Meu cadastro</a>
+							<a href="#" class="logout"> <i class="icon icon-white icon-remove"></i>Sair</a>
+							
+						</div>
+					</div>
+				</div>
 
-	
-</header>
+				
+			</header>
 
 
 			<div class="central">
@@ -75,19 +75,33 @@
 						</div>
 					</div>
 				</section>
-				
-				<div class="fb-comments" data-href="<?php echo $server;?>oferta.php?id=<?php echo $id; ?>" data-width="770" data-num-posts="5"></div>
+				<section class="secondContainer">
+					<div class="suggest">
+						<h5>Também poderá gostar de</h5>
+						
+					</div>
+
+					<div class="comments">
+						<div class="fb-comments" data-href="<?php echo $server;?>oferta.php?id=<?php echo $id; ?>" data-width="770" data-num-posts="5"></div>
+					</div>
+				</section>
 					
-			</div>
+			</div> <!-- .central -->
+
 		</div>
 	</div>
 
-	<!-- <footer id="footer">
+	<footer id="footerMain">
 		<div class="central">
-			
-			
-		</div>
-	</footer> -->
+			<div class="menuFooter">
+				<a href="">Assine um plano</a>
+				<a href="">Quem somos</a>
+				<a href="">Regras gerais</a>
+				<a href="">Blog</a>
+				<a href="">Contato</a>
+			</div>
+		</div>		
+	</footer>
 	
 	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
 	<script src="<?php echo $server;?>js/global.js"></script>

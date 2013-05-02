@@ -135,7 +135,7 @@
 		</div>
 	</div> <!-- all -->
 
-	<footer id="footerMain">
+	<footer id="footerMain" class="notLogged">
 		<div class="central">
 			<div class="menuFooter">
 				<a href="">Assine um plano</a>

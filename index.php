@@ -1,5 +1,7 @@
 <?php 
 	include("includes/config.php");
+
+
 ?>
 
 <!doctype html>
@@ -52,7 +54,7 @@
 						<div id="barDestaque">
 							<button class="btnDestaque" onclick="event.preventDefault(); gostar(1, 199, $(this)); "> <div class="spriteDestaque like"></div> <h5>Gostei</h5> <span>0</span> </button>
 							<button class="btnDestaque" onclick="event.preventeDefault(); gostar(0, 199); "><div class="spriteDestaque dislike"></div> <h5>Não gostei</h5></button>
-							<button class="btnDestaque"><div class="spriteDestaque share"></div> <h5>Share</h5></button>
+							<button class="btnDestaque"><div class="spriteDestaque share "></div> <h5>Share</h5></button>
 							
 							<button class="btnDestaque"><div class="spriteDestaque reservar"></div> <h5>Reservar</h5></button>
 							<!-- trocar favorito, nao existira, entrara Reservar -->
@@ -103,18 +105,26 @@
 		</div>
 	</div> <!-- all -->
 
-	<footer id="footer">
-
+	<footer id="footerMain">
+		<div class="central">
+			<div class="menuFooter">
+				<a href="">Assine um plano</a>
+				<a href="">Quem somos</a>
+				<a href="">Regras gerais</a>
+				<a href="">Blog</a>
+				<a href="">Contato</a>
+			</div>
+		</div>		
 	</footer>
 	
 	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
-	<script src="<?php echo $server;?>js/index.js"></script>
 	<script src="<?php echo $server;?>js/global.js"></script>
+	<script src="<?php echo $server;?>js/jquery.tooltipster.min.js"></script>
 	<script src="<?php echo $server;?>js/bootstrap.min.js"></script>
 	<script src="<?php echo $server;?>js/browser.js"></script>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 	<script type="text/javascript">
-		
 		
 		var search = $('#searchInput').on('keyup', function(e) {
 			var query = $(this).val().toLowerCase();
@@ -177,34 +187,39 @@
 			getShoppingsAtivos(1);
 			carregarCategorias();
 			carregarOfertas(id_shopping);
+
 			checkLogin();
+
 			
 
 		});
 
 
-		// (function ($) { 
-		// 	var control = 0;
-		// 	$('#cbCategorias').change(function(){
-		// 		var cat = $(this).val();
-		// 		if(cat == 0)
-		// 			$('.ofertaUnique').show();
-		// 		else{
-		// 			$('.ofertaUnique').show();
-		// 			$('.ofertaUnique').not('.categoria'+cat+'').hide();
-		// 		}
-				
-		// 		// depois escolher um efeito legal
+		(function ($) { 
 
-		// 		$("#selectShAtivos option").change(function(){
-		// 			// var id_shopping = $(this).val();
-		// 			// carregarOfertas(id_shopping);
-		// 			alert($(this).val());
-		// 		});
-		// 	});
+
+			var control = 0;
+			$('#cbCategorias').change(function(){
+				var cat = $(this).val();
+				if(cat == 0)
+					$('.ofertaUnique').show();
+				else{
+					$('.ofertaUnique').show();
+					$('.ofertaUnique').not('.categoria'+cat+'').hide();
+				}
+				
+				// depois escolher um efeito legal
+
+				$("#selectShAtivos option").change(function(){
+					// var id_shopping = $(this).val();
+					// carregarOfertas(id_shopping);
+					alert($(this).val());
+				});
+			});
+
 
  			
-		// })(jQuery)
+		})(jQuery)
 
 
 

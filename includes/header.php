@@ -1,5 +1,6 @@
 
 
+
 <header id="header">
 	<div class="central">
 		<a href="<?php echo $server ?>"><div id="logo"><span>O shopping na palma da mão</span></div></a>
@@ -9,7 +10,7 @@
 			</div>
 			<div class="profile">
 				<h6></h6>
-				<a href="#"><i class="icon icon-user icon-white"></i>Meu cadastro</a>
+				<a href="#" class="hasToolInteract" title='Altere dados cadastrais' ><i class="icon icon-user icon-white" ></i>Meu cadastro</a>
 				<a href="#" class="logout"> <i class="icon icon-white icon-remove"></i>Sair</a>
 				
 			</div>

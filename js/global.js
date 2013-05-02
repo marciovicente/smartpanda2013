@@ -300,8 +300,28 @@ function carregarOfertas(id_shopping) {
 					oferta = obj.oferta;
 					campanha = obj.campanha;
 					ofertasDisponiveis.push(obj.categoria);
-					// link = servidor+'../publico/anuncio?id='+oferta.id; 
 					link = 'oferta.php?id='+oferta.id;
+					// link = servidor+'../publico/anuncio?id='+oferta.id; 
+
+					var attrTooltip = "<div class='tooltipSocial'>"
+										+"<a onclick='event.preventDefaeult(); shareOnFacebook("+oferta.id+", "+oferta.titulo+", "+oferta.square+");'>"
+										+"<div class='btnShare face'></div>"
+										+"</a>"
+										+"<a href='http://twitter.com/share?url=http://smartpanda.com.br/"+link+"' class='tweet'>"
+										+"<div class='btnShare twitter'></div>"
+										+"</a>"
+										+"<a href=''>"
+										+"<div class='btnShare gplus'></div>"
+										+"</a>"
+										+"<a href='mailto:'>"
+										+"<div class='btnShare mail'></div>"
+										+"</a>"
+									+"</div>";
+
+									//inutil
+
+
+
 					html += '<div class="ofertaUnique categoria'+obj.categoria+'">'
 								+'<a href="'+link+'">'
 									+'<div class="imageOferta">'
@@ -314,24 +334,32 @@ function carregarOfertas(id_shopping) {
 									+'</div>'
 								+'</a>'
 								+'<div class="bottomBar">'
-									+'<button onclick="event.preventDefault(); gostar(1, '+oferta.id+', $(this));"  title="Gostei :)" class="btnBar like"></button>' 
+									+'<button onclick="event.preventDefault(); gostar(1, '+oferta.id+', $(this));"  title="Gostei :)" class="btnBar like hasToolTip"></button>' 
 									+'<div class="innerLine"></div>'
-									+'<button onclick="event.preventDefault(); gostar(0, '+oferta.id+', $(this));"  title="Não gostei :(" class="btnBar dislike"></button>'
+									+'<button onclick="event.preventDefault(); gostar(0, '+oferta.id+', $(this));"  title="Não gostei :(" class="btnBar dislike hasToolTip"></button>'
 									+'<div class="innerLine"></div>'
 									// +'<div class="shareThis" data-url="'+servidor+'smartpanda2013/'+link+'" data-text="'+oferta.texto+'" data-title="'+oferta.titulo+'">'
-									+'<button class="btnBar share" title="Compartilhe" ></button>'
+									+'<button class="btnBar share hasToolInteract" title="'+attrTooltip+'" ></button>'
 									+'<div class="innerLine"></div>'
-									+'<button class="btnBar comment" title="Comentar" ></button>'
+									+'<button class="btnBar comment hasToolTip" title="Comentar" ></button>'
 									+'<div class="innerLine"></div>'
-									+'<button class="btnBar reservar" title="Reserve essa oferta agora mesmo!" ></button>'
+									+'<button class="btnBar reservar hasToolTip" title="Reserve essa oferta agora mesmo!" ></button>'
 								+'</div>'; //imageOferta
 					html += '</div>';
+
+
+					
 				}); //end each
 
-				$('.groupOfertas').hide().html(html).fadeIn('slow');
-				// $('.groupOfertas button[title]').tooltips();
-				
 
+				$('.groupOfertas').hide().html(html).fadeIn('slow');
+				$('.hasToolInteract').tooltipster({
+					interactive: true,
+					theme: 'interact'
+				});
+				
+				$('.hasToolTip').tooltipster();
+				
 			} else 
 				$('.groupOfertas').append('<p style="text-align: center">Nenhum anÃºncio cadastrado para o seu perfil no momento</p>');
 			
@@ -370,6 +398,22 @@ function carregaDestaque(id_shopping){
 					hot = obj;
 			});
 			//hot eh minha oferta(obj) mais curtida até o momento
+
+			var attrTooltip = "<div class='tooltipSocial'>"
+										+"<a onclick='event.preventDefaeult(); shareOnFacebook("+hot.oferta.id+", "+hot.oferta.titulo+", "+hot.oferta.square+");'>"
+										+"<div class='btnShare face'></div>"
+										+"</a>"
+										+"<a href='http://twitter.com/share?url=http://smartpanda.com.br/oferta.php?id="+hot.oferta.id+"' class='tweet'>"
+										+"<div class='btnShare twitter'></div>"
+										+"</a>"
+										+"<a href=''>"
+										+"<div class='btnShare gplus'></div>"
+										+"</a>"
+										+"<a href='mailto:'>"
+										+"<div class='btnShare mail'></div>"
+										+"</a>"
+									+"</div>";
+									
 			$('#ofertaDestaque h3').html('<a href="oferta.php?id='+hot.oferta.id+'">'+hot.oferta.titulo+'</a>');
 			$('#ofertaDestaque h4:first').append(hot.oferta.lojista);
 			$('#ofertaDestaque h4:last').append(hot.shopping);
@@ -380,6 +424,8 @@ function carregaDestaque(id_shopping){
 			$('#barDestaque button:first').attr('onclick', 'event.preventDefault(); gostar(1, '+hot.oferta.id+', $(this));');
 			$('#barDestaque button:first span').html(hot.campanha.curtiram);
 			$('#barDestaque button:nth-child(2)').attr('onclick', 'event.preventDefault(); gostar(0, '+hot.oferta.id+', $(this));');
+			$('#barDestaque button:nth-child(3)').addClass('hasToolInteract');
+			$('#barDestaque button:nth-child(3)').attr('title', attrTooltip);
 
 			$.ajax({type:'GET', dataType:'json', url: servidor+'getcidadescomshoppings', timeout:timeout,
 				success: function(dados){
@@ -489,6 +535,31 @@ function compartilharNoFacebook() {
 			   ),
 			   link: link,
 			   picture: servidor+'../'+oferta.imagem
+			  },
+			  function(response) {
+			    if (response && response.post_id) {
+			      console.debug('Compartilhado no Facebook com sucesso.');
+			    } else {
+			      console.error('Erro ao compartilhar no Facebook.');
+			    }
+			  }
+			);
+}
+
+function shareOnFacebook(id, titulo, image) {
+	
+	link = 'http://smartpanda.com.br/oferta.php?id='+oferta.id;
+	FB.ui(
+			  {
+			   method: 'feed',
+			   display: 'popup',
+			   name: titulo,
+			   caption: oferta.texto,
+			   description: (
+			      lojistaNome
+			   ),
+			   link: link,
+			   picture: servidor+'../'+image
 			  },
 			  function(response) {
 			    if (response && response.post_id) {
