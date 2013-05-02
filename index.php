@@ -126,12 +126,15 @@
 
 	<script type="text/javascript">
 		
-		var search = $('#searchInput').on('keyup', function(e) {
+		$('#searchInput').on('keyup', function(e) {
 			var query = $(this).val().toLowerCase();
+			query = removeAcentos(query);
 			
 			$('.ofertaUnique').each(function(){
 				obj_txt = $(this).find('h5,h6').text();
-				if(obj_txt.toLowerCase().indexOf(query) < 0){
+				obj_txt = removeAcentos(obj_txt);
+				obj_txt = obj_txt.toLowerCase();
+				if(obj_txt.indexOf(query) < 0){
 					$(this).attr('style','');	
 					$(this).addClass('hide');
 				}
@@ -178,6 +181,12 @@
 
 
 		});
+
+
+		function removeAcentos(e){
+			e = e.replace(/[áàâã]/g,'a').replace(/[éèê]/g,'e').replace(/[óòôõ]/g,'o').replace(/[úùû]/g,'u').replace(/[íìî]/g,'i');
+			return e;
+		}
 
 		$(document).ready(function(){
 			
