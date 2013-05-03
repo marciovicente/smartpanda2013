@@ -10,7 +10,7 @@
 			</div>
 			<div class="profile">
 				<h6></h6>
-				<a href="#" class="hasToolInteract" title='Altere dados cadastrais' ><i class="icon icon-user icon-white" ></i>Meu cadastro</a>
+				<a href="#" class="hasToolTilp" title='Altere dados cadastrais' ><i class="icon icon-user icon-white" ></i>Meu cadastro</a>
 				<a href="#" class="logout"> <i class="icon icon-white icon-remove"></i>Sair</a>
 				
 			</div>
@@ -19,6 +19,7 @@
 
 	<div id="filter">
 		<div class="central">
+			<div class="filterLabel"><i class="icon icon-filter"></i> Filtro</div>
 			<form action="" id="formQuery">
 				<label class="select">
 					<select name="cidade" id="selectCidade" class="select" title="Trocar cidade">

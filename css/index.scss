@@ -74,6 +74,49 @@ body{
 
 	p,h1,h2,h3,h4,h5,span{padding: 0;margin: 0;}
 
+
+
+	.overlayLoad{
+		width: 100%;
+		height: 100%;
+		// background: rgba(0, 0, 0, 0.5);
+		position: fixed;
+	    left: 0%;
+	    top: 0%; 
+	    width: 100%;
+	    height: 100%;
+	    z-index: 9000;
+	    background: rgba(0, 0, 0, 0.7);
+
+	    .loaderSp{
+	    	width: 98px;
+	    	height: 98px;
+	    	left: 50%;
+	    	top: 35%;
+	    	position: fixed;
+	    	z-index: 10000;
+	    	background: url(../images/loader-sp.gif) #fff center 20px no-repeat;
+	    	border: 1px solid #e1e1e1;
+	    	-webkit-box-shadow: 0 0 15px #000;
+	    	-moz-box-shadow: 0 0 15px #000;
+	    	box-shadow: 0 0 15px #000;	
+	    	-webkit-border-radius: 4px;
+	    	-moz-border-radius: 4px;
+	    	border-radius: 4px;
+	    	padding: 10px;
+
+	    	span{
+	    		position: relative;
+	    		top: 85px;
+	    		font-family: $ubuntu;
+	    		font-weight: normal;
+	    		letter-spacing: 3px;
+	    		color: #939393;
+
+	    	}
+	    }
+	}
+
 	.central{
 		width: 960px;
 		margin: 0 auto;
@@ -420,6 +463,23 @@ body{
 					    color:    #fff;
 					}
 					
+					.filterLabel{
+
+						i{
+							position: relative;
+							top: 5px;
+						}
+						@include opacityCB(3);
+						font-weight: bold;
+						float: left;
+						width: 93px;
+						height: auto;
+						margin-top: 6px;
+						text-shadow: rgb(255, 255, 255) 0 -1px;
+						font-family: $ubuntu;
+						font-size: 22px;
+					}
+
 					form{
 						width: auto;
 						height: 38px;
@@ -429,11 +489,11 @@ body{
 							width: 200px;
 							float: left;
 							height: auto;
-							margin: 4px 15px 0 0;
+							margin: 4px 12px 0 0;
 							
 							&.input{
 								margin: 0;
-								width: 254px;
+								width: 224px;
 							}
 
 							select{
@@ -465,8 +525,8 @@ body{
 
 						i{
 							position: relative;
-							left: -36px;
-							top: 9px;
+							left: 204px;
+							top: -25px;
 							@include opacityCB(4);
 							cursor: auto;
 						}
@@ -1901,7 +1961,131 @@ body{
 			.btn-facebook.large:before {
 			    background-position: 0 -22px;
 			}
+
+
+
+			.about{
+				width: 960px;
+				height: auto;
+				margin: 150px auto 0;
+
+				.bio{
+					width: 450px;
+					height: 150px;
+					float: left;
+					margin: 10px ;
+					background: #e1e1e1;
+					text-shadow: 0 -1px rgba(255,255,255,0.5);
+					overflow: hidden;
+
+
+					&:hover{
+						.articleBio{
+							height: 150px;
+							top: -60px;
+						}
+					}
+
+					.photo{
+						position: relative;
+						width: 150px;
+						height: 150px;
+						float: left;
+						background: #666;
+						z-index: 7;
+						
+						.brush{
+							background:url(../images/brush.png) center center no-repeat;
+							width: 36px;
+							height: 36px;
+							float: right;
+							right: -42px;
+							z-index: 8;
+							top: 55px;
+							position: relative;
+							@include opacityCB(6);
+						}
+
+						&.marcio{
+							background: url(../images/marcio.jpg) center center no-repeat;
+						}
+						&.davi{
+							background: url(../images/davi.jpg) center center no-repeat;
+						}
+						&.ivo{
+							background: url(../images/ivo.jpg) center center no-repeat;
+						}
+						&.vicente{
+							background: url(../images/vicente.jpg) center center no-repeat;
+						}
+						&.marlon{
+							background: url(../images/marlon.jpg) center center no-repeat;
+						}
+
+
+						&:after{
+							width: 0;
+							height: 0;
+							content: " ";
+							position: absolute;
+							border-width: 75px;
+							border-style: solid;
+							border-color: transparent transparent transparent #8bd11c;
+							left: 150px;
+							z-index: 6;
+						}
+					}
+					h5{
+						font-size: 25px;
+						left: 41px;
+						position: relative;
+						width: auto;
+						top: 9px;
+						font-family: $ubuntu;
+						color: #666;
+						z-index: 1;
+
+					}
+
+					h6{
+						font-size: 18px;
+						color: #8a8a8a;
+						position: relative;
+						left: 67px;
+						top: 12px;
+						z-index: 1;
+					}
+
+					.articleBio{
+						width: 100%;
+						height: 76px;
+						top: 14px;
+						background:#95df1d;
+						position: relative;
+						z-index: 5;
+						-webkit-transition: all 0.4s ease-in-out;
+						-moz-transition: all 0.4s ease-in-out;
+						-ms-transition: all 0.4s ease-in-out;
+						-o-transition: all 0.4s ease-in-out;
+
+						p{
+							width: 218px;
+							height: 55px;
+							float: right;
+							position: relative;
+							font-size: 12px;
+							line-height: 17px;
+							text-align: justify;
+							top: 6px;
+							left: -7px;
+							color: rgba(0,0,0,0.5);
+							text-shadow:none;
+						}
+					}
+				}
+			}
 		} // .container
+
 
 
 		// .pushFooter{height: 150px;}
@@ -2417,7 +2601,6 @@ html {
 }
 
 
-
 .tooltipSocial{
 	width: auto;
 	height: 32px;
@@ -2455,6 +2638,26 @@ html {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	border: 2px solid #ccc;
+	-webkit-box-shadow: 0 0 20px #333;
+	-moz-box-shadow: 0 0 20px #333;
+	box-shadow: 0 0 20px #333;
+	
+
+	.tooltipster-content {
+		font-family: Arial, sans-serif;
+		font-size: 14px;
+		line-height: 16px;
+		padding: 8px 10px;
+	}
+}
+
+
+.tooltipNormal{
+	background: $verde;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 2px solid #6ea515;
 	-webkit-box-shadow: 0 0 20px #333;
 	-moz-box-shadow: 0 0 20px #333;
 	box-shadow: 0 0 20px #333;

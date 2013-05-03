@@ -139,7 +139,7 @@
 		<div class="central">
 			<div class="menuFooter">
 				<a href="">Assine um plano</a>
-				<a href="">Quem somos</a>
+				<a href="about.php">Quem somos</a>
 				<a href="">Regras gerais</a>
 				<a href="">Blog</a>
 				<a href="">Contato</a>

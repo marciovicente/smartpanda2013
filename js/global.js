@@ -71,7 +71,7 @@ function checkLogin() {
 	    FB.api('/me', function(me){
 	    	usuarioID = me.id;
 	    	nomeUsuario = me.name;
-			alert("Id:"+usuarioID+" - Nome:"+nomeUsuario);
+			// alert("Id:"+usuarioID+" - Nome:"+nomeUsuario);
 			imgSrc = "http://graph.facebook.com/"+me.id+"/picture?type=small";
 		 	$('#statusLogin img').attr('src',imgSrc);
 
@@ -358,7 +358,10 @@ function carregarOfertas(id_shopping) {
 					theme: 'interact'
 				});
 				
-				$('.hasToolTip').tooltipster();
+				$('.hasToolTip').tooltipster({
+					theme: '.tooltipNormal'
+				});
+
 				
 			} else 
 				$('.groupOfertas').append('<p style="text-align: center">Nenhum anÃºncio cadastrado para o seu perfil no momento</p>');
@@ -433,6 +436,8 @@ function carregaDestaque(id_shopping){
 						select += '<option value="'+obj.id+'">'+obj.nome+'</option>';
 					});
 					$('#formQuery').find('select#selectCidade').html(select);
+
+					$('.overlayLoad').hide();
 				},
 				error: function(){
 					console.warn("Erro ao carregar nome da cidade");
@@ -554,9 +559,9 @@ function shareOnFacebook(id, titulo, image) {
 			   method: 'feed',
 			   display: 'popup',
 			   name: titulo,
-			   caption: oferta.texto,
+			   caption: titulo,
 			   description: (
-			      lojistaNome
+			      titulo
 			   ),
 			   link: link,
 			   picture: servidor+'../'+image
@@ -773,12 +778,24 @@ function carregaDetalhes(id_oferta) {
 				$( "#btCurtiram" ).button();
 			}
 			
+			carregaSugestoes(oferta);
+
 		},
 		error: function(){
 			carregaDetalhes();
 			console.warn("Erro ao carregar as ofertas cadastradas");
 		}
 	});
+}
+
+
+function carregaSugestoes(oferta){
+	$.each(dados, function(i, obj){
+		
+		
+	}); 
+
+
 }
 
 

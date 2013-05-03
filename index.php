@@ -15,6 +15,11 @@
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $server;?>images/favicon.ico">
 </head>
 <body>
+	<div class="overlayLoad">
+		<div class="loaderSp">
+			<span>Carregando</span>
+		</div>
+	</div>
 	<div class="countFilter">A busca retornou <span></span> <button class="limpar"> <span class="inner"><i class="icon icon-white icon-trash"></i> <h6>Limpar</h6></span> </button></div>
 	<div id="all">
 		<div id="container">
@@ -109,7 +114,7 @@
 		<div class="central">
 			<div class="menuFooter">
 				<a href="">Assine um plano</a>
-				<a href="">Quem somos</a>
+				<a href="about.php">Quem somos</a>
 				<a href="">Regras gerais</a>
 				<a href="">Blog</a>
 				<a href="">Contato</a>
@@ -198,8 +203,6 @@
 			carregarOfertas(id_shopping);
 
 			checkLogin();
-
-			
 
 		});
 
