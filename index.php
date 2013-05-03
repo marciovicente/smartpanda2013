@@ -178,9 +178,6 @@
 				$('.countFilter').removeClass('show');
 				$('#filter #searchInput').val('');
 				$('.ofertaUnique').removeClass('hide');
-				
-
-				
 			});
 
 
@@ -210,7 +207,7 @@
 		(function ($) { 
 
 
-			var control = 0;
+			
 			$('#cbCategorias').change(function(){
 				var cat = $(this).val();
 				if(cat == 0)
@@ -218,15 +215,24 @@
 				else{
 					$('.ofertaUnique').show();
 					$('.ofertaUnique').not('.categoria'+cat+'').hide();
-				}
-				
-				// depois escolher um efeito legal
 
-				$("#selectShAtivos option").change(function(){
-					// var id_shopping = $(this).val();
-					// carregarOfertas(id_shopping);
-					alert($(this).val());
-				});
+					var i = 0;
+					$('.ofertaUnique categoria'+cat+'').each(function(){
+						i++;
+					});
+					
+					if(i == 0)
+						$('#listaOfertas').html("<h1 class='noHas'>Não há ofertas com o filtro desejado</h1>");
+						
+					
+				}
+			
+			});
+			
+			$("#selectShAtivos option").change(function(){
+				// var id_shopping = $(this).val();
+				// carregarOfertas(id_shopping);
+				alert($(this).val());
 			});
 
 

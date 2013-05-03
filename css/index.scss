@@ -279,11 +279,7 @@ body{
 			input, select, textarea {
 				border: 1px solid #ddd;
 			}
-			*{
-				// -moz-box-sizing: border-box;
-				// -webkit-box-sizing: border-box;
-				// box-sizing: border-box;
-			}
+
 			label{
 				&.select{
 					width: auto;
@@ -1986,6 +1982,7 @@ body{
 						}
 					}
 
+
 					.photo{
 						position: relative;
 						width: 150px;
@@ -1993,34 +1990,20 @@ body{
 						float: left;
 						background: #666;
 						z-index: 7;
-						
-						.brush{
-							background:url(../images/brush.png) center center no-repeat;
-							width: 36px;
-							height: 36px;
+						background: url(../images/photos.jpg) no-repeat;
+
+						.icon{
+							background:url(../images/icons-bio.png) no-repeat;
+							width: 41px;
+							height: 41px;
 							float: right;
-							right: -42px;
+							right: -52px;
 							z-index: 8;
 							top: 55px;
 							position: relative;
-							@include opacityCB(6);
+							@include opacityCB(7);
 						}
 
-						&.marcio{
-							background: url(../images/marcio.jpg) center center no-repeat;
-						}
-						&.davi{
-							background: url(../images/davi.jpg) center center no-repeat;
-						}
-						&.ivo{
-							background: url(../images/ivo.jpg) center center no-repeat;
-						}
-						&.vicente{
-							background: url(../images/vicente.jpg) center center no-repeat;
-						}
-						&.marlon{
-							background: url(../images/marlon.jpg) center center no-repeat;
-						}
 
 
 						&:after{
@@ -2031,10 +2014,47 @@ body{
 							border-width: 75px;
 							border-style: solid;
 							border-color: transparent transparent transparent #8bd11c;
-							left: 150px;
+							left: 149px;
 							z-index: 6;
 						}
 					}
+
+					&.marcio{
+						.photo{	background-position: -600px 0; }
+						.icon{ background-position: 0 0; }
+					}
+					&.davi{
+						.photo{	background-position: 0 0; }
+						.icon{ background-position: -153px 0; }
+					}
+					&.ivo{
+						.photo{	background-position: -300px 0; }
+						.icon{ background-position: -106px 0; }
+					}
+					&.vicente{
+						.photo{	background-position: -150px 0; }
+						.icon{ background-position: -52px 0; }
+					}
+					&.marlon{
+						.photo{	background-position: -450px 0; }
+						.icon{ background-position: -189px 0; }
+					}
+
+					&.tiosam{
+						.photo{	background-position: -750px 0; 
+							&:after{
+								border-color: transparent transparent transparent rgb(126, 126, 126);
+							}
+						}
+
+						.articleBio{
+							background: rgb(139, 139, 139);
+							p{color: #333;}
+						}
+						.icon{ background-position: -189px 0; }
+					}
+
+
 					h5{
 						font-size: 25px;
 						left: 41px;
@@ -2049,7 +2069,7 @@ body{
 
 					h6{
 						font-size: 18px;
-						color: #8a8a8a;
+						color: #A0A0A0;
 						position: relative;
 						left: 67px;
 						top: 12px;
