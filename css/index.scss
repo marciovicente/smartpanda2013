@@ -4,7 +4,7 @@
 $ubuntu: "Ubuntu", sans-serif;
 
 //cores
-$verde: #8bd11c;
+$verde: #78B118;
 $roupas: #DF1A49; 
 $praia: #791eb6 ;
 $turismo: #ffc424; 
@@ -295,7 +295,7 @@ body{
 						display: block;
 						width: 20px;
 						height: 24px;
-						background: rgb(117, 167, 34);
+						background: #537B10;
 						pointer-events: none;
 					}
 
@@ -439,25 +439,12 @@ body{
 					background: $verde; 
 					position: relative;
 					z-index: 8;
-					border-bottom: 2px solid #82C018;
+					border-bottom: 2px solid rgb(109, 160, 22);
 					top: 2px;
 
-					// -webkit-box-shadow: 0 1px 2px rgb(0,0,0);
-					// -moz-box-shadow: 0 1px 2px rgb(0,0,0);
-					// box-shadow: 0 1px 2px rgb(0,0,0);
 					
-					::-webkit-input-placeholder { /* WebKit browsers */
-					    color:    #fff;
-					}
-					:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-					    color:    #fff;
-					}
-					::-moz-placeholder { /* Mozilla Firefox 19+ */
-					    color:    #fff;
-					}
-					:-ms-input-placeholder { /* Internet Explorer 10+ */
-					    color:    #fff;
-					}
+					
+					
 					
 					.filterLabel{
 
@@ -465,7 +452,7 @@ body{
 							position: relative;
 							top: 5px;
 						}
-						@include opacityCB(3);
+						@include opacityCB(4);
 						font-weight: bold;
 						float: left;
 						width: 93px;
@@ -496,7 +483,7 @@ body{
 								padding-top: 0;
 								float: left;
 								width: 200px;
-								background: rgb(117, 167, 34);
+								background: #537B10;
 								color: #fff;
 							}
 			
@@ -514,7 +501,7 @@ body{
 							-webkit-border-radius: 3px;
 							-moz-border-radius: 3px;
 							border-radius: 3px;
-							background: rgb(117, 167, 34);
+							background: #537B10;
 							color: #fff;
 							
 						}
@@ -982,7 +969,14 @@ body{
 					// 	}
 					// }
 				}
-
+            
+            
+                .backButton{
+                    width: 30px;
+                    height: 40px;  
+                    float: right;
+                    margin: 10px 5px;     
+                }
 	
 				#oferta{
 					width: 960px;

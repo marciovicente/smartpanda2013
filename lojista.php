@@ -7,49 +7,74 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Área do Lojista - Smartpanda</title>
-	<link rel="stylesheet" href="<?php echo $server;?>css/index.css">
+	<link rel="stylesheet" href="<?php echo $server;?>css/lojista.css">
 	
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $server;?>images/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="<?php echo $server; ?>css/bootstrap.min.css">
+	
 </head>
-<body class="notLogged">
-	<div id="all" class="notLogged">
-		<div class="container notLogged">
+<body>
+	<div class="all">
+		<header class="header">
+			<div class="central">
+				<div class="brand"><span>O shopping na palma da mão</span></div>
 
-			<header class="header">
-				<div id="headerMain">
-					
-					<a href="<?php echo $server ?>"><div id="logo"><span>O shopping na palma da mão</span></div></a>
+				<button class="buttonTop">Cadastre-se agora <br><span>É grátis!</span> </button>
+			</div>
 
-					<div class="auth">
-						<a class="btn-auth btn-facebook large" href="#"> Entre com <b>Facebook</b> </a>
-						<a class="btn-auth btn-lojista large" data-toggle="modal" data-target="#modalLojista">Lojista</a>
+		</header>
+
+		<div class="content">
+			<section class="first">
+				<div class="central">
+					<h2>Nunca foi tão fácil monitorar o marketing da sua empresa!</h2>
+					<div class="labels">
+						<h3>Cadastre facilmente uma oferta</h3>
+						<h3>Direcione seu público alvo e atinja somente quem deve ver seu anúncio</h3>
+						<h3>Acompanhe relatórios, gráficos e todos os dados relevantes da sua campanha</h3>
+					</div>
+
+					<div class="lojista1">
+
+					</div>
+
+					<div class="legends">
+						<h5></h5>
+						<h5></h5>
+						<h5></h5>
 					</div>
 				</div>
-			</header>
-			
-			<div class="lojista">
-				
+			</section>	
 
-			</div>
-			
+			<section class="second">
+				<div class="central">
+					<h2>"Por que minha loja deve usar o Smartpanda?"</h2>
+					<div class="why receita">
+						<h4>Aumente suas receitas</h4>
+						<article class="article">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet.</article>
+					</div>
+					<div class="why mkt">
+						<h4>Aumente suas receitas</h4>
+						<article class="article">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet.</article>	
+					</div>
+					<div class="why hand">
+						<h4>Aumente suas receitas</h4>
+						<article class="article">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet.</article>
+					</div>
+				</div>
 
+			</section>
 
+			<section class="third">
+
+			</section>
 		</div>
-	</div> <!-- all -->
+	</div>
 
-	<footer id="footerMain" class="notLogged">
-		<div class="central">
-			<div class="menuFooter">
-				<a href="">Assine um plano</a>
-				<a href="about.php">Quem somos</a>
-				<a href="">Regras gerais</a>
-				<a href="">Blog</a>
-				<a href="">Contato</a>
-			</div>
-		</div>		
-	</footer>
+
 
 	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
 
