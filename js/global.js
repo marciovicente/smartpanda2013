@@ -301,16 +301,16 @@ function carregarOfertas(id_shopping) {
 					campanha = obj.campanha;
 					ofertasDisponiveis.push(obj.categoria);
 					link = 'oferta.php?id='+oferta.id;
-					// link = servidor+'../publico/anuncio?id='+oferta.id; 
+					publico = servidor+'../publico/anuncio?id='+oferta.id; 
 
 					var attrTooltip = "<div class='tooltipSocial'>"
-										+"<a onclick='event.preventDefaeult(); shareOnFacebook("+oferta.id+", "+oferta.titulo+", "+oferta.square+");'>"
+										+"<a onclick='compartilharNoFacebook();;'>"
 										+"<div class='btnShare face'></div>"
 										+"</a>"
-										+"<a href='http://twitter.com/share?url=http://smartpanda.com.br/"+link+"' class='tweet'>"
+										+"<a href='http://twitter.com/share?url="+publico+"' class='tweet' target='_blank'>"
 										+"<div class='btnShare twitter'></div>"
 										+"</a>"
-										+"<a href=''>"
+										+"<a href='https://plus.google.com/share?url="+publico+"' target='_blank'>"
 										+"<div class='btnShare gplus'></div>"
 										+"</a>"
 										+"<a href='mailto:'>"
@@ -343,7 +343,7 @@ function carregarOfertas(id_shopping) {
 									+'<div class="innerLine"></div>'
 									+'<button class="btnBar comment hasToolTip" title="Comentar" ></button>'
 									+'<div class="innerLine"></div>'
-									+'<button class="btnBar reservar hasToolTip" title="Reserve essa oferta agora mesmo!" ></button>'
+									+'<button class="btnBar reservar notAvailable" title="Breve!" ></button>'
 								+'</div>'; //imageOferta
 					html += '</div>';
 
@@ -360,6 +360,10 @@ function carregarOfertas(id_shopping) {
 				
 				$('.hasToolTip').tooltipster({
 					theme: '.tooltipNormal'
+				});
+
+				$('.notAvailable').tooltipster({
+					theme: '.notAvailable'
 				});
 
 				
@@ -527,7 +531,7 @@ function gostar(gostar, id_campanha, botao){
 }
 
 function compartilharNoFacebook() {
-	lojistaNome = $('#lojistaNome').html();
+	// lojistaNome = $('#lojistaNome').html();
 	link = servidor+'../publico/anuncio?id='+oferta.id;
 	FB.ui(
 			  {

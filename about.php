@@ -114,45 +114,6 @@
 		</div>		
 	</footer>
 
-	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
-	<script src="<?php echo $server;?>js/bootstrap.modal	.js"></script>
 
-	<script>
-		$(function () {
-			var counter = 0, divs = $('.banner, .banner.second');
-			
-		    function alternateDiv() {
-		        divs.hide() // hide all divs
-		            .filter(function (index) { return index == counter % 2; }) // figure out correct div to show
-		            .fadeIn('fast'); // and show it
-
-		        counter++;
-		    }; 
-
-		    alternateDiv(); 
-
-		    setInterval(function () {
-		        alternateDiv(); 
-		    }, 6 * 1000); 
-
-
-			$('.getButton.apple').hover(function() {
-				$(this).fadeIn().html('<span>Em breve!</span> <div class="appleIcon"></div>');
-			});
-
-			$('.getButton.apple').mouseleave(function() {
-				$(this).html('<span>Instale agora mesmo</span> <div class="appleIcon"></div>');
-			});
-
-		});
-
-
-
-
-
-
-
-		
-	</script>
 </body>
 </html>

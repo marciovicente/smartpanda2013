@@ -28,13 +28,15 @@
 				</label>
 
 				<label class="select">
-					<select name="cbCategorias" id="cbCategorias" class="select" title="Filtrar por Categoria">
-						<option value="0">Todas as Categorias</option>
-					</select>
-				</label>
-				<label class="select">
 					<select name="selectShAtivos" id="selectShAtivos" class="select" title="Filtrar por Shopping">
 						<option value="0">Todos os shoppings</option>
+					</select>
+				</label>
+
+				
+				<label class="select">
+					<select name="cbCategorias" id="cbCategorias" class="select" title="Filtrar por Categoria">
+						<option value="0">Todas as Categorias</option>
 					</select>
 				</label>
 				
