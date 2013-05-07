@@ -64,19 +64,119 @@
 						<article class="article">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet.</article>
 					</div>
+
+					<button class="btn"><span>Estou convencido!</span> <br> Quero me cadastrar agora</button>
 				</div>
 
 			</section>
-
+			
 			<section class="third">
+				<div class="central">
+					
+					<h2>Lojas que já se cadastraram</h2>
+					
+					<div id="listaClientes" clas="elastislide-list">
+						<img src="images/soho.png" alt="">
+						<img src="images/flytour.png" alt="">
+						<img src="images/mia_tropical.png" alt="">
+						<img src="images/soho.png" alt="">
+						<img src="images/flytour.png" alt="">
+						<img src="images/mia_tropical.png" alt="">
+						<img src="images/soho.png" alt="">
+						<img src="images/flytour.png" alt="">
+						<img src="images/mia_tropical.png" alt="">
+					</div>
+					<button class="btn">Faça como eles</button>
+				</div>
+			</section>
 
+			<section class="fourth">
+				<div class="central">
+					<div class="left">
+						<h2>Depoimentos</h2>
+						<div class="depoimento">
+							<span>,,</span>
+							<article class="article">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet.
+							</article>
+							<h5>Marcio Vicente - Empório Vinhos</h5>
+						</div>
+						<div class="depoimento">
+							<span>,,</span>
+							<article class="article">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet.
+							</article>
+							<h5>Marcio Vicente - Empório Vinhos</h5>
+						</div>
+						<div class="depoimento">
+							<span>,,</span>
+							<article class="article">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet.
+							</article>
+							<h5>Marcio Vicente - Empório Vinhos</h5>
+						</div>
+					</div>
+
+			
+					<form action="" class="form">
+						<input type="text" name="nome">
+						<input type="email" name="email">
+						<input type="text" name="empresa">
+						<input type="text" name="phone">
+							<label>
+								<select name="estado" id="estado">
+									<option value="0">Selecione seu Estado</option>
+								</select>
+							</label>
+
+							<label class='cidade'>
+								<select name="cidades" id="cidade">
+									<option value="0">Selecione sua cidade</option>
+								</select>
+							</label>
+						<textarea name="mensagem"></textarea>
+						<button class="btn">Enviar mensagem</button>
+
+					</form>
+				</div> <!-- central -->
+				
 			</section>
 		</div>
 	</div>
 
 
 
+
 	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
+	<script src="<?php echo $server;?>js/browser.js"></script>
+	<script src="<?php echo $server;?>js/jquery.carouFredSel-6.2.1-packed.js"></script>
+	<script src="<?php echo $server;?>js/cities.js"></script>
+
+
+	<script>	
+		$(document).ready(function(){
+			$("#listaClientes").carouFredSel({
+				scroll : {
+					duration		: 800,							
+					pauseOnHover	: true
+				}
+			});
+
+			new dgCidadesEstados({
+			    estado: $('#estado').get(0),
+			    cidade: $('#cidade').get(0)
+			});
+		});
+	</script>
 
 </body>
 </html>
