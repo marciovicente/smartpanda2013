@@ -36,37 +36,31 @@
 					<div class="bio davi">
 						<div class="photo"><div class="icon"></div></div>
 						<h5>Davi Ricardo</h5>
-						<h6>Diretor Executivo</h6>
+						<h6>CEO & Co-founder</h6>
 						<div class="articleBio">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.</p>
+							<p>Davi é um apaixonado por estratégias empresariais e comportamento varejista. Empreender sempre esteve no DNA de sua família: cresceu vendo e fazendo negócios. Atuou no desenvolvimento comercial de instituições como Diário Oficial da Bahia, Cosentino Group, Petrobahia e outras.</p>
 						</div>
 					</div>
 					<div class="bio vicente">
 						<div class="photo"><div class="icon"></div></div>
 						<h5>Vicente Machado</h5>
-						<h6>Diretor de Tecnologia</h6>
+						<h6>CTO & Co-founder</h6>
 						<div class="articleBio">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.</p>
+							<p>Pode-se dizer que Vicente respira tecnologia. Domina diversas linguagens e sistemas. Desenvolveu seu primeiro software aos 13 anos e não parou mais. Bacharel em Ciência da Computação, fluente em inglês, trabalhou para Portugal Telecom, Itin e Telegate Americas.</p>
 						</div>
 					</div>
 					<div class="bio ivo">
 						<div class="photo"><div class="icon"></div></div>
 						<h5>Ivo Machado</h5>
-						<h6>Diretor de Marketing</h6>
+						<h6>CMO & Co-founder</h6>
 						<div class="articleBio">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.</p>
+							<p>Publicitário e sócio da Jobs Filmes, Ivo é criativo por excelência e não esconde o prazer de trabalhar. Fluente em inglês, tem experiência internacional na produção de comerciais. No mercado local tem produzido também documentários e videoclips. Já trabalhou para Malagueta Filmes, Rx30 e TCG.</p>
 						</div>
 					</div>
 					<div class="bio marcio">
 						<div class="photo"><div class="icon"></div></div>
 						<h5>Márcio Vicente</h5>
-						<h6>Desenvolvedor Front-End</h6>
+						<h6>Front-End Engineer</h6>
 						<div class="articleBio">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
