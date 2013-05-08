@@ -2,7 +2,22 @@
 
 //variaveis
 $ubuntu: "Ubuntu", sans-serif;
+@mixin opacityCB($valor){
+	$val: $valor*10;
+  	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$val+")";
 
+  	/* IE 5-7 */
+  	filter: alpha(opacity=''+$valor+'0');
+
+  	/* Netscape */
+  	-moz-opacity: $valor*0.1;
+
+	  /* Safari 1.x */
+	  -khtml-opacity: $valor*0.1;
+
+	  /* Good browsers */
+	  opacity: $valor*0.1;
+}
 $verde: #6BB130;
 ::selection{
 	background: #538723;
@@ -64,12 +79,68 @@ body{
 
 				span{
 					position: relative;
-					top: 41px;
+					top: 43px;
 					color: #6A6A6A;
 					text-shadow: 1px 1px 1px #fff;
 					float: right;
 					font-family: Arial;
 					font-size: 12px;
+				}
+			}
+
+			.formLogin{
+				width: 190px;
+				height: 60px;
+				float: right;
+				
+				label{
+
+					width: 200px;
+					float: left;
+
+					span{
+						position: relative;
+						left: 29px;
+						width: 22px;
+						height: 22px;
+						float: left;
+						top: 10px;
+						@include opacityCB(5);
+
+					}
+
+					input{
+						background: rgba(0,0,0,0.2);
+						width: 140px;
+						height: 23px;
+						border: 0;
+						margin-top: 6px;
+						padding: 1px 1px 1px 23px;
+						float: left;
+						-webkit-border-radius: 2px;
+						-moz-border-radius: 2px;
+						border-radius: 2px;
+						font-size: 13px;
+						color: #454545;
+						text-shadow: 0 -1px rgba(255, 255, 255, 0.5);
+					}
+
+				}
+				button{
+					background: $verde;
+					width: 30px;
+					height: 25px;
+					float: right;
+					position: relative;
+					border: 0;
+					top: -25px;
+					-webkit-border-radius: 0 2px 2px 0;
+					-moz-border-radius: 0 2px 2px 0;
+					border-radius: 0 2px 2px 0;
+					left: -4px;
+					cursor: pointer;
+					font-weight: bold;
+					color: #fff;
 				}
 			}
 
@@ -100,15 +171,16 @@ body{
 				transition: all 0.1s ease-in-out;
 				-webkit-transition: all 0.1s ease-in-out;
 				-moz-transition: all 0.1s ease-in-out;
+				margin-right: 20px;
 
 
 				span{
-					font-size: 13px;
+					font-size: 16px;
 					font-family: Arial;
 					padding: 0;
 					margin: 0;
 					position: relative;
-					top: -6px;
+					top: -3px;
 				}
 
 				&:hover{
@@ -217,7 +289,7 @@ body{
 
 			.second{
 				width: 100%;
-				height: 450px;
+				height: 505px;
 				background: url(../images/dots.png);
 				display: table;
 
@@ -229,11 +301,11 @@ body{
 				}
 
 				.why{
-					width: 260px;
-					height: 220px;
+					width: 280px;
+					height: 310px;
 					background: rgba(0,0,0,0.01);
 					float: left; 
-					margin: 35px 30px;
+					margin: 25px 20px 0 20px;
 					border-radius: 4px;
 					box-shadow: inset 0 0 20px rgba(0,0,0, 0.2);
 					-webkit-box-shadow: inset 0 0 20px rgba(0,0,0, 0.2);
@@ -252,6 +324,7 @@ body{
 						margin: 15px auto 0 auto;
 						font-size: 19px;
 						cursor: default;
+						text-align: center;
 					}
 
 					.article{
@@ -273,6 +346,11 @@ body{
 
 					}
 				}//why
+
+				.btn{
+					position:relative;
+					top: 20px;
+				}
 
 				
 			}//second
@@ -394,6 +472,27 @@ body{
 							font-weight: normal;
 							margin-top: 6px;
 							color: #fff;
+						}
+					}
+
+					.phone{
+						background: $verde;
+						width: auto;
+						float: left;
+						padding: 5px 15px;
+						color: #fff;
+						border-bottom: 5px solid #538723;
+						font-family: $ubuntu;
+						position: relative;
+						top: 47px;
+						-webkit-border-radius: 9px 9px 0 0;
+						-moz-border-radius: 9px 9px 0 0;
+						border-radius: 9px 9px 0 0;
+						font-size: 26px;
+						left: 80px;
+
+						span{
+							font-size: 19px;
 						}
 					}
 				}

@@ -72,9 +72,7 @@
 						<h5>Marlon Carvalho</h5>
 						<h6>Desenvolvedor Mobile</h6>
 						<div class="articleBio">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.</p>
+							<p>Graduado em Informática e pós-graduado em Sistemas Distribuídos, Marlon é um entusiasta da área e um dos responsáveis pelo GDG de Salvador e pelo Projeto Pessoa Física, da Receita Federal. Domina muitas linguagens e ambientes e é um especialista em mobile. Atualmente está no SERPRO.</p>
 						</div>
 					</div>
 

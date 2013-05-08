@@ -8,7 +8,7 @@
 	<meta charset="UTF-8">
 	<title>Área do Lojista - Smartpanda</title>
 	<link rel="stylesheet" href="<?php echo $server;?>css/lojista.css">
-	
+	<link rel="stylesheet" href="<?php echo $server;?>css/font-awesome.css">
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $server;?>images/favicon.ico">
 	
@@ -17,9 +17,22 @@
 	<div class="all">
 		<header class="header">
 			<div class="central">
-				<div class="brand"><span>O shopping na palma da mão</span></div>
+				<a href="http://smartpanda.com.br"><div class="brand"><span>O shopping na palma da mão</span></div></a>
 
+				<form action="" class="formLogin">
+					<label>
+						<span class="icon-user"></span>
+						<input type="text" >
+					</label>
+
+					<label>
+						<span class="icon-lock"></span>
+						<input type="password" >
+					</label>
+					<button>OK</button>
+				</form>
 				<button class="buttonTop">Cadastre-se agora <br><span>É grátis!</span> </button>
+
 			</div>
 
 		</header>
@@ -34,9 +47,7 @@
 						<h3>Acompanhe relatórios, gráficos e todos os dados relevantes da sua campanha</h3>
 					</div>
 
-					<div class="lojista1">
-
-					</div>
+					<div class="lojista1"></div>
 
 					
 				</div>
@@ -47,18 +58,21 @@
 					<h2>"Por que minha loja deve usar o Smartpanda?"</h2>
 					<div class="why receita">
 						<h4>Aumente suas receitas</h4>
-						<article class="article">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet.</article>
+						<article class="article">Os Smartphones têm um papel fundamental para as estratégias de marketing, pois aumentam o envolvimento do consumidor com seu produto. Ligamos o mundo offline com o mundo online, trazendo a sua loja para a palma da mão dos consumidores. Não só isso, o Smartpanda é um sistema inteligente e de fácil uso. Conseguimos entregar o mesmo anúncio nas redes sociais, em nosso site e no Smartpanda TV, aplicando o conceito de comunicação 360°.</article>
 					</div>
 					<div class="why mkt">
-						<h4>Aumente suas receitas</h4>
-						<article class="article">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet.</article>	
+						<h4>Reduza gastos com Marketing</h4>
+						<article class="article">Os seus investimentos em marketing serão otimizados, pois suas campanhas serão direcionadas para o seu público-alvo. Com o poder analítico que possuímos, a sua empresa terá informações precisas, sabendo exatamente quantas pessoas foram atingidas por um anúncio, quantas gostaram e compartilharam nas redes sociais e até mesmo quantas pessoas compraram, após terem visto uma informação no Smartpanda.</article>	
 					</div>
 					<div class="why hand">
-						<h4>Aumente suas receitas</h4>
-						<article class="article">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet.</article>
+						<h4>Não pague nada</h4>
+						<article class="article">
+							Possuímos planos que cabem em seu orçamento, no plano Basic você pode usar o 
+							Smartpanda GRÁTIS e pelo tempo que quiser, ou migrar para outros planos que se adequem ao seu negócio.
+							Comece agora mesmo, basta efetuar o seu
+							 cadastro e aproveitar. Não perca mais tempo e nem dinheiro.
+
+						</article>
 					</div>
 
 					<button class="btn"><span>Estou convencido!</span> <br> Quero me cadastrar agora</button>
@@ -92,25 +106,29 @@
 						<div class="depoimento">
 							<span>,,</span>
 							<article class="article">
-								A nossa experiência com o Smartpanda tem sido ótima, já que é uma ferramenta digital, simples e fácil, que tem ajudando a divulgar a nossa marca, focando no nosso público-alvo. Definitivamente recomendamos para clientes que procuram oportunidades e novidades, e para lojistas que visam estar sempre comunicados com seus clientes. Parabéns equipe Smartpanda! 
+								Acreditamos neste novo serviço e nos benefícios que ele trará à nossa empresa. O Sistema é fácil de usar e podemos divulgar os pacotes da Flytour. Hoje, na era dos Iphones e Smartphones, onde os aplicativos podem ser baixados e a facilidade que eles trazem aos seus usuários, com certeza o Smartpanda será mais um de sucesso. Continuaremos indicando.
+							</article>
+							<h5>Taiana Gama - Analista de Marketing Flytour Amex</h5>
+						</div>
+
+						<div class="depoimento">
+							<span>,,</span>
+							<article class="article">
+								A nossa experiência com o Smartpanda tem sido ótima, já que é uma ferramenta digital, simples e fácil, que tem ajudado a divulgar a nossa marca, focando no nosso público-alvo. Definitivamente recomendamos para clientes que procuram oportunidades e novidades, e para lojistas que visam estar sempre se comunicando com seus clientes. Parabéns, Equipe Smartpanda!
 
 							</article>
 							<h5>Camila Alemany - Proprietária Mia Tropical</h5>
 						</div>
+
 						<div class="depoimento">
 							<span>,,</span>
 							<article class="article">
-								Acreditamos neste novo serviço e nos benefícios que ele trará a nossa empresa. O Sistema é fácil de usar e podemos divulgar os pacotes da Flytour. Hoje, na era dos Iphones e Smatrtphones, onde os aplicativos podem ser baixados e a facilidade que eles trazem aos seus usuários, com certeza o Smartpanda será mais um de sucesso. Continuaremos indicando.
+								Tenho achado bem simples, prático e fácil de utilizar. Eu indico, com certeza, pois sei que vamos alavancar as vendas e a divulgação dos nossos serviços.
 							</article>
-							<h5>Taiana Gama - Analista de Marketing Flytour Amex</h5>
+							<h5>Cristina Bortoli - Gerente - Vila Cani Pet Center</h5>
 						</div>
-						<div class="depoimento">
-							<span>,,</span>
-							<article class="article">
-								Tenho achado bem simples, prático e fácil utilizar. Eu indicaria, com certeza, sei que vamos alavancar as vendas e a divulgação dos nossos serviços, aliado a outras formas de divulgação, que não foram utilizadas.
-							</article>
-							<h5>Cristina Botoli - Gerente - Vila Cani Pet Center</h5>
-						</div>
+
+						<div class="phone"><span>+55</span> 71 4141-6366</div>
 					</div>
 
 			
