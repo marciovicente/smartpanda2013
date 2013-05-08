@@ -1838,9 +1838,11 @@ body{
 					}
 
 					&:before {
+						background: none;
 					    border-right: 1px solid #6A9D15;
 					    margin: 0 1em 0 -1em;
-					    background-position: 0 0;
+					    // background-position: 0 0;
+					    content: "\f0b1"
 					}
 
 					&.large {

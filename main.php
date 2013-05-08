@@ -24,7 +24,7 @@
 
 					<div class="auth">
 						<a class="btn-auth btn-facebook large" href="#"> Entre com <b>Facebook</b> </a>
-						<a class="btn-auth btn-lojista large" data-toggle="modal" data-target="#modalLojista">Lojista</a>
+						<a class="btn-auth btn-lojista large" data-toggle="modal" data-target="#modalLojista"><i class="icon-large pull-left icon-briefcase"></i> Lojista</a>
 					</div>
 				</div>
 			</header>

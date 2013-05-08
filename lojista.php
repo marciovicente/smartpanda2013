@@ -199,7 +199,7 @@
 			    estado: $('#estado').get(0),
 			    cidade: $('#cidade').get(0)
 			});
-		});
+		}); 
 
 		$('.input').click(function(){
 			$(this).find('input').focus();
