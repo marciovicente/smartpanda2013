@@ -7,7 +7,7 @@ $ubuntu: "Ubuntu", sans-serif;
 $verde: #78B118;
 $roupas: #DF1A49; 
 $praia: #791eb6 ;
-$turismo: #ffc424; 
+$turismo: #ffb016; 
 $esporte: #00A550; 
 
 // funcoes
@@ -727,6 +727,11 @@ body{
 								top: 2px;
 							}
 						}
+
+						&:hover{
+							background: #19191a;
+							color: #7a7a7a;
+						}
 					}
 				}
 
@@ -1439,7 +1444,7 @@ body{
 				-o-background-size: cover;
 				background-size: cover;
 				height: 430px;
-				background: url(../images/dot.png), url(../images/banner-full-compress.jpg)  center center;
+				background: url(../images/dot.png), url(../images/banner-full-compress.jpg) $verde center center;
 				color: #fff;
 				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/banner-full.jpg', sizingMethod='scale');
 				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/banner-full.jpg', sizingMethod='scale')";

@@ -249,10 +249,15 @@
 					cache: false,
 					url: 'contato.php',
 					success: function(data){
-						if(data.error == true)
-							$('form.form').html("<h3> Mensagem enviada</h3>"); 
-						else
-							alert("Ocorreu um erro, tente novamente mais tarde"); 
+						if(data.error == true && data.num_error == 1)
+							alert("Preencha todos os campos obrigatórios");
+						else if(data.num_error == 2)
+							alert("Digite um email válido");
+						else{
+							$('form.form').html("Mensagem enviada com sucesso! Em breve entraremos em contato com você");
+						}
+						
+							
 					}
 				});
 

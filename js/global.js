@@ -427,12 +427,13 @@ function carregaDestaque(id_shopping){
 			$('#ofertaDestaque .descOfertaDetalhe').html(hot.oferta.texto);
 			$('#fotoDestaque img').attr('src', ''+servidor+'../'+hot.oferta.square+'');
 			$('#fotoDestaque img').attr('alt', hot.oferta.titulo);
-			$('#fotoDestaque a').attr('href', '<a href="'+servidor+'oferta.php?id='+hot.oferta.id+'">');
+			$('#fotoDestaque a').attr('onclick', 'window.location.href = http://smartpanda.com.br/smartpanda2013/oferta.php?id='+hot.oferta.id+'');
 			$('#barDestaque button:first').attr('onclick', 'event.preventDefault(); gostar(1, '+hot.oferta.id+', $(this));');
 			$('#barDestaque button:first span').html(hot.campanha.curtiram);
 			$('#barDestaque button:nth-child(2)').attr('onclick', 'event.preventDefault(); gostar(0, '+hot.oferta.id+', $(this));');
 			$('#barDestaque button:nth-child(3)').addClass('hasToolInteract');
 			$('#barDestaque button:nth-child(3)').attr('title', attrTooltip);
+			$('#barDestaque button:nth-child(5)').attr('onclick', 'window.location.href = http://smartpanda.com.br/smartpanda2013/oferta.php?id='+hot.oferta.id+'&r=cm#comments');
 
 			$.ajax({type:'GET', dataType:'json', url: servidor+'getcidadescomshoppings', timeout:timeout,
 				success: function(dados){

@@ -157,13 +157,13 @@
 		    function alternateDiv() {
 		        divs.hide() // hide all divs
 		            .filter(function (index) { return index == counter % 2; }) // figure out correct div to show
-		            .fadeIn('fast'); // and show it
+		            .fadeIn(300); // and show it
 
 		        counter++;
 		    }; 
 
 		    alternateDiv(); 
-
+		    
 		    setInterval(function () {
 		        alternateDiv(); 
 		    }, 6 * 1000); 

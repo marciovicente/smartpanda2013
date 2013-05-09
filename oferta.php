@@ -81,10 +81,12 @@
 						<h5>Também poderá gostar de</h5>
 						
 					</div>
-
-					<div class="comments">
-						<div class="fb-comments" data-href="<?php echo $server;?>oferta.php?id=<?php echo $id; ?>" data-width="770" data-num-posts="5"></div>
-					</div>
+					
+						<div class="comments">
+							<div class="fb-comments" data-href="<?php echo $server;?>oferta.php?id=<?php echo $id; ?>" data-width="770" data-num-posts="5"></div>
+						</div>
+				
+					
 				</section>
 					
 			</div> <!-- .central -->
@@ -110,7 +112,16 @@
 	
 	<script>
 		$(document).ready(function(){
-			
+			<?php 
+				$r = $_GET['r'];
+				if($r == 'cm'):
+			?>
+				$('.comments').addClass('animated tada');
+
+				setTimeout(function(){
+				    $('.comments').removeClass('animated tada');
+				},30000);
+			<?php endif; ?>
 			var id_oferta = <?php echo $id; ?>;
 			carregaDetalhes(id_oferta);
 			
