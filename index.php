@@ -36,10 +36,76 @@
 						<button class="folding"><h4><div class="categoriaIcon categoria6"></div>Esportes/Fitness</h4></button>
 						<button class="folding"><h4><div class="categoriaIcon categoria18"></div>Turismo</h4></button>	
 						<button class="folding"><h4><div class="categoriaIcon joias"></div>Jóias</h4></button>	
-						<button id="footerFolding"><h4><i class="icon icon-white icon-plus"></i> Ver todas categorias</h4></button>
+						<button id="footerFolding"  data-toggle="modal" data-target="#modalCategorias"><h4><i class="icon icon-white icon-plus"></i> Ver todas categorias</h4></button>
 
 					</div>
 
+					<div id="modalCategorias" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h3 id="myModalLabel">Selecione uma ou mais categorias</h3>
+						</div>
+						
+						<div class="modal-body" >
+							<a href="" class="categoria categoria1">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</a>
+							<a href="" class="categoria categoria2">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</a>
+							<a href="" class="categoria categoria3">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</a>
+							<a href="" class="categoria categoria4">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</a>
+							<a href="" class="categoria categoria5">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</a>
+							<a href="" class="categoria categoria6">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</a>
+							<a href="" class="categoria categoria7">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</a>
+							<a href="" class="categoria categoria8">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</a>
+							<a href="" class="categoria categoria9">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</a>
+							<a href="" class="categoria categoria10">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</a>
+							<a href="" class="categoria categoria11">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</a>
+							<a href="" class="categoria categoria12">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</a>
+							<a href="" class="categoria categoria13">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</a>
+						</div>
+						
+						<!-- <div class="modal-footer">
+							<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+							<button class="btn btn-primary">Save changes</button>
+						</div> -->
+					</div>
 					
 					<div id="destaque" class="praia">
 						<div id="fotoDestaque">
