@@ -27,6 +27,13 @@
 	}(document, 'script', 'facebook-jssdk'));
 
 	</script>
+	
+	<div class="overlayLoad">
+		<div class="loaderSp">
+			<span>Carregando</span>
+		</div>
+	</div>
+
 	<div id="all">
 		<div id="container">
 			<header id="header">

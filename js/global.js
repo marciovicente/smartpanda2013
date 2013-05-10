@@ -343,7 +343,7 @@ function carregarOfertas(id_shopping) {
 									+'<div class="innerLine"></div>'
 									+'<button class="btnBar comment hasToolTip" title="Comentar" ></button>'
 									+'<div class="innerLine"></div>'
-									+'<button class="btnBar reservar notAvailable" title="Breve!" ></button>'
+									+'<button class="btnBar reservar notAvailable" title="Reservar: Em breve!" ></button>'
 								+'</div>'; //imageOferta
 					html += '</div>';
 
@@ -460,38 +460,38 @@ function carregaDestaque(id_shopping){
 }
 
 //useless
-function carregarDetalhes() {
-	$.mobile.loading( 'show' );
-	$.ajax({data: {id: id_oferta}, type:'GET', dataType:'json', url:servidor+'getoferta', timeout:timeout,
-		success: function(dados){
-			$( "#popupInfo3" ).popup( "close" );
-			ofertas = "";
-			oferta = dados[0].oferta;
-			campanha = dados[0].campanha;
-			validade = dados[0].validade.data_max;
+// function carregarDetalhes() {
+// 	$.mobile.loading( 'show' );
+// 	$.ajax({data: {id: id_oferta}, type:'GET', dataType:'json', url:servidor+'getoferta', timeout:timeout,
+// 		success: function(dados){
+// 			$( "#popupInfo3" ).popup( "close" );
+// 			ofertas = "";
+// 			oferta = dados[0].oferta;
+// 			campanha = dados[0].campanha;
+// 			validade = dados[0].validade.data_max;
 			
-			$('#imagem, #imagemZoom').attr('src',servidor+'../'+oferta.imagem);
-			$('#lojistaNome').html(oferta.lojista);
-			if((oferta.lojista_banner) && (oferta.lojista_banner != "")) {
-				$('#banner').html('<div style="text-align:center;"><img alt="logo" src="'+servidor+'../'+oferta.lojista_banner+'" style="height:60px;"></div>');
-			}
-			$('#titulo').html(oferta.titulo);
-			if(validade) $('#validade').html(' (Validade: '+validade+')'); //acrescentar os dados a validade 
-			$('#texto').html(oferta.texto);
-			if(campanha.curtiram > 2) {
-				$('#titulo').append('<br><br> <span style="font-size: 14px;"><a href="#" id="btCurtiram" data-role="button" data-icon="check" data-inline="true" data-iconpos="notext"></a>'+campanha.curtiram+' pessoas gostaram disso.</span>');
-				$( "#btCurtiram" ).button();
-			}
+// 			$('#imagem, #imagemZoom').attr('src',servidor+'../'+oferta.imagem);
+// 			$('#lojistaNome').html(oferta.lojista);
+// 			if((oferta.lojista_banner) && (oferta.lojista_banner != "")) {
+// 				$('#banner').html('<div style="text-align:center;"><img alt="logo" src="'+servidor+'../'+oferta.lojista_banner+'" style="height:60px;"></div>');
+// 			}
+// 			$('#titulo').html(oferta.titulo);
+// 			if(validade) $('#validade').html(' (Validade: '+validade+')'); //acrescentar os dados a validade 
+// 			$('#texto').html(oferta.texto);
+// 			if(campanha.curtiram > 2) {
+// 				$('#titulo').append('<br><br> <span style="font-size: 14px;"><a href="#" id="btCurtiram" data-role="button" data-icon="check" data-inline="true" data-iconpos="notext"></a>'+campanha.curtiram+' pessoas gostaram disso.</span>');
+// 				$( "#btCurtiram" ).button();
+// 			}
 			
-			$.mobile.loading( 'hide' );
-		},
-		error: function(){
-			$( "#popupInfo3" ).popup( "open" );
-			carregarDetalhes();
-			console.warn("Erro ao carregar as ofertas cadastradas");
-		}
-	});
-}
+			
+// 		},
+// 		error: function(){
+// 			$( "#popupInfo3" ).popup( "open" );
+// 			carregarDetalhes();
+// 			console.warn("Erro ao carregar as ofertas cadastradas");
+// 		}
+// 	});
+// }
 
 function votarOferta(curtir) {
 	$.mobile.loading( 'show' );
@@ -783,6 +783,9 @@ function carregaDetalhes(id_oferta) {
 				$( "#btCurtiram" ).button();
 			}
 			
+			alert("Chegou aqui");
+			$('.overlayLoad').hide();
+			//depois trocar /\ \/
 			carregaSugestoes(oferta);
 
 		},

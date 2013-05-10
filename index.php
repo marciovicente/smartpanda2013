@@ -44,67 +44,81 @@
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 							<h3 id="myModalLabel">Selecione uma ou mais categorias</h3>
+							<button class="selectAll">Selecionar todas</button>
 						</div>
 						
 						<div class="modal-body" >
-							<a href="" class="categoria categoria1">
+							<button class="categoria categoria1">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
-							</a>
-							<a href="" class="categoria categoria2">
+							</button>
+
+							<button class="categoria categoria2">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
-							</a>
-							<a href="" class="categoria categoria3">
+							</button>
+
+							<button class="categoria categoria3">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
-							</a>
-							<a href="" class="categoria categoria4">
+							</button>
+
+							<button class="categoria categoria4">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
-							</a>
-							<a href="" class="categoria categoria5">
+							</button>
+
+							<button class="categoria categoria5">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
-							</a>
-							<a href="" class="categoria categoria6">
+							</button>
+
+							<button class="categoria categoria6">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
-							</a>
-							<a href="" class="categoria categoria7">
+							</button>
+
+							<button class="categoria categoria7">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
-							</a>
-							<a href="" class="categoria categoria8">
+							</button>
+
+							<button class="categoria categoria8">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
-							</a>
-							<a href="" class="categoria categoria9">
+							</button>
+
+							<button class="categoria categoria9">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
-							</a>
-							<a href="" class="categoria categoria10">
+							</button>
+
+							<button class="categoria categoria10">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
-							</a>
-							<a href="" class="categoria categoria11">
+							</button>
+
+							<button class="categoria categoria11">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
-							</a>
-							<a href="" class="categoria categoria12">
+							</button>
+
+							<button class="categoria categoria12">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
-							</a>
-							<a href="" class="categoria categoria13">
+							</button>
+
+							<button class="categoria categoria13">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
-							</a>
+							</button>
+
 						</div>
 						
-						<!-- <div class="modal-footer">
-							<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-							<button class="btn btn-primary">Save changes</button>
-						</div> -->
+						<div class="modal-footer">
+							<button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+							<button class="btn btn-primary btn-success">Atualizar</button>
+						</div>
 					</div>
 					
 					<div id="destaque" class="praia">
@@ -114,20 +128,20 @@
 								<img src="" alt="">
 							</a>
 						</div>
-						<a href=""><div id="ribbon"><div class="pinIcon"></div></div></a>
+						<button class="ribbon" class="notAvailable" title="Reservar: Em breve"><div class="pinIcon"></div></button>
 						<div id="ofertaDestaque" >
 							<h3></h3>
-							<a href="#"> <h4><i class="icon icon-tags"></i> </h4></a>
-							<a href=""><h4><i class="icon icon-bookmark"></i> </h4></a>
+							<h4><i class="icon icon-tags"></i> </h4>
+							<h4><i class="icon icon-bookmark"></i> </h4>
 							<article class="descOfertaDetalhe"> </article>
 						</div>
 						
 						<div id="barDestaque">
 							<button class="btnDestaque" onclick="event.preventDefault(); gostar(1, 199, $(this)); "> <div class="spriteDestaque like"></div> <h5>Gostei</h5> <span>0</span> </button>
 							<button class="btnDestaque" onclick="event.preventeDefault(); gostar(0, 199); "><div class="spriteDestaque dislike"></div> <h5>Não gostei</h5></button>
-							<button class="btnDestaque"><div class="spriteDestaque share "></div> <h5>Share</h5></button>
+							<button class="btnDestaque"><div class="spriteDestaque share "></div> <h5>Compartilhe</h5></button>
 							
-							<button class="btnDestaque"><div class="spriteDestaque reservar"></div> <h5>Reservar</h5></button>
+							<!-- <button class="btnDestaque"><div class="spriteDestaque reservar"></div> <h5>Reservar</h5></button> -->
 							<!-- trocar favorito, nao existira, entrara Reservar -->
 							
 							<button class="btnDestaque"><div class="spriteDestaque comment"></div> <h5>Comentar</h5></button>
@@ -301,7 +315,28 @@
 				alert($(this).val());
 			});
 
+			$('button.categoria').click(function(){
+				if($(this).hasClass('active'))
+					$(this).removeClass('active');
+				else
+					$(this).addClass('active');
+			});
 
+			$('.modal-header button.selectAll').click(function(){
+				if($(this).hasClass('remove')){
+					$(this).removeClass('remove');
+					$(this).html('Selecionar todas');
+					$('button.categoria').removeClass('active');
+				}else{
+					$(this).html('Desmarcar todas');
+					$(this).addClass('remove');
+					$('button.categoria').addClass('active');
+				}
+			});	
+
+			$('.modal-footer .btn-primary').click(function(){
+				//aqui faz a seleção e atualiza na index
+			});
  			
 		})(jQuery)
 

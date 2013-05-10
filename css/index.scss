@@ -29,7 +29,7 @@ $esporte: #00A550;
 	  opacity: $valor*0.1;
 }
 
-*{margin: 0; padding: 0;}
+
 
 html,body{height: 100%;}
 
@@ -78,8 +78,6 @@ body{
 
 	.overlayLoad{
 		width: 100%;
-		height: 100%;
-		// background: rgba(0, 0, 0, 0.5);
 		position: fixed;
 	    left: 0%;
 	    top: 0%; 
@@ -97,12 +95,12 @@ body{
 	    	z-index: 10000;
 	    	background: url(../images/loader-sp.gif) #fff center 20px no-repeat;
 	    	border: 1px solid #e1e1e1;
-	    	-webkit-box-shadow: 0 0 25px #000;
-	    	-moz-box-shadow: 0 0 25px #000;
-	    	box-shadow: 0 0 25px #000;	
-	    	// -webkit-border-radius: 4px;
-	    	// -moz-border-radius: 4px;
-	    	// border-radius: 4px;
+	    	-webkit-box-shadow: 0 0 60px #000;
+	    	-moz-box-shadow: 0 0 60px #000;
+	    	box-shadow: 0 0 60px #000;	
+	    	-webkit-border-radius: 4px;
+	    	-moz-border-radius: 4px;
+	    	border-radius: 4px;
 	    	padding: 10px;
 
 	    	span{
@@ -348,14 +346,16 @@ body{
 				-webkit-border-radius: 3px;
 				-moz-border-radius: 3px;
 				border-radius: 3px;
-				background: $verde;
+				background: #7a7a7a;
 				box-shadow: 0 0 5px rgba(0,0,0,0.2);
 				-moz-box-shadow: 0 0 5px rgba(0,0,0,0.2);
 				-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.2);
-				-webkit-transition: all 0.4s ease-in-out;
-				-moz-transition: all 0.4s ease-in-out;
-				-ms-transition: all 0.4s ease-in-out;
-				-o-transition: all 0.4s ease-in-out;
+				-webkit-transition: all 0.25s ease-in-out;
+				-moz-transition: all 0.25s ease-in-out;
+				-ms-transition: all 0.25s ease-in-out;
+				-o-transition: all 0.25s ease-in-out;
+				border: 0;	
+
 				h6{
 					text-align: center;
 					text-decoration: none;
@@ -363,16 +363,87 @@ body{
 
 				}
 
-				&.categoria1{
-					&:hover{
-						background:$roupas;
-					}
+				&.categoria1{ 
+					&:hover, &.active{background: #ff5c42;}
+				} //alimentos
+				
+				&.categoria2{ 
+					&:hover, &.active{background: #5d2bff;}
+				} //sapatos
+				
+				&.categoria3{ 
+					&:hover, &.active{background: #0e64e7;}
+				} //moda masculina
+				
+				&.categoria4{ 
+					&:hover, &.active{background: #ff4690;}
+				} //moda feminina
+				
+				&.categoria5{ 
+					&:hover, &.active{background: #ff5efe;}
+				} //moda infantil
+				
+				&.categoria6{ 
+					&:hover, &.active{background: #00A550;}
+				} //esportes/fitness
+				  
+				&.categoria7{ 
+					&:hover, &.active{background: #32d89b;}
+				} //decoracao
+				
+				&.categoria8{ 
+					&:hover, &.active{background: #629fff;}
+				} //cama/mesa/banho
+				
+				&.categoria9{ 
+					&:hover, &.active{background: #ff660c;}
+				} //entretenimento
+				
+				&.categoria10{ 
+					&:hover, &.active{background: $verde;}
+				} //servicos
+				
+				&.categoria11{ 
+					&:hover, &.active{background: #daa900;}
+				} //joias
+				
+				&.categoria12{ 
+					&:hover, &.active{background: #008199;}
+				} //eletro/eletronicos
+				
+				&.categoria13{ 
+					&:hover, &.active{background: #2e4c92;}
+				} //informatica
+		
+				&.categoria14{ 
+					&:hover, &.active{background: #566792 }}
+				//livraria/papelaria
+				
+				&.categoria15{ 
+					&:hover, &.active{background: #c1000f;}
+				} //farmacia
+				
+				&.categoria16{ 
+					&:hover, &.active{background: #560acd;}
+				} //perfumes, cosmeticos
+				
+				&.categoria17{ 
+					&:hover, &.active{background: #797979;}
+				} //informativo
+				
+				&.categoria18{ 
+					&:hover, &.active{background: #ffc424;}
+				} //turismo
+				
+				&.categoria19{ 
+					&:hover, &.active{background: #7498ff;}
+				} //jogos, brinquedos
 
-				}
+
 				&.active{
-					box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-					-moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-					-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+					box-shadow: inset 0 0 15px rgba(0,0,0,0.4);
+					-moz-box-shadow: inset 0 0 15px rgba(0,0,0,0.4);
+					-webkit-box-shadow: inset 0 0 15px rgba(0,0,0,0.4);
 
 				}
 			}
@@ -483,10 +554,6 @@ body{
 					border-bottom: 2px solid rgb(109, 160, 22);
 					top: 2px;
 
-					
-					
-					
-					
 					.filterLabel{
 
 						i{
@@ -544,6 +611,19 @@ body{
 							border-radius: 3px;
 							background: #537B10;
 							color: #fff;
+
+							&::-webkit-input-placeholder { /* WebKit browsers */
+							    color: #fff;
+							}
+							&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+							    color: #fff;
+							}
+							&::-moz-placeholder { /* Mozilla Firefox 19+ */
+							    color: #fff;
+							}
+							&:-ms-input-placeholder { /* Internet Explorer 10+ */
+							    color: #fff;
+							}
 							
 						}
 
@@ -783,8 +863,8 @@ body{
 					float: left;
 					height: 100%;
 
-					#ribbon {
-						background: #8bd11c;
+					.ribbon {
+						background: $verde;
 						height: 44px;
 						width: 44px;
 						position: relative;
@@ -794,8 +874,9 @@ body{
 						line-height: 22px;
 						border: 0;
 						z-index: 4;
-						right: 15px;
+						right: 3px;
 						float: right;
+						border: 0;
 						
 						&:after {
 							content: "";
@@ -804,7 +885,7 @@ body{
 							left: 0;
 							height: 0;
 							width: 0;
-							border: solid 22px #8bd11c;
+							border: solid 22px $verde;
 							border-bottom-color: transparent;
 
 						}
@@ -815,9 +896,9 @@ body{
 							height: 32px;
 							background: url(../images/sprite-mini.png) no-repeat -226px 0;
 							position: relative;
-							top: 8px;
+							top: 2px;
 							z-index: 1;
-							left: 7px;
+							left: 2px;
 						}
 
 					} //ribbon
@@ -897,7 +978,7 @@ body{
 						z-index: 3;
 
 						.btnDestaque{
-							width: 20%;
+							width: 25%;
 							// margin: 0 1%;
 							height: 62px;
 							float: left;
@@ -909,6 +990,9 @@ body{
 							font-family: $ubuntu;
 							font-weight: normal;
 							letter-spacing: -1px;
+							transition: opacity .25s ease-in-out;
+							-moz-transition: opacity .25s ease-in-out;
+							-webkit-transition: opacity .25s ease-in-out;
 
 							&:first-child{
 								-webkit-box-shadow: none;
