@@ -587,12 +587,20 @@ function carregarCategorias() {
 	$.ajax({type:'GET', dataType:'json', url:servidor+'getcategorias', timeout:timeout,
 		success: function(dados){
 			html = '<option value="0">Todas as Categorias</option>';
+			var modal ="";
 			$.each(dados.categorias, function(i, obj) {
-				// if(ofertasDisponiveis.indexOf(obj.id) > -1)
 				html += '<option value="'+obj.id+'">'+obj.nome+'</option>';
+				if(obj.ativo == 1){
+					modal += '<button class="categoria categoria'+obj.id+'" value="'+obj.id+'">'
+							+'<div class="icon"></div>'
+							+'<h6>'+obj.nome+'</h6>'
+							+'</button>';
+				}
 			});
+			
 			$('#cbCategorias').html('');
 			$('#cbCategorias').append(html);
+			$("#modalCategorias > .modal-body").html(modal);
 		},
 		error: function(){
 			carregarCategorias();
