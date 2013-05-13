@@ -15,11 +15,11 @@
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $server;?>images/favicon.ico">
 </head>
 <body>
-	<div class="overlayLoad">
+	<!-- <div class="overlayLoad">
 		<div class="loaderSp">
 			<span>Carregando</span>
 		</div>
-	</div>
+	</div> -->
 	<div class="countFilter">A busca retornou <span></span> <button class="limpar"> <span class="inner"><i class="icon icon-white icon-trash"></i> <h6>Limpar</h6></span> </button></div>
 	<div id="all">
 		<div id="container">
@@ -109,6 +109,36 @@
 							</button>
 
 							<button class="categoria categoria13">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</button>
+
+							<button class="categoria categoria14">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</button>
+
+							<button class="categoria categoria15">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</button>
+
+							<button class="categoria categoria16">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</button>
+
+							<button class="categoria categoria17">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</button>
+
+							<button class="categoria categoria18">
+								<div class="icon"></div>
+								<h6>NomeDaCategoria</h6>
+							</button>
+
+							<button class="categoria categoria19">
 								<div class="icon"></div>
 								<h6>NomeDaCategoria</h6>
 							</button>
