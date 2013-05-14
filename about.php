@@ -62,9 +62,7 @@
 						<h5>Márcio Vicente</h5>
 						<h6>Front-End Engineer</h6>
 						<div class="articleBio">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.</p>
+							<p>Márcio é o mais jovem da equipe, é estudante de Ciência da Computação e conselheiro 	na Empresa Junior, ambos na UFBA. Trabalha com desenvolvimento Web desde 2009 e hoje atua como Front-End Engineer. Sempre buscando a excelência em seu trabalho, já desenvolveu projetos em outras startups.</p>
 						</div>
 					</div>
 					<div class="bio marlon">

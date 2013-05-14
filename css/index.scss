@@ -339,6 +339,40 @@ body{
 		#modalCategorias{
 			width: 700px;
 			left: 46%;
+			
+			.modal-header{
+
+				-webkit-box-shadow: 0 -3px 30px #000;;
+				-moz-box-shadow: 0 -3px 30px #000;;
+				box-shadow: 0 -3px 30px #000;;
+				h3{
+					font-family: $ubuntu;
+					color: #666;
+					width: 420px;
+					float: left;
+				}
+
+				button.selectAll{
+					background: #32ce6f;
+					border: 1px solid rgba(0,0,0,0.3);
+					color: #fff;
+					font-weight: normal;
+					-webkit-transition: all 0.25s ease-in-out;
+					-moz-transition: all 0.25s ease-in-out;
+					-ms-transition: all 0.25s ease-in-out;
+					-o-transition: all 0.25s ease-in-out;
+					-webkit-border-radius: 3px;
+					-moz-border-radius: 3px;
+					border-radius: 3px;
+					margin: 2px 0 0 14px;
+					width: 130px;
+
+					&.remove{
+						background:#c23e40;
+						
+					}
+				}
+			}
 
 			.categoria{
 				width: 130px;
@@ -348,7 +382,7 @@ body{
 				-webkit-border-radius: 3px;
 				-moz-border-radius: 3px;
 				border-radius: 3px;
-				background: #7a7a7a;
+				background: #9a9a9a;
 				// box-shadow: 0 0 5px rgba(0,0,0,0.2);
 				// -moz-box-shadow: 0 0 5px rgba(0,0,0,0.2);
 				// -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.2);
@@ -379,7 +413,7 @@ body{
 				} //alimentos
 				
 				&.categoria2{ 
-					&:hover, &.active{background: #5d2bff;}
+					&:hover, &.active{background: #8046ce;}
 					
 					.icon{
 						background-position: -80px 0;
@@ -411,7 +445,7 @@ body{
 				} //moda feminina
 				
 				&.categoria5{ 
-					&:hover, &.active{background: #ff5efe;}
+					&:hover, &.active{background: #ff54dd;}
 
 					.icon{ background-position: -895px; }
 				} //moda infantil
@@ -437,7 +471,7 @@ body{
 				} //decoracao
 				
 				&.categoria8{ 
-					&:hover, &.active{background: #629fff;}
+					&:hover, &.active{background: #1fb7d4;}
 
 					.icon{
 						background-position: -175px;
@@ -463,7 +497,7 @@ body{
 				} //servicos
 				
 				&.categoria11{ 
-					&:hover, &.active{background: #daa900;}
+					&:hover, &.active{background: #e6bf10;}
 
 					.icon{
 						background-position: -1193px;
@@ -1457,16 +1491,16 @@ body{
 
 						
 						&.categoria1{ border-color: #ff5c42; } //alimentos
-						&.categoria2{ border-color: #5d2bff; } //sapatos
+						&.categoria2{ border-color: #8046ce; } //sapatos
 						&.categoria3{ border-color: #0e64e7; } //moda masculina
 						&.categoria4{ border-color: #ff4690; } //moda feminina
-						&.categoria5{ border-color: #ff5efe; } //moda infantil
+						&.categoria5{ border-color: #ff54dd; } //moda infantil
 						&.categoria6{ border-color: #00A550; } //esportes/fitness
 						&.categoria7{ border-color: #32d89b; } //decoracao
-						&.categoria8{ border-color: #629fff; } //cama/mesa/banho
+						&.categoria8{ border-color: #1fb7d4; } //cama/mesa/banho
 						&.categoria9{ border-color: #ff660c; } //entretenimento
 						&.categoria10{ border-color: $verde; } //servicos
-						&.categoria11{ border-color: #daa900; } //joias
+						&.categoria11{ border-color: #e6bf10; } //joias
 						&.categoria12{ border-color: #008199; } //eletro/eletronicos
 						&.categoria13{ border-color: #2e4c92; } //informatica
 						&.categoria14{ border-color: #566792 } //livraria/papelaria
@@ -1514,16 +1548,16 @@ body{
 								}
 
 								&.categoria1{ background: #ff5c42; } //alimentos
-								&.categoria2{ background: #5d2bff; } //sapatos
+								&.categoria2{ background: #8046ce; } //sapatos
 								&.categoria3{ background: #0e64e7; } //moda masculina
 								&.categoria4{ background: #ff4690; } //moda feminina
-								&.categoria5{ background: #ff5efe; } //moda infantil
+								&.categoria5{ background: #ff54dd; } //moda infantil
 								&.categoria6{ background: #00A550; } //esportes/fitness
 								&.categoria7{ background: #32d89b; } //decoracao
-								&.categoria8{ background: #629fff; } //cama/mesa/banho
+								&.categoria8{ background: #1fb7d4; } //cama/mesa/banho
 								&.categoria9{ background: #ff660c; } //entretenimento
 								&.categoria10{ background: $verde; } //servicos
-								&.categoria11{ background: #daa900; } //joias
+								&.categoria11{ background: #e6bf10; } //joias
 								&.categoria12{ background: #008199; } //eletro/eletronicos
 								&.categoria13{ background: #2e4c92; } //informatica
 								&.categoria14{ background: #566792 } //livraria/papelaria
@@ -1620,6 +1654,8 @@ body{
 			padding-bottom: 25px;
 
 			&.notLogged{
+				padding-bottom: 0;
+				margin-bottom: -75px;
 			}
 
 			.central{
@@ -1796,6 +1832,9 @@ body{
 				position: relative;
 				top: -2px;
 				text-shadow: 0 -1px 0 rgb(255, 255, 255);
+				top: 24px;
+				text-shadow: 0 -1px 0 #fff;
+				text-align: center;
 			}
 
 			.iconsBio{
@@ -2025,7 +2064,7 @@ body{
 			.btn-auth {
 			    position: relative;
 			    display: inline-block;
-			    height: 22px;
+			    height: 18px;
 			    padding: 0 1em;
 			    border: 1px solid #999;
 			    border-radius: 2px;
@@ -2076,8 +2115,9 @@ body{
 						background: none;
 					    border-right: 1px solid #6A9D15;
 					    margin: 0 1em 0 -1em;
-					    // background-position: 0 0;
-					    content: "\f0b1"
+					    top: 3px;
+						position: relative;
+						content: url(../images/bag.png);
 					}
 
 					&.large {

@@ -313,9 +313,9 @@ function carregarOfertas(id_shopping) {
 										+"<a href='https://plus.google.com/share?url="+publico+"' target='_blank'>"
 										+"<div class='btnShare gplus'></div>"
 										+"</a>"
-										+"<a href='mailto:'>"
-										+"<div class='btnShare mail'></div>"
-										+"</a>"
+										// +"<a href='mailto:'>"
+										// +"<div class='btnShare mail'></div>"
+										// +"</a>"
 									+"</div>";
 
 									//inutil
@@ -416,9 +416,9 @@ function carregaDestaque(id_shopping){
 										+"<a href=''>"
 										+"<div class='btnShare gplus'></div>"
 										+"</a>"
-										+"<a href='mailto:'>"
-										+"<div class='btnShare mail'></div>"
-										+"</a>"
+										// +"<a href='mailto:'>"
+										// +"<div class='btnShare mail'></div>"
+										// +"</a>"
 									+"</div>";
 									
 			$('#ofertaDestaque h3').html('<a href="oferta.php?id='+hot.oferta.id+'">'+hot.oferta.titulo+'</a>');

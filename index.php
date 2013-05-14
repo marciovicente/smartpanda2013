@@ -47,101 +47,7 @@
 							<button class="selectAll">Selecionar todas</button>
 						</div>
 						
-						<div class="modal-body" >
-							<button class="categoria categoria1">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria2">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria3">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria4">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria5">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria6">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria7">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria8">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria9">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria10">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria11">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria12">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria13">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria14">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria15">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria16">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria17">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria18">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
-
-							<button class="categoria categoria19">
-								<div class="icon"></div>
-								<h6>NomeDaCategoria</h6>
-							</button>
+						<div class="modal-body">
 
 						</div>
 						
@@ -365,7 +271,16 @@
 			});	
 
 			$('.modal-footer .btn-primary').click(function(){
-				//aqui faz a seleção e atualiza na index
+				var arrayCategorias = new Array();
+				$('.modal-body button.categoria').each(function(i){
+					if($(this).hasClass('active'))
+						arrayCategorias[i] = $(this).attr('value'); //array de ids de categoria
+				});
+
+				$('.ofertaUnique').each(function(){
+
+				});
+
 			});
  			
 		})(jQuery)

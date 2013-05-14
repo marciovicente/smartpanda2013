@@ -24,7 +24,7 @@
 
 					<div class="auth">
 						<a class="btn-auth btn-facebook large" href="#"> Entre com <b>Facebook</b> </a>
-						<a class="btn-auth btn-lojista large" data-toggle="modal" data-target="#modalLojista"><i class="icon-large pull-left icon-briefcase"></i> Lojista</a>
+						<a class="btn-auth btn-lojista large" data-toggle="modal" data-target="#modalLojista">Lojista</a>
 					</div>
 				</div>
 			</header>
@@ -148,7 +148,7 @@
 	</footer>
 
 	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
-	<script src="<?php echo $server;?>js/bootstrap.modal	.js"></script>
+	<script src="<?php echo $server;?>js/bootstrap.modal.js"></script>
 
 	<script>
 		$(function () {
@@ -157,7 +157,7 @@
 		    function alternateDiv() {
 		        divs.hide() // hide all divs
 		            .filter(function (index) { return index == counter % 2; }) // figure out correct div to show
-		            .fadeIn(300); // and show it
+		            .fadeIn('slow'); // and show it
 
 		        counter++;
 		    }; 
@@ -169,13 +169,7 @@
 		    }, 6 * 1000); 
 
 
-			$('.getButton.apple').hover(function() {
-				$(this).fadeIn().html('<span>Em breve!</span> <div class="appleIcon"></div>');
-			});
-
-			$('.getButton.apple').mouseleave(function() {
-				$(this).html('<span>Instale agora mesmo</span> <div class="appleIcon"></div>');
-			});
+			
 
 		});
 

@@ -22,12 +22,12 @@
 				<form action="" class="formLogin">
 					<label>
 						<span class="icon-user"></span>
-						<input type="text" >
+						<input type="text" placeholder="Usuário">
 					</label>
 
 					<label>
 						<span class="icon-lock"></span>
-						<input type="password" >
+						<input type="password" placeholder="Senha">
 					</label>
 					<button>OK</button>
 				</form>
