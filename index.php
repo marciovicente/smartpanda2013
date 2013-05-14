@@ -222,8 +222,6 @@
 
 		(function ($) { 
 
-
-			
 			$('#cbCategorias').change(function(){
 				var cat = $(this).val();
 				if(cat == 0)
@@ -239,24 +237,12 @@
 					
 					if(i == 0)
 						$('#listaOfertas').html("<h1 class='noHas'>Não há ofertas com o filtro desejado</h1>");
-						
-					
 				}
 			
 			});
 			
-			$("#selectShAtivos option").change(function(){
-				// var id_shopping = $(this).val();
-				// carregarOfertas(id_shopping);
-				alert($(this).val());
-			});
+		
 
-			$('button.categoria').click(function(){
-				if($(this).hasClass('active'))
-					$(this).removeClass('active');
-				else
-					$(this).addClass('active');
-			});
 
 			$('.modal-header button.selectAll').click(function(){
 				if($(this).hasClass('remove')){
@@ -269,19 +255,28 @@
 					$('button.categoria').addClass('active');
 				}
 			});	
-
-			$('.modal-footer .btn-primary').click(function(){
-				var arrayCategorias = new Array();
-				$('.modal-body button.categoria').each(function(i){
-					if($(this).hasClass('active'))
-						arrayCategorias[i] = $(this).attr('value'); //array de ids de categoria
-				});
-
-				$('.ofertaUnique').each(function(){
-
-				});
-
+			
+			$('.modal-body button.categoria').click(function(){
+				if($(this).hasClass('active'))
+					$(this).removeClass('active');
+				else
+					$(this).addClass('active');
 			});
+
+			// $('.modal-footer .btn-primary').click(function(){
+			// 	var arrayCategorias = new Array();
+			// 	$('.modal-body button.categoria').each(function(i){
+			// 		if($(this).hasClass('active'))
+			// 			arrayCategorias[i] = $(this).attr('value'); //array de ids de categoria
+			// 	});
+
+			// 	$('.ofertaUnique').each(function(){
+
+			// 	});
+
+			// });
+
+			
  			
 		})(jQuery)
 

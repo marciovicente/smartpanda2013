@@ -821,8 +821,46 @@ body{
 					// }
 
 				}
-			}
 
+
+			} //header
+
+			.backButton{
+            	width: auto;
+				height: 28px;
+				float: left;
+				position: relative;
+				left: 25px;
+				top: 90px;
+				background: rgba(0,0,0,0.1);
+				border: 0;
+				padding-right: 0;
+				border-radius: 0 3px 3px 0;
+				-webkit-border-radius: 0 3px 3px 0;
+				-moz-border-radius: 0 3px 3px 0;
+				color: #333;
+				text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+
+				&:before{
+					width: 0;
+					height: 0;
+					border-color: transparent rgba(0,0,0,0.1) transparent transparent;
+					position: relative;
+					content: "";
+					display: block;
+					left: -34px;
+					top: -1px;
+					border-width: 14px;
+					border-style: solid;
+
+				}
+
+				i,span{
+					position: relative;
+					top: -25px;
+					left: -10px; 
+				}
+			}
 
 			// icons categorias
 			.categoriaIcon{
@@ -1042,6 +1080,7 @@ body{
 
 					} //ribbon
 
+
 					
 					#fotoDestaque{
 						width: 285px;
@@ -1240,12 +1279,7 @@ body{
 				}
             
             
-                .backButton{
-                    width: 30px;
-                    height: 40px;  
-                    float: right;
-                    margin: 10px 5px;     
-                }
+                
 	
 				#oferta{
 					width: 960px;
@@ -2405,7 +2439,7 @@ body{
 		background: $verde;
 		clear: both;
 		position: relative;
-		top: 115px;
+		top: 129px;
 		
 		.notLogged{top: 0;}
 

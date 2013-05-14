@@ -28,11 +28,11 @@
 
 	</script>
 	
-	<div class="overlayLoad">
+	<!-- <div class="overlayLoad">
 		<div class="loaderSp">
 			<span>Carregando</span>
 		</div>
-	</div>
+	</div> -->
 
 	<div id="all">
 		<div id="container">
@@ -55,10 +55,10 @@
 				
 			</header>
 
-
 			<div class="central">
+				<button class="backButton"><i class="icon icon-chevron-left"></i> <span>Voltar</span></button>
 				<section id="firstContainer">
-					<div class="backButton"></div>
+					
 					<div id="oferta">
 						<img src="" alt="" class="imgOferta">
 						<div id="infoOferta">
@@ -134,6 +134,11 @@
 			
 			// checkLogin();
 			
+		});
+
+		$('.backButton').click(function(){
+			event.preventDefault();
+    		history.back(1);
 		});
 
 		
