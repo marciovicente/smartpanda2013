@@ -15,11 +15,11 @@
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $server;?>images/favicon.ico">
 </head>
 <body>
-	<!-- <div class="overlayLoad">
+	<div class="overlayLoad">
 		<div class="loaderSp">
 			<span>Carregando</span>
 		</div>
-	</div> -->
+	</div>
 	<div class="countFilter">A busca retornou <span></span> <button class="limpar"> <span class="inner"><i class="icon icon-white icon-trash"></i> <h6>Limpar</h6></span> </button></div>
 	<div id="all">
 		<div id="container">
@@ -48,12 +48,15 @@
 						</div>
 						
 						<div class="modal-body">
-
+							<button class="categoria categoria1" value="1">
+							<div class="icon"></div>
+							<h6>Nome</h6>
+							</button>
 						</div>
 						
 						<div class="modal-footer">
 							<button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
-							<button class="btn btn-primary btn-success">Atualizar</button>
+							<button class="btn btn-primary btn-success" data-dismiss="modal">Atualizar</button>
 						</div>
 					</div>
 					
@@ -88,35 +91,26 @@
 				</section>
 
 				<section id="listaOfertas">
+
+					<!--
+					implementar depois, tags 
+					 <div class="tags">
+						<span class="tag categoria1"></span>
+						
+
+					</div> -->
+
 					<p id="textLoading">Carregando ofertas...</p>
 					
 					<div class="groupOfertas">
 					
-						<!-- <a href="#" class="ofertaUnique categoria18">
-							<div class="imageOferta">
-								<img src="https://img.getyourguide.com/img/tour_img-19091-21.jpg" alt="">
+						
 
-								<div class="desc categoria18">
-									<h5>Tênis nike com 70% de desconto</h5>
-									<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h6>
-								</div>
-							</div>
-							<div class="bottomBar">
-								<button class="btnBar like"></button>
-								<div class="innerLine"></div>
-								<button class="btnBar dislike"></button>
-								<div class="innerLine"></div>
-								<button class="btnBar share"></button>
-								<div class="innerLine"></div>
-								<button class="btnBar comment"></button>
-								<div class="innerLine"></div>
-								<button class="btnBar pin"></button>
-								
-							</div>
-						</a>
-
-						 -->
 					</div>
+
+					<h3 class="cleanSearch" style="display:none;">Não existem ofertas cadastradas para este filtro. <br>
+						<button>Limpar pesquisa</button>
+					</h3>
 
 					
 					
@@ -217,6 +211,7 @@
 
 			checkLogin();
 
+
 		});
 
 
@@ -244,6 +239,7 @@
 		
 
 
+			// =================== MODAL CATEGORIAS =======================================
 			$('.modal-header button.selectAll').click(function(){
 				if($(this).hasClass('remove')){
 					$(this).removeClass('remove');
@@ -256,25 +252,53 @@
 				}
 			});	
 			
-			$('.modal-body button.categoria').click(function(){
-				if($(this).hasClass('active'))
-					$(this).removeClass('active');
+			
+
+			$('.modal-footer .btn-primary').click(function(){
+				var arrayCategorias = new Array();
+				$('.modal-body button.categoria').each(function(i){
+					if($(this).hasClass('active'))
+						arrayCategorias[i] = $(this).attr('value'); //array de ids de categoria
+				});
+
+				$('.ofertaUnique').each(function(i){
+					for(var j=0; j<arrayCategorias.length; j++){
+						value = arrayCategorias[j];
+						if($(this).hasClass('categoria'+value+'')){
+							$(this).addClass('show');
+							// $('.tags').append('<span class="tag categoria'+value+'"></span>');
+						}
+					}
+					
+				});
+				
+				var counter = 0;
+				$('#listaOfertas .ofertaUnique').each(function(p){
+					if(!($(this).hasClass('show'))){
+						$(this).hide();
+						counter++;
+					}else
+						$(this).show();
+					
+				});
+				var ln = $('.ofertaUnique').length;
+				if(counter == ln)
+					$('#listaOfertas .cleanSearch').show();
 				else
-					$(this).addClass('active');
+					$('#listaOfertas .cleanSearch').hide();
+
+
+				$('.cleanSearch button').click(function(){
+					$('.ofertaUnique').show();
+					$('.ofertaUnique').removeClass('show');
+					$('.cleanSearch').hide();
+					$('button.categoria').removeClass('active');
+
+				});
+				
+
+				// =======================================================================================================
 			});
-
-			// $('.modal-footer .btn-primary').click(function(){
-			// 	var arrayCategorias = new Array();
-			// 	$('.modal-body button.categoria').each(function(i){
-			// 		if($(this).hasClass('active'))
-			// 			arrayCategorias[i] = $(this).attr('value'); //array de ids de categoria
-			// 	});
-
-			// 	$('.ofertaUnique').each(function(){
-
-			// 	});
-
-			// });
 
 			
  			

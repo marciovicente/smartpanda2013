@@ -830,8 +830,8 @@ body{
 				height: 28px;
 				float: left;
 				position: relative;
-				left: 25px;
-				top: 90px;
+				left: 15px;
+				top: 96px;
 				background: rgba(0,0,0,0.1);
 				border: 0;
 				padding-right: 0;
@@ -1487,6 +1487,144 @@ body{
 				margin-top: 40px;
 			}
 
+			
+			.tag{
+            	width: 32px;
+            	height: 30px;
+				float: left;
+				border: 0;
+				padding-right: 0;
+				border-radius: 0 3px 3px 0;
+				-webkit-border-radius: 0 3px 3px 0;
+				-moz-border-radius: 0 3px 3px 0;
+				color: #333;
+				text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+				margin: 0 9px;
+				background: url(../images/sprite-categorias30.png) no-repeat center center;
+
+				&:before{
+					width: 0;
+					height: 0;
+					position: relative;
+					content: "";
+					display: block;
+					left: -30px;
+					top: 0px;
+					border-width: 15px;
+					border-style: solid;
+
+				}
+
+				i,span{
+					position: relative;
+					top: -25px;
+					left: -10px; 
+				}
+
+				
+				&.categoria1{
+					background-color: #ff5c42;
+					background-position: 4px 0;
+					&:before{ border-color: transparent #ff5c42 transparent transparent;}
+					
+				}
+				&.categoria2{
+					background-color: #8046ce;
+					background-position: -30px 0;
+					width: 29px;
+					&:before{ border-color: transparent #8046ce transparent transparent;}
+					
+				}
+				&.categoria3{
+					background-color: #0e64e7;
+					background-position: -61px;
+					width: 37px;
+					&:before{ border-color: transparent #0e64e7 transparent transparent;}
+					
+				}
+				&.categoria4{
+					background-color: #ff4690;
+					&:before{ border-color: transparent #ff4690 transparent transparent;}
+					
+				}
+				&.categoria5{
+					background-color: #ff54dd;
+					&:before{ border-color: transparent #ff54dd transparent transparent;}
+					
+				}
+				&.categoria6{
+					background-color: #00A550;
+					&:before{ border-color: transparent #00A550 transparent transparent;}
+					
+				}
+				&.categoria7{
+					background-color: #32d89b;
+					&:before{ border-color: transparent #32d89b transparent transparent;}
+					
+				}
+				&.categoria8{
+					background-color: #1fb7d4;
+					&:before{ border-color: transparent #1fb7d4 transparent transparent;}
+					
+				}
+				&.categoria9{
+					background-color: #ff660c;
+					&:before{ border-color: transparent #ff660c transparent transparent;}
+					
+				}
+				&.categoria10{
+					background-color: $verde;
+					&:before{ border-color: transparent $verde transparent transparent;}
+					
+				}
+				&.categoria11{
+					background-color: #e6bf10;
+					&:before{ border-color: transparent #e6bf10 transparent transparent;}
+					
+				}
+				&.categoria12{
+					background-color: #008199;
+					&:before{ border-color: transparent #008199 transparent transparent;}
+					
+				}
+				&.categoria13{
+					background-color: #2e4c92;
+					&:before{ border-color: transparent #2e4c92 transparent transparent;}
+					
+				}
+				&.categoria14{
+					background-color: #566792;
+					&:before{ border-color: transparent #566792 transparent transparent;}
+					
+				}
+				&.categoria15{
+					background-color: #c1000f;
+					&:before{ border-color: transparent #c1000f transparent transparent;}
+					
+				}
+				&.categoria16{
+					background-color: #560acd;
+					&:before{ border-color: transparent #560acd transparent transparent;}
+					
+				}
+				&.categoria17{
+					background-color: #797979;
+					&:before{ border-color: transparent #797979 transparent transparent;}
+					
+				}
+				&.categoria18{
+					background-color: #ffc424;
+					&:before{ border-color: transparent #ffc424 transparent transparent;}
+					
+				}
+				&.categoria19{
+					background-color: #7498ff;
+					&:before{ border-color: transparent #7498ff transparent transparent;}
+					
+				}
+
+			}			
+
 			//lista de ofertas
 			section#listaOfertas{
 				border-top: 1px dotted #b2b2b2;
@@ -1497,6 +1635,12 @@ body{
 				width: 960px;
 				padding-bottom: 190px;
 				
+				.cleanSearch{
+					text-align: center;
+					color:#8D917D;
+					text-shadow: 1px 1px 0 #fff;
+				}
+
 				.groupOfertas{
 					height: auto;
 					min-height: 210px;
@@ -1609,16 +1753,16 @@ body{
 							width: 226px;
 							height: 36px;
 							padding: 5px 0px 0 0px;
-							position: relative;
-							z-index: 10;
 							background: #333;
-							bottom: 0;
+							position: relative; 
+							z-index: 10;
 							display: table;
+							bottom: 0;
 							border-bottom-color: rgb(27, 27, 27);
 							-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
 							-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+							border: 1px solid rgb(29, 29, 29); 
 							box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
-							border: 1px solid #000;
 							border-bottom-width: 4px;
 							
 							img{

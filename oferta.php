@@ -44,7 +44,7 @@
 							<img src="" alt="Facebook profile">
 						</div>
 						<div class="profile">
-							<h6>Davi Ricardo Castro</h6>
+							<h6></h6>
 							<a href="#"><i class="icon icon-user icon-white"></i>Meu cadastro</a>
 							<a href="#" class="logout"> <i class="icon icon-white icon-remove"></i>Sair</a>
 							
@@ -84,10 +84,10 @@
 					</div>
 				</section>
 				<section class="secondContainer">
-					<div class="suggest">
+					<!-- <div class="suggest">
 						<h5>Também poderá gostar de</h5>
 						
-					</div>
+					</div> -->
 					
 						<div class="comments">
 							<div class="fb-comments" data-href="<?php echo $server;?>oferta.php?id=<?php echo $id; ?>" data-width="770" data-num-posts="5"></div>

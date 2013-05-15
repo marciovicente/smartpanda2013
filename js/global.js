@@ -427,6 +427,7 @@ function carregaDestaque(id_shopping){
 			$('#ofertaDestaque .descOfertaDetalhe').html(hot.oferta.texto);
 			$('#fotoDestaque img').attr('src', ''+servidor+'../'+hot.oferta.square+'');
 			$('#fotoDestaque img').attr('alt', hot.oferta.titulo);
+			$('#fotoDestaque a').attr('href', oferta.php?id='+hot.oferta.id+');
 			$('#fotoDestaque a').attr('onclick', 'window.location.href = http://smartpanda.com.br/smartpanda2013/oferta.php?id='+hot.oferta.id+'');
 			$('#barDestaque button:first').attr('onclick', 'event.preventDefault(); gostar(1, '+hot.oferta.id+', $(this));');
 			$('#barDestaque button:first span').html(hot.campanha.curtiram);
@@ -601,6 +602,14 @@ function carregarCategorias() {
 			$('#cbCategorias').html('');
 			$('#cbCategorias').append(html);
 			$("#modalCategorias > .modal-body").html(modal);
+
+			//tmp
+			$('.modal-body button.categoria').click(function(){
+				if($(this).hasClass('active'))
+					$(this).removeClass('active');
+				else
+					$(this).addClass('active');
+			});
 		},
 		error: function(){
 			carregarCategorias();
