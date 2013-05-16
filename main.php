@@ -23,7 +23,8 @@
 					<a href="<?php echo $server ?>"><div id="logo"><span>O shopping na palma da mão</span></div></a>
 
 					<div class="auth">
-						<a class="btn-auth btn-facebook large" href="#"> Entre com <b>Facebook</b> </a>
+						<span>Cadastre-se agora</span>
+						<a class="btn-auth btn-facebook large" href="#"> Conecte-se <b>Facebook</b> </a>
 						<a class="btn-auth btn-lojista large" data-toggle="modal" data-target="#modalLojista">Lojista</a>
 					</div>
 				</div>
@@ -33,14 +34,27 @@
 					<h2>Encontre tudo o que você precisa</h2>
 					<h3>com o shopping na palma da mão</h3>
 					<h3>(ou na tela do computador)</h3>
-					<button class="getButton"><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 2.1 no Google Play</h6> </button>
-					<button class="getButton apple"><span>Instale agora mesmo</span>  <div class="appleIcon"></div></button>
+					<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
+					<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
 				</div>
 			</div>
 
 
+
+			<div class="banner second">
+				<div class="central">
+					<div class="leftBanner">
+						<h2>Em qualquer lugar,</h2>
+						<h3>de qualquer dispositivo</h3>
+						<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
+						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div><h6>Breve na App Store</h6> </button>
+
+					</div>
+				</div>
+			</div>
+
 			<!-- =========================== modal lojista =========================== -->
-			
+			<!-- 
 			<div id="modalLojista" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -65,26 +79,9 @@
 					</div>
 				</div>
 				
-				<!-- <div class="modal-footer">
-					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-					<button class="btn btn-primary">Save changes</button>
-				</div> -->
-			</div>
+			</div> -->
 
 			<!-- ======================================================================= -->
-
-			<div class="banner second">
-				<div class="central">
-					<div class="leftBanner">
-						<h2>Em qualquer lugar,</h2>
-						<h3>de qualquer dispositivo</h3>
-						<button class="getButton"><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 2.1 no Google Play</h6> </button>
-						<button class="getButton apple"><span>Instale agora mesmo</span>  <div class="appleIcon"></div></button>
-
-					</div>
-				</div>
-			</div>
-
 			<div class="central">
 				<h1>Como Funciona</h1>
 				<div class="iconsBio">

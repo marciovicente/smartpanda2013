@@ -63,8 +63,8 @@
 						<img src="" alt="" class="imgOferta">
 						<div id="infoOferta">
 							<h2></h2>
-							<a href="#"><h4><i class="icon icon-gift"></i></h4></a>
-							<a href=""><h4 class="shoppingName"><i class="icon icon-tags"></i></h4></a>
+							<h4><div class="iconLoja"></div> </h4>
+							<h4 class="shoppingName"><div class="iconLoja mall"></div> </h4>
 							<article class="articleOferta">
 							
 							<br><span class="validadeOferta"></span>

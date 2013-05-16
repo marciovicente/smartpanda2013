@@ -15,11 +15,11 @@
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $server;?>images/favicon.ico">
 </head>
 <body>
-	<!-- <div class="overlayLoad">
+	<div class="overlayLoad">
 		<div class="loaderSp">
 			<span>Carregando</span>
 		</div>
-	</div> -->
+	</div>
 	<div class="countFilter">A busca retornou <span></span> <button class="limpar"> <span class="inner"><i class="icon icon-white icon-trash"></i> <h6>Limpar</h6></span> </button></div>
 	<div id="all">
 		<div id="container">
@@ -30,12 +30,12 @@
 				<section id="firstContainer">
 					
 					<div id="paperFolding">
-						<button class="folding categoria1"><h4><div class="categoriaIcon"></div>  Roupas e Acessórios</h4></button>
-						<button class="folding categoria2"><h4><div class="categoriaIcon"></div>Moda praia</h4></button>
-						<button class="folding categoria19"><h4><div class="categoriaIcon"></div>Informática</h4></button>
-						<button class="folding categoria10"><h4><div class="categoriaIcon"></div>Esportes/Fitness</h4></button>
-						<button class="folding categoria18"><h4><div class="categoriaIcon"></div>Turismo</h4></button>	
-						<button class="folding categoria13"><h4><div class="categoriaIcon"></div>Jóias</h4></button>	
+						<button class="folding categoria1"><h4><div class="categoriaIcon"></div> Turismo</h4></button>
+						<button class="folding categoria2"><h4><div class="categoriaIcon"></div>Decoração</h4></button>
+						<button class="folding categoria3"><h4><div class="categoriaIcon"></div>Informática</h4></button>
+						<button class="folding categoria4"><h4><div class="categoriaIcon"></div>Esportes/Fitness</h4></button>
+						<button class="folding categoria5"><h4><div class="categoriaIcon"></div>Turismo</h4></button>	
+						<button class="folding categoria6"><h4><div class="categoriaIcon"></div>Jóias</h4></button>	
 						<button id="footerFolding"  data-toggle="modal" data-target="#modalCategorias"><h4><i class="icon icon-white icon-plus"></i> Ver todas categorias</h4></button>
 
 					</div>
@@ -47,6 +47,7 @@
 							<button class="selectAll">Selecionar todas</button>
 						</div>
 						
+						<!-- only to test -->
 						<div class="modal-body">
 							<button class="categoria categoria1" value="1">
 							<div class="icon"></div>
@@ -60,7 +61,7 @@
 						</div>
 					</div>
 					
-					<div id="destaque" class="praia">
+					<div id="destaque">
 						<div id="fotoDestaque">
 						<!--	<div class="filterCategoria praia"><div class="categoriaIcon praia"></div></div> -->
 							<a href="#">
@@ -70,8 +71,8 @@
 						<button class="ribbon" class="notAvailable" title="Reservar: Em breve"><div class="pinIcon"></div></button>
 						<div id="ofertaDestaque" >
 							<h3></h3>
-							<h4><i class="icon icon-tags"></i> </h4>
-							<h4><i class="icon icon-bookmark"></i> </h4>
+							<h4><div class="iconLoja"></div> </h4>
+							<h4><div class="iconLoja mall"></div> </h4>
 							<article class="descOfertaDetalhe"> </article>
 						</div>
 						

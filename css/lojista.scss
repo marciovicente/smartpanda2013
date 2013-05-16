@@ -25,10 +25,10 @@ $verde: #6BB130;
 	text-shadow: none;
 }
 
--moz-::selection{
+-moz-::selection{ 
 	background: #538723;
-	color:#fff;
 	text-shadow: none;
+	color:#fff;
 }
 
 .gecko{
@@ -121,8 +121,22 @@ body{
 						-moz-border-radius: 2px;
 						border-radius: 2px;
 						font-size: 13px;
-						color: #454545;
+						color: #333;
 						text-shadow: 0 -1px rgba(255, 255, 255, 0.5);
+
+
+					}
+					::-webkit-input-placeholder { /* WebKit browsers */
+					    color: #515151;
+					}
+					:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+					    color: #515151;
+					}
+					::-moz-placeholder { /* Mozilla Firefox 19+ */
+					    color: #515151;
+					}
+					:-ms-input-placeholder { /* Internet Explorer 10+ */
+					    color: #515151;
 					}
 
 				}
@@ -484,7 +498,7 @@ body{
 						border-bottom: 5px solid #538723;
 						font-family: $ubuntu;
 						position: relative;
-						top: 47px;
+						top: 26px;
 						-webkit-border-radius: 9px 9px 0 0;
 						-moz-border-radius: 9px 9px 0 0;
 						border-radius: 9px 9px 0 0;

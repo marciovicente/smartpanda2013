@@ -335,6 +335,72 @@ body{
 			}//label
 
 		}
+		#modalCurriculo{
+			width: 600px;
+			left: 46%;
+
+			.modal-header{
+				-webkit-box-shadow: 0 -3px 30px #000;;
+				-moz-box-shadow: 0 -3px 30px #000;;
+				box-shadow: 0 -3px 30px #000;
+				z-index: 10;
+			}
+			.add-on{
+				float: left;
+				width: 70px;
+				height: 24px;
+				padding-top: 7px;
+
+				&.textarea{
+					position: relative;
+					z-index: 2;
+					float: left; 
+					width: 100px;
+
+					&.plus{
+						height: 62px;
+					}
+				}
+			}
+
+			h3{
+				font-family: $ubuntu;
+				color: #666;
+			}
+
+			input, textarea{
+				width: 348px;
+				float: left;
+				height: 27px;
+			}
+
+			textarea{
+				width: 306px;
+				height: 100px;
+				position: relative;
+				z-index: 1;
+				left: -111px;
+				padding-left: 120px;
+				resize:none;
+			}
+
+			.input-prepend{
+				margin: 8px 0;
+				max-width: 610px;
+				float: left;
+
+
+			}
+
+			select{
+				margin-top: 8px;
+
+				&:first-child{
+					width: 216px;
+					margin-right: 7px;
+				}
+			}
+		}
 
 		#modalCategorias{
 			width: 700px;
@@ -1114,6 +1180,21 @@ body{
 					}
 				}
 
+				.iconLoja{
+					width: 37px;
+					height: 40px;
+					float: left;
+					background:url(../images/sprite-mall.png) no-repeat left center;
+					@include opacityCB(5);
+					position: relative;
+					top: -14px;
+					left: -10px;
+
+					&.mall{
+						background-position: -40px 0;
+					}
+				}
+
 				#destaque{
 					width: 685px;
 					margin-left: 15px;
@@ -1197,12 +1278,13 @@ body{
 
 					}
 					
+
+					
 					#ofertaDestaque{
 						width: 335px;
 						margin-left: 15px;
 						float: left;
 						height: 285px;
-
 
 						h3 > a{
 							color: #6d6d6d;
@@ -1210,16 +1292,21 @@ body{
 							margin-bottom: 13px;
 							font-weight: normal;
 							margin-top: 6px;
+							
 						}
 
 						h4{
 							i{ @include opacityCB(5);}
-							margin-top: 15px;
-							padding-bottom: 10px;
+							margin-top: 25px;
 							border-bottom: 1px solid #ccc;
 							color: #666;
 							font-weight: normal;
 							text-shadow:1px 1px 1px #fff;
+							padding-left: 10px;
+							width:317px;
+							height: 40px;
+							float: left;
+							
 						}
 						article.descOfertaDetalhe{
 							color: #818181;
@@ -1411,7 +1498,7 @@ body{
 					}
 
 					#infoOferta{
-						width: 507px;
+						width: 505px;
 						float: left;
 						text-shadow: 1px 1px 1px #fff;
 						height: auto;
@@ -1423,35 +1510,34 @@ body{
 							padding-bottom: 10px;
 							border-bottom: 1px solid #c3c3c3;			
 							margin-left: 25px;
+							width: 450px;
 						}
 						
-						a{
-							text-decoration: none;
-							color: #616161;
-							width: auto;
 
-							h4{
-								width: auto;
-								font-family: $ubuntu;
-								padding: 10px 0;
-								border-bottom: 1px solid #c3c3c3;
-								margin-left: 40px;
+						h4{
+							font-family: $ubuntu;
+							padding: 12px 0 0 0;
+							border-bottom: 1px solid #c3c3c3;
+							margin-left: 30px;
+							width: 463px;
+							float: left;
+							height: 40px;
+							padding-left: 10px;
+							color: #4D4F44;
 
-								i{
-									position: relative;
-									right: 5px;
-									top: 2px;
-
-								}
-
+							.iconLoja{
+								top: -8px;
 							}
+
 						}
+						
 
 						.articleOferta{
 							margin-left: 40px;
-							margin-top: 11px;
 							font-size: 13px;
 							line-height: 20px;
+							margin-top: 17px;
+							float: left;
 							
 							span.validadeOferta{
 								
@@ -1915,8 +2001,8 @@ body{
 			padding-bottom: 25px;
 
 			&.notLogged{
-				padding-bottom: 0;
 				margin-bottom: -75px;
+				padding-bottom: 0;
 			}
 
 			.central{
@@ -1971,20 +2057,20 @@ body{
 				-o-background-size: cover;
 				background-size: cover;
 				height: 430px;
-				background: url(../images/dot.png), url(../images/banner-full-compress.jpg) $verde center center;
+				background: url(../images/dot.png), url(../images/banner-full-compress.jpg) $verde center center no-repeat;
 				color: #fff;
 				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/banner-full.jpg', sizingMethod='scale');
 				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/banner-full.jpg', sizingMethod='scale')";
 				margin-top: 80px;
 				
 				&.second{
-					background: url(../images/dot.png), url(../images/banner2.jpg) center center;
+					background: url(../images/dot.png), url(../images/banner2.jpg) #68A723 center center no-repeat;
 					// background: none;
 
 					.devices{
 						float: right;
 						height: 373px;
-						background: url(../images/devices.png) no-repeat center center;
+						background: url(../images/devices.png) no-repeat center center no-repeat;
 						width: 535px;
 					} 
 
@@ -2033,17 +2119,14 @@ body{
 
 					&.apple{ 
 						margin-top: -6px;
-						background: #7e7e7e;
+						background: #727272;
 						float: left; 
 						border: 1px solid #303233;
 						border-bottom: 4px solid #323436;
+						cursor: wait;
 
 						&:hover{
 							background: #494d4f;
-						}
-
-						span{
-							top: 7px;
 						}
 					}
 
@@ -2056,7 +2139,7 @@ body{
 
 					h6{
 						font-family: Arial;
-						font-size: 9px;
+						font-size: 10px;
 						color: rgba(0,0,0,0.4);
 						text-shadow: none;
 						text-align: left;
@@ -2258,7 +2341,6 @@ body{
 					font-weight: normal;
 					margin-top: 7px;
 
-
 					a{
 						color: $verde;
 						margin-right: 17px;
@@ -2307,6 +2389,7 @@ body{
 
 				.btn-auth.large{
 					float: right;
+					margin: 20px 0 0 0 ;
 				}
 			}
 
@@ -2314,8 +2397,18 @@ body{
 			.auth{
 				width: 430px;
 				float: right;
+
+				span{
+					font-size: 17px;
+					letter-spacing: 2px;
+					font-family: $ubuntu;
+					color: #808370;
+					text-align: left;
+					position: relative;
+					top: 2px;
+				}
 			    
-			    *{
+			    button{
 			    	transition: all .45s ease-in-out;
 					-moz-transition: all .45s ease-in-out;
 					-webkit-transition: all .45s ease-in-out;
@@ -2414,7 +2507,7 @@ body{
 				    line-height: 36px;
 				    font-size: 20px;
 					float: left;
-					margin: 20px 0 0 0;
+					margin: 5px 0 0 0;
 					border-bottom-width: 4px;
 					border-bottom-style: solid;
 					transition: all .45s ease-in-out;
@@ -2422,7 +2515,7 @@ body{
 					-webkit-transition: all .45s ease-in-out;
 
 					&.btn-lojista{
-						margin: 20px 0 0 15px;
+						margin: 5px 0 0 15px;
 
 					}
 				}
@@ -2506,12 +2599,20 @@ body{
 					text-shadow: 0 -1px rgba(255,255,255,0.5);
 					overflow: hidden;
 
+					.btn{
+						float: right;
+						position: relative;
+						top: 15px;
+						right: 7px;
+					}
 
 					&:hover{
 						.articleBio{
 							height: 150px;
 							top: -60px;
 							cursor: default;
+
+
 						}
 					}
 
@@ -2582,7 +2683,7 @@ body{
 
 						.articleBio{
 							background: rgb(139, 139, 139);
-							p{color: #333;}
+							p{color: #f2f2f2;}
 						}
 						.icon{ background-position: -189px 0; }
 					}
@@ -2627,7 +2728,7 @@ body{
 							float: right;
 							position: relative;
 							font-size: 12px;
-							line-height: 17px;
+							line-height: 16px;
 							text-align: justify;
 							top: 6px;
 							left: -7px;

@@ -23,7 +23,8 @@
 					<a href="<?php echo $server ?>"><div id="logo"><span>O shopping na palma da mão</span></div></a>
 
 					<div class="auth">
-						<a class="btn-auth btn-facebook large" href="#"> Entre com <b>Facebook</b> </a>
+						<span>Cadastre-se agora</span>
+						<a class="btn-auth btn-facebook large" href="#"> Conecte-se com <b>Facebook</b> </a>
 						<a class="btn-auth btn-lojista large" data-toggle="modal" data-target="#modalLojista">Lojista</a>
 					</div>
 				</div>
@@ -62,7 +63,7 @@
 						<h5>Márcio Vicente</h5>
 						<h6>Front-End Engineer</h6>
 						<div class="articleBio">
-							<p>Márcio é o mais jovem da equipe, é estudante de Ciência da Computação e conselheiro 	na Empresa Junior, ambos na UFBA. Trabalha com desenvolvimento Web desde 2009 e hoje atua como Front-End Engineer. Sempre buscando a excelência em seu trabalho, já desenvolveu projetos em outras startups.</p>
+							<p>Márcio é o mais jovem da equipe, estudante de Ciência da Computação e conselheiro na Empresa Júnior, ambos na UFBA. Trabalha com desenvolvimento Web desde 2009 e hoje atua como Front-End Engineer. Sempre buscando a excelência em seu trabalho, já desenvolveu projetos em outras startups.</p>
 						</div>
 					</div>
 					<div class="bio marlon">
@@ -79,14 +80,63 @@
 						<h5>VOCÊ!</h5>
 						<h6>Seja um Smartbrother</h6>
 						<div class="articleBio">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.</p>
+							<p>Quer fazer parte da nossa equipe e ser um Smartbrother? Nos envie seu currículo e iremos analisá-lo com o maior cuidado.</p>
+							<button class="btn btn-success" data-toggle="modal" data-target="#modalCurriculo">Enviar currículo</button>
 						</div>
 					</div>
 				</div>
 			</div>
 			
+			<div id="modalCurriculo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h3 id="myModalLabel">Cadastre seu currículo conosco</h3>
+						</div>
+						
+						<!-- only to test -->
+						<div class="modal-body">
+							<form method="POST" action="">
+								<div class="input-prepend">
+							  		<span class="add-on">Nome</span>
+							  		<input class="span2" id="prependedInput" type="text" name="nome" required>
+								</div>
+
+								<div class="input-prepend">
+							  		<span class="add-on">Email</span>
+							  		<input class="span2" id="prependedInput" type="email" name="email" required>
+								</div>
+
+								<div class="input-prepend">
+							  		<span class="add-on">Telefone</span>
+							  		<input class="span2" id="prependedInput" type="text" name="telefone" required>
+								</div>
+								
+								<select name="estado" id="estado">
+									<option value="0">Estado</option>
+								</select>
+
+								<select name="cidades" id="cidade">
+									<option value="0">Cidade</option>
+								</select>		
+
+								<div class="input-prepend ">
+							  		<span class="add-on textarea">Experiências</span>
+							  		<textarea></textarea>
+								</div>
+
+								<div class="input-prepend ">
+							  		<span class="add-on textarea plus">Por que você <br> deve ser um <br>Smartbrother?</span>
+							  		<textarea></textarea>
+								</div>
+				
+							</form>
+						</div>
+						
+						<div class="modal-footer">
+							<button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+							<button class="btn btn-primary btn-success" data-dismiss="modal">Enviar</button>
+						</div>
+					</div>
 
 
 		</div>
@@ -104,6 +154,18 @@
 		</div>		
 	</footer>
 
+
+	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
+	<script src="<?php echo $server;?>js/cities.js"></script>
+	<script type="text/javascript" src="<?php echo $server;?>js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			new dgCidadesEstados({
+			    estado: $('#estado').get(0),
+			    cidade: $('#cidade').get(0)
+			});
+		});
+	</script>
 
 </body>
 </html>

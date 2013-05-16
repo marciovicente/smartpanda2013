@@ -67,7 +67,7 @@
 					<div class="why hand">
 						<h4>Não pague nada</h4>
 						<article class="article">
-							Possuímos planos que cabem em seu orçamento: você pode usar o Smartpanda GRÁTIS pelo tempo que quiser (no plano Basic) ou migrar para outros planos que se adequem ao seu negócio. Comece agora mesmo. Basta efetuar o seu cadastro e aproveitar. Não perca mais tempo e dinheiro.
+							Possuímos planos que cabem em seu orçamento. Você pode usar o Smartpanda GRÁTIS pelo tempo que quiser (no plano Basic) ou migrar para outros planos que se adequem ao seu negócio. Comece agora mesmo. Basta efetuar o seu cadastro e aproveitar. Não perca mais tempo e dinheiro.
 
 						</article>
 					</div>
