@@ -341,10 +341,10 @@ body{
 			left: 46%;
 			
 			.modal-header{
-
 				-webkit-box-shadow: 0 -3px 30px #000;;
 				-moz-box-shadow: 0 -3px 30px #000;;
 				box-shadow: 0 -3px 30px #000;;
+
 				h3{
 					font-family: $ubuntu;
 					color: #666;
@@ -396,6 +396,8 @@ body{
 					text-align: center;
 					text-decoration: none;
 					color: #fff;
+					line-height: 17px;
+					margin: 2px 0 0 0;
 
 				}
 				
@@ -405,6 +407,8 @@ body{
 					height: 68px;
 					float: none;
 					background: url(../images/sprite-categorias68.png) no-repeat center top;
+					position: relative;
+					top: -12px;
 				}
 
 				&.categoria1{ 
@@ -416,10 +420,9 @@ body{
 					&:hover, &.active{background: #8046ce;}
 					
 					.icon{
-						background-position: -80px 0;
-						width: 76px;
-						height: 81px;
-					}
+						background-position: -72px 0;
+						width: 97px;
+						height: 81px;					}
 				} //calcados
 				
 				&.categoria3{ 
@@ -487,7 +490,7 @@ body{
 				} //entretenimento
 				
 				&.categoria10{ 
-					&:hover, &.active{background: $verde;}
+					&:hover, &.active{background: #00AC94;}
 
 					.icon{
 						background-position: -1397px;
@@ -867,7 +870,7 @@ body{
 				width: 36px;
 				height: 33px;
 				float: left;
-				background: url(../images/sprite-categorias.png) no-repeat;
+				background: url(../images/sprite-categorias36.png) no-repeat;
 				margin-right: 9px;
 
 				&.roupas{
@@ -960,29 +963,107 @@ body{
 						-moz-transition: all 0.4s ease-in-out;
 						-ms-transition: all 0.4s ease-in-out;
 						-o-transition: all 0.4s ease-in-out;
+						
 
-						&:first-child{
-							background:#DF1A49;
-						}
-
-						&:nth-child(2){
-							background: rgb(121, 30, 182);
-						}
-
-						&:nth-child(3){
-							background:#1481A9
-						}
-
-						&:nth-child(4){
+						&.categoria1{ 
+							background: #ff5c42;
+							background-position: 0 0;			
+						} //alimentos
+						&.categoria2{ 
+							background: #8046ce;
+							background-position: 0 0;			
+						} //sapatos
+						&.categoria3{ 
+							background: #0e64e7;
+							background-position: 0 0;			
+						} //moda masculina
+						&.categoria4{ 
+							background: #ff4690;
+							background-position: 0 0;			
+						} //moda feminina
+						&.categoria5{ 
+							background: #ff54dd;
+							background-position: 0 0;			
+						} //moda infantil
+						&.categoria6{ 
 							background: #00A550;
-						}
-						&:nth-child(5){
-							background:#ffc424; 
-						}
+							background-position: 0 0;			
+						} //esportes/fitness
+						&.categoria7{ 
+							background: #32d89b;
+							background-position: 0 0;			
+						} //decoracao
+						&.categoria8{ 
+							background: #1fb7d4;
+							background-position: 0 0;			
+						} //cama/mesa/banho
+						&.categoria9{ 
+							background: #ff660c;
+							background-position: 0 0;			
+						} //entretenimento
+						&.categoria10{
+						 	background: #00AC94;
+							background-position: 0 0;				
+						} //servicos
+						&.categoria11{
+							background: #e6bf10;
+							background-position: 0 0;				
+						} //joias
+						&.categoria12{
+							background: #008199;
+							background-position: 0 0;				
+						} //eletro/eletronicos
+						&.categoria13{
+							background: #2e4c92;
+							background-position: 0 0;				
+						} //informatica
+						&.categoria14{
+							background: #566792 }
+							background-position: 0 0;				
+						//livraria/papelaria
+						&.categoria15{
+							background: #c1000f;
+							background-position: 0 0;				
+						} //farmacia
+						&.categoria16{
+							background: #560acd;
+							background-position: 0 0;				
+						} //perfumes, cosmeticos
+						&.categoria17{
+							background: #797979;
+							background-position: 0 0;				
+						} //informativo
+						&.categoria18{
+							background: #ffc424;
+							background-position: 0 0;				
+						} //turismo
+						&.categoria19{
+							background: #7498ff;
+							background-position: 0 0;				
+						} //jogos, brinquedos
 
-						&:nth-child(6){
-							background:#F5811E;
-						}
+						// &:first-child{
+						// 	background:#DF1A49;
+						// }
+
+						// &:nth-child(2){
+						// 	background: rgb(121, 30, 182);
+						// }
+
+						// &:nth-child(3){
+						// 	background:#1481A9
+						// }
+
+						// &:nth-child(4){
+						// 	background: #00A550;
+						// }
+						// &:nth-child(5){
+						// 	background:#ffc424; 
+						// }
+
+						// &:nth-child(6){
+						// 	background:#F5811E;
+						// }
 
 						h4{
 							position: relative;
@@ -1573,8 +1654,8 @@ body{
 					
 				}
 				&.categoria10{
-					background-color: $verde;
-					&:before{ border-color: transparent $verde transparent transparent;}
+					background-color: #00AC94;
+					&:before{ border-color: transparent #00AC94 transparent transparent;}
 					
 				}
 				&.categoria11{
@@ -1639,6 +1720,8 @@ body{
 					text-align: center;
 					color:#8D917D;
 					text-shadow: 1px 1px 0 #fff;
+					position: relative;
+					top: -165px;
 				}
 
 				.groupOfertas{
@@ -1677,7 +1760,7 @@ body{
 						&.categoria7{ border-color: #32d89b; } //decoracao
 						&.categoria8{ border-color: #1fb7d4; } //cama/mesa/banho
 						&.categoria9{ border-color: #ff660c; } //entretenimento
-						&.categoria10{ border-color: $verde; } //servicos
+						&.categoria10{ border-color: #00AC94; } //servicos
 						&.categoria11{ border-color: #e6bf10; } //joias
 						&.categoria12{ border-color: #008199; } //eletro/eletronicos
 						&.categoria13{ border-color: #2e4c92; } //informatica
@@ -1734,7 +1817,7 @@ body{
 								&.categoria7{ background: #32d89b; } //decoracao
 								&.categoria8{ background: #1fb7d4; } //cama/mesa/banho
 								&.categoria9{ background: #ff660c; } //entretenimento
-								&.categoria10{ background: $verde; } //servicos
+								&.categoria10{ background: #00AC94; } //servicos
 								&.categoria11{ background: #e6bf10; } //joias
 								&.categoria12{ background: #008199; } //eletro/eletronicos
 								&.categoria13{ background: #2e4c92; } //informatica
