@@ -105,6 +105,8 @@ cache_lat = 0;
 cache_long = 0;
 
 
+//array de Categorias
+var	categorias;
 
 function carregarShoppings(latitude, longitude) {
 	cache_lat = latitude;
@@ -298,15 +300,17 @@ function carregarOfertas(id_cidade) {
 				var html = '';
 
 				$.each(dados, function(i, obj) {
-					categorias[obj.categoria]++; //carrego para o paperfold
-					oferta = obj.oferta;
-					campanha = obj.campanha;
+
+					var oferta = obj.oferta;
+					var campanha = obj.campanha;
 					ofertasDisponiveis.push(obj.categoria);
-					link = 'oferta.php?id='+oferta.id;
-					publico = servidor+'../publico/anuncio?id='+oferta.id; 
+					var link = 'oferta.php?id='+oferta.id;
+					var publico = servidor+'../publico/anuncio?id='+oferta.id; 
+					
+					categorias[obj.categoria] = categorias[obj.categoria] + 1; //carrego para o paperfold
 
 					var attrTooltip = "<div class='tooltipSocial'>"
-										+"<a onclick='compartilharNoFacebook();;'>"
+										+"<a onclick='compartilharNoFacebook();'>"
 										+"<div class='btnShare face'></div>"
 										+"</a>"
 										+"<a href='http://twitter.com/share?url="+publico+"' class='tweet' target='_blank'>"
@@ -591,10 +595,10 @@ function carregaDestaqueShopping(id_shopping){
 function carregaDestaque(id_cidade){
 	var hot = null;
 
-	
 	$.ajax({data: {id_cidade: id_cidade}, type:'GET', dataType:'json', url:servidor+'getofertasbycidade', timeout:timeout,
 		success: function(dados){
 			hot = dados[0];
+			var campanha;
 			$.each(dados, function(i, obj) {
 				campanha = obj.campanha;
 				if(campanha.curtiram > hot.campanha.curtiram)
@@ -807,10 +811,9 @@ function shareOnFacebook(id, titulo, image) {
 			);
 }
 
-var	categorias = new Array();
 
 function carregarCategorias() { 
-
+	categorias = new Array();
 	$.ajax({type:'GET', dataType:'json', url:servidor+'getcategorias', timeout:timeout,
 		success: function(dados){
 			html = '<option value="0">Todas as Categorias</option>';

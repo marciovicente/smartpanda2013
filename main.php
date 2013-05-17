@@ -105,7 +105,7 @@
 				</div>
 				
 				<div class="algorithms">
-					<h3>Através do Facebook entendemos o seu perfil e capturamos seus interesses</h3>
+					<h3>Através do Facebook entendemos o seu perfil</h3>
 					<h3>O algoritmo inteligente do Smartpanda é capaz de identificar apenas o que é de seu interesse</h3>
 					<h3>Você aproveita todos anúncios que o Smartpanda preparou pra você! </h3>
 				</div>
