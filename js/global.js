@@ -282,21 +282,23 @@ function carregarLojasSemOfertas() {
 	});
 }
 
-function carregarOfertas(id_shopping) {
+var controladorShopping = 0;
+function carregarOfertas(id_cidade) {
+	controladorShopping++;
 
 	var ofertasDisponiveis = new Array();
 
-	$.ajax({data: {id: id_shopping}, type:'GET', dataType:'json', url:servidor+'getofertasbyid', timeout:timeout,
+	$.ajax({data: {id_cidade: id_cidade}, type:'GET', dataType:'json', url:servidor+'getofertasbycidade', timeout:timeout,
 		success: function(dados){
 			if(dados[0]) {
 				$('#textLoading').hide();
 
 				// ofertas = "";
-				ultimaLoja = 0;
+				// ultimaLoja = 0;
 				var html = '';
-				
+
 				$.each(dados, function(i, obj) {
-		
+					categorias[obj.categoria]++; //carrego para o paperfold
 					oferta = obj.oferta;
 					campanha = obj.campanha;
 					ofertasDisponiveis.push(obj.categoria);
@@ -387,14 +389,137 @@ function carregarOfertas(id_shopping) {
 		},
 		error: function(){
 		
-			carregarOfertas();
+			carregarOfertas(id_cidade);
+			console.warn("Erro ao carregar as ofertas cadastradas");
+		}
+	});
+}
+
+
+
+function carregaMaisOfertas(){
+	
+}
+
+function carregarOfertasShopping(id_shopping) {
+
+	$('.overlayLoad').show();
+	var ofertasDisponiveis = new Array();
+
+	//getofertasbyid
+	$.ajax({data: {id: id_shopping}, type:'GET', dataType:'json', url:servidor+'getofertasbyid', timeout:timeout,
+		success: function(dados){
+			if(dados[0]) {
+				$('#textLoading').hide();
+
+				// ofertas = "";
+				ultimaLoja = 0;
+				var html = '';
+				
+				$.each(dados, function(i, obj) {
+					categorias[obj.categoria]++; // p/ paperfold
+					oferta = obj.oferta;
+					campanha = obj.campanha;
+					ofertasDisponiveis.push(obj.categoria);
+					link = 'oferta.php?id='+oferta.id;
+					publico = servidor+'../publico/anuncio?id='+oferta.id; 
+
+					var attrTooltip = "<div class='tooltipSocial'>"
+										+"<a onclick='compartilharNoFacebook();;'>"
+										+"<div class='btnShare face'></div>"
+										+"</a>"
+										+"<a href='http://twitter.com/share?url="+publico+"' class='tweet' target='_blank'>"
+										+"<div class='btnShare twitter'></div>"
+										+"</a>"
+										+"<a href='https://plus.google.com/share?url="+publico+"' target='_blank'>"
+										+"<div class='btnShare gplus'></div>"
+										+"</a>"
+										// +"<a href='mailto:'>"
+										// +"<div class='btnShare mail'></div>"
+										// +"</a>"
+									+"</div>";
+
+									//inutil
+
+
+
+					html += '<div class="ofertaUnique categoria'+obj.categoria+'">'
+								+'<a href="'+link+'">'
+									+'<div class="imageOferta">'
+										+'<img src="'+servidor+'../'+oferta.square+'" alt="'+oferta.titulo+'" width="228" height="228">'
+										+'<div class="desc categoria'+obj.categoria+'">'
+											+'<h5>'+oferta.titulo+'</h5>'
+											+'<h6><i class="icon icon-white icon icon-gift"></i> '+oferta.lojista+'</h6>'
+											+'<h6><i class="icon icon-white icon icon-inbox"></i> '+obj.shopping+'</h6>'
+										+'</div>'
+									+'</div>'
+								+'</a>'
+								+'<div class="bottomBar">'
+									+'<button onclick="event.preventDefault(); gostar(1, '+oferta.id+', $(this));"  title="Gostei :)" class="btnBar like hasToolTip"></button>' 
+									+'<div class="innerLine"></div>'
+									+'<button onclick="event.preventDefault(); gostar(0, '+oferta.id+', $(this));"  title="Não gostei :(" class="btnBar dislike hasToolTip"></button>'
+									+'<div class="innerLine"></div>'
+									// +'<div class="shareThis" data-url="'+servidor+'smartpanda2013/'+link+'" data-text="'+oferta.texto+'" data-title="'+oferta.titulo+'">'
+									+'<button class="btnBar share hasToolInteract" title="'+attrTooltip+'" ></button>'
+									+'<div class="innerLine"></div>'
+									+'<button class="btnBar comment hasToolTip" title="Comentar" ></button>'
+									+'<div class="innerLine"></div>'
+									+'<button class="btnBar reservar notAvailable" title="Reservar: Em breve!" ></button>'
+								+'</div>'; //imageOferta
+					html += '</div>';
+
+
+					
+				}); //end each
+
+
+				$('.groupOfertas').hide().html(html).fadeIn('slow');
+				$('.hasToolInteract').tooltipster({
+					interactive: true,
+					theme: 'interact'
+				});
+				
+				$('.hasToolTip').tooltipster({
+					theme: '.tooltipNormal'
+				});
+
+				$('.notAvailable').tooltipster({
+					theme: '.notAvailable'
+				});
+
+				$('.overlayLoad').hide();
+				
+			} else 
+				$('.groupOfertas').append('<p style="text-align: center">Nenhum anÃºncio cadastrado para o seu perfil no momento</p>');
+			
+			
+			
+//			var usuariosBuscados = new Array();
+//			$('.h3Lojista').each(function(){
+//				id_facebook = $(this).html();
+//				if($.inArray(id_facebook,usuariosBuscados) < 0) {
+//					usuariosBuscados.push(id_facebook);
+//					$(this).html('Carregando Nome...');
+//					FB.api('/'+id_facebook, function(response) {
+//						$('.h3'+response.id).attr('title',response.name);
+//						$('.h3'+response.id).html(response.name);
+//					});
+//				}
+//			});
+		},
+		error: function(){
+		
+			carregarOfertasShopping(id_shopping);
 			console.warn("Erro ao carregar as ofertas cadastradas");
 		}
 	});
 }
 
 var select = '';
-function carregaDestaque(id_shopping){
+function carregaDestaqueShopping(id_shopping){
+	
+	$('.overlayLoad').show();
+
 	var hot = null;
 	$.ajax({data: {id: id_shopping}, type:'GET', dataType:'json', url:servidor+'getofertasbyid', timeout:timeout,
 		success: function(dados){
@@ -450,6 +575,8 @@ function carregaDestaque(id_shopping){
 				}
 			});
 
+			carregaPaperFold();
+
 					
 				
 			},
@@ -458,6 +585,104 @@ function carregaDestaque(id_shopping){
 			console.warn("Erro ao carregar destaque");
 		}
 	});
+}
+
+//por cidade
+function carregaDestaque(id_cidade){
+	var hot = null;
+
+	
+	$.ajax({data: {id_cidade: id_cidade}, type:'GET', dataType:'json', url:servidor+'getofertasbycidade', timeout:timeout,
+		success: function(dados){
+			hot = dados[0];
+			$.each(dados, function(i, obj) {
+				campanha = obj.campanha;
+				if(campanha.curtiram > hot.campanha.curtiram)
+					hot = obj;
+			});
+			//hot eh minha oferta(obj) mais curtida até o momento
+
+			var attrTooltip = "<div class='tooltipSocial'>"
+										+"<a onclick='event.preventDefaeult(); shareOnFacebook("+hot.oferta.id+", "+hot.oferta.titulo+", "+hot.oferta.square+");'>"
+										+"<div class='btnShare face'></div>"
+										+"</a>"
+										+"<a href='http://twitter.com/share?url=http://smartpanda.com.br/oferta.php?id="+hot.oferta.id+"' class='tweet'>"
+										+"<div class='btnShare twitter'></div>"
+										+"</a>"
+										+"<a href=''>"
+										+"<div class='btnShare gplus'></div>"
+										+"</a>"
+										// +"<a href='mailto:'>"
+										// +"<div class='btnShare mail'></div>"
+										// +"</a>"
+									+"</div>";
+									
+			$('#ofertaDestaque h3').html('<a href="oferta.php?id='+hot.oferta.id+'">'+hot.oferta.titulo+'</a>');
+			$('#ofertaDestaque h4:first').append(hot.oferta.lojista);
+			$('#ofertaDestaque h4:last').append(hot.shopping);
+			$('#ofertaDestaque .descOfertaDetalhe').html(hot.oferta.texto);
+			$('#fotoDestaque img').attr('src', ''+servidor+'../'+hot.oferta.square+'');
+			$('#fotoDestaque img').attr('alt', hot.oferta.titulo);
+			$('#fotoDestaque a').attr('href', 'oferta.php?id='+hot.oferta.id+'');
+			$('#fotoDestaque a').attr('onclick', 'window.location.href = http://smartpanda.com.br/smartpanda2013/oferta.php?id='+hot.oferta.id+'');
+			$('#barDestaque button:first').attr('onclick', 'event.preventDefault(); gostar(1, '+hot.oferta.id+', $(this));');
+			$('#barDestaque button:first span').html(hot.campanha.curtiram);
+			$('#barDestaque button:nth-child(2)').attr('onclick', 'event.preventDefault(); gostar(0, '+hot.oferta.id+', $(this));');
+			$('#barDestaque button:nth-child(3)').addClass('hasToolInteract');
+			$('#barDestaque button:nth-child(3)').attr('title', attrTooltip);
+			$('#barDestaque button:nth-child(5)').attr('onclick', 'window.location.href = http://smartpanda.com.br/smartpanda2013/oferta.php?id='+hot.oferta.id+'&r=cm#comments');
+
+			$.ajax({type:'GET', dataType:'json', url: servidor+'getcidadescomshoppings', timeout:timeout,
+				success: function(dados){
+					$.each(dados, function(i,obj){
+						select += '<option value="'+obj.id+'">'+obj.nome+'</option>';
+					});
+					$('#formQuery').find('select#selectCidade').html(select);
+
+					$('.overlayLoad').hide();
+				},
+				error: function(){
+					console.warn("Erro ao carregar nome da cidade");
+				}
+			});
+
+			carregaPaperFold();
+				
+			},
+		
+		error: function(){
+			console.warn("Erro ao carregar destaque");
+		}
+	});
+}
+
+
+
+function carregaPaperFold(){
+	var maior = 0;
+	var count = 0;
+	var aux = new Array();
+	var iMaior = 0;
+	do{
+		for(var i=0; i<categorias.length;i++){
+			if(categorias[i] > maior){
+				maior = categorias[i];
+				iMaior=i;
+			}
+		}
+
+		aux[count]=maior;
+		count++;
+		delete categorias[iMaior];
+	}while(count != 6);
+
+	var folder = '';
+	var nomeCategoria;
+	for(var j=0;j<6;j++){
+		nomeCategoria = $('#cbCategorias option[value='+aux[j]+']').html();
+		folder += '<button class="folding categoria'+aux[j]+'"><h4><div class="categoriaIcon"></div> '+nomeCategoria+'</h4></button>';
+	}
+	$('#paperFolding').html(folder+'<button id="footerFolding"  data-toggle="modal" data-target="#modalCategorias"><h4><i class="icon icon-white icon-plus"></i> Ver todas categorias</h4></button>');
 }
 
 //useless
@@ -582,6 +807,7 @@ function shareOnFacebook(id, titulo, image) {
 			);
 }
 
+var	categorias = new Array();
 
 function carregarCategorias() { 
 
@@ -590,6 +816,7 @@ function carregarCategorias() {
 			html = '<option value="0">Todas as Categorias</option>';
 			var modal ="";
 			$.each(dados.categorias, function(i, obj) {
+				categorias[obj.id] = 0;
 				html += '<option value="'+obj.id+'">'+obj.nome+'</option>';
 				if(obj.ativo == 1){
 					modal += '<button class="categoria categoria'+obj.id+'" value="'+obj.id+'">'

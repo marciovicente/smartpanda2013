@@ -200,15 +200,16 @@
 			e = e.replace(/[áàâã]/g,'a').replace(/[éèê]/g,'e').replace(/[óòôõ]/g,'o').replace(/[úùû]/g,'u').replace(/[íìî]/g,'i');
 			return e;
 		}
+		var id_shopping = 14;	
+		var id_cidade = 1;
 
 		$(document).ready(function(){
 			
 			$('#textLoading').addClass('animated tada');
-			var id_shopping = 14;	
-			carregaDestaque(id_shopping);	
-			getShoppingsAtivos(1);
 			carregarCategorias();
-			carregarOfertas(id_shopping);
+			carregaDestaque(id_cidade);	
+			carregarOfertas(id_cidade);
+			getShoppingsAtivos(id_cidade);
 
 			checkLogin();
 
@@ -236,7 +237,20 @@
 				}
 			
 			});
+
+			$('#selectCidade').change(function(){
+				var id_cidade = $(this).val();
+				carregarOfertas(id_cidade);
+				carregaDestaque(id_cidade);
+			});
+		
+			$('#selectShAtivos').change(function(){
+				var id_shopping = $(this).val();
+				carregarOfertasShopping(id_shopping);
+				carregarDestaqueShopping(id_shopping);
+			});
 			
+
 			
 
 
