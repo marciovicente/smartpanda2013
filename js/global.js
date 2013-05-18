@@ -594,6 +594,7 @@ function carregaDestaqueShopping(id_shopping){
 	});
 }
 
+var auxTmp;
 
 //por cidade
 function carregaDestaque(id_cidade){
@@ -601,13 +602,15 @@ function carregaDestaque(id_cidade){
 
 	$.ajax({data: {id_cidade: id_cidade}, type:'GET', dataType:'json', url:servidor+'getofertasbycidade', timeout:timeout,
 		success: function(dados){
-			hot = dados[0][0].campanha;
+			hot = dados[0][0];
+			auxTmp = hot;
 			var campanha;
 			
 			$.each(dados,function(j,objShopping){
 
 				$.each(objShopping, function(i, obj) {
 					campanha = obj.campanha;
+					
 					if(campanha.curtiram > hot.campanha.curtiram)
 						hot = obj;
 				});
@@ -645,6 +648,9 @@ function carregaDestaque(id_cidade){
 			$('#barDestaque button:nth-child(3)').addClass('hasToolInteract');
 			$('#barDestaque button:nth-child(3)').attr('title', attrTooltip);
 			$('#barDestaque button:nth-child(5)').attr('onclick', 'window.location.href = http://smartpanda.com.br/smartpanda2013/oferta.php?id='+hot.oferta.id+'&r=cm#comments');
+			
+			carregaPaperFold();
+
 
 			$.ajax({type:'GET', dataType:'json', url: servidor+'getcidadescomshoppings', timeout:timeout,
 				success: function(dados){
@@ -660,7 +666,6 @@ function carregaDestaque(id_cidade){
 				}
 			});
 
-			carregaPaperFold();
 				
 			},
 		
@@ -673,28 +678,33 @@ function carregaDestaque(id_cidade){
 
 
 function carregaPaperFold(){
-	var maior = 0;
-	var count = 0;
+	
+	var idMaior;
+	var tmp;
 	var aux = new Array();
-	var iMaior = 0;
-	do{
-		for(var i=0; i<categorias.length;i++){
-			if(categorias[i] > maior){
-				maior = categorias[i];
-				iMaior=i;
+	var catAux = categorias;
+	//errado! Não devo ordenar, devo salvar o indice, o indice é o id da categoria!
+	var maior = categorias[0];
+	for(var j=0: j<6; j++){
+
+		for(var i=0; i<catAux.length; i++){
+			if(maior > catAux[i]){
+				maior = catAux[i];
+				idMaior = i;
 			}
 		}
+		delete catAux[idMaior];
+		aux[j] = {valor: maior, id: idMaior};
+	}
 
-		aux[count]=maior;
-		count++;
-		delete categorias[iMaior];
-	}while(count != 6);
 
 	var folder = '';
 	var nomeCategoria;
-	for(var j=0;j<6;j++){
-		nomeCategoria = $('#cbCategorias option[value='+aux[j]+']').html();
-		folder += '<button class="folding categoria'+aux[j]+'"><h4><div class="categoriaIcon"></div> '+nomeCategoria+'</h4></button>';
+	
+	for(var l = 0; l<6; l++){
+		console.log(aux[l].valor+'- Ind:'+aux[l].id);
+		nomeCategoria = $('#cbCategorias option[value='+id[l].id+']').html();
+		folder += '<button class="folding categoria'+aux[l].id+'"><h4><div class="categoriaIcon"></div> '+nomeCategoria+'</h4></button>';
 	}
 	$('#paperFolding').html(folder+'<button id="footerFolding"  data-toggle="modal" data-target="#modalCategorias"><h4><i class="icon icon-white icon-plus"></i> Ver todas categorias</h4></button>');
 }
