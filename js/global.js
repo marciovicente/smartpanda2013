@@ -375,6 +375,8 @@ function carregarOfertas(id_cidade) {
 					theme: '.notAvailable'
 				});
 
+				//tirando posicao 0 do vetor
+				delete categorias[0];
 				
 			} else 
 				$('.groupOfertas').append('<p style="text-align: center">Nenhum anÃºncio cadastrado para o seu perfil no momento</p>');
@@ -396,6 +398,7 @@ function carregarOfertas(id_cidade) {
 		},
 		error: function(){
 		
+			$('.groupOfertas').append('<p style="text-align: center">Nenhum anÃºncio cadastrado para o seu perfil no momento</p>');
 			carregarOfertas(id_cidade);
 			console.warn("Erro ao carregar as ofertas cadastradas");
 		}
@@ -682,19 +685,24 @@ function carregaPaperFold(){
 	var idMaior;
 	var tmp;
 	var aux = new Array();
+	
 	var catAux = categorias;
-	//errado! Não devo ordenar, devo salvar o indice, o indice é o id da categoria!
+	
 	var maior = categorias[0];
-	for(var j=0: j<6; j++){
+	for(var j=0; j<6; j++){
 
 		for(var i=0; i<catAux.length; i++){
-			if(maior > catAux[i]){
-				maior = catAux[i];
-				idMaior = i;
+			if(catAux[i] != undefined){
+				if(maior >= catAux[i]){
+					maior = catAux[i];
+					idMaior = i;
+				}
 			}
 		}
 		delete catAux[idMaior];
-		aux[j] = {valor: maior, id: idMaior};
+		aux[j] = new Array();
+		aux[j][0] = maior;
+		aux[j][1] = idMaior;
 	}
 
 
@@ -702,9 +710,9 @@ function carregaPaperFold(){
 	var nomeCategoria;
 	
 	for(var l = 0; l<6; l++){
-		console.log(aux[l].valor+'- Ind:'+aux[l].id);
-		nomeCategoria = $('#cbCategorias option[value='+id[l].id+']').html();
-		folder += '<button class="folding categoria'+aux[l].id+'"><h4><div class="categoriaIcon"></div> '+nomeCategoria+'</h4></button>';
+		console.log(aux[l][0]+'- Ind:'+aux[l][1]);
+		nomeCategoria = $('#cbCategorias option[value='+aux[l][1]+']').html();
+		folder += '<button class="folding categoria'+aux[l][1]+'"><h4><div class="categoriaIcon"></div> '+nomeCategoria+'</h4></button>';
 	}
 	$('#paperFolding').html(folder+'<button id="footerFolding"  data-toggle="modal" data-target="#modalCategorias"><h4><i class="icon icon-white icon-plus"></i> Ver todas categorias</h4></button>');
 }

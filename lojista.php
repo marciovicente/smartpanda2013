@@ -56,23 +56,32 @@
 			<section class="second">
 				<div class="central">
 					<h2>"Por que minha loja deve usar o Smartpanda?"</h2>
+
+					<div class="tabContent">
+						<div class="tabLeft">
+							<button class="tab" value="1">Aumente suas receitas</button>
+							<button class="tab" value="2">Reduza gastos com Marketing</button>
+							<button class="tab" value="3">Não pague nada</button>
+						</div>
+						<div class="tabRight">
+							<article class="article1">Os Smartphones têm um papel fundamental para as estratégias de marketing, pois aumentam o envolvimento do consumidor com seu produto. Ligamos o mundo offline com o mundo online, trazendo a sua loja para a palma da mão dos consumidores. Não só isso, o Smartpanda é um sistema inteligente e de fácil uso. Conseguimos entregar o mesmo anúncio nas redes sociais, em nosso site e no Smartpanda TV, aplicando o conceito de comunicação 360°.</article>
+							<article class="article2">Os seus investimentos em marketing serão otimizados, pois suas campanhas serão direcionadas para o seu público-alvo. Com o poder analítico que possuímos, a sua empresa terá informações precisas, sabendo exatamente quantas pessoas foram atingidas por um anúncio, quantas gostaram e compartilharam nas redes sociais e até mesmo quantas pessoas compraram, após terem visto uma informação no Smartpanda.</article>	
+							<article class="article3">Possuímos planos que cabem em seu orçamento. Você pode usar o Smartpanda GRÁTIS pelo tempo que quiser (no plano Basic) ou migrar para outros planos que se adequem ao seu negócio. Comece agora mesmo. Basta efetuar o seu cadastro e aproveitar. Não perca mais tempo e dinheiro.</article>
+							
+						</div>
+					</div>
+
 					<div class="why receita">
-						<h4>Aumente suas receitas</h4>
-						<article class="article">Os Smartphones têm um papel fundamental para as estratégias de marketing, pois aumentam o envolvimento do consumidor com seu produto. Ligamos o mundo offline com o mundo online, trazendo a sua loja para a palma da mão dos consumidores. Não só isso, o Smartpanda é um sistema inteligente e de fácil uso. Conseguimos entregar o mesmo anúncio nas redes sociais, em nosso site e no Smartpanda TV, aplicando o conceito de comunicação 360°.</article>
+						<h4></h4>
 					</div>
 					<div class="why mkt">
-						<h4>Reduza gastos com Marketing</h4>
-						<article class="article">Os seus investimentos em marketing serão otimizados, pois suas campanhas serão direcionadas para o seu público-alvo. Com o poder analítico que possuímos, a sua empresa terá informações precisas, sabendo exatamente quantas pessoas foram atingidas por um anúncio, quantas gostaram e compartilharam nas redes sociais e até mesmo quantas pessoas compraram, após terem visto uma informação no Smartpanda.</article>	
+						<h4></h4>
 					</div>
 					<div class="why hand">
-						<h4>Não pague nada</h4>
-						<article class="article">
-							Possuímos planos que cabem em seu orçamento. Você pode usar o Smartpanda GRÁTIS pelo tempo que quiser (no plano Basic) ou migrar para outros planos que se adequem ao seu negócio. Comece agora mesmo. Basta efetuar o seu cadastro e aproveitar. Não perca mais tempo e dinheiro.
-
-						</article>
+						<h4></h4>
 					</div>
 
-					<button class="btn"><span>Estou convencido!</span> <br> Quero me cadastrar agora</button>
+					<button class="btn">Quero me cadastrar agora</button>
 				</div>
 
 			</section>
@@ -92,6 +101,34 @@
 						<img src="images/clientes/humpty.png" alt="Humpty Dumpty Brinquedos">
 						
 					</div>
+
+					
+
+					<div class="searchShopping">
+						
+						<input type="text" class="search"><i class="icon-search"></i>
+						<div class="listaShopping">
+							<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+						    <div class="viewport">
+						        <div class="overview">
+									<h4 class="shopping">Shopping Iguatemi</h4>
+									<h4 class="shopping">Shopping Iguatemi</h4>
+									<h4 class="shopping">Shopping Iguatemi</h4>
+									<h4 class="shopping">Shopping Iguatemi</h4>
+									<h4 class="shopping">Shopping Iguatemi</h4>
+									<h4 class="shopping">Shopping Iguatemi</h4>
+									<h4 class="shopping">Shopping Iguatemi</h4>
+									<h4 class="shopping">Shopping Iguatemi</h4>
+									<h4 class="shopping">Shopping Iguatemi</h4>
+									<h4 class="shopping">Shopping Iguatemi</h4>
+									<h4 class="shopping">Shopping Iguatemi</h4>
+									<h4 class="shopping">Shopping Iguatemi</h4>
+									<h4 class="shopping">Shopping Iguatemi</h4>
+						        </div>
+						    </div>
+						</div>
+					</div>
+					
 					<a class="doIt" href="#">Faça como eles</a>
 				</div>
 			</section>
@@ -181,22 +218,38 @@
 	<script src="<?php echo $server;?>js/browser.js"></script>
 	<script src="<?php echo $server;?>js/jquery.carouFredSel-6.2.1-packed.js"></script>
 	<script src="<?php echo $server;?>js/cities.js"></script>
-
+	<script src="<?php echo $server;?>js/tiny.js"></script>
+	
 
 	<script>	
 		$(document).ready(function(){
+
 			$("#listaClientes").carouFredSel({
 				scroll : {
 					duration		: 800,							
 					pauseOnHover	: true
 				}
 			});
+			
+			carregaShoppings();
 
 			new dgCidadesEstados({
 			    estado: $('#estado').get(0),
 			    cidade: $('#cidade').get(0)
 			});
+			$('.article2,.article3').hide();
+			$('.tab:first').addClass('active');
+
+			$('.listaShopping').tinyscrollbar();
+
 		}); 
+
+		var servidor = "smartpanda.com.br/servidor/sistema/";
+		
+		if((location.href).charAt(7) == 'w' && (location.href).charAt(8) == 'w' && (location.href).charAt(9) == 'w')
+			servidor = 'http://www.'+servidor;
+		else
+			servidor = 'http://'+servidor;
 
 		$('.input').click(function(){
 			$(this).find('input').focus();
@@ -212,15 +265,15 @@
 			
 		});
 
-		var x = 0;
+		var e = 0;
 			
 		$('form input').each(function(i){
 			if($(this).hasClass('error'))
-				x++;
+				e++;
 		});
 
 		$('form .btn').mouseover(function(){
-			if(x > 0){
+			if(e > 0){
 				$('form button').html('Preencha corretamente');
 				$('form').find('button').addClass('error');
 			}else{
@@ -234,11 +287,19 @@
 			$(this).parent().addClass('active');
 		});
 
-		
+		$('button.tab').click(function(){
+			$(this).siblings().removeClass('active');
+			$(this).addClass('active');
+
+			var value = $(this).val();
+
+			$('article.article'+value).show();
+			$('article.article'+value).siblings().hide();
+		});
 		
 		$('.form').submit(function(){
 
-			if(x == 0){
+			if(e == 0){
 
 				$.ajax({
 					type: 'POST',
@@ -261,6 +322,25 @@
 				return false;
 			}
 		});
+		
+		
+		function carregaShoppings(){
+			var shop = '';	
+			$.ajax({type:'GET', dataType:'json', url: servidor+'getshoppingsativos', timeout:3000,
+				success: function(dados){
+					$.each(dados, function(i,obj){
+						shop += '<span class="shopping">'+obj.nome_fantasia+'</span>';
+					});
+
+					$('.listaShopping').html(shop);
+				},
+				error: function(){			
+					console.warn("Erro ao carregar shoppings ");
+				}
+			});
+		}
+
+		// $('input.search').on('live',function(){});
 	</script>
 
 </body>
