@@ -379,7 +379,7 @@ body{
 							width: 580px;
 							margin-left: 16px;
 							text-shadow: 1px 1px 0 #d7d7d7;
-
+							font-weight: bold;
 						}
 					}
 
@@ -516,7 +516,7 @@ body{
 
 					.listaShopping{
 						width: 480px; 
-						height: auto;
+						height: 0;
 						max-height: 200px;
 						display: table;
 						margin: 30px auto;
@@ -534,7 +534,7 @@ body{
 						clear: both;
 						position: relative;
 						
-						.viewport { width: 460px; height: auto; min-height: 100px;  overflow: hidden; position: relative; }
+						.viewport { width: 460px; height: auto; min-height: 80px;  overflow: hidden; position: relative; }
 						.overview { list-style: none; position: absolute; left: 0; top: 0; }
 						.thumb .end,
 						.thumb { background-color: #868c92; }
@@ -568,11 +568,15 @@ body{
 							text-shadow: 1px 1px 0 #fff;
 							text-align: left;
 							padding: 3px 0 6px;
-							width: 430px;
 							margin: 8px auto;
 							font-family: Arial;
 							font-size: 14px;
-							border-bottom: 1px solid rgb(224, 224, 224);
+							border-bottom: 1px solid #e0e0e0;
+							width: auto;
+							display: table;
+							float: left;
+
+
 
 						}
 					}
@@ -624,6 +628,7 @@ body{
 						height: auto;
 						margin-top: 10px;
 
+						&:last-child{ margin-bottom: 26px; }
 						span{
 							font-family: Georgia;
 							font-size: 60px;

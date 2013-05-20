@@ -111,19 +111,7 @@
 							<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
 						    <div class="viewport">
 						        <div class="overview">
-									<h4 class="shopping">Shopping Iguatemi</h4>
-									<h4 class="shopping">Shopping Iguatemi</h4>
-									<h4 class="shopping">Shopping Iguatemi</h4>
-									<h4 class="shopping">Shopping Iguatemi</h4>
-									<h4 class="shopping">Shopping Iguatemi</h4>
-									<h4 class="shopping">Shopping Iguatemi</h4>
-									<h4 class="shopping">Shopping Iguatemi</h4>
-									<h4 class="shopping">Shopping Iguatemi</h4>
-									<h4 class="shopping">Shopping Iguatemi</h4>
-									<h4 class="shopping">Shopping Iguatemi</h4>
-									<h4 class="shopping">Shopping Iguatemi</h4>
-									<h4 class="shopping">Shopping Iguatemi</h4>
-									<h4 class="shopping">Shopping Iguatemi</h4>
+
 						        </div>
 						    </div>
 						</div>
@@ -231,16 +219,19 @@
 				}
 			});
 			
+			$('.article2,.article3').hide();
+			$('.tab:first').addClass('active');
+
+
 			carregaShoppings();
+
+			// $('.listaShopping').hide();
+			
 
 			new dgCidadesEstados({
 			    estado: $('#estado').get(0),
 			    cidade: $('#cidade').get(0)
 			});
-			$('.article2,.article3').hide();
-			$('.tab:first').addClass('active');
-
-			$('.listaShopping').tinyscrollbar();
 
 		}); 
 
@@ -255,7 +246,7 @@
 			$(this).find('input').focus();
 		});
 
-		$('input, textarea').on('keyup', function(e){
+		$('form input, textarea').on('keyup', function(e){
 			$(this).addClass('ok');
 
 			if(!$(this).val())
@@ -326,13 +317,15 @@
 		
 		function carregaShoppings(){
 			var shop = '';	
-			$.ajax({type:'GET', dataType:'json', url: servidor+'getshoppingsativos', timeout:3000,
+			var timeout = 30000;
+			$.ajax({type:'GET', dataType:'json', url:servidor+'getshoppingsativos', timeout:timeout,
 				success: function(dados){
 					$.each(dados, function(i,obj){
 						shop += '<span class="shopping">'+obj.nome_fantasia+'</span>';
 					});
 
-					$('.listaShopping').html(shop);
+					$('.listaShopping .overview').html(shop);
+					$('.listaShopping').tinyscrollbar();
 				},
 				error: function(){			
 					console.warn("Erro ao carregar shoppings ");
@@ -340,7 +333,36 @@
 			});
 		}
 
-		// $('input.search').on('live',function(){});
+		$('input.search').focus(function(){
+			$('.listaShopping').fadeIn('slow');
+		});
+		$('input.search').focusout(function(){
+			if(!$(this).val())
+				$('.listaShopping').fadeOut('slow');
+		});
+
+		function removeAcentos(e){
+			e = e.replace(/[áàâã]/g,'a').replace(/[éèê]/g,'e').replace(/[óòôõ]/g,'o').replace(/[úùû]/g,'u').replace(/[íìî]/g,'i');
+			return e;
+		}
+
+		$('input.search').on('keyup',function(e){
+
+			var val = $(this).val().toLowerCase();
+			val = removeAcentos(val);
+
+			$('.listaShopping .shopping').each(function(i){
+				var shopping = $(this).text();
+				shopping = removeAcentos(shopping);
+				shopping = shopping.toLowerCase();
+
+				if(shopping.indexOf(val) < 0){
+					$(this).hide();
+				}else
+					$(this).show();
+
+			});
+		});
 	</script>
 
 </body>
