@@ -106,15 +106,14 @@
 
 					<div class="searchShopping">
 						
+						<h3>Confira se o Smartpanda está no shopping da sua loja</h3>
 						<input type="text" class="search"><i class="icon-search"></i>
-						<div class="listaShopping">
-							<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
-						    <div class="viewport">
-						        <div class="overview">
 
-						        </div>
-						    </div>
+						<div class="solicite">
+							
 						</div>
+
+						
 					</div>
 					
 					<a class="doIt" href="#">Faça como eles</a>

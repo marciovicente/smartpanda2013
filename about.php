@@ -32,7 +32,7 @@
 			
 			<div class="about">
 				<div class="central">
-					<h3>Quem somos</h3>		
+					<h2>Quem somos</h2>		
 
 					<div class="bio davi">
 						<div class="photo"><div class="icon"></div></div>

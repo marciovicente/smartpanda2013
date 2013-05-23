@@ -12,6 +12,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $server;?>images/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="<?php echo $server; ?>css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo $server; ?>css/font-awesome.css">
 </head>
 <body class="notLogged">
 	<div id="all" class="notLogged">
@@ -35,6 +36,7 @@
 					<h3>com o shopping na palma da mão</h3>
 					<h3>(ou na tela do computador)</h3>
 					<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
+					<button class="getButton web"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
 					<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
 				</div>
 			</div>
@@ -47,6 +49,7 @@
 						<h2>Em qualquer lugar,</h2>
 						<h3>de qualquer dispositivo</h3>
 						<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
+						<button class="getButton web"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
 						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div><h6>Breve na App Store</h6> </button>
 
 					</div>

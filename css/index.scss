@@ -2110,7 +2110,7 @@ body{
 					background: #2cb73f;
 					border: 1px solid #207028;
 					border-bottom-width: 4px;
-					margin: 40px 20px;
+					margin: 10px 20px;
 					transition: all .45s ease-in-out;
 					-moz-transition: all .45s ease-in-out;
 					-webkit-transition: all .45s ease-in-out;
@@ -2118,7 +2118,7 @@ body{
 					margin-right: 500px;
 
 					&.apple{ 
-						margin-top: -6px;
+						
 						background: #727272;
 						float: left; 
 						border: 1px solid #303233;
@@ -2127,6 +2127,23 @@ body{
 
 						&:hover{
 							background: #494d4f;
+						}
+					}
+
+					&.web{
+						background:#1FADC7;
+						border: 1px solid #157788;
+						border-bottom: 4px solid #157788;
+						
+
+						&:hover{
+							background:#1C8482;
+						}
+						h6{
+							width: 160px;
+							float: left;
+							margin-top: 0;
+
 						}
 					}
 
@@ -2145,10 +2162,17 @@ body{
 						text-align: left;
 					}
 
-					div{
+					div,i{
 						width: 41px;
 						height: 40px;
 						float: right;
+						font-size: 50px;
+						color: #fff;
+					}
+
+					i{
+						margin-top: -2px;
+						margin-right: 10px;
 					}
 
 					.androidIcon{
@@ -2158,7 +2182,6 @@ body{
 						background:url(../images/os-icons.png) -47px -1px no-repeat ;
 					}
 					
-
 					&:hover{
 						background: rgb(37, 168, 55);
 
@@ -2184,7 +2207,7 @@ body{
 			.iconsBio{
 				width: auto;
 				height: auto;
-				margin: 73px auto; 
+				margin: 73px auto 0;
 				border-bottom: 1px solid #e0e5e5;
 				display: table;
 				height: 250px;
@@ -2590,6 +2613,13 @@ body{
 				height: auto;
 				margin: 150px auto 0;
 
+				h2{
+					font-family: $ubuntu;
+					text-shadow: 1px 1px 0 #fff;
+					color: #888888;
+					text-align: center;
+				}
+
 				.bio{
 					width: 450px;
 					height: 150px;
@@ -2767,7 +2797,7 @@ body{
 		background: $verde;
 		clear: both;
 		position: relative;
-		top: 129px;
+		top: 75px;
 		
 		.notLogged{top: 0;}
 

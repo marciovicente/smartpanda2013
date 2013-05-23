@@ -284,12 +284,12 @@ body{
 						font-size: 18px;
 
 						&:nth-child(2){
-							margin: 0 25px 0 35px;
+							margin: 0 25px 0 95px;
 						}
 
 						&:last-child{
-							margin: 0 0 0 68px;
-							width: 310px;
+							margin: 0 0 0 30px;
+							width: 280px;
 						}
 					}
 				}
@@ -298,7 +298,7 @@ body{
 					width: 960px;
 					height: 168px;
 					background: url(../images/lojista1.png) center center no-repeat;
-					margin-top: 30px;
+					margin-top: 50px;
 
 
 				}
@@ -319,7 +319,7 @@ body{
 				.tabContent{
 					width: auto;
 					height: 220px;
-					background:#ababab url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASElEQVQ4T2NkAIJDhw79B9F2dnaMpPJJ1oBuASPIdnJshhlEuQGk+hnDCxQbMBoGjJRHI8WBSHE0UmwANi+ADEUG+PIKxYEIAD7WFkhvfNCzAAAAAElFTkSuQmCC);
+					background:#C8C8C8 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASElEQVQ4T2NkAIJDhw79B9F2dnaMpPJJ1oBuASPIdnJshhlEuQGk+hnDCxQbMBoGjJRHI8WBSHE0UmwANi+ADEUG+PIKxYEIAD7WFkhvfNCzAAAAAElFTkSuQmCC);
 					-webkit-box-shadow: 0 0 25px rgba(0,0,0,0.4);
 					-moz-box-shadow: 0 0 25px rgba(0,0,0,0.4);
 					box-shadow: 0 0 25px rgba(0,0,0,0.4);
@@ -456,7 +456,7 @@ body{
 			
 				h2{
 					font-family: $ubuntu;
-					color: #a2a2a2;
+					color: #666;
 					font-size: 25px;
 					text-align: center;
 					text-shadow: -1px 0 0 rgba(255,255,255, 0.5);
@@ -484,11 +484,19 @@ body{
 					width: 960px;
 					height: auto;
 					display: table;
+					margin-top: 30px;
+					
+					h3{
+						color: #666;
+						font-family: $ubuntu;
+						text-align: center;
+						text-shadow: 1px 1px 0 #fff;
+					}
 
 					i{
 						float: left;
 						position: relative;
-						top: -28px;
+						top: -50px;
 						left: 325px;
 						color: #686868;
 						font-size: 19px;
@@ -498,7 +506,7 @@ body{
 					input.search{
 						width: 300px;
 						height: 35px;
-						margin: 0 auto;
+						margin: 20px auto;
 						background: rgba(0,0,0,0.3);
 						display: table;
 						-webkit-border-radius: none;
@@ -514,72 +522,72 @@ body{
 						border-radius: 30px;
 					}
 
-					.listaShopping{
-						width: 480px; 
-						height: 0;
-						max-height: 200px;
-						display: table;
-						margin: 30px auto;
-						background: #f2f2f2;
-						-webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
-						-moz-box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
-						box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
-						transition: all 0.25s ease-in-out;
-						-webkit-transition: all 0.25s ease-in-out;
-						-moz-transition: all 0.25s ease-in-out;
-						-webkit-border-radius: 7px;
-						-moz-border-radius: 7px;
-						border-radius: 7px;
-						padding: 6px 0 6px 20px;
-						clear: both;
-						position: relative;
+					// .listaShopping{
+					// 	width: 480px; 
+					// 	height: 0;
+					// 	max-height: 200px;
+					// 	display: table;
+					// 	margin: 30px auto;
+					// 	background: #f2f2f2;
+					// 	-webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+					// 	-moz-box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+					// 	box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+					// 	transition: all 0.25s ease-in-out;
+					// 	-webkit-transition: all 0.25s ease-in-out;
+					// 	-moz-transition: all 0.25s ease-in-out;
+					// 	-webkit-border-radius: 7px;
+					// 	-moz-border-radius: 7px;
+					// 	border-radius: 7px;
+					// 	padding: 6px 0 6px 20px;
+					// 	clear: both;
+					// 	position: relative;
 						
-						.viewport { width: 460px; height: auto; min-height: 80px;  overflow: hidden; position: relative; }
-						.overview { list-style: none; position: absolute; left: 0; top: 0; }
-						.thumb .end,
-						.thumb { background-color: #868c92; }
-						.scrollbar { 
-							position: relative;
-							float: right; 
-							width: 9px; 
-							right: 9px;
-							-webkit-border-radius: 80px;
-							-moz-border-radius: 80px;
-							border-radius: 80px;
-							overflow: hidden;
-						}
-						.track { background-color: #dcdee4; height: 100%; width:13px; position: relative; padding: 0 1px; }
-						.thumb { 
-							height: 20px;
-							width: 7px;
-							cursor: pointer;
-							overflow: hidden;
-							position: absolute;
-							top: 0;
-							-webkit-border-radius: 60px;
-							-moz-border-radius: 60px;
-							border-radius: 60px;
-						}
-						.thumb .end { overflow: hidden; height: 5px; width: 13px; }
-						.disable{ display: none; }
+					// 	.viewport { width: 460px; height: auto; min-height: 80px;  overflow: hidden; position: relative; }
+					// 	.overview { list-style: none; position: absolute; left: 0; top: 0; }
+					// 	.thumb .end,
+					// 	.thumb { background-color: #868c92; }
+					// 	.scrollbar { 
+					// 		position: relative;
+					// 		float: right; 
+					// 		width: 9px; 
+					// 		right: 9px;
+					// 		-webkit-border-radius: 80px;
+					// 		-moz-border-radius: 80px;
+					// 		border-radius: 80px;
+					// 		overflow: hidden;
+					// 	}
+					// 	.track { background-color: #dcdee4; height: 100%; width:13px; position: relative; padding: 0 1px; }
+					// 	.thumb { 
+					// 		height: 20px;
+					// 		width: 7px;
+					// 		cursor: pointer;
+					// 		overflow: hidden;
+					// 		position: absolute;
+					// 		top: 0;
+					// 		-webkit-border-radius: 60px;
+					// 		-moz-border-radius: 60px;
+					// 		border-radius: 60px;
+					// 	}
+					// 	.thumb .end { overflow: hidden; height: 5px; width: 13px; }
+					// 	.disable{ display: none; }
 						
-						.shopping{
-							color: #545454;
-							text-shadow: 1px 1px 0 #fff;
-							text-align: left;
-							padding: 3px 0 6px;
-							margin: 8px auto;
-							font-family: Arial;
-							font-size: 14px;
-							border-bottom: 1px solid #e0e0e0;
-							width: auto;
-							display: table;
-							float: left;
+					// 	.shopping{
+					// 		color: #545454;
+					// 		text-shadow: 1px 1px 0 #fff;
+					// 		text-align: left;
+					// 		padding: 3px 0 6px;
+					// 		margin: 8px auto;
+					// 		font-family: Arial;
+					// 		font-size: 14px;
+					// 		border-bottom: 1px solid #e0e0e0;
+					// 		width: auto;
+					// 		display: table;
+					// 		float: left;
 
 
 
-						}
-					}
+					// 	}
+					// }
 				}
 
 				.doIt{
@@ -617,7 +625,7 @@ body{
 					width: 450px;
 					margin-top: 35px;
 					float: left;
-					height: auto;
+					height: 510px;
 
 					h2{
 						font-family: $ubuntu;
@@ -628,7 +636,8 @@ body{
 						height: auto;
 						margin-top: 10px;
 
-						&:last-child{ margin-bottom: 26px; }
+						
+
 						span{
 							font-family: Georgia;
 							font-size: 60px;
@@ -676,13 +685,13 @@ body{
 						color: #fff;
 						border-bottom: 5px solid #538723;
 						font-family: $ubuntu;
-						position: relative;
-						top: 47px;
 						-webkit-border-radius: 9px 9px 0 0;
 						-moz-border-radius: 9px 9px 0 0;
 						border-radius: 9px 9px 0 0;
 						font-size: 26px;
-						left: 80px;
+						float: left;
+						margin-left: 80px;
+						margin-top: 26px;
 
 						span{
 							font-size: 19px;
