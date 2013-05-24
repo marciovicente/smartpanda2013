@@ -83,7 +83,7 @@ body{
 	    top: 0%; 
 	    width: 100%;
 	    height: 100%;
-	    z-index: 9000;
+	    z-index: 90000;
 	    background: rgba(0, 0, 0, 0.7);
 
 	    .loaderSp{
@@ -672,7 +672,7 @@ body{
 				border-bottom: 3px solid #232323;
 				display: block;
 				position: fixed;
-				z-index: 100;
+				z-index: 10000;
 
 				#logo{
 					background: url(../images/marca.png) no-repeat;
@@ -2017,7 +2017,7 @@ body{
 				width: 100%;
 				background: url(../images/dots.png);	
 				position: relative;
-				z-index: 1000;
+				z-index: 10000;
 				-webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.4);
 				-moz-box-shadow: 0 3px 7px rgba(0,0,0,0.4);
 				box-shadow: 0 3px 7px rgba(0,0,0,0.4);
@@ -2049,146 +2049,147 @@ body{
 				}
 			}
 
-			.banner{
+			// .banner{
 				// width: 960px;
-				width: 100%;
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
-				height: 430px;
-				background: url(../images/dot.png), url(../images/banner-full-compress.jpg) $verde center center no-repeat;
-				color: #fff;
-				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/banner-full.jpg', sizingMethod='scale');
-				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/banner-full.jpg', sizingMethod='scale')";
-				margin-top: 80px;
+				// width: 100%;
+				// -webkit-background-size: cover;
+				// -moz-background-size: cover;
+				// -o-background-size: cover;
+				// background-size: cover;
+				// height: 430px;
+				// background: url(../images/dot.png), url(../images/banner-full-compress.jpg) $verde center center no-repeat;
+				// color: #fff;
+				// filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/banner-full.jpg', sizingMethod='scale');
+				// -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/banner-full.jpg', sizingMethod='scale')";
+				// margin-top: 80px;
 				
-				&.second{
-					background: url(../images/dot.png), url(../images/banner2.jpg) #68A723 center center no-repeat;
-					// background: none;
+				// &.second{
+				// 	background: url(../images/dot.png), url(../images/banner2.jpg) #68A723 center center no-repeat;
+				// 	// background: none;
 
-					.devices{
-						float: right;
-						height: 373px;
-						background: url(../images/devices.png) no-repeat center center no-repeat;
-						width: 535px;
-					} 
+				// 	.devices{
+				// 		float: right;
+				// 		height: 373px;
+				// 		background: url(../images/devices.png) no-repeat center center no-repeat;
+				// 		width: 535px;
+				// 	} 
 
-					.leftBanner{
-						width: 380px; 
-						float: left;
+				// 	.leftBanner{
+				// 		width: 380px; 
+				// 		float: left;
 
 
-					}
+				// 	}
 
-				}
+				// }
 	
 
-				button{ cursor: pointer; }
-				h2,h3{
-					text-align: left;
-					font-family: $ubuntu;
-					text-shadow: 1px 1px 1px #000;
-				}
+				// button{ cursor: pointer; }
+				// h2,h3{
+				// 	text-align: left;
+				// 	font-family: $ubuntu;
+				// 	text-shadow: 1px 1px 1px #000;
+				// }
 
-				h2{ margin: 40px 0 0 20px; font-size: 36.5px;}
+				// h2{ margin: 40px 0 0 20px; font-size: 36.5px;}
 
-				h3{margin: 9px 0 0 20px ;font-size: 29.5px;}
+				// h3{margin: 9px 0 0 20px ;font-size: 29.5px;}
 
-				.getButton{
-					width: 250px;
-					color: #fff;
-					font-size: 18px;
-					text-align: center;
-					padding: 5px 10px;
-					color: #fff;
-					height: 50px;
-					-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
-					-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
-					box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
-					text-shadow: 1px 1px 0 #3b3b3b;
-					background: #2cb73f;
-					border: 1px solid #207028;
-					border-bottom-width: 4px;
-					margin: 10px 20px;
-					transition: all .45s ease-in-out;
-					-moz-transition: all .45s ease-in-out;
-					-webkit-transition: all .45s ease-in-out;
-					float: left;
-					margin-right: 500px;
 
-					&.apple{ 
-						
-						background: #727272;
-						float: left; 
-						border: 1px solid #303233;
-						border-bottom: 4px solid #323436;
-						cursor: wait;
 
-						&:hover{
-							background: #494d4f;
-						}
-					}
+			// }
+			.getButton{
+				width: 250px;
+				color: #fff;
+				font-size: 18px;
+				text-align: center;
+				padding: 5px 10px;
+				color: #fff;
+				cursor: pointer;
+				height: 50px;
+				-webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+				-moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+				box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+				text-shadow: 1px 1px 0 #3b3b3b;
+				background: #2cb73f;
+				border: 1px solid #207028;
+				border-bottom-width: 4px;
+				margin: 10px 20px;
+				transition: all .45s ease-in-out;
+				-moz-transition: all .45s ease-in-out;
+				-webkit-transition: all .45s ease-in-out;
+				float: left;
+				margin-right: 500px;
 
-					&.web{
-						background:#1FADC7;
-						border: 1px solid #157788;
-						border-bottom: 4px solid #157788;
-						
-
-						&:hover{
-							background:#1C8482;
-						}
-						h6{
-							width: 160px;
-							float: left;
-							margin-top: 0;
-
-						}
-					}
-
-					span{
-						width: auto;
-						float: left;
-						position: relative;
-						top: 1px;
-					}
-
-					h6{
-						font-family: Arial;
-						font-size: 10px;
-						color: rgba(0,0,0,0.4);
-						text-shadow: none;
-						text-align: left;
-					}
-
-					div,i{
-						width: 41px;
-						height: 40px;
-						float: right;
-						font-size: 50px;
-						color: #fff;
-					}
-
-					i{
-						margin-top: -2px;
-						margin-right: 10px;
-					}
-
-					.androidIcon{
-						background:url(../images/os-icons.png) 0 -1px no-repeat ;
-					}	
-					.appleIcon{
-						background:url(../images/os-icons.png) -47px -1px no-repeat ;
-					}
+				&.apple{ 
 					
+					background: #727272;
+					float: left; 
+					border: 1px solid #303233;
+					border-bottom: 4px solid #323436;
+					cursor: wait;
+
 					&:hover{
-						background: rgb(37, 168, 55);
-
+						background: #494d4f;
 					}
-
 				}
 
+				&.web{
+					background:#1FADC7;
+					border: 1px solid #157788;
+					border-bottom: 4px solid #157788;
+					
+
+					&:hover{
+						background:#1e8f8d;
+					}
+					h6{
+						width: 160px;
+						float: left;
+						margin-top: 0;
+
+					}
+				}
+
+				span{
+					width: auto;
+					float: left;
+					position: relative;
+					top: 1px;
+				}
+
+				h6{
+					font-family: Arial;
+					font-size: 10px;
+					color: rgba(0,0,0,0.4);
+					text-shadow: none;
+					text-align: left;
+				}
+
+				div,i{
+					width: 41px;
+					height: 40px;
+					float: right;
+					font-size: 50px;
+					color: #fff;
+				}
+
+				i{
+					margin-top: -2px;
+					margin-right: 10px;
+				}
+
+				.androidIcon{
+					background:url(../images/os-icons.png) 0 -1px no-repeat ;
+				}	
+				.appleIcon{
+					background:url(../images/os-icons.png) -47px -1px no-repeat ;
+				}
+				
+				&:hover{
+					background: rgb(37, 168, 55);
+
+				}
 
 			}
 			
@@ -2418,8 +2419,10 @@ body{
 
 			// home page, hotsite, presentation, login, etc
 			.auth{
-				width: 475px;
+				width: 360px;
 				float: right;
+				margin-top: 15px;
+				display: inline-block;
 
 				span{
 					font-size: 17px;
@@ -2435,6 +2438,7 @@ body{
 			    	transition: all .45s ease-in-out;
 					-moz-transition: all .45s ease-in-out;
 					-webkit-transition: all .45s ease-in-out;
+					float: left;
 				}
 
 			} //.auth
@@ -2528,7 +2532,7 @@ body{
 				&.large {
 				    height: 36px;
 				    line-height: 36px;
-				    font-size: 20px;
+				    font-size: 16px;
 					float: left;
 					margin: 5px 0 0 0;
 					border-bottom-width: 4px;
@@ -3176,6 +3180,16 @@ body{
 // 	-o-animation-name: pulse;
 // 	animation-name: pulse;
 // }
+
+
+
+
+
+
+
+
+//slider
+
 
 
 

@@ -13,6 +13,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $server;?>images/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="<?php echo $server; ?>css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo $server; ?>css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo $server; ?>css/parallax.css">
 </head>
 <body class="notLogged">
 	<div id="all" class="notLogged">
@@ -24,67 +25,55 @@
 					<a href="<?php echo $server ?>"><div id="logo"><span>O shopping na palma da mão</span></div></a>
 
 					<div class="auth">
-						<span>Cadastre-se agora</span>
+						<!-- <span>Cadastre-se agora</span> -->
 						<a class="btn-auth btn-facebook large" href="#"> Conecte-se <b>Facebook</b> </a>
-						<a class="btn-auth btn-lojista large" data-toggle="modal" data-target="#modalLojista">Lojista</a>
+						<a class="btn-auth btn-lojista large" href="<?php echo $server ?>lojista.php">Lojista</a>
 					</div>
 				</div>
 			</header>
-			<div class="banner">
-				<div class="central">
-					<h2>Encontre tudo o que você precisa</h2>
-					<h3>com o shopping na palma da mão</h3>
-					<h3>(ou na tela do computador)</h3>
-					<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
-					<button class="getButton web"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
-					<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
-				</div>
-			</div>
 
-
-
-			<div class="banner second">
-				<div class="central">
-					<div class="leftBanner">
-						<h2>Em qualquer lugar,</h2>
-						<h3>de qualquer dispositivo</h3>
-						<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
+			<div id="da-slider" class="da-slider">
+ 
+			    <div class="da-slide">
+			        <h2>Encontre tudo o que você precisa <br>	
+					com o shopping na palma da mão</h2>
+			        <p>
+			        	<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
 						<button class="getButton web"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
-						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div><h6>Breve na App Store</h6> </button>
+						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
 
-					</div>
-				</div>
+			        </p>
+			        <div class="da-img">
+			            <img src="images/devices.png" alt="Smartpanda em diversos aparelhos" />
+			        </div>
+			    </div>
+
+			    <div class="da-slide">
+			        <h2>Em qualquer lugar, <br>	
+					de qualquer dispositivo.</h2>
+			        <p>
+			        	<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
+						<button class="getButton web"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
+						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
+
+			        </p>
+			        <div class="da-img">
+			            <img src="images/devices.png" alt="Smartpanda em diversos aparelhos" />
+			        </div>
+			    </div>
+
+			    
+			     
+			    
+			     
+			    <nav class="da-arrows">
+			        <span class="da-arrows-prev"></span>
+			        <span class="da-arrows-next"></span>
+			    </nav>
+			     
 			</div>
 
-			<!-- =========================== modal lojista =========================== -->
-			<!-- 
-			<div id="modalLojista" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h3 id="myModalLabel">Área do Lojista</h3>
-				</div>
-				
-				<div class="modal-body">
-					<form class="loginLojista" method="POST" action="">
-						<span>Login</span>
-						<input type="text" name="user" placeholder="Nome de usuário">
-						<input type="password" name="password" placeholder="Senha">
-						<button class="btn btn-info"><i class="icon icon-white icon-lock" ></i> Entrar</button>
-						<a href=""> <i class="icon icon-question-sign"></i> Esqueci minha senha</a>
-					</form>
-					<div class="leftModalLojista">
-						<h4>Ainda não cadastrou sua loja?</h4>
-						<p>Aumente suas receitas</p>
-						<p>Gerencie e otimize suas despesas com publicidade</p>
-		 				<p>Seus produtos e serviços na palma da mão dos consumidores</p>
-						<p>Seja eficaz em satisfazer as necessidades dos seus clientes</p>
-						<button class="btn btn-success btn-large">Cadastre agora!</button>
-					</div>
-				</div>
-				
-			</div> -->
-
-			<!-- ======================================================================= -->
+			
 			<div class="central">
 				<h1>Como Funciona</h1>
 				<div class="iconsBio">
@@ -106,12 +95,6 @@
 
 					
 				</div>
-				
-				<!-- <div class="algorithms">
-					<h3>Através do Facebook entendemos o seu perfil</h3>
-					<h3>O algoritmo inteligente do Smartpanda é capaz de identificar apenas o que é de seu interesse</h3>
-					<h3>Você aproveita todos anúncios que o Smartpanda preparou pra você! </h3>
-				</div> -->
 				
 				
 	
@@ -149,37 +132,44 @@
 
 	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
 	<script src="<?php echo $server;?>js/bootstrap.modal.js"></script>
+	<script src="<?php echo $server;?>js/modernizr.custom.28468.js"></script>
+	<script src="<?php echo $server;?>js/jquery.cslider.js"></script>
 
 	<script>
-		$(function () {
-			var counter = 0, divs = $('.banner, .banner.second');
-			
-		    function alternateDiv() {
-		        divs.hide() // hide all divs
-		            .filter(function (index) { return index == counter % 2; }) // figure out correct div to show
-		            .fadeIn('slow'); // and show it
 
-		        counter++;
-		    }; 
-
-		    alternateDiv(); 
-		    
-		    setInterval(function () {
-		        alternateDiv(); 
-		    }, 6 * 1000); 
-
-
-			
-
+	
+		$('#da-slider').cslider({
+	 
+		    current     : 0,    
+		    bgincrement : 50,   
+		    autoplay    : true,
+		    interval    : 6000 
+		     
 		});
 
+	
+		// $(function () {
+		// 	var counter = 0, divs = $('.banner, .banner.second');
+			
+		//     function alternateDiv() {
+		//         divs.hide() // hide all divs
+		//             .filter(function (index) { return index == counter % 2; }) // figure out correct div to show
+		//             .fadeIn('slow'); // and show it
+
+		//         counter++;
+		//     }; 
+
+		//     alternateDiv(); 
+		    
+		//     setInterval(function () {
+		//         alternateDiv(); 
+		//     }, 6 * 1000); 
 
 
+			
 
+		// });
 
-
-
-		
 	</script>
 </body>
 </html>
