@@ -53,12 +53,21 @@
 					de qualquer dispositivo.</h2>
 			        <p>
 			        	<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
+<<<<<<< HEAD
 						<!-- <button class="getButton web"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
 						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
  -->
 			        </p>
 			        <div class="da-img">
 			            <img src="images/nexus.png" alt="Smartpanda em diversos aparelhos" />
+=======
+						<button class="getButton web"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
+						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
+
+			        </p>
+			        <div class="da-img">
+			            <img src="images/devices.png" alt="Smartpanda em diversos aparelhos" />
+>>>>>>> 859bd21c6db74b1e82e23f0ddee29c9584b5e8d6
 			        </div>
 			    </div>
 
