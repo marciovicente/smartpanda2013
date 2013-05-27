@@ -379,7 +379,7 @@ function carregarOfertas(id_cidade) {
 				delete categorias[0];
 				
 			} else 
-				$('.groupOfertas').append('<p style="text-align: center">Nenhum anÃºncio cadastrado para o seu perfil no momento</p>');
+				console.log('<p style="text-align: center">Nenhum anÃºncio cadastrado para o seu perfil no momento</p>');
 			
 			
 			
@@ -680,14 +680,15 @@ function carregaDestaque(id_cidade){
 
 
 
+var tmp;
 function carregaPaperFold(){
 	
 	var idMaior;
-	var tmp;
 	var aux = new Array();
-	
+		
 	var catAux = categorias;
-	
+	tmp = categorias;
+	console.log(tmp);
 	var maior = categorias[0];
 	for(var j=0; j<6; j++){
 
@@ -705,6 +706,8 @@ function carregaPaperFold(){
 		aux[j][1] = idMaior;
 	}
 
+	tmp = aux;
+	console.log(tmp);
 
 	var folder = '';
 	var nomeCategoria;
