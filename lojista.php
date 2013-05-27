@@ -61,12 +61,12 @@
 						<div class="tabLeft">
 							<button class="tab" value="1">Aumente suas receitas</button>
 							<button class="tab" value="2">Reduza gastos com Marketing</button>
-							<button class="tab" value="3">Não pague nada</button>
+							<button class="tab" value="3">Cabe em seu orçamento</button>
 						</div>
 						<div class="tabRight">
 							<article class="article1">Os Smartphones têm um papel fundamental para as estratégias de marketing, pois aumentam o envolvimento do consumidor com seu produto. Ligamos o mundo offline com o mundo online, trazendo a sua loja para a palma da mão dos consumidores. Não só isso, o Smartpanda é um sistema inteligente e de fácil uso. Conseguimos entregar o mesmo anúncio nas redes sociais, em nosso site e no Smartpanda TV, aplicando o conceito de comunicação 360°.</article>
 							<article class="article2">Os seus investimentos em marketing serão otimizados, pois suas campanhas serão direcionadas para o seu público-alvo. Com o poder analítico que possuímos, a sua empresa terá informações precisas, sabendo exatamente quantas pessoas foram atingidas por um anúncio, quantas gostaram e compartilharam nas redes sociais e até mesmo quantas pessoas compraram, após terem visto uma informação no Smartpanda.</article>	
-							<article class="article3">Possuímos planos que cabem em seu orçamento. Você pode usar o Smartpanda GRÁTIS pelo tempo que quiser (no plano Basic) ou migrar para outros planos que se adequem ao seu negócio. Comece agora mesmo. Basta efetuar o seu cadastro e aproveitar. Não perca mais tempo e dinheiro.</article>
+							<article class="article3">Você pode usar o Smartpanda GRÁTIS pelo tempo que quiser (no plano Basic) ou migrar para outros planos que se adequem ao seu negócio. Comece agora mesmo. Basta efetuar o seu cadastro e aproveitar. Não perca mais tempo e dinheiro. <a href="">Confira nossos planos</a></article>
 							
 						</div>
 					</div>

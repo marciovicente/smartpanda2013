@@ -23,7 +23,6 @@
 					<a href="<?php echo $server ?>"><div id="logo"><span>O shopping na palma da mão</span></div></a>
 
 					<div class="auth">
-						<span>Cadastre-se agora</span>
 						<a class="btn-auth btn-facebook large" href="#"> Conecte-se <b>Facebook</b> </a>
 						<a class="btn-auth btn-lojista large" data-toggle="modal" data-target="#modalLojista">Lojista</a>
 					</div>
