@@ -2419,34 +2419,35 @@ body{
 
 			// home page, hotsite, presentation, login, etc
 			.auth{
-<<<<<<< HEAD
-				width: 380px;
-=======
-				width: 360px;
->>>>>>> 859bd21c6db74b1e82e23f0ddee29c9584b5e8d6
+				width:440px;
 				float: right;
 				margin-top: 15px;
 				display: inline-block;
+				line-height: 20px;
 
 				span{
-					font-size: 17px;
+					font-size: 12px;
 					letter-spacing: 2px;
 					font-family: $ubuntu;
-					color: #808370;
-					text-align: left;
+					color: #fff;
+					text-align: center;
 					position: relative;
-					top: 2px;
+					top: -5px;
+					bottom: -10px;
 				}
 			    
-			    button{
+			    a{ 
 			    	transition: all .45s ease-in-out;
 					-moz-transition: all .45s ease-in-out;
 					-webkit-transition: all .45s ease-in-out;
 					float: left;
+
+
 				}
 
 			} //.auth
 			.btn-auth {
+				line-height: 20px;
 			    position: relative;
 			    display: inline-block;
 			    height: 18px;

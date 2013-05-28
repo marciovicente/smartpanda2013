@@ -27,7 +27,7 @@
 					<div class="auth">
 						<!-- <span>Cadastre-se agora</span> -->
 						<a class="btn-auth btn-facebook large" href="#"> Conecte-se <b>Facebook</b> </a>
-						<a class="btn-auth btn-lojista large" href="<?php echo $server ?>lojista.php">Lojista</a>
+						<a class="btn-auth btn-lojista large" href="<?php echo $server ?>lojista.php">Área do Lojista</a>
 					</div>
 				</div>
 			</header>
@@ -53,21 +53,26 @@
 					de qualquer dispositivo.</h2>
 			        <p>
 			        	<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
-<<<<<<< HEAD
-						<!-- <button class="getButton web"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
-						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
- -->
-			        </p>
-			        <div class="da-img">
-			            <img src="images/nexus.png" alt="Smartpanda em diversos aparelhos" />
-=======
 						<button class="getButton web"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
 						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
 
 			        </p>
 			        <div class="da-img">
-			            <img src="images/devices.png" alt="Smartpanda em diversos aparelhos" />
->>>>>>> 859bd21c6db74b1e82e23f0ddee29c9584b5e8d6
+			            <img src="images/nexus2.png" alt="Smartpanda Nexus" />
+			        </div>
+			    </div> 
+
+			    <div class="da-slide">
+			        <h2>Em qualquer lugar, <br>	
+					de qualquer dispositivo.</h2>
+			        <p>
+			        	<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
+						<button class="getButton web"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
+						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
+
+			        </p>
+			        <div class="da-img">
+			            <img src="images/iphone.png" alt="Smartpanda Iphone" />
 			        </div>
 			    </div>
 
@@ -95,11 +100,11 @@
 					</div>
 
 					<div class="exp deal">
-						<h5>Encontre os produtos que você procura</h5>	
+						<h5>Encontre os melhores anúncios para seu perfil</h5>	
 					</div>
 
 					<div class="exp cart">
-						<h5>Agora é só sair para as compras!</h5>	
+						<h5>Só sair para as compras!</h5>	
 					</div>
 
 					
