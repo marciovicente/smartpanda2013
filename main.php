@@ -100,7 +100,7 @@
 					</div>
 
 					<div class="exp deal">
-						<h5>Encontre os melhores anúncios para seu perfil</h5>	
+						<h5>Encontre os melhores produtos para seu perfil</h5>	
 					</div>
 
 					<div class="exp cart">

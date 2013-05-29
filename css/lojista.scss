@@ -623,18 +623,24 @@ body{
 				background:#1e1e1e;
 				position: relative;
 				z-index: 2;
-				height: 545px;
+				min-height: 755px;
+				height: auto;
+				
+				.central{
+					display: table;
+				}
 
 				.left{
 					width: 450px;
 					margin-top: 35px;
 					float: left;
-					height: 510px;
+					height: auto;
 
 					h2{
 						font-family: $ubuntu;
 						color: #4c4c4c;
 					}
+
 					.depoimento{
 						width: 100%;
 						height: auto;
@@ -681,26 +687,42 @@ body{
 						}
 					}
 
-					.phone{
-						background: $verde;
-						width: auto;
-						float: left;
-						padding: 5px 15px;
-						color: #fff;
-						border-bottom: 5px solid #538723;
-						font-family: $ubuntu;
-						-webkit-border-radius: 9px 9px 0 0;
-						-moz-border-radius: 9px 9px 0 0;
-						border-radius: 9px 9px 0 0;
-						font-size: 26px;
-						float: left;
-						margin-left: 80px;
-						margin-top: 26px;
+					.atuacao{
+						width: 100%;
+						height: auto;
+						margin-top: 25px;
+						display: table;
 
-						span{
-							font-size: 19px;
+						h3,h4{font-weight: normal;}
+
+						h3{
+							font-family: $ubuntu;
+							color: $verde;
+						}
+
+						h4{
+							font-family: $ubuntu;
+							color: #6F7261;
+							margin-top: 10px;
+						}
+
+						.cidades, .shoppings{
+
+							font-family: Arial;
+							font-size: 12px;
+							color: #999;
+							line-height: 19px;
+						}
+
+						a{
+							color: $verde;
+							font-family: Arial;
+							font-weight: bold;
+
 						}
 					}
+
+					
 				}
 
 				.form{
@@ -896,6 +918,26 @@ body{
 					}
 
 				}
+
+				.phone{
+						background: $verde;
+						width: auto;
+						float: right;
+						padding: 5px 15px;
+						color: #fff;
+						border-bottom: 5px solid #538723;
+						font-family: $ubuntu;
+						-webkit-border-radius: 9px 9px 0 0;
+						-moz-border-radius: 9px 9px 0 0;
+						border-radius: 9px 9px 0 0;
+						font-size: 26px;
+						margin-right: 80px;
+						margin-top: 26px;
+
+						span{
+							font-size: 19px;
+						}
+					}
 			}
 
 		} //content
