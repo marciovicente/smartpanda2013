@@ -623,7 +623,7 @@ body{
 				background:#1e1e1e;
 				position: relative;
 				z-index: 2;
-				min-height: 755px;
+				min-height: 622px;
 				height: auto;
 				
 				.central{
@@ -735,6 +735,14 @@ body{
 						font-family: $ubuntu;
 						font-size: 22px;
 						color: #7E826F;
+
+						&.success{
+							font-family: $ubuntu;
+							color: #999;
+							font-size: 22px;
+							text-align: center;
+							text-shadow: 1px 1px 0 #000;
+						}
 					}
 
 					h5{
@@ -932,7 +940,7 @@ body{
 						border-radius: 9px 9px 0 0;
 						font-size: 26px;
 						margin-right: 80px;
-						margin-top: 26px;
+						margin-top: 39px;
 
 						span{
 							font-size: 19px;

@@ -45,6 +45,10 @@ window.fbAsyncInit = function() {
    d.getElementsByTagName('head')[0].appendChild(js);
  }(document));
 
+
+
+
+
 erroFacebook = 0;
 var nomeUsuario = null;
 
@@ -285,7 +289,7 @@ function carregarLojasSemOfertas() {
 }
 
 var controladorShopping = 0;
-function carregarOfertas(id_cidade) {
+function carregarOfertas(id_cidade, flag) {
 	controladorShopping++;
 
 	var ofertasDisponiveis = new Array();
@@ -295,27 +299,37 @@ function carregarOfertas(id_cidade) {
 			if(dados[0]) {
 				$('#textLoading').hide();
 
-				// ofertas = "";
-				// ultimaLoja = 0;
 				var html = '';
 
 				var shopp = '';
 				$.each(dados, function(i, objShopping) {
-					shopp = '<legend class="nomeShopping">'+objShopping.shopping+'</legend>';
+					
 					$.each(objShopping,function(j, obj){
 
+						shopp = '<div class="ofertasPorShopping">'
+									+'<legend class="nomeShopping">'+objShopping[0].shopping+'</legend>';
 						var oferta = obj.oferta;
+
+						// ====== tmp =============
+						if(j == 1)
+							testOfertaTmp = oferta;
+						// ========================
+
 						var campanha = obj.campanha;
 						ofertasDisponiveis.push(obj.categoria);
 						var link = 'oferta.php?id='+oferta.id;
 						var publico = servidor+'../publico/anuncio?id='+oferta.id; 
 						
-						categorias[obj.categoria]++; //carrego para o paperfold
-					
+						// categorias[obj.categoria]++; //carrego para o paperfold
+						
+						var objCategorias = {
+							id: obj.categoria
+						}
+						categorias.push(objCategorias);
 
 						var attrTooltip = "<div class='tooltipSocial'>"
-										+"<a onclick='compartilharNoFacebook();'>"
-										+"<div class='btnShare face'></div>"
+										+"<a onClick='shareOnFacebook("+oferta.id+", "+oferta.titulo+", "+oferta.imagem+")'>"
+										+"<div  class='btnShare face'></div>"
 										+"</a>"
 										+"<a href='http://twitter.com/share?url="+publico+"' class='tweet' target='_blank'>"
 										+"<div class='btnShare twitter'></div>"
@@ -328,6 +342,17 @@ function carregarOfertas(id_cidade) {
 										// +"</a>"
 									+"</div>";
 
+						// var attrTooltip = '<div class="tooltipNewSocial">
+						// 		<input type="checkbox" class="checkbox" class="shareInput" checked>
+						// 		  <label for="share" class="label entypo-export"></label>
+						// 		  <div class="social">
+						// 		    <ul>
+						// 		      <li class="entypo-twitter"></li>
+						// 		      <li class="entypo-facebook"></li>
+						// 		      <li class="entypo-gplus"></li>
+						// 		    </ul>
+						// 		  </div>
+						// 	  </div>';
 									
 						html += '<div class="ofertaUnique categoria'+obj.categoria+'">'
 									+'<a href="'+link+'">'
@@ -353,12 +378,14 @@ function carregarOfertas(id_cidade) {
 										+'<button class="btnBar reservar notAvailable" title="Reservar: Em breve!" ></button>'
 									+'</div>'; //imageOferta
 					html += '</div>';
-
+					shopp 
 
 					}); //campanha
 					
-					
-					$('.groupOfertas').hide().append(shopp+html).fadeIn('slow');
+					if(flag == 0)
+						$('.groupOfertas').hide().append(shopp+html+'</div>').fadeIn('slow');
+					if(flag == 1)
+						$('.groupOfertas').hide().html(shopp+html+'</div>').fadeIn('slow');
 				}); //end each
 
 		
@@ -399,7 +426,7 @@ function carregarOfertas(id_cidade) {
 		error: function(){
 		
 			$('.groupOfertas').append('<p style="text-align: center">Nenhum anÃºncio cadastrado para o seu perfil no momento</p>');
-			carregarOfertas(id_cidade);
+			carregarOfertas(id_cidade, flag);
 			console.warn("Erro ao carregar as ofertas cadastradas");
 		}
 	});
@@ -435,8 +462,8 @@ function carregarOfertasShopping(id_shopping) {
 					publico = servidor+'../publico/anuncio?id='+oferta.id; 
 
 					var attrTooltip = "<div class='tooltipSocial'>"
-										+"<a onclick='compartilharNoFacebook();;'>"
-										+"<div class='btnShare face'></div>"
+										+"<a onClick='shareOnFacebook("+oferta.id+", "+oferta.titulo+", "+oferta.imagem+")'>"
+										+"<div class='btnShare face' ></div>"
 										+"</a>"
 										+"<a href='http://twitter.com/share?url="+publico+"' class='tweet' target='_blank'>"
 										+"<div class='btnShare twitter'></div>"
@@ -542,7 +569,7 @@ function carregaDestaqueShopping(id_shopping){
 			//hot eh minha oferta(obj) mais curtida até o momento
 
 			var attrTooltip = "<div class='tooltipSocial'>"
-										+"<a onclick='event.preventDefaeult(); shareOnFacebook("+hot.oferta.id+", "+hot.oferta.titulo+", "+hot.oferta.square+");'>"
+										+"<a onclick='event.preventDefault(); shareOnFacebook("+hot.oferta.id+", "+hot.oferta.titulo+", "+hot.oferta.square+");'>"
 										+"<div class='btnShare face'></div>"
 										+"</a>"
 										+"<a href='http://twitter.com/share?url=http://smartpanda.com.br/oferta.php?id="+hot.oferta.id+"' class='tweet'>"
@@ -577,6 +604,7 @@ function carregaDestaqueShopping(id_shopping){
 						select += '<option value="'+obj.id+'">'+obj.nome+'</option>';
 					});
 					$('#formQuery').find('select#selectCidade').html(select);
+					$('#selectCidade option[value="'+id_cidade+'"]').attr('checked', true);
 
 					$('.overlayLoad').hide();
 				},
@@ -585,7 +613,7 @@ function carregaDestaqueShopping(id_shopping){
 				}
 			});
 
-			carregaPaperFold();
+			// carregaPaperFold();
 
 					
 				
@@ -623,7 +651,7 @@ function carregaDestaque(id_cidade){
 			//hot eh minha oferta(obj) mais curtida até o momento
 
 			var attrTooltip = "<div class='tooltipSocial'>"
-								+"<a onclick='event.preventDefaeult(); shareOnFacebook("+hot.oferta.id+", "+hot.oferta.titulo+", "+hot.oferta.square+");'>"
+								+"<a onclick='event.preventDefault(); shareOnFacebook("+hot.oferta.id+", "+hot.oferta.titulo+", "+hot.oferta.square+");'>"
 								+"<div class='btnShare face'></div>"
 								+"</a>"
 								+"<a href='http://twitter.com/share?url=http://smartpanda.com.br/oferta.php?id="+hot.oferta.id+"' class='tweet'>"
@@ -638,8 +666,8 @@ function carregaDestaque(id_cidade){
 							+"</div>";
 									
 			$('#ofertaDestaque h3').html('<a href="oferta.php?id='+hot.oferta.id+'">'+hot.oferta.titulo+'</a>');
-			$('#ofertaDestaque h4:first').append(hot.oferta.lojista);
-			$('#ofertaDestaque h4:last').append(hot.shopping);
+			$('#ofertaDestaque h4:first').html('<div class="iconLoja"></div> '+hot.oferta.lojista);
+			$('#ofertaDestaque h4:last').html('<div class="iconLoja mall"></div> '+hot.shopping);
 			$('#ofertaDestaque .descOfertaDetalhe').html(hot.oferta.texto);
 			$('#fotoDestaque img').attr('src', ''+servidor+'../'+hot.oferta.square+'');
 			$('#fotoDestaque img').attr('alt', hot.oferta.titulo);
@@ -652,7 +680,7 @@ function carregaDestaque(id_cidade){
 			$('#barDestaque button:nth-child(3)').attr('title', attrTooltip);
 			$('#barDestaque button:nth-child(5)').attr('onclick', 'window.location.href = http://smartpanda.com.br/smartpanda2013/oferta.php?id='+hot.oferta.id+'&r=cm#comments');
 			
-			carregaPaperFold();
+			// carregaPaperFold();
 
 
 			$.ajax({type:'GET', dataType:'json', url: servidor+'getcidadescomshoppings', timeout:timeout,
@@ -680,44 +708,64 @@ function carregaDestaque(id_cidade){
 
 
 
-var tmp;
+
 function carregaPaperFold(){
 	
-	var idMaior;
+
 	var aux = new Array();
-		
-	var catAux = categorias;
-	tmp = categorias;
-	console.log(tmp);
-	var maior = categorias[0];
-	for(var j=0; j<6; j++){
-
-		for(var i=0; i<catAux.length; i++){
-			if(catAux[i] != undefined){
-				if(maior >= catAux[i]){
-					maior = catAux[i];
-					idMaior = i;
-				}
-			}
-		}
-		delete catAux[idMaior];
-		aux[j] = new Array();
-		aux[j][0] = maior;
-		aux[j][1] = idMaior;
-	}
-
-	tmp = aux;
-	console.log(tmp);
-
+	aux = categorias.sort(function(a,b) { return parseInt(a.id) - parseInt(b.id) });		
+	
+	
 	var folder = '';
 	var nomeCategoria;
-	
-	for(var l = 0; l<6; l++){
-		console.log(aux[l][0]+'- Ind:'+aux[l][1]);
-		nomeCategoria = $('#cbCategorias option[value='+aux[l][1]+']').html();
-		folder += '<button class="folding categoria'+aux[l][1]+'"><h4><div class="categoriaIcon"></div> '+nomeCategoria+'</h4></button>';
-	}
+	$(aux).each(function(i, obj){
+		if(obj != 0 && obj && i < 6){
+			console.log('Indice do loop: '+i);	 
+			nomeCategoria = $('#cbCategorias option[value='+obj.id+']').html();
+			console.log('Nome da categoria: '+nomeCategoria); 
+			folder += '<button class="folding categoria'+obj.id+'"><h4><div class="categoriaIcon"></div> '+nomeCategoria+'</h4></button>';
+			aux.splice(i,1); 
+			
+		
+		}
+	});
+
+
 	$('#paperFolding').html(folder+'<button id="footerFolding"  data-toggle="modal" data-target="#modalCategorias"><h4><i class="icon icon-white icon-plus"></i> Ver todas categorias</h4></button>');
+	
+
+	// var maior = categorias[0];
+	// for(var j=0; j<6; j++){
+
+	// 	for(var i=0; i<catAux.length; i++){
+	// 		if(catAux[i] != undefined){
+	// 			if(maior >= catAux[i]){
+	// 				maior = catAux[i];
+	// 				idMaior = i;
+	// 			}
+	// 		}
+	// 	}
+	// 	delete catAux[idMaior];
+	// 	aux[j] = new Array();
+	// 	aux[j][0] = maior;
+	// 	aux[j][1] = idMaior;
+	// }
+
+	// tmp = aux;
+	// console.log(tmp);
+
+	
+	// // for(var l = 2; l<8; l++){
+	// // 	console.log(categorias[l]);
+	// // 	nomeCategoria = $('#cbCategorias option[value='+categorias[l][1]+']').html();
+	// // 	folder += '<button class="folding categoria'+aux[l][1]+'"><h4><div class="categoriaIcon"></div> '+nomeCategoria+'</h4></button>';
+	// // }
+
+	// $.each(categorias, function(i, obj){
+	// 	console.log(obj);
+	// });
+
+	// $('#paperFolding').html(folder+'<button id="footerFolding"  data-toggle="modal" data-target="#modalCategorias"><h4><i class="icon icon-white icon-plus"></i> Ver todas categorias</h4></button>');
 }
 
 //useless
@@ -792,54 +840,58 @@ function gostar(gostar, id_campanha, botao){
 
 }
 
-function compartilharNoFacebook() {
-	// lojistaNome = $('#lojistaNome').html();
-	link = servidor+'../publico/anuncio?id='+oferta.id;
+function compartilharNoFacebook(offer) {
+	var oferta = offer;
+	
+	var link = servidor+'../publico/anuncio?id='+oferta.id;
+	console.log(oferta.titulo);
+	console.log(oferta.texto);
+	
 	FB.ui(
-			  {
-			   method: 'feed',
-			   display: 'popup',
-			   name: oferta.titulo,
-			   caption: oferta.texto,
-			   description: (
-			      lojistaNome
-			   ),
-			   link: link,
-			   picture: servidor+'../'+oferta.imagem
-			  },
-			  function(response) {
-			    if (response && response.post_id) {
-			      console.debug('Compartilhado no Facebook com sucesso.');
-			    } else {
-			      console.error('Erro ao compartilhar no Facebook.');
-			    }
-			  }
-			);
+	  {
+	   method: 'feed',
+	   display: 'popup',
+	   name: oferta.titulo,
+	   caption: oferta.texto,
+	   description: (
+	      oferta.titulo
+	   ),
+	   link: link,
+	   picture: servidor+'../'+oferta.imagem
+	  },
+	  function(response) {
+	    if (response && response.post_id) 
+	      console.debug('Compartilhado no Facebook com sucesso.');
+	    else 
+	      console.error('Erro ao compartilhar no Facebook.');
+	    
+	  }
+	);
 }
 
 function shareOnFacebook(id, titulo, image) {
 	
-	link = 'http://smartpanda.com.br/oferta.php?id='+oferta.id;
+	var link = servidor+'../publico/anuncio?id='+id;
 	FB.ui(
-			  {
-			   method: 'feed',
-			   display: 'popup',
-			   name: titulo,
-			   caption: titulo,
-			   description: (
-			      titulo
-			   ),
-			   link: link,
-			   picture: servidor+'../'+image
-			  },
-			  function(response) {
-			    if (response && response.post_id) {
-			      console.debug('Compartilhado no Facebook com sucesso.');
-			    } else {
-			      console.error('Erro ao compartilhar no Facebook.');
-			    }
-			  }
-			);
+	  {
+	   method: 'feed',
+	   display: 'popup',
+	   name: titulo,
+	   caption: titulo,
+	   description: (
+	      titulo
+	   ),
+	   link: link,
+	   picture: servidor+'../'+image
+	  },
+	  function(response) {
+	    if (response && response.post_id) {
+	      console.debug('Compartilhado no Facebook com sucesso.');
+	    } else {
+	      console.error('Erro ao compartilhar no Facebook.');
+	    }
+	  }
+	);
 }
 
 
@@ -849,6 +901,7 @@ function carregarCategorias() {
 		success: function(dados){
 			html = '<option value="0">Todas as Categorias</option>';
 			var modal ="";
+			var fold ="";
 			$.each(dados.categorias, function(i, obj) {
 				categorias[obj.id] = 0;
 				html += '<option value="'+obj.id+'">'+obj.nome+'</option>';
@@ -857,8 +910,15 @@ function carregarCategorias() {
 							+'<div class="icon"></div>'
 							+'<h6>'+obj.nome+'</h6>'
 							+'</button>';
+					if(i<6){
+						fold += '<button class="folding categoria'+obj.id+'"><h4><div class="categoriaIcon"></div> '+obj.nome+'</h4></button>';
+						
+					}
+
 				}
 			});
+
+			$('#paperFolding').html(fold+'<button id="footerFolding"  data-toggle="modal" data-target="#modalCategorias"><h4><i class="icon icon-white icon-plus"></i> Ver todas categorias</h4></button>');
 			
 			$('#cbCategorias').html('');
 			$('#cbCategorias').append(html);
@@ -877,12 +937,6 @@ function carregarCategorias() {
 			console.warn("Erro ao carregar lista de categorias");
 		}
 	});
-}
-
-function selecionarCategoria(id) {
-	$('.categorias').removeClass('ui-screen-hidden');
-	if(id > 0)
-		$('.categorias:not(.categoria'+id+')').addClass('ui-screen-hidden');
 }
 
 
@@ -925,67 +979,9 @@ function getEstabelecimentoInfo(id_estabelecimento, campo) {
 	});
 }
 
-//Geolocalizacao***
-function obterPosicao() {
-	if(navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(geoSucesso,geoErro, {
-			enableHighAccuracy: true,
-			timeout: 5000, //5s
-			maximumAge:300000 //5min
-		});
-	} else {
-		console.warn("O navegador nÃ£o suporta Geolocation");
-		carregarShoppings(0,0);
-	}
-}
 
-function geoSucesso(position) {
-	latitude = position.coords.latitude;
-	longitude = position.coords.longitude;
-	
-	console.debug("Latitude: "+latitude);
-	console.debug("Longitude: "+longitude);
-	
-	carregarShoppings(latitude,longitude);
-}
 
-function geoErro(err) {
-	switch (err.code) {
-		case 1 :
-			console.error("A permissÃ£o para obter a geolocalizacao foi negada");
-			break;
-		case 2 :
-			console.error("NÃ£o foi possivel estabelecer uma conexao para obter a geolocalizacao");
-			break;
-		case 3 :
-			console.error("Tempo Esgostado ao tentar obter a geolocalizacao");
-			break;
-		default:
-			console.error("Erro ao obter a geolocalizacao");
-	}
-	
-	carregarShoppings(0,0);
-}
 
-function calcularDistancia(lat1,lon1,lat2,lon2) {
-	var R = 6371; // km
-	var dLat = toRad((lat2-lat1));
-	var dLon = toRad((lon2-lon1));
-	var lat1 = toRad(lat1);
-	var lat2 = toRad(lat2);
-	
-	var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-    Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
-	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-	var d = R * c;
-	
-	return d;
-}
-
-function toRad(Value) {
-    /** Converts numeric degrees to radians */
-    return Value * Math.PI / 180;
-}
 
 function loadCidades() {
 	

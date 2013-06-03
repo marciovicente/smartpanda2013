@@ -26,7 +26,7 @@
 
 					<div class="auth">
 						<!-- <span>Cadastre-se agora</span> -->
-						<a class="btn-auth btn-facebook large" href="#"> Conecte-se <b>Facebook</b> </a>
+						<a class="btn-auth btn-facebook large" onclick="FB.login(function(response) {window.location ='./';}, {scope: 'user_birthday'});" data-icon="facebook" data-iconshadow="false" data-icon-pos="top"  data-mini="true"> Conecte-se <b>Facebook</b> </a>
 						<a class="btn-auth btn-lojista large" href="<?php echo $server ?>lojista.php">Área do Lojista</a>
 					</div>
 				</div>
@@ -39,7 +39,7 @@
 					com o shopping na palma da mão</h2>
 			        <p>
 			        	<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
-						<button class="getButton web"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
+						<button class="getButton web" onclick="FB.login(function(response) {window.location ='./';}, {scope: 'user_birthday'});" data-icon="facebook" data-iconshadow="false" data-icon-pos="top"  data-mini="true"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
 						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
 
 			        </p>
@@ -53,7 +53,7 @@
 					de qualquer dispositivo.</h2>
 			        <p>
 			        	<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
-						<button class="getButton web"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
+						<button class="getButton web" onclick="FB.login(function(response) {window.location ='./';}, {scope: 'user_birthday'});" data-icon="facebook" data-iconshadow="false" data-icon-pos="top"  data-mini="true"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
 						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
 
 			        </p>
@@ -99,13 +99,14 @@
 						<h5>Localize o shopping mais próximo ou de sua preferência</h5>	
 					</div>
 
+					<div class="exp cart">
+						<h5>Encontre o que você procura</h5>	
+					</div>
+					
 					<div class="exp deal">
-						<h5>Encontre os melhores produtos para seu perfil</h5>	
+						<h5>Agora é só sair para as compras!</h5>	
 					</div>
 
-					<div class="exp cart">
-						<h5>Só sair para as compras!</h5>	
-					</div>
 
 					
 				</div>
@@ -120,12 +121,12 @@
 					<div class="textDownload">
 						Faça o download agora mesmo 
 						<br> 
-						<a href=""><div class="os android"></div>Android</a> 
-						<a href=""><div class="os ios"></div>iPhone</a>
+						<a href="https://play.google.com/store/apps/details?id=com.bambooss.smartpanda"><div class="os android"></div>Android</a> 
+						<a><div class="os ios"></div>iPhone</a>
 					</div>
 					<span>ou</span> 
 
-					<a class="btn-auth btn-facebook large" href="#"> Entre com <b>Facebook</b> </a>
+					<a class="btn-auth btn-facebook large" onclick="FB.login(function(response) {window.location ='./';}, {scope: 'user_birthday'});" data-icon="facebook" data-iconshadow="false" data-icon-pos="top"  data-mini="true"> Conecte-se <b>Facebook</b> </a>
 				</div>
 			</div>
 
@@ -135,16 +136,18 @@
 	<footer id="footerMain" class="notLogged">
 		<div class="central">
 			<div class="menuFooter">
-				<a href="">Assine um plano</a>
-				<a href="about.php">Quem somos</a>
-				<a href="">Regras gerais</a>
-				<a href="">Blog</a>
+				<a href="https://bambooss.websiteseguro.com/cadastro.php">Assine um plano</a>
+				<a href="about.php">Smartpanda</a>
+				<a href="http://www.smartpanda.com.br/TermosDeUso-SMARTPANDA.pdf">Regras gerais</a>
+				<a href="" title="Em breve">Blog</a>
 				<a href="">Contato</a>
 			</div>
 		</div>		
 	</footer>
 
+	<script id="facebook-jssdk" src="//connect.facebook.net/pt_BR/all.js"></script>
 	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
+	<script src="<?php echo $server;?>js/global.js"></script>
 	<script src="<?php echo $server;?>js/bootstrap.modal.js"></script>
 	<script src="<?php echo $server;?>js/modernizr.custom.28468.js"></script>
 	<script src="<?php echo $server;?>js/jquery.cslider.js"></script>
@@ -162,27 +165,6 @@
 		});
 
 	
-		// $(function () {
-		// 	var counter = 0, divs = $('.banner, .banner.second');
-			
-		//     function alternateDiv() {
-		//         divs.hide() // hide all divs
-		//             .filter(function (index) { return index == counter % 2; }) // figure out correct div to show
-		//             .fadeIn('slow'); // and show it
-
-		//         counter++;
-		//     }; 
-
-		//     alternateDiv(); 
-		    
-		//     setInterval(function () {
-		//         alternateDiv(); 
-		//     }, 6 * 1000); 
-
-
-			
-
-		// });
 
 	</script>
 </body>

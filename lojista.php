@@ -29,9 +29,9 @@
 						<span class="icon-lock"></span>
 						<input type="password" placeholder="Senha">
 					</label>
-					<button>OK</button>
+					<button type="submit" value="OK">OK</button>
 				</form>
-				<button class="buttonTop">Cadastre-se agora <br><span>É grátis!</span> </button>
+				<button class="buttonTop" onclick="location.href='https://bambooss.websiteseguro.com/cadastro.php'">Cadastre-se agora <br><span>É grátis!</span> </button>
 
 			</div>
 
@@ -64,8 +64,8 @@
 							<button class="tab" value="3">Cabe em seu orçamento</button>
 						</div>
 						<div class="tabRight">
-							<article class="article1">Os Smartphones têm um papel fundamental para as estratégias de marketing, pois aumentam o envolvimento do consumidor com seu produto. Ligamos o mundo offline com o mundo online, trazendo a sua loja para a palma da mão dos consumidores. Não só isso, o Smartpanda é um sistema inteligente e de fácil uso. Entregamos seus produtos nas redes sociais, em nosso site e no Smartpanda TV, aplicando o conceito de comunicação 360°.</article>
-							<article class="article2">Os seus investimentos em marketing serão otimizados, pois seus serão direcionados para o seu público-alvo. Com o poder analítico que possuímos, a sua empresa terá informações precisas, sabendo exatamente quantas pessoas foram atingidas, quantas gostaram e compartilharam nas redes sociais e até mesmo quantas pessoas compraram, após terem visto uma informação no Smartpanda.</article>	
+							<article class="article1">Os Smartphones têm um papel fundamental para as estratégias de marketing, pois aumentam o envolvimento do consumidor com seu produto. Ligamos o mundo offline com o mundo online, trazendo a sua loja para a palma da mão dos consumidores e os consumidores até o seu ponto de venda. Não só isso, o Smartpanda é um sistema inteligente e de fácil uso. Entregamos seus produtos nas redes sociais, em nosso site e no Smartpanda TV, aplicando o conceito de comunicação 360°.</article>
+							<article class="article2">Os seus investimentos em marketing serão otimizados, pois seus produtos serão direcionados para o seu público-alvo. Com o poder analítico que possuímos, a sua empresa terá informações precisas, sabendo exatamente quantas pessoas foram atingidas, quantas gostaram e compartilharam nas redes sociais e até mesmo quantas pessoas compraram, após terem visto uma informação no Smartpanda.</article>	
 							<article class="article3">Você pode usar o Smartpanda GRÁTIS pelo tempo que quiser (no plano Basic) ou migrar para outros planos que se adequem ao seu negócio. Comece agora mesmo. Basta efetuar o seu cadastro e aproveitar. Não perca mais tempo e dinheiro. <a href="">Confira nossos planos</a></article>
 							
 						</div>
@@ -81,7 +81,7 @@
 						<h4></h4>
 					</div>
 
-					<button class="btn">Quero me cadastrar agora</button>
+					<button class="btn" onclick="location.href='https://bambooss.websiteseguro.com/cadastro.php'">Quero me cadastrar agora</button>
 				</div>
 
 			</section>
@@ -104,7 +104,7 @@
 
 					
 
-					<div class="searchShopping">
+					<!-- <div class="searchShopping">
 						
 						<h3>Confira se o Smartpanda está no shopping da sua loja</h3>
 						<input type="text" class="search"><i class="icon-search"></i>
@@ -114,9 +114,9 @@
 						</div>
 
 						
-					</div>
+					</div> -->
 					
-					<a class="doIt" href="#">Faça como eles</a>
+					<a class="doIt" href="https://bambooss.websiteseguro.com/cadastro.php">Faça como eles</a>
 				</div>
 			</section>
 
@@ -141,13 +141,13 @@
 							<h5>Camila Alemany - Proprietária Mia Tropical</h5>
 						</div>
 
-						<div class="depoimento">
+						<!-- <div class="depoimento">
 							<span>,,</span>
 							<article class="article">
 								Tenho achado bem simples, prático e fácil de utilizar. Eu indico, com certeza, pois sei que vamos alavancar as vendas e a divulgação dos nossos serviços.
 							</article>
 							<h5>Cristina Bortoli - Gerente - Vila Cani Pet Center</h5>
-						</div>
+						</div> -->
 						
 						<div class="atuacao">
 							<h3>Atuação</h3>
@@ -157,7 +157,7 @@
 							<h4>Shoppings já cadastrados</h4>
 							<div class="shoppings"></div>	
 
-							<a href="" id="linkLojista">Quer levar o Smartpanda para a sua loja?</a>
+							<a href="" id="linkLojista">Solicite o cadastramento de um shopping</a>
 						</div>
 
 						
@@ -179,7 +179,7 @@
 							<input type="email" name="email" required>
 						</div>
 
-						<div class="input">
+						<div class="input telefone">
 							<div class="placeholder">Telefone</div>
 							<input type="text" name="phone" required>
 						</div>
@@ -190,22 +190,22 @@
 						</div>
 
 							<label>
-								<select name="estado" id="estado">
+								<select name="estado" id="estado" required>
 									<option value="0">Estado</option>
 								</select>
 							</label>
 
 							<label class='cidade'>
-								<select name="cidades" id="cidade">
+								<select name="cidades" id="cidade" required>
 									<option value="0">Cidade</option>
 								</select>
 							</label>
-						<textarea name="mensagem"></textarea>
+						<textarea name="mensagem" required></textarea>
 						<button class="btn" type="submit">Enviar mensagem</button>
 
 					</form>
 					
-					<div class="phone"><span>+55</span> 71 4141-6366</div>
+					<div class="phone"> <i class="icon-phone"></i> <span>+55</span> 71 4141-6366</div>
 				</div> <!-- central -->
 				
 			</section>
@@ -316,7 +316,7 @@
 						else if(data.num_error == 2)
 							alert("Digite um email válido");
 						else{
-							$('form.form').html("Mensagem enviada com sucesso! Em breve entraremos em contato com você");
+							$('form.form').html("<h3 class='success'>Mensagem enviada com sucesso! Em breve entraremos em contato com você</h3>");
 						}
 						
 							
@@ -337,6 +337,7 @@
 						shop += ' <span class="shopping">'+obj.nome_fantasia+'</span> - ';
 					});
 
+					shop.slice(0,-1);
 					$('.shoppings ').html(shop);
 					
 				},
@@ -352,6 +353,7 @@
 						city += ' <span class="cidade">'+obj.nome+'</span> - ';
 					});
 
+					city.slice(0,-1);
 					$('.cidades').html(city);
 				},
 				error: function(){			
@@ -360,14 +362,17 @@
 			});
 		}
 
+		var count = 0;
 		$('#linkLojista').click(function(event){
 			event.preventDefault();
+			if(count == 0){
 
-			$('form.form input:first').focus();
-			var input = '<div class="input"> <div class="placeholder">Shopping</div> <input type="text" name="shopping"> </div>';
+				$('form.form input:first').focus();
+				var input = '<div class="input"> <div class="placeholder">Shopping</div> <input type="text" name="shopping"> </div>';
 
-			$('form.form input[name="empresa"]').after(input);
-			$(window).scrollTop($('form.form').offset().top);
+				$('form.form .input.telefone').after(input);
+			}
+			$(window).scrollTop($('.doIt').offset().top);
 		})
 
 		function removeAcentos(e){
@@ -375,23 +380,23 @@
 			return e;
 		}
 
-		$('input.search').on('keyup',function(e){
+		// $('input.search').on('keyup',function(e){
 
-			var val = $(this).val().toLowerCase();
-			val = removeAcentos(val);
+		// 	var val = $(this).val().toLowerCase();
+		// 	val = removeAcentos(val);
 
-			$('.listaShopping .shopping').each(function(i){
-				var shopping = $(this).text();
-				shopping = removeAcentos(shopping);
-				shopping = shopping.toLowerCase();
+		// 	$('.listaShopping .shopping').each(function(i){
+		// 		var shopping = $(this).text();
+		// 		shopping = removeAcentos(shopping);
+		// 		shopping = shopping.toLowerCase();
 
-				if(shopping.indexOf(val) < 0){
-					$(this).hide();
-				}else
-					$(this).show();
+		// 		if(shopping.indexOf(val) < 0){
+		// 			$(this).hide();
+		// 		}else
+		// 			$(this).show();
 
-			});
-		});
+		// 	});
+		// });
 	</script>
 
 </body>

@@ -1,9 +1,6 @@
 <?php 
 	include("includes/config.php");
-
-
 ?>
-
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -71,8 +68,8 @@
 						<button class="ribbon" class="notAvailable" title="Reservar: Em breve"><div class="pinIcon"></div></button>
 						<div id="ofertaDestaque" >
 							<h3></h3>
-							<h4><div class="iconLoja"></div> </h4>
-							<h4><div class="iconLoja mall"></div> </h4>
+							<h4> </h4>
+							<h4> </h4>
 							<article class="descOfertaDetalhe"> </article>
 						</div>
 						
@@ -124,10 +121,10 @@
 	<footer id="footerMain">
 		<div class="central">
 			<div class="menuFooter">
-				<a href="">Assine um plano</a>
-				<a href="about.php">Quem somos</a>
-				<a href="">Regras gerais</a>
-				<a href="">Blog</a>
+				<a href="https://bambooss.websiteseguro.com/cadastro.php">Assine um plano</a>
+				<a href="about.php">Smartpanda</a>
+				<a href="http://www.smartpanda.com.br/TermosDeUso-SMARTPANDA.pdf">Regras gerais</a>
+				<a href="" title="Em breve">Blog</a>
 				<a href="">Contato</a>
 			</div>
 		</div>		
@@ -138,6 +135,7 @@
 	<script src="<?php echo $server;?>js/jquery.tooltipster.min.js"></script>
 	<script src="<?php echo $server;?>js/bootstrap.min.js"></script>
 	<script src="<?php echo $server;?>js/browser.js"></script>
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 	<script type="text/javascript">
@@ -208,8 +206,9 @@
 			$('#textLoading').addClass('animated tada');
 			carregarCategorias();
 			carregaDestaque(id_cidade);	
-			carregarOfertas(id_cidade);
+			carregarOfertas(id_cidade, 0);
 			getShoppingsAtivos(id_cidade);
+
 
 			checkLogin();
 
@@ -218,6 +217,8 @@
 
 
 		(function ($) { 
+			
+
 
 			$('#cbCategorias').change(function(){
 				var cat = $(this).val();
@@ -238,9 +239,11 @@
 			
 			});
 
+		
+
 			$('#selectCidade').change(function(){
 				var id_cidade = $(this).val();
-				carregarOfertas(id_cidade);
+				carregarOfertas(id_cidade, 1);
 				carregaDestaque(id_cidade);
 			});
 		
@@ -252,7 +255,7 @@
 			
 
 			
-
+			
 
 
 			// =================== MODAL CATEGORIAS =======================================
@@ -298,6 +301,7 @@
 						$(this).fadeOut();
 						counter++;
 					}else
+
 						$(this).fadeIn();
 					
 				});
@@ -320,9 +324,11 @@
 				// =======================================================================================================
 			});
 
+
 			
  			
 		})(jQuery)
+		
 
 
 

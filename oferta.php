@@ -104,10 +104,10 @@
 	<footer id="footerMain">
 		<div class="central">
 			<div class="menuFooter">
-				<a href="">Assine um plano</a>
-				<a href="">Quem somos</a>
-				<a href="">Regras gerais</a>
-				<a href="">Blog</a>
+				<a href="https://bambooss.websiteseguro.com/cadastro.php">Assine um plano</a>
+				<a href="about.php">Smartpanda</a>
+				<a href="http://www.smartpanda.com.br/TermosDeUso-SMARTPANDA.pdf">Regras gerais</a>
+				<a href="" title="Em breve">Blog</a>
 				<a href="">Contato</a>
 			</div>
 		</div>		

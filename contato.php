@@ -2,7 +2,7 @@
 
 	$nome = $_POST['nome'];
 	$email = $_POST['email'];
-	$telefone = $_POST['telefone'];
+	$telefone = $_POST['phone'];
 	$empresa = $_POST['empresa'];
 	$estado = $_POST['estado'];
 	$cidade = $_POST['cidade'];
@@ -12,7 +12,7 @@
 
 	validaEmail($email);
 
-	if($nome == " " || $email == " " || $telefone == " " || $empresa == " " || $cidade == null || $estado == null)
+	if($nome == " " || $email == " " || $telefone == " " || $empresa == " " || $cidade == " " || $estado == " ")
 		$error = 1;
 
 	function validaEmail($mail){
@@ -35,7 +35,13 @@
 		$msg .= "Estado: ".$estado."\n";
 		$msg .= "Cidade: ".$cidade."\n";
 		$msg .= "Mensagem: ".$mensagem."\n";
-		if(mail())
+		if(isset($_POST['shopping'])){
+			$msg .= "Shopping: ".$_POST['shopping'];
+			$assunto = "Interesse em cadastrar um novo shopping";
+		}else
+			$assunto = "Contato enviado pelo site";
+		if(mail("contato@smartpanda.com.br", $assunto, $msg))
+			$return ['error'] = false;
 	}else{
 		$return ['error'] = true;
 		$return ['num_error'] = $error;
