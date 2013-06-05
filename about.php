@@ -16,21 +16,29 @@
 <body class="notLogged">
 	<div id="all" class="notLogged">
 		<div class="container notLogged">
-
 			<header class="header">
 				<div id="headerMain">
 					
 					<a href="<?php echo $server ?>"><div id="logo"><span>O shopping na palma da mão</span></div></a>
 
 					<div class="auth">
-						<a class="btn-auth btn-facebook large" href="#"> Conecte-se <b>Facebook</b> </a>
-						<a class="btn-auth btn-lojista large" data-toggle="modal" data-target="#modalLojista">Lojista</a>
+						<a class="btn-auth btn-facebook large" onclick="FB.login(function(response) {window.location ='./';}, {scope: 'user_birthday'});" data-icon="facebook" data-iconshadow="false" data-icon-pos="top"  data-mini="true"> Conecte-se <b>Facebook</b> </a>
+						<a class="btn-auth btn-lojista large" href="<?php echo $server ?>lojista.php">Área do Lojista</a>
 					</div>
 				</div>
 			</header>
 			
 			<div class="about">
 				<div class="central">
+					<h1>Smartpanda</h1>
+					<article class="articleAbout">O SMARTPANDA surgiu para atender às suas necessidades, seja você consumidor ou lojista. Nosso grande desafio é avaliar e entender as relações de consumo, criando facilidades que gerem satisfação plena para todos os envolvidos. Como resultado teremos, do lado da empresa, uma otimização de processos, com redução de custos, aumento da produtividade e ampliação de mercado. Do lado do cliente, a felicidade de poder contar com um serviço que leva em consideração o seu perfil e a certeza de ter seu desejo satisfeito.</article>
+
+					<h2>Para você</h2>
+					<article class="articleAbout">O aplicativo SMARTPANDA traz uma nova experiência de consumo para você. Que tal receber as melhores informações sobre os produtos e serviços que lhe interessam? E o principal: estão todos bem pertinho de você. Satisfaça seus desejos com muito mais economia e praticidade. </article>
+					 
+
+					<h2>Para sua empresa</h2>
+					<article class="articleAbout">Com o nosso aplicativo SMARTPANDA a sua empresa ganha uma nova ferramenta capaz de auxiliar no gerenciamento dos seus investimentos em marketing, especialmente publicidade e propaganda. Será possível saber, por exemplo, exatamente quantas pessoas foram atingidas pela sua campanha, quantas clicaram em seu produto e até mesmo quantas foram ao seu estabelecimento e efetivamente compraram. A tendência é que essas pessoas divulguem espontaneamente a informação entre seus amigos e nas redes sociais. A análise e cruzamento de dados dos potenciais clientes e as informações do perfil da sua empresa nos permitem colocar seus produtos ou serviços no centro dos desejos dos consumidores. </article>
 					<h2>Quem somos</h2>		
 
 					<div class="bio davi">
@@ -84,12 +92,12 @@
 					</div>
 
 					<div class="bio tiosam">
-						<div class="photo"><div class="icon"></div></div>
+						<div class="photo"></div>
 						<h5>VOCÊ!</h5>
 						<h6>Seja um Smartbrother</h6>
 						<div class="articleBio">
 							<p>Quer fazer parte da nossa equipe e ser um Smartbrother? Nos envie seu currículo e iremos analisá-lo com o maior cuidado.</p>
-							<button class="btn btn-success" data-toggle="modal" data-target="#modalCurriculo">Enviar currículo</button>
+							<button class="btn btn-success" data-toggle="modal" data-target="#modalCurriculo">Quero ser Smartbrother</button>
 						</div>
 					</div>
 				</div>
@@ -98,7 +106,7 @@
 			<div id="modalCurriculo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-							<h3 id="myModalLabel">Cadastre seu currículo conosco</h3>
+							<h3 id="myModalLabel">Conte-nos sobre você</h3>
 						</div>
 						
 						<!-- only to test -->
@@ -165,6 +173,7 @@
 
 	<script src="<?php echo $server;?>js/jquery.1-9-1.min.js"></script>
 	<script src="<?php echo $server;?>js/cities.js"></script>
+	<script src="<?php echo $server;?>js/global.js"></script>
 	<script type="text/javascript" src="<?php echo $server;?>js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){

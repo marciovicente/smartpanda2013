@@ -2014,6 +2014,8 @@ body{
 			&.notLogged{
 				margin-bottom: -130px;
 				padding-bottom: 0;
+
+				
 			}
 
 			.central{
@@ -2633,11 +2635,21 @@ body{
 				height: auto;
 				margin: 150px auto 0;
 
+				h1{
+					margin: -47px 0 46px 0;
+					color: $verde;
+				}
+
 				h2{
 					font-family: $ubuntu;
 					text-shadow: 1px 1px 0 #fff;
 					color: #888888;
 					text-align: center;
+					margin: 15px 0 ;
+				}
+
+				.articleAbout{
+					color: #5F5F5F;
 				}
 
 				.bio{
@@ -2652,7 +2664,7 @@ body{
 					.btn{
 						float: right;
 						position: relative;
-						top: 15px;
+						top: 30px;
 						right: 7px;
 					}
 
@@ -2705,7 +2717,7 @@ body{
 
 					&.marcio{
 						.photo{	background-position: -600px 0; }
-						.icon{ background-position: 0 0; }
+						.icon{ background-position: -221px 0; }
 					}
 					&.davi{
 						.photo{	background-position: 0 0; }
@@ -2713,7 +2725,10 @@ body{
 					}
 					&.ivo{
 						.photo{	background-position: -300px 0; }
-						.icon{ background-position: -106px 0; }
+						.icon{ 
+							background-position: -105px 0;
+							width: 45px; 
+						}
 					}
 					&.vicente{
 						.photo{	background-position: -150px 0; }
@@ -2721,12 +2736,17 @@ body{
 					}
 					&.marlon{
 						.photo{	background-position: -450px 0; }
-						.icon{ background-position: -189px 0; }
+
+						.icon{ 
+							background-position: -195px 0;
+							width: 25px;
+							right: -41px;
+						}
 					}
 
 					&.vitor{
 						.photo{	background-position: -900px 0; }
-						.icon{ background-position: -189px 0; }
+						.icon{ background-position: 0 0; right: -47px; }
 					}
 
 					&.tiosam{
