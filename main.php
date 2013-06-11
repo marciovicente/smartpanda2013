@@ -38,8 +38,8 @@
 			        <h2>Encontre tudo o que você precisa <br>	
 					com o shopping na palma da mão</h2>
 			        <p>
-			        	<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
 						<button class="getButton web" onclick="FB.login(function(response) {window.location ='./';}, {scope: 'user_birthday'});" data-icon="facebook" data-iconshadow="false" data-icon-pos="top"  data-mini="true"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
+			        	<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
 						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
 
 			        </p>
@@ -66,8 +66,8 @@
 			        <h2>Em qualquer lugar, <br>	
 					de qualquer dispositivo.</h2>
 			        <p>
-			        	<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
 						<button class="getButton web"><span>Acesse agora</span>  <i class="icon-laptop"></i> <h6>pelo seu computador</h6> </button>
+			        	<button class="getButton" onclick="location.href='https://play.google.com/store/apps/details?id=com.bambooss.smartpanda'" ><span>Instale agora mesmo</span> <div class="androidIcon"></div> <h6>Versão 1.2.4 no Google Play</h6> </button>
 						<button class="getButton apple"><span>Em desenvolvimento.</span>  <div class="appleIcon"></div> <h6>Breve na App Store</h6> </button>
 
 			        </p>
@@ -153,18 +153,33 @@
 	<script src="<?php echo $server;?>js/jquery.cslider.js"></script>
 
 	<script>
+		$(document).ready(function(){
+			$('#da-slider').cslider({
+			    current     : 0,    
+			    bgincrement : 30,   
+			    autoplay    : true,
+			    interval    : 6000 
+			});
 
-	
-		$('#da-slider').cslider({
-	 
-		    current     : 0,    
-		    bgincrement : 50,   
-		    autoplay    : true,
-		    interval    : 6000 
-		     
+			// setInterval(trocaBanner, 6000);
+			
 		});
-
+		
 	
+
+		var i = 0;
+		function trocaBanner(){
+			if(i % 2 == 0){
+				$("#da-slider").css('background-position', '0 0');
+				$("#da-slider").fadeIn().css('background-image', 'url(images/mall.jpg)');
+			}else{
+				$("#da-slider").css('background-position', '0 0');
+				$("#da-slider").fadeIn().css('background-image', 'url(images/mall2.jpg)');
+			}
+				
+			i++;
+		}
+
 
 	</script>
 </body>

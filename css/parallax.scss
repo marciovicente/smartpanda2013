@@ -5,7 +5,7 @@
 	position: relative;
 	margin: 30px auto;
 	overflow: hidden;
-	background: url(../images/dot.png) #78B118 repeat 0% 0%;
+	background: url(../images/mall-full.jpg) repeat 0% 0%;
 	border-top: 8px solid #5a8611;
 	border-bottom: 8px solid #5a8611;
 	box-shadow: 0px 1px 1px rgba(0,0,0,0.2), 0px -2px 1px #fff;
@@ -52,7 +52,7 @@
 	opacity: 1;
 }
 .da-slide h2{
-	color: #fff;
+	color: rgba(0,0,0,0.7);
 	font-size: 34px;
 	width: 50%;
 	top: 60px;
@@ -62,7 +62,6 @@
 	font-family: 'Ubuntu', Arial, sans-serif;
 	font-weight: 700;
 	line-height: 40px;
-	text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
 }
 .da-slide p{
 	width: 45%;
@@ -112,12 +111,16 @@
 	width: 12px;
 	height: 12px;
 	border-radius: 50%;
-	background: #5c842a;
+	background: rgba(0,0,0,0.3);
 	margin: 3px;
 	cursor: pointer;
 	box-shadow: 
 		1px 1px 1px rgba(0,0,0,0.1) inset, 
 		1px 1px 1px rgba(255,255,255,0.1);
+
+		&:hover{
+			background:rgba(0,0,0,0.6);
+		}
 }
 .da-dots span.da-dots-current:after{
 	content: '';
